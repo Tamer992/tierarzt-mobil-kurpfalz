@@ -85,19 +85,38 @@
 
 })();
 
-// Termin-Vorauswahl: bei „Etwas anderes“ ein Textfeld zeigen
+// Termin-Vorauswahl: Beschreibung zum Anlass (bei „Etwas anderes“ Pflicht) und Feld für ein anderes Tier
 (function () {
   var anlass = document.getElementById('anlass');
   var anlassText = document.querySelector('.anlass-text');
   if (anlass && anlassText) {
     var textfeld = anlassText.querySelector('textarea');
+    var label = anlassText.querySelector('label');
+    var hinweis = anlassText.querySelector('.feld__hinweis');
     var pruefeAnlass = function () {
+      var gewaehlt = anlass.value !== '';
       var sonst = anlass.value === anlass.getAttribute('data-sonst');
-      anlassText.hidden = !sonst;
-      textfeld.disabled = !sonst;
+      anlassText.hidden = !gewaehlt;
+      textfeld.disabled = !gewaehlt;
       textfeld.required = sonst;
+      label.textContent = anlassText.getAttribute(sonst ? 'data-label-sonst' : 'data-label');
+      hinweis.textContent = anlassText.getAttribute(sonst ? 'data-hinweis-sonst' : 'data-hinweis');
     };
     anlass.addEventListener('change', pruefeAnlass);
     pruefeAnlass();
+  }
+
+  var tierAnderes = document.querySelector('.tier-anderes');
+  var tiere = document.querySelectorAll('input[name="tier"]');
+  if (tierAnderes && tiere.length) {
+    var tierFeld = tierAnderes.querySelector('input');
+    var pruefeTier = function () {
+      var anders = document.querySelector('input[name="tier"][value="anderes-tier"]:checked') !== null;
+      tierAnderes.hidden = !anders;
+      tierFeld.disabled = !anders;
+      tierFeld.required = anders;
+    };
+    tiere.forEach(function (r) { r.addEventListener('change', pruefeTier); });
+    pruefeTier();
   }
 })();

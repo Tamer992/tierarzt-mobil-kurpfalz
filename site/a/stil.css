@@ -288,7 +288,8 @@ section h2 { font-size: var(--s5); line-height: 1.12; }
 .feld[aria-invalid="true"] { border-color: var(--fehler); box-shadow: 0 0 0 3px #F3DCD5; }
 .feld:disabled { background: var(--grund); color: #5F636B; border-style: dashed; }
 .feld--text { min-height: 112px; padding: var(--a3) var(--a4); margin-top: var(--a2); max-width: 26rem; resize: vertical; line-height: 1.5; }
-.anlass-text[hidden] { display: none; }
+.anlass-text[hidden], .tier-anderes[hidden] { display: none; }
+.feld--kurz { margin-top: var(--a2); max-width: 26rem; }
 
 /* Kosten: Preisliste mit Punktlinie */
 .kosten { max-width: 52rem; margin: 0 auto; padding: var(--a10) var(--rand) 0; }

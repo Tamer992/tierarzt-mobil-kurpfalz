@@ -232,7 +232,11 @@
     "anlass_leer": "Bitte wählen",
     "anlass_erst": "Frisst nicht oder wirkt krank",
     "anlass_sonst_label": "Worum geht es genau?",
-    "anlass_sonst_hinweis": "Zum Beispiel: hinkt seit gestern, hat etwas verschluckt"
+    "anlass_sonst_hinweis": "Zum Beispiel: hinkt seit gestern, hat etwas verschluckt",
+    "anlass_text_label": "Beschreiben Sie kurz, was Ihnen aufgefallen ist (freiwillig)",
+    "anlass_text_hinweis": "Zum Beispiel: seit wann, wie oft, frisst und trinkt es noch?",
+    "tier_anderes_label": "Welches Tier?",
+    "tier_anderes_hinweis": "Zum Beispiel: Kaninchen, Meerschweinchen"
   },
   "erreichbarkeit": {
     "titel": "Erreichbar",

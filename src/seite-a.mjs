@@ -71,14 +71,19 @@ export function startseiteA({ g, r, s, esc, txt, bild, nr, tel, kopf }) {
           <div class="wahlreihe">${tiere}
           </div>
         </fieldset>
+        <div class="vorauswahl__gruppe tier-anderes" hidden>
+          <label class="feld__label" for="tier-anderes">${esc(s.kontakt.tier_anderes_label)}</label>
+          <input class="feld feld--kurz" id="tier-anderes" name="tier_anderes" type="text" maxlength="60" autocomplete="off" aria-describedby="tier-anderes-hinweis" disabled>
+          <p class="feld__hinweis" id="tier-anderes-hinweis">${esc(s.kontakt.tier_anderes_hinweis)}</p>
+        </div>
         <div class="vorauswahl__gruppe">
           <label class="feld__label" for="anlass">${esc(s.kontakt.frage_anlass)}</label>
           <div class="auswahl"><select class="feld" id="anlass" name="anlass" required data-sonst="${esc(s.kontakt.anlass_sonst)}">${anlaesse}</select></div>
         </div>
-        <div class="vorauswahl__gruppe anlass-text" hidden>
-          <label class="feld__label" for="anlass-text">${esc(s.kontakt.anlass_sonst_label)}</label>
+        <div class="vorauswahl__gruppe anlass-text" hidden data-label-sonst="${esc(s.kontakt.anlass_sonst_label)}" data-hinweis-sonst="${esc(s.kontakt.anlass_sonst_hinweis)}" data-label="${esc(s.kontakt.anlass_text_label)}" data-hinweis="${esc(s.kontakt.anlass_text_hinweis)}">
+          <label class="feld__label" for="anlass-text">${esc(s.kontakt.anlass_text_label)}</label>
           <textarea class="feld feld--text" id="anlass-text" name="anlass_text" rows="3" maxlength="300" aria-describedby="anlass-text-hinweis" disabled></textarea>
-          <p class="feld__hinweis" id="anlass-text-hinweis">${esc(s.kontakt.anlass_sonst_hinweis)}</p>
+          <p class="feld__hinweis" id="anlass-text-hinweis">${esc(s.kontakt.anlass_text_hinweis)}</p>
         </div>
         <button class="knopf knopf--gross" type="submit">${esc(s.kontakt.weiter)}<span class="pfeil" aria-hidden="true"></span></button>
       </form>
