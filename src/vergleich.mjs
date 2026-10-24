@@ -34,7 +34,7 @@ const block = (k) => {
     <div>
       <h2>${esc(d.name)}</h2>
       <p class="idee">${esc(d.startidee)}</p>
-      <p class="links"><a class="knopf" href="/${k}/">Richtung ${k.toUpperCase()} live ansehen</a></p>
+      <p class="links"><a class="knopf" href="${k}/">Richtung ${k.toUpperCase()} live ansehen</a></p>
     </div>
   </header>
   <figure class="bild"><img src="vergleich/${k}-start.webp" width="1600" height="900" alt="Richtung ${k.toUpperCase()}: erster Bildschirm am Computer und am Handy" loading="lazy"><figcaption>Erster Bildschirm · Computer 1440 px und Handy 390 px</figcaption></figure>
@@ -66,7 +66,7 @@ const html = `<!doctype html>
   <header class="seitenkopf">
     <h1>Mobiler Tierarzt · drei Richtungen</h1>
     <p>Stand 24.10.2026. Jede Richtung hat einen gebauten Startbereich und eine Leistungsübersicht. Die Richtungen lassen sich live öffnen und am Handy durchtippen. Farbig hinterlegte Stellen sind Platzhalter für fehlende Angaben. Die Telefonnummer hat die Länge einer echten Nummer, damit das Layout stimmt.</p>
-    <nav aria-label="Richtungen"><a href="#a">A · ${esc(r.a.name)}</a><a href="#b">B · ${esc(r.b.name)}</a><a href="#c">C · ${esc(r.c.name)}</a><a href="/recherche/">Phase 0 · Vorbilder</a></nav>
+    <nav aria-label="Richtungen"><a href="#a">A · ${esc(r.a.name)}</a><a href="#b">B · ${esc(r.b.name)}</a><a href="#c">C · ${esc(r.c.name)}</a><a href="recherche/">Phase 0 · Vorbilder</a></nav>
   </header>
   ${['a', 'b', 'c'].map(block).join('\n')}
   <footer class="fuss"><p>Alle Fotos von Unsplash unter der Unsplash-Lizenz, Nachweis in BILDNACHWEIS.md. Alle Schriften unter der SIL Open Font License, lokal eingebunden, ohne Google Fonts und ohne Tracking.</p></footer>
