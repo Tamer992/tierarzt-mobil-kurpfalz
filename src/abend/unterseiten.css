@@ -1,0 +1,88 @@
+/* ===== Richtung „Abendlicht“: Anpassungen für die Unterseiten ===== */
+@font-face { font-family: 'Geist'; src: url('../schriften/Geist.woff2') format('woff2'); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: 'Geist Mono'; src: url('../schriften/GeistMono.woff2') format('woff2'); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: 'Geist Ersatz'; src: local('Arial'); size-adjust: 104%; ascent-override: 92%; descent-override: 24%; }
+
+:root {
+  --nacht: #14110e; --nacht-2: #1c1814; --licht: #f1ebe1; --asche: #a99f92; --lampe: #dba564;
+  --kalk: #f2efe8; --tinte: #1f1b17; --stein: #5f574e;
+  /* Variablen von Richtung A auf Abendlicht umgestellt */
+  --grund: var(--kalk);
+  --flaeche: #faf8f3;
+  --text: var(--tinte);
+  --leise: var(--stein);
+  --akzent: var(--tinte);
+  --akzent-tief: #000;
+  --akzent-hell: #e7e1d5;
+  --auf-akzent: var(--kalk);
+  --linie: rgba(31, 27, 23, .16);
+  --leise-dunkel: var(--asche);
+  --serif: 'Geist', 'Geist Ersatz', system-ui, sans-serif;
+  --sans: 'Geist', 'Geist Ersatz', system-ui, sans-serif;
+  --mono: 'Geist Mono', ui-monospace, monospace;
+  --rund: 20px;
+}
+body { -webkit-font-smoothing: antialiased; }
+::selection { background: var(--lampe); color: var(--nacht); }
+input, select, textarea { caret-color: var(--tinte); accent-color: var(--tinte); }
+
+/* Überschriften: Geist kräftig und eng statt Antiqua */
+h1, h2, h3 { font-weight: 600; letter-spacing: -.03em; }
+.u-start h1, .termin__kopf h1, .seitenkopf h1, h1 { font-size: clamp(42px, 5.6vw, 84px); line-height: 1; letter-spacing: -.042em; }
+.still h1 { font-size: clamp(36px, 4.4vw, 60px); font-weight: 600; }
+.schritt__wann, .frage summary, .gruppe__titel, .plzhinweis, .fehlerliste__titel, .still__einleitung { font-style: normal; }
+.still__text { font-family: var(--sans); }
+
+/* Knöpfe rund wie auf der Startseite */
+.knopf { border-radius: 999px; padding-inline: 28px; font-weight: 500; }
+.feld, .formfeld input, .formfeld select, .formfeld textarea, input[type="text"], input[type="tel"], input[type="email"], input[type="date"], select, textarea { border-radius: 14px; }
+.wahl span, .wahlreihe label span { border-radius: 999px; }
+
+/* Fotos mit runden Ecken */
+.vorher__bild img, .still__bild img, .uebersicht img, .artikel img { border-radius: var(--rund); }
+
+/* Telefonnummer in Geist Mono, wie auf der Startseite */
+.nummer, .start__kontakt .nummer, a.nummer { font-family: var(--mono) !important; font-weight: 400; letter-spacing: -.02em; }
+
+.fehlt { font-family: var(--sans); font-size: .8em; background: rgba(219, 165, 100, .35); padding: 0 .3em; border-radius: 3px; }
+
+/* ----- Kopf ----- */
+.ab-kopf { position: sticky; top: 0; z-index: 20; display: flex; flex-wrap: wrap; align-items: center; gap: 32px; padding: 14px var(--rand); background: var(--nacht); color: var(--licht); }
+.ab-kopf__marke img { width: 140px; height: auto; display: block; }
+.ab-kopf__nav { margin-left: auto; }
+.ab-kopf__nav ul { display: flex; gap: 30px; list-style: none; margin: 0; padding: 0; }
+.ab-kopf__nav a, .ab-kopf__tel { font-size: 14px; text-decoration: none; color: var(--licht); opacity: .82; }
+.ab-kopf__nav a:hover, .ab-kopf__tel:hover { opacity: 1; }
+.ab-kopf__tel { font-family: var(--mono); font-size: 13px; opacity: 1; padding-left: 30px; border-left: 1px solid rgba(241, 235, 225, .22); white-space: nowrap; }
+.ab-kopf .menueknopf { display: none; color: var(--licht); margin-left: auto; }
+.ab-kopf .handymenue { flex-basis: 100%; background: var(--nacht); padding: 8px 0 20px; margin: 0; }
+.ab-kopf .handymenue ul { list-style: none; margin: 0; padding: 0; }
+.ab-kopf .handymenue a { color: var(--licht); font-family: var(--sans); font-weight: 500; font-size: 24px; letter-spacing: -.02em; border-bottom: 1px solid rgba(241, 235, 225, .14); }
+@media (max-width: 980px) {
+  .ab-kopf__nav, .ab-kopf__tel { display: none; }
+  .ab-kopf .menueknopf { display: grid; }
+}
+
+/* ----- Fuß ----- */
+.ab-fuss { background: #0e0c0a; padding: 80px var(--rand) 40px; color: var(--asche); font-size: 15px; }
+.ab-fuss__innen { max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; }
+.ab-fuss img { width: 150px; }
+.ab-fuss p { margin: 0; line-height: 1.7; }
+.ab-fuss a { text-decoration: none; color: var(--licht); }
+.ab-fuss__titel { margin: 0 0 10px; font-size: 15px; font-weight: 500; letter-spacing: 0; color: var(--asche); }
+.ab-fuss__recht { max-width: 1320px; margin: 64px auto 0; padding-top: 24px; border-top: 1px solid rgba(241, 235, 225, .14); display: flex; gap: 28px; flex-wrap: wrap; font-size: 14px; }
+.ab-fuss__recht span { margin-left: auto; }
+@media (max-width: 980px) { .ab-fuss__innen { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 700px) { .ab-fuss__innen { grid-template-columns: 1fr; gap: 28px; } .ab-fuss__recht span { margin-left: 0; width: 100%; } .ab-fuss { padding-bottom: 120px; } }
+
+/* ----- Leiste am Handy ----- */
+.ab-leiste { display: none; }
+.ab-knopf { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 12px; border-radius: 999px; border: 1px solid transparent; font: 500 16px/1 var(--sans); text-decoration: none; }
+.ab-knopf--hell { background: var(--licht); color: var(--nacht); }
+.ab-knopf--linie { border-color: rgba(241, 235, 225, .45); color: var(--licht); }
+@media (max-width: 700px) {
+  .ab-leiste { display: flex; gap: 10px; position: fixed; inset: auto 0 0; z-index: 30; padding: 12px var(--rand) calc(12px + env(safe-area-inset-bottom)); background: rgba(20, 17, 14, .96); border-top: 1px solid rgba(241, 235, 225, .14); }
+  .ab-knopf { flex: 1 1 0; }
+}
+.ab-fuss .fehlt { color: var(--licht); background: rgba(219, 165, 100, .22); }
+.ab-fuss p a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(241, 235, 225, .4); }

@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "bauen": "node src/bauen.mjs && node src/vergleich.mjs",
-    "pruefen": "node src/bauen.mjs && node src/vergleich.mjs && node scripts/feinschliff.mjs http://127.0.0.1:4391 /a/ /a/leistungen/durchfall-erbrechen/ /a/termin/ '/a/termin/?vorschau=fehler' '/a/termin/?vorschau=gesendet' /a/abschied/ /a/designsystem/ ; node scripts/axe.mjs http://127.0.0.1:4391 /a/ /a/leistungen/durchfall-erbrechen/ /a/termin/ '/a/termin/?vorschau=fehler' '/a/termin/?vorschau=gesendet' /a/abschied/ /a/designsystem/ && node scripts/formtest.mjs"
+    "pruefen": "node src/bauen.mjs && node src/vergleich.mjs && node scripts/feinschliff.mjs http://127.0.0.1:4391 /a/ /a/leistungen/durchfall-erbrechen/ /a/termin/ '/a/termin/?vorschau=fehler' '/a/termin/?vorschau=gesendet' /a/abschied/ /a/designsystem/ ; node scripts/axe.mjs http://127.0.0.1:4391 /a/ /a/leistungen/durchfall-erbrechen/ /a/termin/ '/a/termin/?vorschau=fehler' '/a/termin/?vorschau=gesendet' /a/abschied/ /a/designsystem/ && node scripts/formtest.mjs",
+    "abend": "node src/abend.mjs && node src/abend-seiten.mjs"
   },
   "keywords": [],
   "author": "",

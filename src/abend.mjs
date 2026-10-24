@@ -14,7 +14,7 @@ const artikel = (await Promise.all((await readdir(join(wurzel, 'src/inhalt/ratge
 
 const esc = (t) => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const txt = (t) => esc(t).replace(/\[(FEHLT:[^\]]*)\]/g, '<span class="fehlt">[$1]</span>');
-const A = '../a/'; // Unterseiten liegen vorerst noch in Richtung A
+const A = ''; // Unterseiten liegen in site/abend/ (src/abend-seiten.mjs)
 
 // Bild mit drei Breiten; masse = [breite, hoehe] des Originals
 const MASSE = {

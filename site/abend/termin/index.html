@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Termin anfragen · Mobile Tierarztpraxis Kurpfalz</title>
+<meta name="description" content="Hausbesuch für Hund oder Katze anfragen: Tier, Anlass, Adresse und Wunschtermin angeben. Die Praxis ruft Sie zurück und bestätigt den Termin.">
+<link rel="preload" href="../../schriften/Geist.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="../../logo/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../unterseiten.css">
+<script src="../../js/seite.js" defer></script>
+<script src="../abend.js" defer></script>
+</head>
+<body class="unterseite">
+<a class="sprung" href="#inhalt">Zum Inhalt springen</a>
+<header class="ab-kopf">
+  <a class="ab-kopf__marke" href="../" aria-label="Mobile Tierarztpraxis Kurpfalz, zur Startseite"><img src="../../logo/logo-quer-negativ.svg" width="166" height="50" alt=""></a>
+  <nav class="ab-kopf__nav" aria-label="Hauptnavigation"><ul><li><a href="../leistungen/">Leistungen</a></li><li><a href="../#ablauf">Hausbesuch</a></li><li><a href="../#tierarzt">Über mich</a></li><li><a href="../ratgeber/">Ratgeber</a></li><li><a href="../#termin">Kontakt</a></li></ul></nav>
+  <a class="ab-kopf__tel" href="tel:+496210000000">0621 000 00 00</a>
+  <button class="menueknopf" type="button" aria-expanded="false" aria-controls="handymenue"><span class="unsichtbar">Menü öffnen</span><span class="menueknopf__strich"></span><span class="menueknopf__strich"></span></button>
+  <nav class="handymenue" id="handymenue" aria-label="Menü" hidden><ul><li><a href="../leistungen/">Leistungen</a></li><li><a href="../#ablauf">Hausbesuch</a></li><li><a href="../#tierarzt">Über mich</a></li><li><a href="../ratgeber/">Ratgeber</a></li><li><a href="../#termin">Kontakt</a></li></ul></nav>
+</header>
+<main id="inhalt" class="termin">
+  <div class="termin__kopf">
+    <nav class="brotkrumen" aria-label="Sie sind hier"><ol><li><a href="../">Startseite</a></li><li aria-current="page">Termin anfragen</li></ol></nav>
+    <h1 id="termin-titel">Termin anfragen</h1>
+    <p class="termin__satz">Schreiben Sie uns, was Ihrem Tier fehlt und wo Sie wohnen. Mein Team ruft Sie zurück und macht mit Ihnen eine Uhrzeit aus.</p>
+  </div>
+
+  <div class="termin__raster">
+    <div class="termin__haupt">
+      <p class="eilig">Hat Ihr Tier Atemnot, eine Vergiftung oder starke Schmerzen, rufen Sie bitte direkt an. <a class="nummer" href="tel:+496210000000">0621 000 00 00</a></p>
+
+      <div class="fehlerliste" id="fehlerliste" tabindex="-1" role="alert" hidden data-eins="Bitte prüfen Sie noch eine Angabe." data-mehr="Bitte prüfen Sie noch {n} Angaben.">
+        <h2 class="fehlerliste__titel"></h2>
+        <ul></ul>
+      </div>
+
+      <form class="anfrage" id="anfrage" action="./" method="post" novalidate data-plz="{&quot;55232&quot;:&quot;Alzey&quot;,&quot;67059&quot;:&quot;Ludwigshafen&quot;,&quot;67061&quot;:&quot;Ludwigshafen&quot;,&quot;67063&quot;:&quot;Ludwigshafen&quot;,&quot;67065&quot;:&quot;Ludwigshafen&quot;,&quot;67067&quot;:&quot;Ludwigshafen&quot;,&quot;67069&quot;:&quot;Ludwigshafen&quot;,&quot;67071&quot;:&quot;Ludwigshafen&quot;,&quot;67098&quot;:&quot;Bad Dürkheim&quot;,&quot;67112&quot;:&quot;Mutterstadt&quot;,&quot;67117&quot;:&quot;Limburgerhof&quot;,&quot;67122&quot;:&quot;Altrip&quot;,&quot;67125&quot;:&quot;Dannstadt&quot;,&quot;67126&quot;:&quot;Hochdorf-Assenheim&quot;,&quot;67127&quot;:&quot;Rödersheim-Gronau&quot;,&quot;67136&quot;:&quot;Fußgönheim&quot;,&quot;67141&quot;:&quot;Neuhofen&quot;,&quot;67165&quot;:&quot;Waldsee&quot;,&quot;67166&quot;:&quot;Otterstadt&quot;,&quot;67245&quot;:&quot;Lambsheim&quot;,&quot;67346&quot;:&quot;Speyer&quot;,&quot;67354&quot;:&quot;Römerberg&quot;,&quot;67360&quot;:&quot;Lingenfeld&quot;,&quot;67373&quot;:&quot;Dudenhofen&quot;,&quot;67433&quot;:&quot;Neustadt&quot;,&quot;67434&quot;:&quot;Neustadt&quot;,&quot;67435&quot;:&quot;Neustadt&quot;,&quot;67454&quot;:&quot;Haßloch&quot;,&quot;67459&quot;:&quot;Böhl-Iggelheim&quot;,&quot;67547&quot;:&quot;Worms&quot;,&quot;67549&quot;:&quot;Worms&quot;,&quot;67550&quot;:&quot;Worms&quot;,&quot;67551&quot;:&quot;Worms&quot;,&quot;68159&quot;:&quot;Mannheim&quot;,&quot;68161&quot;:&quot;Mannheim&quot;,&quot;68163&quot;:&quot;Mannheim&quot;,&quot;68165&quot;:&quot;Mannheim&quot;,&quot;68167&quot;:&quot;Mannheim&quot;,&quot;68169&quot;:&quot;Mannheim&quot;,&quot;68199&quot;:&quot;Mannheim&quot;,&quot;68219&quot;:&quot;Mannheim&quot;,&quot;68229&quot;:&quot;Mannheim&quot;,&quot;68239&quot;:&quot;Mannheim&quot;,&quot;68259&quot;:&quot;Mannheim&quot;,&quot;68305&quot;:&quot;Mannheim&quot;,&quot;68307&quot;:&quot;Mannheim&quot;,&quot;68309&quot;:&quot;Mannheim&quot;,&quot;68519&quot;:&quot;Viernheim&quot;,&quot;68723&quot;:&quot;Schwetzingen&quot;,&quot;68766&quot;:&quot;Hockenheim&quot;,&quot;68775&quot;:&quot;Ketsch&quot;,&quot;68809&quot;:&quot;Neulußheim&quot;,&quot;69115&quot;:&quot;Heidelberg&quot;,&quot;69117&quot;:&quot;Heidelberg&quot;,&quot;69118&quot;:&quot;Heidelberg&quot;,&quot;69120&quot;:&quot;Heidelberg&quot;,&quot;69121&quot;:&quot;Heidelberg&quot;,&quot;69123&quot;:&quot;Heidelberg&quot;,&quot;69124&quot;:&quot;Heidelberg&quot;,&quot;69126&quot;:&quot;Heidelberg&quot;,&quot;69469&quot;:&quot;Weinheim&quot;,&quot;76131&quot;:&quot;Karlsruhe&quot;,&quot;76133&quot;:&quot;Karlsruhe&quot;,&quot;76135&quot;:&quot;Karlsruhe&quot;,&quot;76137&quot;:&quot;Karlsruhe&quot;,&quot;76139&quot;:&quot;Karlsruhe&quot;,&quot;76149&quot;:&quot;Karlsruhe&quot;,&quot;76185&quot;:&quot;Karlsruhe&quot;,&quot;76187&quot;:&quot;Karlsruhe&quot;,&quot;76189&quot;:&quot;Karlsruhe&quot;,&quot;76199&quot;:&quot;Karlsruhe&quot;,&quot;76227&quot;:&quot;Karlsruhe&quot;,&quot;76228&quot;:&quot;Karlsruhe&quot;,&quot;76229&quot;:&quot;Karlsruhe&quot;,&quot;76726&quot;:&quot;Germersheim&quot;}" data-ausserhalb="Diese Postleitzahl steht nicht auf meiner Liste. Schicken Sie die Anfrage trotzdem, mein Team sagt Ihnen dann, ob ich komme." data-ja="Ja, ich komme zu Ihnen nach {ort}." data-sonst="Etwas anderes" data-laeuft="Wird gesendet">
+        <p class="anfrage__pflicht">Freiwillige Angaben sind markiert. Alles andere brauchen wir, um zu Ihnen zu kommen.</p>
+
+        <fieldset class="gruppe">
+          <legend class="gruppe__titel">Ihr Tier</legend>
+          <fieldset class="formfeld formfeld--wahl" id="f-tier" data-feld="tier" aria-describedby="tier-fehler">
+            <legend class="feld__label">Für wen ist der Termin?</legend>
+            <div class="wahlreihe">
+            <label class="wahl"><input type="radio" name="tier" value="Hund" required data-fehler="Bitte wählen Sie aus, für wen der Termin ist."><span>Hund</span></label>
+            <label class="wahl"><input type="radio" name="tier" value="Katze" data-fehler="Bitte wählen Sie aus, für wen der Termin ist."><span>Katze</span></label>
+            <label class="wahl"><input type="radio" name="tier" value="Anderes Tier" data-fehler="Bitte wählen Sie aus, für wen der Termin ist."><span>Anderes Tier</span></label>
+            </div>
+            <p class="feld__fehler" id="tier-fehler" hidden></p>
+          </fieldset>
+          <div class="formfeld formfeld--kurz" data-feld="tier_anderes" hidden>
+          <label class="feld__label" for="f-tier_anderes">Welches Tier?</label>
+          <input class="feld" id="f-tier_anderes" name="tier_anderes" type="text" required aria-describedby="tier_anderes-hinweis tier_anderes-fehler" data-fehler="Bitte schreiben Sie, um welches Tier es geht." maxlength="60" disabled>
+          <p class="feld__hinweis" id="tier_anderes-hinweis">Zum Beispiel Kaninchen oder Meerschweinchen. Andere Kleintiere behandle ich nach Absprache.</p>
+          <p class="feld__fehler" id="tier_anderes-fehler" hidden></p>
+        </div>
+          <div class="formreihe">
+        <div class="formfeld" data-feld="tier_name">
+          <label class="feld__label" for="f-tier_name">Wie heißt Ihr Tier? <span class="feld__frei">(freiwillig)</span></label>
+          <input class="feld" id="f-tier_name" name="tier_name" type="text" aria-describedby="tier_name-fehler" maxlength="40">
+          
+          <p class="feld__fehler" id="tier_name-fehler" hidden></p>
+        </div>
+        <div class="formfeld" data-feld="tier_alter">
+          <label class="feld__label" for="f-tier_alter">Wie alt ist es? <span class="feld__frei">(freiwillig)</span></label>
+          <input class="feld" id="f-tier_alter" name="tier_alter" type="text" aria-describedby="tier_alter-hinweis tier_alter-fehler" maxlength="20">
+          <p class="feld__hinweis" id="tier_alter-hinweis">Zum Beispiel: 9 Jahre</p>
+          <p class="feld__fehler" id="tier_alter-fehler" hidden></p>
+        </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="gruppe">
+          <legend class="gruppe__titel">Was ihm fehlt</legend>
+          <div class="formfeld" data-feld="anlass">
+            <label class="feld__label" for="f-anlass">Worum geht es?</label>
+            <div class="auswahl"><select class="feld" id="f-anlass" name="anlass" required aria-describedby="anlass-fehler" data-fehler="Bitte wählen Sie aus, worum es geht."><option value="">Bitte wählen</option><option>Frisst nicht oder wirkt krank</option><option>Akutversorgung und Stabilisierung</option><option>Durchfall und Erbrechen</option><option>Schmerzbehandlung</option><option>Bisswunden und Verletzungen</option><option>Ohrenentzündungen</option><option>Augen und Bindehaut</option><option>Blase und Harnwege</option><option>Infektionen und Infusionen</option><option>Lahmheit und Bewegung</option><option>Abschied zu Hause</option><option>Etwas anderes</option></select></div>
+            <p class="feld__fehler" id="anlass-fehler" hidden></p>
+          </div>
+          <div class="formfeld" data-feld="anlass_text" data-label="Beschreiben Sie kurz, was Ihnen aufgefallen ist (freiwillig)" data-hinweis="Zum Beispiel: seit wann, wie oft, frisst und trinkt es noch?" data-label-sonst="Worum geht es genau?" data-hinweis-sonst="Zum Beispiel: hinkt seit gestern, hat etwas verschluckt">
+            <label class="feld__label" for="f-anlass_text">Beschreiben Sie kurz, was Ihnen aufgefallen ist (freiwillig)</label>
+            <textarea class="feld feld--text" id="f-anlass_text" name="anlass_text" rows="4" maxlength="600" aria-describedby="anlass_text-hinweis anlass_text-fehler" data-fehler="Bitte beschreiben Sie kurz, worum es geht."></textarea>
+            <p class="feld__hinweis" id="anlass_text-hinweis">Zum Beispiel: seit wann, wie oft, frisst und trinkt es noch?</p>
+            <p class="feld__fehler" id="anlass_text-fehler" hidden></p>
+          </div>
+          <fieldset class="formfeld formfeld--wahl">
+            <legend class="feld__label">Seit wann? <span class="feld__frei">(freiwillig)</span></legend>
+            <div class="wahlreihe wahlreihe--klein">
+            <label class="wahl"><input type="radio" name="seit" value="Seit heute"><span>Seit heute</span></label>
+            <label class="wahl"><input type="radio" name="seit" value="Seit gestern"><span>Seit gestern</span></label>
+            <label class="wahl"><input type="radio" name="seit" value="Seit ein paar Tagen"><span>Seit ein paar Tagen</span></label>
+            <label class="wahl"><input type="radio" name="seit" value="Schon länger"><span>Schon länger</span></label>
+            </div>
+          </fieldset>
+        </fieldset>
+
+        <fieldset class="gruppe">
+          <legend class="gruppe__titel">Wo ich hinkomme</legend>
+          <div class="formfeld" data-feld="strasse">
+          <label class="feld__label" for="f-strasse">Straße und Hausnummer</label>
+          <input class="feld" id="f-strasse" name="strasse" type="text" autocomplete="address-line1" required aria-describedby="strasse-fehler" data-fehler="Bitte geben Sie Straße und Hausnummer ein." maxlength="80">
+          
+          <p class="feld__fehler" id="strasse-fehler" hidden></p>
+        </div>
+          <div class="formreihe formreihe--plz">
+        <div class="formfeld" data-feld="plz">
+          <label class="feld__label" for="f-plz">Postleitzahl</label>
+          <input class="feld" id="f-plz" name="plz" type="text" autocomplete="postal-code" required aria-describedby="plz-fehler" data-fehler="Bitte geben Sie fünf Ziffern ein." inputmode="numeric" maxlength="5" pattern="[0-9]{5}">
+          
+          <p class="feld__fehler" id="plz-fehler" hidden></p>
+        </div>
+        <div class="formfeld" data-feld="ort">
+          <label class="feld__label" for="f-ort">Ort</label>
+          <input class="feld" id="f-ort" name="ort" type="text" autocomplete="address-level2" required aria-describedby="ort-fehler" data-fehler="Bitte geben Sie Ihren Ort ein." maxlength="60">
+          
+          <p class="feld__fehler" id="ort-fehler" hidden></p>
+        </div>
+          </div>
+          <p class="plzhinweis" id="plz-ausserhalb" role="status" aria-live="polite"></p>
+          <div class="formfeld" data-feld="zugang">
+          <label class="feld__label" for="f-zugang">Was sollte ich vor der Tür wissen? <span class="feld__frei">(freiwillig)</span></label>
+          <input class="feld" id="f-zugang" name="zugang" type="text" aria-describedby="zugang-hinweis zugang-fehler" maxlength="120">
+          <p class="feld__hinweis" id="zugang-hinweis">Zum Beispiel: dritter Stock ohne Aufzug, Klingel bei Müller</p>
+          <p class="feld__fehler" id="zugang-fehler" hidden></p>
+        </div>
+        </fieldset>
+
+        <fieldset class="gruppe">
+          <legend class="gruppe__titel">Wann es Ihnen passt</legend>
+          <fieldset class="formfeld formfeld--wahl" id="f-wann" data-feld="wann" aria-describedby="wann-fehler">
+            <legend class="feld__label">Wann soll ich kommen?</legend>
+            <div class="wahlreihe wahlreihe--zwei">
+            <label class="wahl"><input type="radio" name="wann" value="So bald wie möglich" required checked data-fehler="Bitte wählen Sie aus, wann ich kommen soll."><span>So bald wie möglich</span></label>
+            <label class="wahl"><input type="radio" name="wann" value="An einem bestimmten Tag" data-fehler="Bitte wählen Sie aus, wann ich kommen soll."><span>An einem bestimmten Tag</span></label>
+            </div>
+            <p class="feld__fehler" id="wann-fehler" hidden></p>
+          </fieldset>
+          <div class="formreihe ist-bedingt" id="wunschtag" hidden>
+        <div class="formfeld" data-feld="datum">
+          <label class="feld__label" for="f-datum">Tag</label>
+          <input class="feld" id="f-datum" name="datum" type="date" required aria-describedby="datum-fehler" data-fehler="Bitte wählen Sie einen Tag ab heute." disabled>
+          
+          <p class="feld__fehler" id="datum-fehler" hidden></p>
+        </div>
+            <div class="formfeld" data-feld="tageszeit">
+              <label class="feld__label" for="f-tageszeit">Tageszeit</label>
+              <div class="auswahl"><select class="feld" id="f-tageszeit" name="tageszeit" disabled><option>Egal</option><option>Vormittag</option><option>Nachmittag</option><option>Abend</option></select></div>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="gruppe">
+          <legend class="gruppe__titel">Wie wir Sie erreichen</legend>
+          <div class="formfeld" data-feld="name">
+          <label class="feld__label" for="f-name">Ihr Name</label>
+          <input class="feld" id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="name-fehler" data-fehler="Bitte geben Sie Ihren Namen ein." maxlength="80">
+          
+          <p class="feld__fehler" id="name-fehler" hidden></p>
+        </div>
+          <div class="formfeld" data-feld="telefon">
+          <label class="feld__label" for="f-telefon">Telefonnummer für den Rückruf</label>
+          <input class="feld" id="f-telefon" name="telefon" type="tel" autocomplete="tel" required aria-describedby="telefon-hinweis telefon-fehler" data-fehler="Bitte geben Sie eine Telefonnummer ein, unter der wir Sie erreichen." maxlength="30">
+          <p class="feld__hinweis" id="telefon-hinweis">Am besten eine Handynummer, dann erreichen wir Sie auch unterwegs.</p>
+          <p class="feld__fehler" id="telefon-fehler" hidden></p>
+        </div>
+          <div class="formfeld" data-feld="email">
+          <label class="feld__label" for="f-email">E-Mail für die Rechnung <span class="feld__frei">(freiwillig)</span></label>
+          <input class="feld" id="f-email" name="email" type="email" autocomplete="email" aria-describedby="email-fehler" data-fehler="Bitte prüfen Sie die E-Mail-Adresse, ihr fehlt noch etwas." maxlength="120">
+          
+          <p class="feld__fehler" id="email-fehler" hidden></p>
+        </div>
+          <div class="formfeld formfeld--haken" data-feld="datenschutz">
+            <label class="haken"><input type="checkbox" id="f-datenschutz" name="datenschutz" required aria-describedby="datenschutz-fehler" data-fehler="Bitte stimmen Sie zu, damit wir Ihre Anfrage bearbeiten dürfen."><span class="haken__kasten" aria-hidden="true"></span><span class="haken__text">Ich bin einverstanden, dass meine Angaben gespeichert werden, damit mein Termin geplant werden kann.</span></label>
+            <a class="textlink textlink--klein" href="#fuss">Datenschutz</a>
+            <p class="feld__fehler" id="datenschutz-fehler" hidden></p>
+          </div>
+        </fieldset>
+
+        <div class="anfrage__senden">
+          <button class="knopf knopf--gross" type="submit"><span class="knopf__wort">Anfrage senden</span><span class="pfeil" aria-hidden="true"></span></button>
+        </div>
+      </form>
+
+      <section class="gesendet" id="gesendet" tabindex="-1" aria-labelledby="gesendet-titel" hidden data-satz="Mein Team ruft Sie unter {telefon} zurück und macht mit Ihnen eine Uhrzeit aus. Geht es Ihrem Tier in der Zwischenzeit schlechter, rufen Sie bitte direkt an.">
+        <h2 id="gesendet-titel">Ihre Anfrage ist angekommen.</h2>
+        <p class="gesendet__satz"></p>
+        <h3 class="gesendet__zwischen">Ihre Angaben</h3>
+        <dl class="gesendet__liste">
+          <div><dt>Tier</dt><dd data-zeile="tier"></dd></div>
+          <div><dt>Anlass</dt><dd data-zeile="anlass"></dd></div>
+          <div><dt>Adresse</dt><dd data-zeile="ort"></dd></div>
+          <div><dt>Wunschtermin</dt><dd data-zeile="wann"></dd></div>
+        </dl>
+        <p class="gesendet__nummer"><a class="nummer" href="tel:+496210000000">0621 000 00 00</a></p>
+        <p><a class="textlink" href="../">Zurück zur Startseite</a></p>
+        <p class="hinweis-fehlt"><span class="fehlt">[FEHLT: Versand an das Praxisteam folgt im zweiten Auftrag. Diese Seite sendet noch nichts.]</span></p>
+      </section>
+    </div>
+
+    <aside class="termin__seite" aria-label="Telefon und Zeiten">
+      <h2>Lieber anrufen?</h2>
+      <p>Am Telefon klären wir am schnellsten, was Ihr Tier braucht.</p>
+      <p class="kontakt__nummer"><a class="nummer" href="tel:+496210000000">0621 000 00 00</a></p>
+      <table class="zeiten">
+        <caption>Erreichbar</caption>
+        <tbody><tr><th scope="row">Montag bis Freitag</th><td>9 bis 23 Uhr</td></tr><tr><th scope="row">Samstag</th><td>8 bis 12 Uhr</td></tr><tr><th scope="row">Sonntag</th><td>in Ausnahmefällen nach Absprache</td></tr></tbody>
+      </table>
+      <h2 class="termin__danach">Nach Ihrer Anfrage</h2>
+      <p>Mein Team ruft Sie zurück und nennt Ihnen die Uhrzeit, zu der ich komme.</p>
+    </aside>
+  </div>
+</main>
+
+<footer class="ab-fuss">
+  <div class="ab-fuss__innen">
+    <div><img src="../../logo/logo-quer-negativ.svg" width="166" height="50" alt="Mobile Tierarztpraxis Kurpfalz, Notfall-Tierarzt Al Saeed" loading="lazy"></div>
+    <div><h2 class="ab-fuss__titel">Erreichbar</h2><p>Montag bis Freitag 9 bis 23 Uhr<br>Samstag 8 bis 12 Uhr<br>Sonntag in Ausnahmefällen</p></div>
+    <div><h2 class="ab-fuss__titel">Kontakt</h2><p><a href="tel:+496210000000">0621 000 00 00</a> <span class="fehlt">[FEHLT: neue Nummer]</span><br><span class="fehlt">[FEHLT: E-Mail]</span></p></div>
+    <div><h2 class="ab-fuss__titel">Praxis</h2><p>Freinsheimer Str. 30<br>67245 Lambsheim</p></div>
+  </div>
+  <p class="ab-fuss__recht"><a href="#inhalt">Impressum</a> <a href="#inhalt">Datenschutz</a> <span>Fotos: Pexels</span></p>
+</footer>
+<nav class="ab-leiste" aria-label="Schnellkontakt"><a class="ab-knopf ab-knopf--linie" href="tel:+496210000000">Anrufen</a></nav>
+</body>
+</html>

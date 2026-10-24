@@ -40,3 +40,10 @@ Frei nutzbar unter der Pexels-Lizenz (https://www.pexels.com/license/), auch ges
 | katze-seitenlicht | A tabby cat basks in sunlight, highlighting its keen eye and whiskers. Stock Photo | https://www.pexels.com/photo/close-up-of-a-tabby-cat-in-sunlight-38103897/ |
 | katze-decke-grau | Adorable tabby cat snuggled up under a blanket, showcasing a cute and cozy moment. Stock Photo | https://www.pexels.com/photo/close-up-photo-of-a-cute-furry-tabby-cat-7162888/ |
 | hund-verband | A small dog with an IV is receiving treatment at a vet clinic, focusing on its paws. Stock Photo | https://www.pexels.com/photo/dog-with-intravenous-line-on-his-leg-4074725/ |
+| hund-dackel-dunkel | A serene image of a dachshund relaxing on a blanket by a window indoors. Stock Photo | https://www.pexels.com/photo/relaxed-dachshund-lounging-by-window-32235380/ |
+| hund-kopf-licht | A close-up of a brown dog resting with focused gaze and soft fur texture. Stock Photo | https://www.pexels.com/photo/brown-little-dog-enjoys-the-sunlight-20347610/ |
+| hund-ohren-bett | A serene cocker spaniel dog resting indoors, showcasing its gentle expression and beautiful fur. Stock Photo | https://www.pexels.com/photo/close-up-portrait-of-a-relaxed-cocker-spaniel-dog-31042012/ |
+| katze-schwarz-auge | A close-up of a black cat looking out of a window during sunset in Avesnes-le-Comte, France. Stock Photo | https://www.pexels.com/photo/charming-black-cat-gazing-out-window-at-sunset-32336082/ |
+| katze-abendfenster | A close-up of a cat's profile illuminated by warm sunset light. Stock Photo | https://www.pexels.com/photo/profile-of-a-cat-in-warm-sunset-lighting-31227202/ |
+| hund-pfoten-holz | Detailed close-up of a dog's paws resting on a sunny wooden deck in natural lighting. Stock Photo | https://www.pexels.com/photo/dog-feet-in-close-up-photography-9996454/ |
+| hund-schlaf-sonne | Adorable brown dachshund cuddled in a cozy blanket, basking in warm sunlight. Stock Photo | https://www.pexels.com/photo/dachshund-sleeping-peacefully-in-morning-sunlight-30269072/ |
