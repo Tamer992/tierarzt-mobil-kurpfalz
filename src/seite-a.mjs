@@ -117,13 +117,15 @@ export function startseiteA({ g, r, s, esc, txt, bild, nr, tel, kopf }) {
   </section>
 
   <section class="ablauf" id="ablauf" aria-labelledby="ablauf-titel">
-    <div class="ablauf__kopf">
-      <h2 id="ablauf-titel" class="einblenden">${esc(s.ablauf.titel)}</h2>
-      ${s.ablauf.einleitung ? `<p class="einblenden">${esc(s.ablauf.einleitung)}</p>` : ''}
-      <figure class="ablauf__bild einblenden">${bild(s.ablauf.foto, s.ablauf.foto_alt, '(min-width: 900px) 30vw, 100vw')}</figure>
+    <figure class="ablauf__bild">${bild(s.ablauf.foto, s.ablauf.foto_alt, '100vw')}</figure>
+    <div class="ablauf__innen">
+      <div class="ablauf__tafel einblenden">
+        <h2 id="ablauf-titel">${esc(s.ablauf.titel)}</h2>
+        ${s.ablauf.einleitung ? `<p>${esc(s.ablauf.einleitung)}</p>` : ''}
+      </div>
+      <ol class="ablauf__liste">${schritte}
+      </ol>
     </div>
-    <ol class="ablauf__liste">${schritte}
-    </ol>
   </section>
 
   <section class="leistungen" id="leistungen" aria-labelledby="leistungen-titel">

@@ -161,16 +161,12 @@
     "satz": "Ich rechne nach der Gebührenordnung für Tierärzte ab. Vorab erstelle ich Ihnen einen Kostenvoranschlag.",
     "zeilen": [
       {
-        "was": "Hausbesuch",
-        "wert": "nach der Gebührenordnung für Tierärzte"
+        "was": "Hausbesuch, Untersuchung und Behandlung",
+        "wert": "nach GOT"
       },
       {
         "was": "Nach 18 Uhr, am Wochenende und an Feiertagen",
-        "wert": "Zuschlag nach der Gebührenordnung für Tierärzte"
-      },
-      {
-        "was": "Untersuchung und Behandlung",
-        "wert": "nach Gebührenordnung (GOT)"
+        "wert": "Zuschlag nach GOT"
       },
       {
         "was": "Bezahlen",

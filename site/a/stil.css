@@ -17,6 +17,7 @@
   --auf-akzent: #F6F6F2;
   --fehler: #8C2F1B;
   --linie: #C9CAC3;
+  --leise-dunkel: #B4B8BF;   /* Nebentext auf Graphit */
 
   /* Schriftskala, feste Stufen (Handy) */
   --s1: 1rem;      /* 16 */
@@ -146,10 +147,11 @@ figure { margin: 0; }
 }
 
 /* Leistungen: links ruhige Spalte mit Bild, rechts Liste ohne Linien */
-.leistungen { max-width: var(--max); margin: 0 auto; padding: var(--a9) var(--rand) var(--a10); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--spalte-abstand); }
+.leistungen { max-width: var(--max); margin: var(--a10) auto 0; padding: var(--a9) var(--rand) var(--a10); background: var(--text); color: var(--flaeche); box-shadow: 0 0 0 100vmax var(--text); clip-path: inset(0 -100vmax); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--spalte-abstand); }
 .leistungen__seite { grid-column: 1 / -1; }
-.leistungen h2 { font-size: var(--s5); line-height: 1.12; }
-.leistungen__satz { margin-top: var(--a4); color: var(--leise); max-width: 30em; }
+.leistungen h2 { font-size: var(--s6); line-height: 1.06; letter-spacing: -0.01em; }
+.leistungen__satz, .leistungen .dienst__satz { color: var(--leise-dunkel); }
+.leistungen__satz { margin-top: var(--a4); max-width: 30em; }
 .leistungen__bild { margin-top: var(--a6); aspect-ratio: 4 / 3; overflow: hidden; }
 .leistungen__bild img { width: 100%; height: 100%; object-fit: cover; object-position: 55% 50%; }
 .leistungen__liste { grid-column: 1 / -1; margin-top: var(--a7); display: grid; gap: var(--a2); }
@@ -217,20 +219,23 @@ section h2 { font-size: var(--s5); line-height: 1.12; }
   .notfall__nummer { justify-self: end; }
 }
 
-/* Ablauf: Kopf mit Querformat-Foto, darunter Zeilen mit Zeitpunkt links */
-.ablauf { max-width: var(--max); margin: 0 auto; padding: var(--a10) var(--rand) 0; }
-.ablauf__kopf { display: grid; gap: var(--a6); }
-.ablauf__bild { aspect-ratio: 3 / 2; overflow: hidden; }
-.ablauf__bild img { width: 100%; height: 100%; object-fit: cover; }
-.ablauf__liste { list-style: none; margin: var(--a7) 0 0; padding: 0; display: grid; gap: var(--a6); }
-.schritt { display: grid; gap: var(--a2); }
+/* Ablauf: zweite Bildstelle, randloses Foto, Tafel greift mit harter Kante hinein (Echo des Startbilds) */
+.ablauf { margin-top: var(--a10); }
+.ablauf__bild { aspect-ratio: 4 / 3; overflow: hidden; background: #CFCFC8; }
+.ablauf__bild img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 60%; }
+.ablauf__innen { max-width: var(--max); margin: 0 auto; padding: 0 var(--rand); }
+.ablauf__tafel { position: relative; background: var(--grund); padding: var(--a6) var(--a5) 0 var(--rand); margin: calc(var(--a8) * -1) 0 0 calc(var(--rand) * -1); max-width: 40rem; }
+.ablauf__tafel h2 { font-size: var(--s6); line-height: 1.06; letter-spacing: -0.01em; }
+.ablauf__liste { list-style: none; margin: var(--a7) 0 0; padding: 0; display: grid; }
+.schritt { display: grid; gap: var(--a2); padding: var(--a5) 0; border-top: 1px solid var(--linie); }
+.schritt:last-child { border-bottom: 1px solid var(--linie); }
 .schritt__wann { font-family: var(--serif); font-style: italic; font-size: var(--s3); }
 .schritt__text { max-width: 36em; }
 @media (min-width: 900px) {
-  .ablauf__kopf { grid-template-columns: 5fr 7fr; align-items: end; column-gap: var(--a8); }
-  .ablauf__kopf h2 { padding-bottom: var(--a2); }
-  .ablauf__liste { margin-top: var(--a8); gap: var(--a6); }
-  .schritt { grid-template-columns: 4fr 8fr; column-gap: var(--spalte-abstand); align-items: baseline; }
+  .ablauf__bild { aspect-ratio: auto; height: min(68vh, 680px); }
+  .ablauf__tafel { margin-top: calc(var(--a10) * -1); padding: var(--a7) var(--a8) 0 var(--a7); margin-left: calc(var(--a7) * -1); max-width: 46rem; }
+  .ablauf__liste { margin-top: var(--a9); }
+  .schritt { grid-template-columns: 4fr 8fr; column-gap: var(--spalte-abstand); align-items: baseline; padding: var(--a6) 0; }
 }
 
 /* Tierarzt: großes Hochformat links, Text rechts, Platzhalter in den Farben der Seite */
@@ -242,7 +247,8 @@ section h2 { font-size: var(--s5); line-height: 1.12; }
 .tierarzt__portraet { aspect-ratio: 4 / 5; }
 .platzhalter__titel { font-family: var(--serif); font-size: var(--s4); }
 .platzhalter__hinweis { font-size: var(--s1); max-width: 22em; }
-.tierarzt__name { margin-top: var(--a4); font-weight: 600; }
+.tierarzt h2 { font-size: var(--s6); line-height: 1.06; letter-spacing: -0.01em; }
+.tierarzt__name { margin-top: var(--a5); font-weight: 600; }
 .tierarzt__text > p:not(.tierarzt__name) { margin-top: var(--a4); max-width: 34em; }
 .tierarzt__text > p.tierarzt__name + p { margin-top: var(--a5); }
 .auto { margin-top: var(--a7); display: grid; gap: var(--a3); }
@@ -257,7 +263,7 @@ section h2 { font-size: var(--s5); line-height: 1.12; }
 
 /* Einsatzgebiet: Postleitzahl prüfen */
 .einsatz { max-width: var(--max); margin: 0 auto; padding: var(--a10) var(--rand) 0; }
-.einsatz__tafel { background: var(--flaeche); padding: var(--a6) var(--a5); }
+.einsatz__tafel { border-top: 2px solid var(--text); padding-top: var(--a6); }
 .einsatz__satz { margin-top: var(--a3); max-width: 36em; }
 .plz { margin-top: var(--a6); max-width: 34rem; }
 .plz__zeile { display: flex; gap: var(--a3); margin-top: var(--a2); }
@@ -268,7 +274,7 @@ section h2 { font-size: var(--s5); line-height: 1.12; }
 .plz__antwort.ist-fehler { color: var(--fehler); font-family: var(--sans); font-size: var(--s1); }
 .einsatz .hinweis-fehlt { margin-top: var(--a5); }
 @media (min-width: 900px) {
-  .einsatz__tafel { padding: var(--a8); display: grid; grid-template-columns: 5fr 7fr; column-gap: var(--a8); }
+  .einsatz__tafel { padding-top: var(--a7); display: grid; grid-template-columns: 5fr 7fr; column-gap: var(--a8); }
   .einsatz__tafel h2, .einsatz__satz { grid-column: 1; }
   .plz { grid-column: 2; grid-row: 1 / span 3; margin-top: 0; }
   .einsatz .hinweis-fehlt { grid-column: 1; }
