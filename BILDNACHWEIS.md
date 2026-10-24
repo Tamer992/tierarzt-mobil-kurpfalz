@@ -30,7 +30,7 @@ Frei nutzbar unter der Pexels-Lizenz (https://www.pexels.com/license/), auch ges
 |---|---|---|
 | start-blick | Katze liegt im Lampenlicht auf dem Sofa und schaut in die Kamera (Startbild) | https://www.pexels.com/photo/photo-of-a-white-and-black-cat-8408703/ |
 | start-schlaf | Schlafende Katze im warmen Licht, gespiegelt (nicht verwendet, Reserve) | https://www.pexels.com/photo/close-up-of-a-sleeping-cat-18691812/ |
-| nacht-scheinwerfer | A mysterious car driving at night through foggy Coatepec, headlights illuminating the road. Stock Photo | https://www.pexels.com/photo/bright-lights-from-a-car-driving-on-a-dark-road-11914217/ |
+| nacht-scheinwerfer (nicht mehr verwendet) | A mysterious car driving at night through foggy Coatepec, headlights illuminating the road. Stock Photo | https://www.pexels.com/photo/bright-lights-from-a-car-driving-on-a-dark-road-11914217/ |
 | katze-kissen-dunkel | Adorable tabby cat peeking from between soft pillows, creating a cozy home vibe. Stock Photo | https://www.pexels.com/photo/cozy-cat-peeking-from-between-comfy-pillows-33312308/ |
 | hand-katze | A peaceful scene of a tattooed hand gently stroking a relaxed cat, perfect for themes of companionship and tra | https://www.pexels.com/photo/a-person-petting-a-cat-with-a-tattoo-on-their-arm-18586141/ |
 | katze-decken | A snug tabby cat nestled in layers of soft, knitted blankets, radiating warmth and comfort. Stock Photo | https://www.pexels.com/photo/cat-under-knitted-clothes-10348922/ |

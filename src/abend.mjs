@@ -175,15 +175,6 @@ const leistungen = `
   </ul>
 </section>`;
 
-const zeiten = `
-<section class="zeitband" aria-labelledby="zeitband-titel">
-  <figure class="zeitband__bild">${bild('nacht-scheinwerfer', '', '100vw')}</figure>
-  <div class="zeitband__text zeige">
-    <p class="start__marke">Montag bis Freitag</p>
-    <h2 id="zeitband-titel" class="zeitband__zahl">9–23<span> Uhr</span></h2>
-    <p class="zeitband__satz">Auch abends, wenn die meisten Praxen geschlossen haben. Samstag von 8 bis 12 Uhr, Sonntag in Ausnahmefällen.</p>
-  </div>
-</section>`;
 
 const t = s.tierarzt;
 const tierarzt = `
@@ -282,7 +273,6 @@ ${termin}
 ${einsatz}
 ${ablauf}
 ${leistungen}
-${zeiten}
 ${tierarzt}
 ${kosten}
 ${ratgeber}

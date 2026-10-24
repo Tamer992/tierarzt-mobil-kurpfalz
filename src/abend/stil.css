@@ -183,17 +183,9 @@ h1, h2, h3 { margin: 0; font-weight: 600; }
 .zeilen__anzeichen { color: var(--stein); font-size: 16px; }
 .zeilen__pfeil { font-size: 20px; }
 
-/* 6 Zeitband */
-.zeitband { position: relative; min-height: 92svh; display: grid; place-items: center; text-align: center; overflow: hidden; isolation: isolate; padding: var(--abstand) var(--rand); }
-.zeitband__bild { position: absolute; inset: 0; z-index: -1; }
-.zeitband__bild img { width: 100%; height: 100%; object-fit: cover; opacity: .55; }
-.zeitband__bild::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(20,17,14,.35) 0%, rgba(20,17,14,.85) 70%); }
-.zeitband .start__marke { animation: none; }
-.zeitband__zahl { font-family: var(--mono); font-weight: 200; font-size: clamp(96px, 19vw, 300px); line-height: .9; letter-spacing: -.06em; }
-.zeitband__zahl span { font-family: var(--schrift); font-weight: 500; font-size: .22em; letter-spacing: -.02em; }
-.zeitband__satz { margin: 32px auto 0; max-width: 40ch; font-size: clamp(18px, 1.6vw, 22px); color: rgba(241, 235, 225, .86); }
-
-/* 7 Tierarzt */
+/* 6 Tierarzt */
+.leistungen:has(+ .tierarzt) { padding-bottom: calc(var(--abstand) * .5); }
+.leistungen + .tierarzt { padding-top: calc(var(--abstand) * .5); }
 .tierarzt { padding: var(--abstand) var(--rand); display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(48px, 8vw, 128px); align-items: center; }
 .tierarzt > * { max-width: 760px; }
 .tierarzt__portraet { justify-self: end; width: 100%; max-width: 480px; aspect-ratio: 4 / 5; border-radius: var(--rund); border: 1px solid var(--linie-hell); display: grid; place-content: center; gap: 10px; text-align: center; padding: 24px; background: linear-gradient(180deg, #ebe7df, #e3ded4); }
