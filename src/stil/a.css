@@ -88,6 +88,9 @@ figure { margin: 0; }
 .kopf__innen { max-width: var(--max); margin: 0 auto; padding: 0 var(--rand); height: 64px; display: flex; align-items: center; gap: var(--a6); }
 .marke { font-family: var(--serif); font-size: var(--s3); font-weight: 600; text-decoration: none; white-space: nowrap; margin-right: auto; }
 .marke .fehlt { background: none; color: inherit; padding: 0; }
+.marke { display: grid; line-height: 1.1; }
+.marke__1 { font-size: var(--s1); font-weight: 600; }
+.marke__2 { font-family: var(--sans); font-size: 0.875rem; font-weight: 500; color: var(--leise); letter-spacing: 0.01em; margin-top: 2px; }
 .kopf__nav, .kopf__kontakt { display: none; }
 .kopf__nav ul { display: flex; gap: var(--a6); }
 .kopf__nav a { text-decoration: none; font-size: var(--s1); font-weight: 500; padding: var(--a2) 0; background: linear-gradient(currentColor, currentColor) 0 100% / 0 1.5px no-repeat; transition: background-size var(--zeit) var(--kurve); }
@@ -162,7 +165,7 @@ figure { margin: 0; }
   .leistungen__seite { grid-column: 1 / span 4; align-self: start; position: sticky; top: var(--a6); }
   .leistungen__bild { aspect-ratio: 4 / 5; }
   .leistungen__liste li:nth-child(-n+2) { padding-top: 6px; }
-  .leistungen__liste { grid-column: 6 / -1; margin-top: 0; grid-template-columns: 1fr 1fr; column-gap: var(--a7); row-gap: var(--a5); }
+  .leistungen__liste { grid-column: 6 / -1; margin-top: 0; grid-template-columns: 1fr 1fr; column-gap: var(--a7); row-gap: var(--a2); }
   .hinweis-fehlt { grid-column: 6 / -1; }
 }
 
@@ -318,7 +321,7 @@ section h2 { font-size: var(--s5); line-height: 1.12; }
 .kontakt__satz { margin-top: var(--a3); color: var(--leise); max-width: 34em; }
 .vorauswahl { margin-top: var(--a6); display: grid; gap: var(--a6); }
 .vorauswahl__gruppe { border: 0; margin: 0; padding: 0; min-width: 0; }
-.wahlreihe { display: grid; grid-template-columns: 1fr 1fr; gap: var(--a3); margin-top: var(--a2); max-width: 26rem; }
+.wahlreihe { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--a3); margin-top: var(--a2); max-width: 32rem; }
 .wahl { position: relative; display: block; }
 .wahl input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
 .wahl span {

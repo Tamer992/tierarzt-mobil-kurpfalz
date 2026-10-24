@@ -1,8 +1,8 @@
 {
-  "praxisname": "[Praxisname]",
+  "praxisname": "Mobile Tierarztpraxis Kurpfalz · Al Saeed",
   "telefon_anzeige": "0621 000 00 00",
   "telefon_link": "+496210000000",
-  "ort": "[FEHLT: Ort und Umgebung]",
+  "ort": "Mannheim, Ludwigshafen, Heidelberg und Umgebung",
   "termin_label": "Termin anfragen",
   "anrufen_label": "Anrufen",
   "navigation": [
@@ -13,29 +13,49 @@
   ],
   "leistungen": [
     {
+      "titel": "Akutversorgung und Stabilisierung",
+      "satz": "Bei Atemnot, Vergiftung oder Kreislaufproblemen untersuche ich Ihr Tier sofort, stabilisiere es und lindere den Schmerz.",
+      "foto": "hund-teppich"
+    },
+    {
       "titel": "Durchfall und Erbrechen",
       "satz": "Ich untersuche Ihr Tier, suche die Ursache und gebe ihm Flüssigkeit, wenn es sie braucht.",
       "foto": "katze-unter-decke"
     },
     {
-      "titel": "Ohren und Augen",
-      "satz": "Kratzt sich Ihr Hund ständig am Ohr oder kneift Ihre Katze ein Auge zu, sehe ich mir das in Ruhe an.",
-      "foto": "katze-sofa"
-    },
-    {
-      "titel": "Schmerzen und Lahmheit",
-      "satz": "Ich finde heraus, wo es weh tut, und lindere den Schmerz, auch wenn er schon länger besteht.",
+      "titel": "Schmerzbehandlung",
+      "satz": "Ich behandle akute und chronische Schmerzen mit Medikamenten aus meiner tierärztlichen Apotheke.",
       "foto": "hund-boden2"
     },
     {
-      "titel": "Wunden und Bisse",
-      "satz": "Ich reinige und versorge die Wunde bei Ihnen zu Hause, oft auf dem Sofa oder am Küchentisch.",
+      "titel": "Bisswunden und Verletzungen",
+      "satz": "Ich reinige und versorge die Wunde bei Ihnen zu Hause.",
       "foto": "hund-teppich"
     },
     {
-      "titel": "Impfung und Vorsorge",
-      "satz": "Für Tiere, die in der Praxis in Panik geraten, ist die Impfung im eigenen Flur der ruhigere Weg.",
+      "titel": "Ohrenentzündungen",
+      "satz": "Kratzt sich Ihr Hund ständig am Ohr oder schüttelt den Kopf, sehe ich mir das in Ruhe an.",
+      "foto": "katze-sofa"
+    },
+    {
+      "titel": "Augen und Bindehaut",
+      "satz": "Rote, tränende oder verklebte Augen untersuche und behandle ich vor Ort.",
+      "foto": "katze-sofa"
+    },
+    {
+      "titel": "Blase und Harnwege",
+      "satz": "Muss Ihr Tier ständig oder unter Schmerzen Wasser lassen, kläre ich die Ursache und behandle die Entzündung.",
       "foto": "katze-grau-fenster"
+    },
+    {
+      "titel": "Infektionen und Infusionen",
+      "satz": "Antibiotika und Infusionen gebe ich bei Ihnen zu Hause, wenn Ihr Tier sie braucht.",
+      "foto": "katze-unter-decke"
+    },
+    {
+      "titel": "Lahmheit und Bewegung",
+      "satz": "Ich finde heraus, wo es weh tut, und lindere den Schmerz, auch wenn er schon länger besteht.",
+      "foto": "hund-boden2"
     },
     {
       "titel": "Abschied zu Hause",
@@ -43,6 +63,8 @@
       "foto": "hund-senior-boden"
     }
   ],
-  "leistungen_fehlt": "[FEHLT: Leistungen vom Kunden bestätigen]",
-  "telefon_fehlt": "FEHLT: Telefonnummer"
+  "leistungen_fehlt": "",
+  "telefon_fehlt": "FEHLT: neue Telefonnummer",
+  "marke_zeile1": "Mobile Tierarztpraxis Kurpfalz",
+  "marke_zeile2": "Al Saeed"
 }

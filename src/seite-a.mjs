@@ -27,15 +27,15 @@ export function startseiteA({ g, r, s, esc, txt, bild, nr, tel, kopf }) {
   const zeiten = s.erreichbarkeit.zeilen.map((z) => `<tr><th scope="row">${esc(z.tage)}</th><td>${txt(z.zeit)}</td></tr>`).join('');
 
   const tiere = s.kontakt.tiere.map((t, i) => `
-            <label class="wahl"><input type="radio" name="tier" value="${esc(t.toLowerCase())}"${i === 0 ? ' required' : ''}><span>${esc(t)}</span></label>`).join('');
+            <label class="wahl"><input type="radio" name="tier" value="${esc(t.toLowerCase().replace(/\s+/g, '-'))}"${i === 0 ? ' required' : ''}><span>${esc(t)}</span></label>`).join('');
   const anlaesse = `<option value="" selected disabled>${esc(s.kontakt.anlass_leer)}</option>` + [s.kontakt.anlass_erst, ...g.leistungen.map((l) => l.titel), s.kontakt.anlass_sonst].map((t) => `<option>${esc(t)}</option>`).join('');
 
   const plzDaten = esc(JSON.stringify(s.einsatz.plz_liste));
 
-  return `${kopf(`${g.praxisname.replace(/[[\]]/g, '')} · Mobiler Tierarzt für Hunde und Katzen`, { schrift: 'Brygada1918.woff2' })}
+  return `${kopf(`${g.praxisname} · Mobiler Tierarzt in Mannheim und Umgebung`, { schrift: 'Brygada1918.woff2' })}
 <header class="kopf">
   <div class="kopf__innen">
-    <a class="marke" href="./">${txt(g.praxisname)}</a>
+    <a class="marke" href="./"><span class="marke__1">${esc(g.marke_zeile1)}</span><span class="marke__2">${esc(g.marke_zeile2)}</span></a>
     <nav class="kopf__nav" aria-label="Hauptmenü"><ul>${nav}</ul></nav>
     <div class="kopf__kontakt">${tel}<a class="knopf" href="#kontakt">${esc(g.termin_label)}</a></div>
     <button class="menueknopf" type="button" aria-expanded="false" aria-controls="handymenue"><span class="unsichtbar">Menü öffnen</span><span class="menueknopf__strich"></span><span class="menueknopf__strich"></span></button>
@@ -90,7 +90,7 @@ export function startseiteA({ g, r, s, esc, txt, bild, nr, tel, kopf }) {
     </div>
     <ul class="leistungen__liste">${leistungen}
     </ul>
-    <p class="hinweis-fehlt">${txt(g.leistungen_fehlt)}</p>
+    ${g.leistungen_fehlt ? `<p class="hinweis-fehlt">${txt(g.leistungen_fehlt)}</p>` : ''}
   </section>
 
   <section class="tierarzt" id="tierarzt" aria-labelledby="tierarzt-titel">
@@ -171,7 +171,7 @@ export function startseiteA({ g, r, s, esc, txt, bild, nr, tel, kopf }) {
 <footer class="fuss" id="fuss">
   <div class="fuss__innen">
     <div class="fuss__marke">
-      <p class="marke">${txt(g.praxisname)}</p>
+      <p class="marke"><span class="marke__1">${esc(g.marke_zeile1)}</span><span class="marke__2">${esc(g.marke_zeile2)}</span></p>
       <p>${txt(s.fuss.satz)}</p>
     </div>
     <div class="fuss__kontakt">

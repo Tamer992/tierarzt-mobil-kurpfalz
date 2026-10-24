@@ -19,13 +19,13 @@
   ],
   "kosten_kurz": {
     "titel": "Abrechnung",
-    "satz": "Für den Hausbesuch berechne ich [FEHLT: Betrag Hausbesuch]. Die Behandlung rechne ich nach der Gebührenordnung für Tierärzte ab.",
+    "satz": "Sie zahlen eine Hausbesuchsgebühr und die Behandlung nach der Gebührenordnung für Tierärzte. Vorab erstelle ich Ihnen einen Kostenvoranschlag.",
     "link": "Alles zur Abrechnung"
   },
   "notfall": {
     "titel": "Im Notfall",
-    "text": "Atmet Ihr Tier schwer, blutet es stark oder hat es etwas Giftiges gefressen, rufen Sie mich sofort an. Rufen Sie auch an, wenn Ihr Tier seit mehr als einem Tag nicht frisst. Ich sage Ihnen am Telefon, was Sie bis zu meiner Ankunft tun können.",
-    "klinik": "Bin ich nicht schnell genug bei Ihnen, ist die nächste Tierklinik der richtige Ort: [FEHLT: Tierklinik mit Adresse und Telefon]."
+    "text": "Bei Atemnot, Vergiftung, Verletzungen, starken Schmerzen oder Kreislaufproblemen rufen Sie mich an. Ich komme so schnell wie möglich, untersuche Ihr Tier und stabilisiere es. Die wichtigsten Medikamente habe ich dabei.",
+    "klinik": "Eine 24-Stunden-Versorgung biete ich nicht an. Ist das Leben Ihres Tieres in Gefahr oder erreichen Sie mich außerhalb meiner Zeiten, fahren Sie bitte direkt in die nächste Tierklinik: [FEHLT: Tierklinik mit Adresse und Telefon]."
   },
   "ablauf": {
     "titel": "So läuft ein Hausbesuch",
@@ -33,67 +33,127 @@
     "schritte": [
       {
         "wann": "Am Telefon",
-        "text": "Sie schildern mir, was los ist. Ich frage nach, sage Ihnen, ob ein Hausbesuch passt, und wir machen eine Uhrzeit aus."
+        "text": "Sie schildern, was los ist. Mein Team oder ich fragen nach und machen mit Ihnen eine Uhrzeit aus. Sie erreichen uns auch per WhatsApp oder über die Terminanfrage."
       },
       {
         "wann": "Vor dem Besuch",
-        "text": "Halten Sie Ihr Tier in einem ruhigen, hellen Raum. Katzen am besten schon vorher, bevor sie sich verstecken. Impfpass und Medikamente legen Sie bereit."
+        "text": "Halten Sie Ihr Tier in einem ruhigen, gut beleuchteten Raum bereit. Katzen am besten schon vorher, bevor sie sich verstecken."
       },
       {
         "wann": "Bei Ihnen",
-        "text": "Ich untersuche Ihr Tier dort, wo es liegt, auf dem Teppich oder im Körbchen. Ich erkläre Ihnen jeden Schritt und was ich finde."
+        "text": "Ich untersuche Ihr Tier in seiner vertrauten Umgebung, ohne Transportkäfig und ohne Fahrt. Sie bleiben die ganze Zeit dabei, und ich erkläre Ihnen jeden Schritt."
       },
       {
         "wann": "Nach dem Besuch",
-        "text": "Die Rechnung kommt per E-Mail. Sie können sie bei Ihrer Tierkrankenversicherung einreichen."
+        "text": "Die Rechnung kommt direkt per E-Mail. Sie können sie bei Ihrer Tierkrankenversicherung einreichen."
       },
       {
-        "wann": "Am nächsten Tag",
-        "text": "Ich melde mich und frage, wie es Ihrem Tier geht. [FEHLT: mit dem Kunden klären, ob er nachfragt]"
+        "wann": "Wenn mehr nötig ist",
+        "text": "Braucht Ihr Tier eine Operation oder stationäre Behandlung, vermittle ich Sie an eine geeignete Klinik in Mannheim und übernehme die Vor- und Nachsorge."
       }
     ],
     "foto": "katze-unter-decke",
     "foto_alt": "Eine rote Katze schläft unter einer Wolldecke auf dem Sofa."
   },
   "tierarzt": {
-    "titel": "Ich komme allein und bleibe, bis alles geklärt ist.",
-    "name": "[FEHLT: Vorname Nachname], Tierarzt",
+    "titel": "Ich bringe die Praxis zu Ihnen nach Hause.",
+    "name": "Rasheed Al Saeed, approbierter Tierarzt, Schwerpunkt Kleintiermedizin",
     "absaetze": [
-      "Ich behandle Hunde und Katzen in ihrem Zuhause, weil sie dort ruhiger sind und ich mehr sehe als in der Praxis: wie Ihr Tier liegt und wie es sich bewegt.",
-      "[FEHLT: Werdegang in zwei bis drei Sätzen, zum Beispiel Studium, Stationen in Praxen und Kliniken, Schwerpunkte. Keine Jahreszahlen erfinden.]"
+      "Transport und fremde Gerüche bedeuten für ein krankes Tier Stress. Das verschlechtert nicht nur sein Befinden, er erschwert auch die Untersuchung. Zu Hause untersuche ich ruhiger und sehe mehr.",
+      "Meine tierärztliche Kenntnisprüfung habe ich an der Justus-Liebig-Universität Gießen abgelegt. Erfahrung habe ich in einem Internship bei AniCura in Bielefeld und in Tierarztpraxen und Kliniken in Essen gesammelt. Dort habe ich gelernt, wie viel eine sorgfältige Anamnese und eine ruhige, klare Entscheidung wert sind, wenn es eilt.",
+      "Ich behandle allein. Mein Praxisteam kümmert sich um Termine, Erreichbarkeit und Medikamente, damit ich mich ganz auf Ihr Tier konzentrieren kann."
     ],
     "portraet": "[FEHLT: Porträt]",
     "portraet_hinweis": "Hochformat 4 : 5, Tageslicht, mit einem Patienten auf dem Boden",
     "auto": "[FEHLT: Foto Praxisauto]",
-    "auto_satz": "Mit diesem Auto komme ich. Darin habe ich alles für die Untersuchung und die wichtigsten Medikamente."
+    "auto_satz": "Mit diesem Auto komme ich. Darin ist meine tierärztliche Apotheke mit den wichtigsten Medikamenten."
   },
   "einsatz": {
     "titel": "Wohin ich komme",
-    "satz": "Ich fahre zu Ihnen nach [FEHLT: fünf bis acht Orte, zum Beispiel Hauptort, Nachbarorte und Stadtteile].",
+    "satz": "Mein Schwerpunkt ist das Stadtgebiet Mannheim. Ich fahre auch nach Ludwigshafen, Heidelberg, Speyer, Schwetzingen, Weinheim, Worms und in die Orte dazwischen.",
     "plz_label": "Ihre Postleitzahl",
     "plz_knopf": "Prüfen",
-    "plz_hinweis": "Fünf Ziffern, zum Beispiel 10000",
+    "plz_hinweis": "Fünf Ziffern, zum Beispiel 68159",
     "antwort_ja": "Ja, ich komme zu Ihnen nach {ort}.",
-    "antwort_nein": "Diese Postleitzahl liegt außerhalb meines Gebiets. Rufen Sie mich trotzdem an, dann sage ich Ihnen, ob und wann ich kommen kann.",
+    "antwort_nein": "Diese Postleitzahl steht nicht auf meiner Liste. Schicken Sie mir Ihre Adresse, dann sage ich Ihnen, ob und zu welchen Bedingungen ich komme.",
     "antwort_fehler": "Bitte geben Sie fünf Ziffern ein.",
     "plz_liste": {
-      "10000": "[FEHLT: Ort]",
-      "10001": "[FEHLT: Ort]",
-      "10002": "[FEHLT: Ort]"
+      "68159": "Mannheim",
+      "68161": "Mannheim",
+      "68163": "Mannheim",
+      "68165": "Mannheim",
+      "68167": "Mannheim",
+      "68169": "Mannheim",
+      "68199": "Mannheim",
+      "68219": "Mannheim",
+      "68229": "Mannheim",
+      "68239": "Mannheim",
+      "68259": "Mannheim",
+      "68305": "Mannheim",
+      "68307": "Mannheim",
+      "68309": "Mannheim",
+      "67059": "Ludwigshafen",
+      "67061": "Ludwigshafen",
+      "67063": "Ludwigshafen",
+      "67065": "Ludwigshafen",
+      "67067": "Ludwigshafen",
+      "67069": "Ludwigshafen",
+      "67071": "Ludwigshafen",
+      "69115": "Heidelberg",
+      "69117": "Heidelberg",
+      "69118": "Heidelberg",
+      "69120": "Heidelberg",
+      "69121": "Heidelberg",
+      "69123": "Heidelberg",
+      "69124": "Heidelberg",
+      "69126": "Heidelberg",
+      "67346": "Speyer",
+      "67117": "Limburgerhof",
+      "67112": "Mutterstadt",
+      "67141": "Neuhofen",
+      "67165": "Waldsee",
+      "67354": "Römerberg",
+      "67373": "Dudenhofen",
+      "76726": "Germersheim",
+      "67360": "Lingenfeld",
+      "68766": "Hockenheim",
+      "68775": "Ketsch",
+      "67122": "Altrip",
+      "67459": "Böhl-Iggelheim",
+      "67454": "Haßloch",
+      "67547": "Worms",
+      "67549": "Worms",
+      "67550": "Worms",
+      "67551": "Worms",
+      "55232": "Alzey",
+      "67098": "Bad Dürkheim",
+      "67433": "Neustadt",
+      "67434": "Neustadt",
+      "67435": "Neustadt",
+      "68519": "Viernheim",
+      "69469": "Weinheim",
+      "67126": "Hochdorf-Assenheim",
+      "67127": "Rödersheim-Gronau",
+      "67136": "Fußgönheim",
+      "67125": "Dannstadt",
+      "68723": "Schwetzingen",
+      "68809": "Neulußheim",
+      "67166": "Otterstadt",
+      "67245": "Lambsheim"
     },
-    "plz_fehlt": "[FEHLT: Liste der Postleitzahlen. Zum Testen 10000 eingeben.]"
+    "plz_fehlt": "[FEHLT: Postleitzahlen aus der Ortsliste vom Kunden prüfen lassen]"
   },
   "kosten": {
     "titel": "Was auf Sie zukommt",
-    "satz": "Ich rechne nach der Gebührenordnung für Tierärzte ab. Vor der Behandlung sage ich Ihnen, womit Sie rechnen können.",
+    "satz": "Ich rechne nach der Gebührenordnung für Tierärzte ab. Vorab erstelle ich Ihnen einen Kostenvoranschlag.",
     "zeilen": [
       {
         "was": "Hausbesuch",
         "wert": "[FEHLT: Betrag]"
       },
       {
-        "was": "Abends ab 18 Uhr, am Wochenende und an Feiertagen",
-        "wert": "[FEHLT: Zuschlag]"
+        "was": "Nach 18 Uhr, am Wochenende und an Feiertagen",
+        "wert": "Zuschlag [FEHLT: Höhe]"
       },
       {
         "was": "Untersuchung und Behandlung",
@@ -101,11 +161,11 @@
       },
       {
         "was": "Bezahlen",
-        "wert": "[FEHLT: bar, EC-Karte oder Rechnung]"
+        "wert": "bar, EC-Karte oder Rechnung"
       },
       {
         "was": "Absagen",
-        "wert": "[FEHLT: bis 24 Stunden vorher ohne Kosten]"
+        "wert": "bis 24 Stunden vorher ohne Gebühr"
       }
     ]
   },
@@ -113,75 +173,72 @@
     "titel": "Häufige Fragen",
     "liste": [
       {
-        "f": "Womit muss ich bei einem Hausbesuch rechnen?",
-        "a": "Für die Anfahrt berechne ich [FEHLT: Betrag]. Dazu kommt die Behandlung nach der Gebührenordnung für Tierärzte. Am Telefon sage ich Ihnen, womit Sie rechnen können."
+        "f": "Wie vereinbare ich einen Termin?",
+        "a": "Rufen Sie an, schreiben Sie per WhatsApp oder nutzen Sie die Terminanfrage auf dieser Seite. Ich melde mich so schnell wie möglich und wir finden einen Termin."
       },
       {
-        "f": "Wie bezahle ich?",
-        "a": "[FEHLT: Zahlungsarten]. Die Rechnung bekommen Sie per E-Mail, Sie können sie direkt bei Ihrer Tierkrankenversicherung einreichen."
+        "f": "Bieten Sie Notfallbehandlungen an?",
+        "a": "Ja, innerhalb meiner Zeiten versorge ich akute Erkrankungen und Verletzungen bei Ihnen zu Hause. Eine 24-Stunden-Versorgung biete ich nicht an. In Lebensgefahr fahren Sie bitte direkt in die nächste Tierklinik."
       },
       {
-        "f": "Können Sie bei einem Besuch mehrere Tiere behandeln?",
-        "a": "Ja. Sagen Sie mir bei der Anfrage, wie viele Tiere es sind, dann plane ich genug Zeit ein."
+        "f": "Kommen Sie auch am Wochenende?",
+        "a": "Ja, nach Vereinbarung am Samstag und in Ausnahmefällen am Sonntag. Am Wochenende fällt ein Zuschlag an."
+      },
+      {
+        "f": "Können Sie operieren?",
+        "a": "Größere Operationen sind mobil nicht möglich, dafür braucht Ihr Tier eine Klinik. Ich vermittle Sie an eine geeignete Klinik in Mannheim und übernehme die Vor- und Nachsorge."
+      },
+      {
+        "f": "Wie bezahle ich, und zahlt meine Versicherung?",
+        "a": "Sie zahlen bar, mit EC-Karte oder auf Rechnung. Die Rechnung bekommen Sie direkt nach der Behandlung per E-Mail. Viele Tierkrankenversicherungen erstatten die Behandlung, wie viel, hängt von Ihrem Tarif ab."
       },
       {
         "f": "Welche Tiere behandeln Sie?",
-        "a": "Hunde und Katzen. [FEHLT: andere Kleintiere nach Absprache, ja oder nein]"
+        "a": "Vor allem Hunde und Katzen. Bei Kaninchen, Meerschweinchen und anderen Kleintieren rufen Sie mich bitte vorher an, dann besprechen wir, was möglich ist."
       },
       {
-        "f": "Was mache ich, bis Sie da sind?",
-        "a": "Bringen Sie Ihr Tier in einen ruhigen Raum und schließen Sie die Tür. Geben Sie ihm kein Futter und keine Medikamente, ohne vorher mit mir zu sprechen."
-      },
-      {
-        "f": "Wann muss mein Tier doch in eine Klinik?",
-        "a": "Wenn es operiert werden muss oder ein Röntgenbild braucht. Dann sage ich es Ihnen offen und kümmere mich um die Überweisung."
-      },
-      {
-        "f": "Wie sage ich einen Termin ab?",
-        "a": "Rufen Sie mich an oder schreiben Sie mir. [FEHLT: Absagefrist]"
+        "f": "Kann ich einen Termin absagen?",
+        "a": "Ja. Sagen Sie bitte bis 24 Stunden vorher ab. Bei einer späteren Absage berechne ich bis zur Hälfte der Hausbesuchsgebühr."
       }
     ]
   },
   "kontakt": {
     "titel": "Termin anfragen",
-    "satz": "Zwei kurze Fragen, dann geht es zur Anfrage. Ich melde mich [FEHLT: wann, zum Beispiel noch am selben Tag].",
+    "satz": "Zwei kurze Fragen, dann geht es zur Anfrage. Mein Team meldet sich so schnell wie möglich bei Ihnen.",
     "frage_tier": "Für wen ist der Termin?",
     "tiere": [
       "Hund",
-      "Katze"
+      "Katze",
+      "Anderes Tier"
     ],
     "frage_anlass": "Worum geht es?",
     "anlass_sonst": "Etwas anderes",
     "weiter": "Weiter zur Anfrage",
     "telefon_titel": "Lieber anrufen?",
-    "telefon_satz": "Am Telefon klären wir am schnellsten, was Ihr Tier braucht.",
+    "telefon_satz": "Am Telefon klären wir am schnellsten, was Ihr Tier braucht. Schreiben können Sie mir auch per WhatsApp: [FEHLT: Nummer].",
     "anlass_leer": "Bitte wählen",
     "anlass_erst": "Frisst nicht oder wirkt krank"
   },
   "erreichbarkeit": {
-    "titel": "Telefonisch erreichbar",
+    "titel": "Erreichbar",
     "zeilen": [
       {
         "tage": "Montag bis Freitag",
-        "zeit": "[FEHLT: 8 bis 20 Uhr]"
+        "zeit": "9 bis 23 Uhr"
       },
       {
-        "tage": "Samstag",
-        "zeit": "[FEHLT: 9 bis 14 Uhr]"
-      },
-      {
-        "tage": "Sonntag und Feiertage",
-        "zeit": "[FEHLT: im Notfall]"
+        "tage": "Samstag und Sonntag",
+        "zeit": "8 bis 12 Uhr"
       }
     ]
   },
   "fuss": {
-    "satz": "Mobile Tierarztpraxis für Hunde und Katzen in [FEHLT: Ort und Umgebung].",
+    "satz": "Mobile Notfall- und Akutversorgung für Hunde und Katzen in Mannheim, Ludwigshafen, Heidelberg und Umgebung.",
     "links": [
       "Impressum",
       "Datenschutz",
       "Bildnachweis"
     ]
   },
-  "erreichbar_zeile": "Telefonisch erreichbar [FEHLT: Montag bis Freitag 8 bis 20 Uhr]. Außerhalb dieser Zeiten hilft die Tierklinik [FEHLT: Name und Telefon]."
+  "erreichbar_zeile": "Erreichbar Montag bis Freitag von 9 bis 23 Uhr, Samstag und Sonntag von 8 bis 12 Uhr. In Lebensgefahr fahren Sie bitte direkt in die nächste Tierklinik."
 }
