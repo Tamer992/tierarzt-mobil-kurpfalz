@@ -76,7 +76,7 @@ function kopfzeile(p) {
   const nav = navListe(p).replace(/href="([^"]*)#/g, `href="$1#`);
   return `
 <header class="ab-kopf">
-  <a class="ab-kopf__marke" href="${p || './'}" aria-label="Mobile Tierarztpraxis Kurpfalz, zur Startseite"><img src="${p}../logo/logo-quer-negativ.svg" width="166" height="50" alt=""></a>
+  <a class="ab-kopf__marke" href="${p || './'}" aria-label="Mobile Tierarztpraxis Kurpfalz, zur Startseite"><img src="${p}../logo/logo-quer-warm.svg" width="166" height="50" alt=""></a>
   <nav class="ab-kopf__nav" aria-label="Hauptnavigation"><ul>${nav}</ul></nav>
   <a class="ab-kopf__tel" href="tel:${g.telefon_link}">${nr()}</a>
   <button class="menueknopf" type="button" aria-expanded="false" aria-controls="handymenue"><span class="unsichtbar">Menü öffnen</span><span class="menueknopf__strich"></span><span class="menueknopf__strich"></span></button>
@@ -87,7 +87,7 @@ function fuss(p) {
   return `
 <footer class="ab-fuss">
   <div class="ab-fuss__innen">
-    <div><img src="${p}../logo/logo-quer-negativ.svg" width="166" height="50" alt="${logoAlt}" loading="lazy"></div>
+    <div><img src="${p}../logo/logo-quer-warm.svg" width="166" height="50" alt="${logoAlt}" loading="lazy"></div>
     <div><h2 class="ab-fuss__titel">Erreichbar</h2><p>Montag bis Freitag 9 bis 23 Uhr<br>Samstag 8 bis 12 Uhr<br>Sonntag in Ausnahmefällen</p></div>
     <div><h2 class="ab-fuss__titel">Kontakt</h2><p><a href="tel:${g.telefon_link}">${nr()}</a> <span class="fehlt">[FEHLT: neue Nummer]</span><br><span class="fehlt">[FEHLT: E-Mail]</span></p></div>
     <div><h2 class="ab-fuss__titel">Praxis</h2><p>Freinsheimer Str. 30<br>67245 Lambsheim</p></div>

@@ -36,7 +36,7 @@ const telFehlt = g.telefon_fehlt ? `<span class="fehlt fehlt--block">[FEHLT: neu
 
 const kopf = `
 <header class="kopf" data-kopf>
-  <a class="kopf__marke" href="./" aria-label="Mobile Tierarztpraxis Kurpfalz, zur Startseite"><img src="../logo/logo-quer-negativ.svg" width="166" height="50" alt=""></a>
+  <a class="kopf__marke" href="./" aria-label="Mobile Tierarztpraxis Kurpfalz, zur Startseite"><img src="../logo/logo-quer-warm.svg" width="166" height="50" alt=""></a>
   <nav class="kopf__nav" aria-label="Hauptnavigation"><ul>
     <li><a href="#leistungen">Leistungen</a></li>
     <li><a href="#ablauf">Hausbesuch</a></li>
@@ -256,7 +256,7 @@ const notfall = `
 const fuss = `
 <footer class="fuss">
   <div class="fuss__innen">
-    <div><img src="../logo/logo-quer-negativ.svg" width="166" height="50" alt="Mobile Tierarztpraxis Kurpfalz, Notfall-Tierarzt Al Saeed"></div>
+    <div><img src="../logo/logo-quer-warm.svg" width="166" height="50" alt="Mobile Tierarztpraxis Kurpfalz, Notfall-Tierarzt Al Saeed"></div>
     <div><h2 class="beschriftung">Erreichbar</h2><p>Montag bis Freitag 9 bis 23 Uhr<br>Samstag 8 bis 12 Uhr<br>Sonntag in Ausnahmefällen</p></div>
     <div><h2 class="beschriftung">Kontakt</h2><p><a href="${telLink}">${esc(tel)}</a>${telFehlt}<br><span class="fehlt">[FEHLT: E-Mail]</span></p></div>
     <div><h2 class="beschriftung">Praxis</h2><p>Freinsheimer Str. 30<br>67245 Lambsheim</p></div>

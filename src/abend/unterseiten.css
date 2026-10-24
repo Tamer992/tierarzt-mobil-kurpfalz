@@ -1,6 +1,5 @@
 /* ===== Richtung „Abendlicht“: Anpassungen für die Unterseiten ===== */
 @font-face { font-family: 'Source Serif 4'; src: url('../schriften/SourceSerif4.woff2') format('woff2'); font-weight: 200 900; font-display: swap; }
-@font-face { font-family: 'Source Serif 4'; src: url('../schriften/SourceSerif4-Italic.woff2') format('woff2'); font-weight: 200 900; font-style: italic; font-display: swap; }
 @font-face { font-family: 'Albert Sans'; src: url('../schriften/AlbertSans.woff2') format('woff2'); font-weight: 100 900; font-display: swap; }
 
 :root {
@@ -46,7 +45,7 @@ h1, h2, h3 { font-weight: 500; letter-spacing: -.01em; }
 
 /* ----- Kopf ----- */
 .ab-kopf { position: sticky; top: 0; z-index: 20; display: flex; flex-wrap: wrap; align-items: center; gap: 32px; padding: 14px var(--rand); background: var(--nacht); color: var(--licht); }
-.ab-kopf__marke img { width: 140px; height: auto; display: block; }
+.ab-kopf__marke img { width: 180px; height: auto; display: block; }
 .ab-kopf__nav { margin-left: auto; }
 .ab-kopf__nav ul { display: flex; gap: 30px; list-style: none; margin: 0; padding: 0; }
 .ab-kopf__nav a, .ab-kopf__tel { font-size: 15px; text-decoration: none; color: var(--licht); opacity: .82; }
@@ -64,7 +63,7 @@ h1, h2, h3 { font-weight: 500; letter-spacing: -.01em; }
 /* ----- Fuß ----- */
 .ab-fuss { background: #120f0c; padding: 80px var(--rand) 40px; color: var(--asche); font-size: 15px; }
 .ab-fuss__innen { max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; }
-.ab-fuss img { width: 150px; }
+.ab-fuss img { width: 200px; }
 .ab-fuss p { margin: 0; line-height: 1.7; }
 .ab-fuss a { text-decoration: none; color: var(--licht); }
 .ab-fuss__titel { margin: 0 0 10px; font-size: 15px; font-weight: 500; letter-spacing: 0; color: var(--asche); }
@@ -88,3 +87,6 @@ h1, h2, h3 { font-weight: 500; letter-spacing: -.01em; }
 /* Akzent Honig für Links und Pfeile */
 .textlink, .brotkrumen a { text-decoration-color: var(--honig); }
 .weitere__link:hover, .uebersicht a:hover h2 { color: var(--honig); }
+
+/* Keine Kursivschrift (Tamers Wunsch), auch nicht aus dem Aufbau von Richtung A */
+h1, h2, h3, p, span, li, a, blockquote, figcaption, summary, dt, dd, label, legend, small, strong, .schritt__wann { font-style: normal !important; }
