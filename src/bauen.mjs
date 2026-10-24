@@ -34,6 +34,7 @@ function kopf(titel, richtung) {
 <meta name="robots" content="noindex, nofollow">
 <title>${esc(titel)}</title>
 <link rel="preload" href="../schriften/${richtung.schrift}" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="../logo/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="stil.css">
 <script src="../js/seite.js" defer></script>
 </head>
@@ -195,6 +196,7 @@ for (const [k, f] of [['a', seiteAVoll], ['b', seiteB], ['c', seiteC]]) {
 await mkdir(join(wurzel, 'site/schriften'), { recursive: true });
 await cp(join(wurzel, 'schriften/woff2'), join(wurzel, 'site/schriften'), { recursive: true });
 await cp(join(wurzel, 'schriften/lizenzen'), join(wurzel, 'site/schriften/lizenzen'), { recursive: true });
+await cp(join(wurzel, 'src/logo'), join(wurzel, 'site/logo'), { recursive: true });
 await mkdir(join(wurzel, 'site/js'), { recursive: true });
 await cp(join(wurzel, 'src/js/seite.js'), join(wurzel, 'site/js/seite.js'));
 console.log('gebaut: site/a, site/b, site/c');

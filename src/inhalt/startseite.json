@@ -25,7 +25,7 @@
   "notfall": {
     "titel": "Im Notfall",
     "text": "Bei Atemnot, Vergiftung, Verletzungen, starken Schmerzen oder Kreislaufproblemen rufen Sie mich an. Ich komme so schnell wie möglich, untersuche Ihr Tier und stabilisiere es. Die wichtigsten Medikamente habe ich dabei.",
-    "klinik": "Eine 24-Stunden-Versorgung biete ich nicht an. Ist das Leben Ihres Tieres in Gefahr oder erreichen Sie mich außerhalb meiner Zeiten, fahren Sie bitte direkt in die nächste Tierklinik: [FEHLT: Tierklinik mit Adresse und Telefon]."
+    "klinik": "Eine 24-Stunden-Versorgung biete ich nicht an. Ist das Leben Ihres Tieres in Gefahr oder erreichen Sie mich außerhalb meiner Zeiten, fahren Sie bitte direkt in die nächste Tierklinik."
   },
   "ablauf": {
     "titel": "So läuft ein Hausbesuch",
@@ -70,7 +70,7 @@
   },
   "einsatz": {
     "titel": "Wohin ich komme",
-    "satz": "Mein Schwerpunkt ist das Stadtgebiet Mannheim. Ich fahre auch nach Ludwigshafen, Heidelberg, Speyer, Schwetzingen, Weinheim, Worms und in die Orte dazwischen.",
+    "satz": "Mein Schwerpunkt ist das Stadtgebiet Mannheim. Ich fahre auch nach Ludwigshafen, Heidelberg, Karlsruhe, Speyer, Schwetzingen, Weinheim, Worms und in die Orte dazwischen.",
     "plz_label": "Ihre Postleitzahl",
     "plz_knopf": "Prüfen",
     "plz_hinweis": "Fünf Ziffern, zum Beispiel 68159",
@@ -139,7 +139,20 @@
       "68723": "Schwetzingen",
       "68809": "Neulußheim",
       "67166": "Otterstadt",
-      "67245": "Lambsheim"
+      "67245": "Lambsheim",
+      "76131": "Karlsruhe",
+      "76133": "Karlsruhe",
+      "76135": "Karlsruhe",
+      "76137": "Karlsruhe",
+      "76139": "Karlsruhe",
+      "76149": "Karlsruhe",
+      "76185": "Karlsruhe",
+      "76187": "Karlsruhe",
+      "76189": "Karlsruhe",
+      "76199": "Karlsruhe",
+      "76227": "Karlsruhe",
+      "76228": "Karlsruhe",
+      "76229": "Karlsruhe"
     },
     "plz_fehlt": "[FEHLT: Postleitzahlen aus der Ortsliste vom Kunden prüfen lassen]"
   },
@@ -149,11 +162,11 @@
     "zeilen": [
       {
         "was": "Hausbesuch",
-        "wert": "[FEHLT: Betrag]"
+        "wert": "nach der Gebührenordnung für Tierärzte"
       },
       {
         "was": "Nach 18 Uhr, am Wochenende und an Feiertagen",
-        "wert": "Zuschlag [FEHLT: Höhe]"
+        "wert": "Zuschlag nach der Gebührenordnung für Tierärzte"
       },
       {
         "was": "Untersuchung und Behandlung",
@@ -227,8 +240,12 @@
         "zeit": "9 bis 23 Uhr"
       },
       {
-        "tage": "Samstag und Sonntag",
+        "tage": "Samstag",
         "zeit": "8 bis 12 Uhr"
+      },
+      {
+        "tage": "Sonntag",
+        "zeit": "in Ausnahmefällen nach Absprache"
       }
     ]
   },
@@ -240,5 +257,5 @@
       "Bildnachweis"
     ]
   },
-  "erreichbar_zeile": "Erreichbar Montag bis Freitag von 9 bis 23 Uhr, Samstag und Sonntag von 8 bis 12 Uhr. In Lebensgefahr fahren Sie bitte direkt in die nächste Tierklinik."
+  "erreichbar_zeile": "Erreichbar Montag bis Freitag von 9 bis 23 Uhr und Samstag von 8 bis 12 Uhr, Sonntag in Ausnahmefällen. In Lebensgefahr fahren Sie bitte direkt in die nächste Tierklinik."
 }

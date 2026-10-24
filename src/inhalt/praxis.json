@@ -6,28 +6,83 @@
   "team": "behandelt allein, ein Praxisteam übernimmt Terminorganisation, Erreichbarkeit und Medikamentenverwaltung",
   "tiere": "hauptsächlich Hunde und Katzen; Kaninchen, Meerschweinchen und andere Kleintiere nach vorheriger Absprache",
   "zeiten": [
-    { "tage": "Montag bis Freitag", "zeit": "9 bis 23 Uhr" },
-    { "tage": "Samstag und Sonntag", "zeit": "8 bis 12 Uhr" }
+    {
+      "tage": "Montag bis Freitag",
+      "zeit": "9 bis 23 Uhr"
+    },
+    {
+      "tage": "Samstag",
+      "zeit": "8 bis 12 Uhr"
+    },
+    {
+      "tage": "Sonntag",
+      "zeit": "in Ausnahmefällen nach Absprache"
+    }
   ],
   "zuschlag": "nach 18 Uhr, am Wochenende und an Feiertagen",
   "zahlung": "bar, EC-Karte oder Rechnung; Rechnung direkt nach der Behandlung per E-Mail, einreichbar bei der Tierkrankenversicherung",
   "absage": "bis 24 Stunden vorher; bei späterer Absage bis zu 50 % der Hausbesuchsgebühr",
-  "kontakt": { "telefon": "[FEHLT: neue Nummer]", "whatsapp": "[FEHLT: Nummer]", "email": "[FEHLT: neue Adresse]" },
+  "kontakt": {
+    "telefon": "[FEHLT: neue Nummer]",
+    "whatsapp": "[FEHLT: Nummer]",
+    "email": "[FEHLT: neue Adresse]"
+  },
   "adresse_impressum": "Freinsheimer Str. 30, 67245 Lambsheim",
   "kammer": "Landestierärztekammer Rheinland-Pfalz",
   "aufsicht": "Veterinäramt der Kreisverwaltung Rhein-Pfalz-Kreis",
   "einsatz_schwerpunkt": "Stadtgebiet Mannheim",
-  "einsatz_orte": ["Mannheim","Ludwigshafen","Heidelberg","Speyer","Limburgerhof","Mutterstadt","Neuhofen","Waldsee","Römerberg","Dudenhofen","Germersheim","Lingenfeld","Hockenheim","Ketsch","Altrip","Böhl-Iggelheim","Haßloch","Worms","Alzey","Bad Dürkheim","Neustadt","Viernheim","Weinheim","Hochdorf-Assenheim","Rödersheim-Gronau","Fußgönheim","Dannstadt","Schwetzingen","Neulußheim","Otterstadt"],
-  "seiten_nicht_gewuenscht": ["Blog", "eigene Notfallseite"],
+  "einsatz_orte": [
+    "Mannheim",
+    "Ludwigshafen",
+    "Heidelberg",
+    "Karlsruhe",
+    "Speyer",
+    "Limburgerhof",
+    "Mutterstadt",
+    "Neuhofen",
+    "Waldsee",
+    "Römerberg",
+    "Dudenhofen",
+    "Germersheim",
+    "Lingenfeld",
+    "Hockenheim",
+    "Ketsch",
+    "Altrip",
+    "Böhl-Iggelheim",
+    "Haßloch",
+    "Worms",
+    "Alzey",
+    "Bad Dürkheim",
+    "Neustadt",
+    "Viernheim",
+    "Weinheim",
+    "Hochdorf-Assenheim",
+    "Rödersheim-Gronau",
+    "Fußgönheim",
+    "Dannstadt",
+    "Schwetzingen",
+    "Neulußheim",
+    "Otterstadt"
+  ],
+  "seiten_nicht_gewuenscht": [
+    "Blog",
+    "eigene Notfallseite"
+  ],
   "eigene_fotos": "keine",
   "texte_selbst_aendern": true,
   "fertig_bis": "2026-10-28",
   "offene_fragen": [
-    "Im Text „Über uns“ steht Karlsruhe, in der Ortsliste nicht. Gehört Karlsruhe zum Einsatzgebiet?",
-    "FAQ: keine 24-Stunden-Notfallversorgung, bei lebensbedrohlichen Notfällen die nächste Tierklinik. Gleichzeitig nennt er Notfallversorgung bei Atemnot und Vergiftung. Die Seite sagt jetzt: innerhalb der Zeiten anrufen, in Lebensgefahr direkt in die Klinik. Passt das?",
-    "Zeiten Samstag und Sonntag 8 bis 12 Uhr, in der FAQ aber Sonntag nur in Ausnahmefällen. Was gilt?",
-    "Höhe der Hausbesuchsgebühr und des Zuschlags",
-    "Welche Tierklinik nennen wir für Notfälle außerhalb der Zeiten?",
-    "Telefonnummer, WhatsApp-Nummer und E-Mail-Adresse (neu)"
+    "Telefonnummer, WhatsApp-Nummer und E-Mail-Adresse (neu)",
+    "Postleitzahlen der Ortsliste bestätigen"
+  ],
+  "gebuehren": "Hausbesuchsgebühr und Zuschlag nach GOT, keine eigenen Beträge auf der Seite",
+  "tierklinik": "keine bestimmte Klinik nennen, nur „die nächste Tierklinik“",
+  "logo": "kunde/logo/*.jpg, als SVG nachgezeichnet mit scripts/logo.py (src/logo/), Farben der Seite aus dem Logo",
+  "geklaert_am_2026_10_24": [
+    "Karlsruhe gehört zum Einsatzgebiet",
+    "Notfall-Formulierung passt",
+    "Sonntag nur in Ausnahmefällen",
+    "Gebühren laut GOT",
+    "keine Tierklinik nennen"
   ]
 }

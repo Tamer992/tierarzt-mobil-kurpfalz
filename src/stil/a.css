@@ -7,16 +7,17 @@
 
 :root {
   /* Farben: Grundfläche, Text, ein Akzent, abgeleitete Töne */
-  --grund: #E9E9E4;
-  --flaeche: #F6F6F2;
-  --text: #1F2328;
-  --leise: #4B5058;
-  --akzent: #2B44A3;
-  --akzent-tief: #1E3383;
-  --akzent-hell: #DCE1F2;
-  --auf-akzent: #F6F6F2;
+  --grund: #E4F0EE;
+  --flaeche: #F6FAF9;
+  --text: #1F2D3A;
+  --leise: #44535E;
+  --akzent: #1F6F78;
+  --akzent-tief: #175961;
+  --akzent-hell: #D2E6E3;
+  --auf-akzent: #FFFFFF;
+  --signal: #F18C3A;   /* Logo-Orange, nur Fläche mit Navy, nie weiße Schrift */
   --fehler: #8C2F1B;
-  --linie: #C9CAC3;
+  --linie: #B9CFCC;
 
   /* Schriftskala, feste Stufen (Handy) */
   --s1: 1rem;      /* 16 */
@@ -85,12 +86,12 @@ figure { margin: 0; }
 
 /* Kopfzeile */
 .kopf { background: var(--grund); position: relative; z-index: 10; }
-.kopf__innen { max-width: var(--max); margin: 0 auto; padding: 0 var(--rand); height: 64px; display: flex; align-items: center; gap: var(--a6); }
+.kopf__innen { max-width: var(--max); margin: 0 auto; padding: 0 var(--rand); height: 72px; display: flex; align-items: center; gap: var(--a6); }
 .marke { font-family: var(--serif); font-size: var(--s3); font-weight: 600; text-decoration: none; white-space: nowrap; margin-right: auto; }
 .marke .fehlt { background: none; color: inherit; padding: 0; }
-.marke { display: grid; line-height: 1.1; }
-.marke__1 { font-size: var(--s1); font-weight: 600; }
-.marke__2 { font-family: var(--sans); font-size: 0.875rem; font-weight: 500; color: var(--leise); letter-spacing: 0.01em; margin-top: 2px; }
+.marke { display: block; line-height: 0; }
+.marke img { height: 48px; width: auto; }
+.fuss .marke img { height: 64px; }
 .kopf__nav, .kopf__kontakt { display: none; }
 .kopf__nav ul { display: flex; gap: var(--a6); }
 .kopf__nav a { text-decoration: none; font-size: var(--s1); font-weight: 500; padding: var(--a2) 0; background: linear-gradient(currentColor, currentColor) 0 100% / 0 1.5px no-repeat; transition: background-size var(--zeit) var(--kurve); }
@@ -106,14 +107,15 @@ figure { margin: 0; }
 .handymenue a { display: block; padding: var(--a3) 0; font-family: var(--serif); font-size: var(--s4); text-decoration: none; }
 
 @media (min-width: 1000px) {
-  .kopf__innen { height: 80px; }
+  .kopf__innen { height: 88px; }
+  .kopf .marke img { height: 60px; }
   .kopf__nav, .kopf__kontakt { display: flex; }
   .menueknopf, .handymenue { display: none; }
 }
 
 /* Startbereich: Foto randlos, Tafel greift mit harter Kante hinein */
 .start { position: relative; }
-.start__bild { aspect-ratio: 4 / 3.4; overflow: hidden; background: #CFCFC8; }
+.start__bild { aspect-ratio: 4 / 3.4; overflow: hidden; background: #C9DCD9; }
 .start__bild img { width: 100%; height: 100%; object-fit: cover; object-position: 45% 62%; }
 .start__unten { position: relative; }
 .start__tafel {
@@ -206,7 +208,7 @@ section h2 { font-size: var(--s5); line-height: 1.12; }
 
 /* Notfall: ruhige Tafel, Nummer groß, keine Warnfarbe */
 .notfall { max-width: var(--max); margin: var(--a9) auto 0; padding: 0 var(--rand); }
-.notfall__innen { background: var(--flaeche); padding: var(--a6) var(--a5); display: grid; gap: var(--a4); }
+.notfall__innen { background: var(--flaeche); border-top: 6px solid var(--signal); padding: var(--a6) var(--a5); display: grid; gap: var(--a4); }
 .notfall h2 { font-size: var(--s4); }
 .notfall__text p + p { margin-top: var(--a3); }
 .notfall__klinik { color: var(--leise); }
@@ -278,7 +280,7 @@ section h2 { font-size: var(--s5); line-height: 1.12; }
 .feld__hinweis { margin-top: var(--a2); font-size: var(--s1); color: var(--leise); }
 .feld {
   display: block; width: 100%; min-height: 56px; padding: 0 var(--a4); font: inherit; color: var(--text);
-  background: #FFFFFE; border: 1.5px solid #8C9098; border-radius: 2px;
+  background: #FFFFFE; border: 1.5px solid #7E9396; border-radius: 2px;
   transition: border-color var(--zeit) var(--kurve), box-shadow var(--zeit) var(--kurve);
 }
 .feld:hover { border-color: var(--text); }
@@ -326,7 +328,7 @@ section h2 { font-size: var(--s5); line-height: 1.12; }
 .wahl input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
 .wahl span {
   display: flex; align-items: center; justify-content: center; min-height: 64px; font-weight: 600; font-size: var(--s2);
-  background: #FFFFFE; border: 1.5px solid #8C9098; border-radius: 2px; transition: border-color var(--zeit) var(--kurve), background-color var(--zeit) var(--kurve), color var(--zeit) var(--kurve);
+  background: #FFFFFE; border: 1.5px solid #7E9396; border-radius: 2px; transition: border-color var(--zeit) var(--kurve), background-color var(--zeit) var(--kurve), color var(--zeit) var(--kurve);
 }
 .wahl:hover span { border-color: var(--text); }
 .wahl input:checked + span { border-color: var(--akzent); background: var(--akzent-hell); color: var(--akzent-tief); box-shadow: inset 0 0 0 1px var(--akzent); }

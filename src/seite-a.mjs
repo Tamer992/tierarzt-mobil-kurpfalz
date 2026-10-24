@@ -35,7 +35,7 @@ export function startseiteA({ g, r, s, esc, txt, bild, nr, tel, kopf }) {
   return `${kopf(`${g.praxisname} · Mobiler Tierarzt in Mannheim und Umgebung`, { schrift: 'Brygada1918.woff2' })}
 <header class="kopf">
   <div class="kopf__innen">
-    <a class="marke" href="./"><span class="marke__1">${esc(g.marke_zeile1)}</span><span class="marke__2">${esc(g.marke_zeile2)}</span></a>
+    <a class="marke" href="./"><img src="../logo/logo-quer.svg" width="497" height="150" alt="Mobile Tierarztpraxis Kurpfalz, Notfall-Tierarzt Al Saeed"></a>
     <nav class="kopf__nav" aria-label="Hauptmenü"><ul>${nav}</ul></nav>
     <div class="kopf__kontakt">${tel}<a class="knopf" href="#kontakt">${esc(g.termin_label)}</a></div>
     <button class="menueknopf" type="button" aria-expanded="false" aria-controls="handymenue"><span class="unsichtbar">Menü öffnen</span><span class="menueknopf__strich"></span><span class="menueknopf__strich"></span></button>
@@ -171,7 +171,7 @@ export function startseiteA({ g, r, s, esc, txt, bild, nr, tel, kopf }) {
 <footer class="fuss" id="fuss">
   <div class="fuss__innen">
     <div class="fuss__marke">
-      <p class="marke"><span class="marke__1">${esc(g.marke_zeile1)}</span><span class="marke__2">${esc(g.marke_zeile2)}</span></p>
+      <p class="marke"><img src="../logo/logo-quer.svg" width="497" height="150" alt="Mobile Tierarztpraxis Kurpfalz, Notfall-Tierarzt Al Saeed" loading="lazy"></p>
       <p>${txt(s.fuss.satz)}</p>
     </div>
     <div class="fuss__kontakt">
