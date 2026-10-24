@@ -154,7 +154,61 @@
       "76228": "Karlsruhe",
       "76229": "Karlsruhe"
     },
-    "plz_fehlt": "[FEHLT: Postleitzahlen aus der Ortsliste vom Kunden prüfen lassen]"
+    "plz_fehlt": "[FEHLT: Postleitzahlen aus der Ortsliste vom Kunden prüfen lassen]",
+    "orte_titel": "Orte im Einsatzgebiet",
+    "orte": [
+      {
+        "stufe": 1,
+        "orte": [
+          "Mannheim"
+        ]
+      },
+      {
+        "stufe": 2,
+        "orte": [
+          "Ludwigshafen",
+          "Heidelberg",
+          "Schwetzingen",
+          "Viernheim",
+          "Weinheim",
+          "Speyer"
+        ]
+      },
+      {
+        "stufe": 3,
+        "orte": [
+          "Karlsruhe",
+          "Worms",
+          "Neustadt",
+          "Bad Dürkheim",
+          "Hockenheim",
+          "Haßloch"
+        ]
+      },
+      {
+        "stufe": 4,
+        "orte": [
+          "Altrip",
+          "Neuhofen",
+          "Limburgerhof",
+          "Mutterstadt",
+          "Dannstadt",
+          "Fußgönheim",
+          "Ketsch",
+          "Otterstadt",
+          "Waldsee",
+          "Böhl-Iggelheim",
+          "Hochdorf-Assenheim",
+          "Rödersheim-Gronau",
+          "Römerberg",
+          "Dudenhofen",
+          "Neulußheim",
+          "Germersheim",
+          "Lingenfeld",
+          "Alzey"
+        ]
+      }
+    ]
   },
   "kosten": {
     "titel": "Was auf Sie zukommt",
@@ -259,5 +313,6 @@
       "Bildnachweis"
     ]
   },
-  "erreichbar_zeile": "Erreichbar Montag bis Freitag von 9 bis 23 Uhr und Samstag von 8 bis 12 Uhr, Sonntag in Ausnahmefällen. In Lebensgefahr fahren Sie bitte direkt in die nächste Tierklinik."
+  "erreichbar_zeile": "Erreichbar Montag bis Freitag von 9 bis 23 Uhr und Samstag von 8 bis 12 Uhr, Sonntag in Ausnahmefällen. In Lebensgefahr fahren Sie bitte direkt in die nächste Tierklinik.",
+  "leistungen_weitere_titel": "Weitere Leistungen"
 }

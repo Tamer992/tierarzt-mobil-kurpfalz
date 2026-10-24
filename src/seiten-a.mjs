@@ -36,11 +36,11 @@ export function leistungsseite({ g, s, l, esc, txt, rh }) {
         <p class="sofort__nummer">${tel}</p>
       </div>
       ${satzliste(l.sofort.liste, 'satzliste')}
+      <aside class="klinikhinweis" aria-labelledby="klinik-titel">
+        <h3 id="klinik-titel">${esc(l.sofort.klinik_titel)}</h3>
+        <p>${txt(l.sofort.klinik)}</p>
+      </aside>
     </div>
-    <aside class="klinikhinweis einblenden" aria-labelledby="klinik-titel">
-      <h3 id="klinik-titel">${esc(l.sofort.klinik_titel)}</h3>
-      <p>${txt(l.sofort.klinik)}</p>
-    </aside>
   </section>
 
   <section class="besuch" aria-labelledby="besuch-titel">

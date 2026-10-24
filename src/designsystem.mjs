@@ -19,7 +19,7 @@ export function designsystem({ css, schriften, esc, rh }) {
     ['leise', 'Nebentext, Hinweise'],
     ['akzent', 'Kobalt, nur für Anrufen und Termin'],
     ['akzent-tief', 'Kobalt bei Hover und Druck'],
-    ['akzent-hell', 'Gewählte Antwort, Fokusring, Platzhalter'],
+    ['akzent-hell', 'Gewählte Antwort, Fokusring, Markierung [FEHLT]'],
     ['fehler', 'Fehler am Feld, nie als Warnfläche'],
     ['linie', 'Haarlinien zwischen Einträgen'],
     ['leise-dunkel', 'Nebentext auf Graphit'],
@@ -198,7 +198,7 @@ export function designsystem({ css, schriften, esc, rh }) {
       <div class="ds-flaeche ds-flaeche--tafel"><h3>Tafel</h3><p>Kalk auf Grundfläche. Für Termin anfragen und den Startbereich.</p></div>
       <div class="ds-flaeche ds-flaeche--graphit"><h3>Graphit-Band</h3><p>Randlos, für den Taktwechsel in der Mitte einer Seite.</p></div>
       <div class="ds-flaeche klinikhinweis"><h3>Hinweis mit Linie</h3><p>Graphit-Linie oben, für Klinik und Lebensgefahr. Keine Warnfarbe.</p></div>
-      <div class="ds-flaeche tierarzt__portraet ds-platzhalter"><span class="platzhalter__titel">[FEHLT: Porträt]</span><span class="platzhalter__hinweis">Platzhalter in den Farben der Seite</span></div>
+      <div class="ds-flaeche tierarzt__portraet ds-platzhalter"><span class="platzhalter__titel">[FEHLT: Porträt]</span><span class="platzhalter__hinweis">Platzhalter als Graphit-Rahmen, tritt hinter den Text zurück</span></div>
     </div>
   </section>
 
@@ -219,6 +219,7 @@ export function designsystem({ css, schriften, esc, rh }) {
         <caption>Nur <code>transform</code> und <code>opacity</code></caption>
         <thead><tr><th scope="col">Was</th><th scope="col">Dauer</th><th scope="col">Kurve</th></tr></thead>
         <tbody>
+          <tr><th scope="row">Startbereich: Tafel schiebt sich ins Foto (der eine Moment)</th><td class="ds-zahl">900 ms</td><td><code>cubic-bezier(0.16, 1, 0.3, 1)</code>, 96 px von unten, von Anfang an sichtbar</td></tr>
           <tr><th scope="row">Texte und Fotos beim Erscheinen</th><td class="ds-zahl">900 ms</td><td><code>cubic-bezier(0.16, 1, 0.3, 1)</code>, Anlauf sofort</td></tr>
           <tr><th scope="row">Hover, Fokus, Farbwechsel</th><td class="ds-zahl">300 ms</td><td><code>cubic-bezier(0.25, 1, 0.5, 1)</code></td></tr>
           <tr><th scope="row">Knopf gedrückt</th><td class="ds-zahl">120 ms</td><td><code>cubic-bezier(0.25, 1, 0.5, 1)</code></td></tr>

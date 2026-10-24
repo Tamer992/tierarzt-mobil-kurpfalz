@@ -3,12 +3,24 @@ export function startseiteA({ g, r, s, esc, txt, rh }) {
   const a = r.a;
   const { tel, bild } = rh;
 
-  const leistungen = g.leistungen.map((l) => `
+  // Die drei häufigsten Anlässe groß, die übrigen kompakt zum Aufklappen
+  const mehr = (l) => l.seite ? `
+          <a class="dienst__mehr" href="${l.seite}">${esc(a.leistungen_mehr)}<span class="unsichtbar">: ${esc(l.titel)}</span><span class="pfeil" aria-hidden="true"></span></a>` : '';
+  const leistungen = g.leistungen.slice(0, 3).map((l) => `
         <li class="dienst einblenden">
           <h3 class="dienst__titel">${esc(l.titel)}</h3>
-          <p class="dienst__satz">${esc(l.satz)}</p>${l.seite ? `
-          <a class="dienst__mehr" href="${l.seite}">${esc(a.leistungen_mehr)}<span class="unsichtbar">: ${esc(l.titel)}</span><span class="pfeil" aria-hidden="true"></span></a>` : ''}
+          <p class="dienst__satz">${esc(l.satz)}</p>${mehr(l)}
         </li>`).join('');
+  const weitere = g.leistungen.slice(3).map((l) => `
+        <li>
+          <details class="dienst-kurz">
+            <summary><span class="dienst-kurz__titel">${esc(l.titel)}</span><span class="frage__zeichen" aria-hidden="true"></span></summary>
+            <div class="dienst-kurz__text"><p>${esc(l.satz)}</p>${mehr(l)}</div>
+          </details>
+        </li>`).join('');
+
+  const orte = s.einsatz.orte.map((st) => `
+        <ul class="orte__stufe orte__stufe--${st.stufe}">${st.orte.map((o) => `<li>${esc(o)}</li>`).join('')}</ul>`).join('');
 
   const schritte = s.ablauf.schritte.map((st) => `
         <li class="schritt einblenden">
@@ -91,6 +103,8 @@ export function startseiteA({ g, r, s, esc, txt, rh }) {
     <div class="einsatz__tafel einblenden">
       <h2 id="einsatz-titel">${esc(s.einsatz.titel)}</h2>
       <p class="einsatz__satz">${txt(s.einsatz.satz)}</p>
+      <div class="orte" role="group" aria-label="${esc(s.einsatz.orte_titel)}">${orte}
+      </div>
       <form class="plz" data-plz="${plzDaten}" data-ja="${esc(s.einsatz.antwort_ja)}" data-nein="${esc(s.einsatz.antwort_nein)}" data-fehler="${esc(s.einsatz.antwort_fehler)}" novalidate>
         <label class="feld__label" for="plz-eingabe">${esc(s.einsatz.plz_label)}</label>
         <div class="plz__zeile">
@@ -122,8 +136,13 @@ export function startseiteA({ g, r, s, esc, txt, rh }) {
       <p class="leistungen__satz einblenden">${esc(a.leistungen_satz)}</p>
       <figure class="leistungen__bild einblenden">${bild('katze-sonnenfenster', 'Eine Katze sitzt am Fenster im Licht und schaut hinaus.', '(min-width: 900px) 34vw, 100vw')}</figure>
     </div>
-    <ul class="leistungen__liste">${leistungen}
-    </ul>
+    <div class="leistungen__haupt">
+      <ul class="leistungen__liste">${leistungen}
+      </ul>
+      <h3 class="leistungen__weitere-titel einblenden">${esc(s.leistungen_weitere_titel)}</h3>
+      <ul class="leistungen__weitere einblenden">${weitere}
+      </ul>
+    </div>
     ${g.leistungen_fehlt ? `<p class="hinweis-fehlt">${txt(g.leistungen_fehlt)}</p>` : ''}
   </section>
 
