@@ -1,0 +1,50 @@
+{
+  "slug": "giftig-fuer-hunde",
+  "titel": "Giftig für Hunde: Was im Haushalt gefährlich ist",
+  "kurz": "Schokolade, Trauben, Birkenzucker und Medikamente: was Ihr Hund nie fressen darf.",
+  "datum": "2026-10-24",
+  "leistung": "leistungen/akutversorgung/",
+  "leistung_titel": "Akutversorgung und Stabilisierung",
+  "einleitung": "Viele Vergiftungen passieren in der eigenen Küche. Ein Hund findet die Schokolade auf dem Tisch, den Kaugummi in der Jackentasche oder die Tablette auf dem Boden. Diese Stoffe sind für Hunde gefährlich, schon in kleinen Mengen.",
+  "abschnitte": [
+    {
+      "titel": "Aus der Küche",
+      "liste": [
+        "Schokolade und Kakao: Je dunkler, desto giftiger. Zittern, Unruhe und Herzrasen sind die ersten Zeichen.",
+        "Birkenzucker (Xylit) in Kaugummi, Bonbons, Zahnpasta und zuckerfreiem Gebäck: Er lässt den Blutzucker innerhalb von Minuten absacken und schädigt die Leber.",
+        "Weintrauben und Rosinen: Schon wenige lösen bei manchen Hunden ein Nierenversagen aus. Eine sichere Menge gibt es nicht.",
+        "Zwiebeln, Knoblauch, Lauch und Schnittlauch, roh und gekocht: Sie zerstören die roten Blutkörperchen. Die Folgen zeigen sich erst nach einigen Tagen.",
+        "Macadamia-Nüsse: Sie lösen Schwäche, Zittern und Lähmungen der Hinterbeine aus.",
+        "Alkohol und Teig mit Hefe."
+      ]
+    },
+    {
+      "titel": "Aus Bad, Garage und Garten",
+      "liste": [
+        "Schmerzmittel für Menschen wie Ibuprofen, Diclofenac und Paracetamol: Schon eine Tablette schadet Magen, Nieren oder Leber.",
+        "Rattengift: Die Blutungen beginnen erst nach drei bis fünf Tagen. Es gibt ein Gegenmittel, deshalb zählt jeder Tag.",
+        "Schneckenkorn: Es löst innerhalb von Stunden schwere Krämpfe aus.",
+        "Frostschutzmittel: Es schmeckt süß, und Hunde lecken es aus Pfützen in der Garage auf. Es zerstört die Nieren.",
+        "Zigaretten, Nikotinkaugummi und Liquids für E-Zigaretten.",
+        "Pflanzen wie Eibe, Oleander, Maiglöckchen und Herbstzeitlose."
+      ]
+    },
+    {
+      "titel": "Für Katzen besonders gefährlich",
+      "absaetze": [
+        "Lilien sind für Katzen lebensgefährlich, auch der Blütenstaub, den sie sich aus dem Fell lecken. Zecken- und Flohmittel für Hunde mit dem Wirkstoff Permethrin lösen bei Katzen schwere Krämpfe aus. Geben Sie Ihrer Katze nie ein Mittel, das für Hunde gedacht ist."
+      ]
+    },
+    {
+      "titel": "Was Sie tun, wenn Ihr Hund etwas gefressen hat",
+      "liste": [
+        "Rufen Sie sofort an, auch wenn Ihr Hund noch munter wirkt. Viele Gifte wirken erst nach Stunden oder Tagen.",
+        "Lösen Sie kein Erbrechen aus, weder mit Salzwasser noch mit dem Finger. Bei manchen Stoffen schadet das mehr.",
+        "Notieren Sie, was, wie viel und wann Ihr Hund gefressen hat, und legen Sie die Verpackung bereit.",
+        "Außerhalb meiner Zeiten fahren Sie bitte direkt in die nächste Tierklinik."
+      ]
+    }
+  ],
+  "lesezeit": 2,
+  "freigabe": "[FEHLT: fachliche Freigabe des Artikels durch Herrn Al Saeed]"
+}

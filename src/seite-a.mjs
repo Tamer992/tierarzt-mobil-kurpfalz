@@ -1,5 +1,5 @@
 // Startseite Richtung A „Auf Augenhöhe“, komplett (Phase 2). Texte aus src/inhalt/startseite.json und gemeinsam.json.
-export function startseiteA({ g, r, s, esc, txt, rh }) {
+export function startseiteA({ g, r, s, esc, txt, rh, artikel = [] }) {
   const a = r.a;
   const { tel, bild } = rh;
 
@@ -31,11 +31,23 @@ export function startseiteA({ g, r, s, esc, txt, rh }) {
   const kostenZeilen = s.kosten.zeilen.map((z) => `
         <div class="kosten__zeile"><dt>${esc(z.was)}</dt><dd>${txt(z.wert)}</dd></div>`).join('');
 
-  const fragen = s.fragen.liste.map((f) => `
+  // Häufige Fragen nach Themen
+  const frage = (f) => `
         <details class="frage">
           <summary><span class="frage__text">${esc(f.f)}</span><span class="frage__zeichen" aria-hidden="true"></span></summary>
           <div class="frage__antwort"><p>${txt(f.a)}</p></div>
-        </details>`).join('');
+        </details>`;
+  const fragen = s.fragen.gruppen.map((gr) => `
+      <div class="fragen__gruppe einblenden">
+        <h3 class="fragen__thema">${esc(gr.titel)}</h3>
+        <div class="fragen__liste">${gr.liste.map(frage).join('')}
+        </div>
+      </div>`).join('');
+  const ratgeber = artikel.slice(0, 3).map((a) => `
+        <li class="ratgeber__eintrag">
+          <a class="ratgeber__link" href="ratgeber/${a.slug}/"><span class="ratgeber__titel">${esc(a.titel)}</span><span class="pfeil" aria-hidden="true"></span></a>
+          <p class="ratgeber__satz">${esc(a.kurz)} <span class="ratgeber__zeit">${a.lesezeit} Min.</span></p>
+        </li>`).join('');
 
 
   const tiere = s.kontakt.tiere.map((t, i) => `
@@ -168,10 +180,23 @@ export function startseiteA({ g, r, s, esc, txt, rh }) {
     <dl class="kosten__liste einblenden">${kostenZeilen}
     </dl>
   </section>
+${artikel.length ? `
+  <section class="ratgeber" id="ratgeber" aria-labelledby="ratgeber-titel">
+    <div class="ratgeber__kopf einblenden">
+      <h2 id="ratgeber-titel">${esc(s.ratgeber.titel)}</h2>
+      <p>${esc(s.ratgeber.satz)}</p>
+      <a class="textlink" href="ratgeber/">${esc(s.ratgeber.link)}</a>
+    </div>
+    <ul class="ratgeber__liste einblenden">${ratgeber}
+    </ul>
+  </section>` : ''}
 
   <section class="fragen" id="fragen" aria-labelledby="fragen-titel">
-    <h2 id="fragen-titel" class="einblenden">${esc(s.fragen.titel)}</h2>
-    <div class="fragen__liste einblenden">${fragen}
+    <h2 id="fragen-titel" class="einblenden">${esc(s.fragen.titel)}</h2>${fragen}
+    <div class="fragen__nicht-dabei einblenden">
+      <h3>${esc(s.fragen.nicht_dabei.titel)}</h3>
+      <p>${txt(s.fragen.nicht_dabei.satz)}</p>
+      <p class="fragen__nummer">${tel}</p>
     </div>
   </section>
 

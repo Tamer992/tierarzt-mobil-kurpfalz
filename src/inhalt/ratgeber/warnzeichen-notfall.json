@@ -1,0 +1,63 @@
+{
+  "slug": "warnzeichen-notfall",
+  "titel": "Warnzeichen: Wann Ihr Tier sofort Hilfe braucht",
+  "kurz": "Diese Zeichen bedeuten bei Hund und Katze: nicht bis morgen warten.",
+  "datum": "2026-10-24",
+  "leistung": "leistungen/akutversorgung/",
+  "leistung_titel": "Akutversorgung und Stabilisierung",
+  "einleitung": "Hunde und Katzen zeigen lange nicht, wenn es ihnen schlecht geht. Wenn Sie etwas Ungewöhnliches bemerken, ist die Krankheit oft schon weiter, als es aussieht. Diese Zeichen nehmen Sie bitte immer ernst.",
+  "abschnitte": [
+    {
+      "titel": "Zeichen, bei denen Sie sofort anrufen",
+      "liste": [
+        "Ihr Tier atmet schnell, mit offenem Maul oder mit sichtbarer Anstrengung. Bei Katzen ist Maulatmung immer ein Notfall.",
+        "Zahnfleisch oder Zunge sind blass, grau oder bläulich statt rosa.",
+        "Ihr Tier hatte einen Krampfanfall oder war kurz bewusstlos.",
+        "Es hat etwas Giftiges gefressen, auch wenn es noch munter wirkt.",
+        "Es erbricht mehrmals in wenigen Stunden oder behält kein Wasser bei sich.",
+        "Es blutet stark, oder die Blutung hört nach zehn Minuten nicht auf.",
+        "Es wurde angefahren oder ist gestürzt, auch ohne sichtbare Verletzung."
+      ]
+    },
+    {
+      "titel": "Zeichen, bei denen Sie direkt in die Klinik fahren",
+      "absaetze": [
+        "Manche Notfälle brauchen sofort Röntgen, Sauerstoff oder eine Operation. Dann ist die Tierklinik der schnellste Weg, und Sie verlieren keine Zeit mit Warten auf einen Hausbesuch."
+      ],
+      "liste": [
+        "Ihr Hund würgt, ohne dass etwas kommt, und sein Bauch wird dick und hart. Das ist der Verdacht auf eine Magendrehung.",
+        "Ihr Kater sitzt immer wieder im Katzenklo, und es kommt kein Urin.",
+        "Ihr Tier ist bewusstlos oder bekommt kaum Luft.",
+        "Die Hinterbeine tragen plötzlich nicht mehr."
+      ]
+    },
+    {
+      "titel": "Zeichen, die bis zum nächsten Tag Zeit haben, aber nicht länger",
+      "liste": [
+        "Ihr Tier frisst seit einem Tag nicht, ist sonst aber wach und trinkt.",
+        "Es humpelt, setzt das Bein aber noch auf.",
+        "Es kratzt sich am Ohr oder schüttelt den Kopf.",
+        "Ein Auge tränt, ohne dass Ihr Tier es zukneift."
+      ]
+    },
+    {
+      "titel": "Was Sie selbst prüfen",
+      "absaetze": [
+        "Drei Werte helfen mir am Telefon, die Lage einzuschätzen. Üben Sie das, wenn Ihr Tier gesund ist, dann wissen Sie im Ernstfall, was normal ist."
+      ],
+      "liste": [
+        "Schleimhäute: Heben Sie die Lefze an. Das Zahnfleisch ist bei einem gesunden Tier rosa. Drücken Sie kurz mit dem Finger darauf, wird die Stelle in höchstens zwei Sekunden wieder rosa.",
+        "Atmung: Zählen Sie im Schlaf die Atemzüge einer Minute. Mehr als 30 sind bei Hund und Katze zu viel.",
+        "Temperatur: Normal sind 38 bis 39 Grad, im Po gemessen."
+      ]
+    },
+    {
+      "titel": "Im Zweifel anrufen",
+      "absaetze": [
+        "Sie müssen nicht wissen, ob es ein Notfall ist. Rufen Sie an und beschreiben Sie, was Sie sehen. Mein Team sagt Ihnen, ob ich komme, ob es bis morgen Zeit hat oder ob Sie besser in die Klinik fahren."
+      ]
+    }
+  ],
+  "lesezeit": 2,
+  "freigabe": "[FEHLT: fachliche Freigabe des Artikels durch Herrn Al Saeed]"
+}

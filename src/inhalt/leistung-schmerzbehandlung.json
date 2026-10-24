@@ -1,0 +1,70 @@
+{
+  "pfad": "leistungen/schmerzbehandlung/",
+  "seitentitel": "Schmerzbehandlung bei Hund und Katze · Hausbesuch in Mannheim und Umgebung",
+  "beschreibung": "Hunde und Katzen zeigen Schmerzen leise. Tierärztliche Behandlung bei Ihnen zu Hause in Mannheim, Ludwigshafen, Heidelberg und Umgebung.",
+  "brotkrumen": "Leistungen",
+  "titel": "Schmerzbehandlung",
+  "einleitung": "Hunde und Katzen zeigen Schmerzen leise. Sie ziehen sich zurück, fressen weniger oder bewegen sich vorsichtiger. Ich finde heraus, wo es weh tut, und behandle den Schmerz bei Ihnen zu Hause, ob er erst seit gestern da ist oder schon seit Monaten.",
+  "foto": "hund-boden2",
+  "foto_alt": "Ein brauner Hund ruht mit dem Kopf auf dem Boden.",
+  "anzeichen": [
+    "Zieht sich zurück",
+    "Frisst schlechter",
+    "Leckt eine Stelle"
+  ],
+  "sofort": {
+    "titel": "Wann Sie sofort anrufen",
+    "satz": "Starke Schmerzen sollte Ihr Tier keinen Tag länger aushalten.",
+    "liste": [
+      "Ihr Tier schreit oder winselt bei Berührung.",
+      "Es krümmt den Rücken oder liegt in einer ungewohnten Haltung.",
+      "Es will sich nicht mehr hinlegen oder steht immer wieder auf.",
+      "Es atmet schnell und flach, ohne dass es warm ist oder es sich bewegt hat."
+    ],
+    "klinik_titel": "Wenn die Hinterbeine plötzlich nicht mehr tragen",
+    "klinik": "Kann Ihr Hund die Hinterbeine plötzlich nicht mehr bewegen oder schleift er sie nach, fahren Sie bitte sofort in die nächste Tierklinik. Dahinter kann ein Bandscheibenvorfall stecken, und dann zählt jede Stunde."
+  },
+  "besuch": {
+    "titel": "Was ich bei Ihnen mache",
+    "absaetze": [
+      "Zuerst frage ich nach. Seit wann verhält sich Ihr Tier anders, wann wird es schlimmer, was hilft? Sie kennen Ihr Tier am besten.",
+      "Dann untersuche ich es in Ruhe auf seinem Platz. Zu Hause bewegt es sich so, wie es sich wirklich bewegt, und ich sehe mehr als auf einem Behandlungstisch.",
+      "Gegen akute Schmerzen bekommt Ihr Tier ein Mittel direkt beim Besuch. Für länger anhaltende Schmerzen, etwa bei Arthrose, stelle ich eine Behandlung zusammen, die Ihr Tier auf Dauer verträgt.",
+      "Bei einer Dauerbehandlung kontrolliere ich die Blutwerte und komme zur Nachkontrolle wieder."
+    ],
+    "klinik": "Braucht Ihr Tier Röntgen, um die Ursache zu finden, organisiere ich die Überweisung und übernehme danach die Behandlung zu Hause."
+  },
+  "vorher": {
+    "titel": "Bis ich bei Ihnen bin",
+    "liste": [
+      "Geben Sie keine Schmerzmittel aus Ihrer eigenen Hausapotheke. Ibuprofen, Diclofenac und Paracetamol sind für Hunde und Katzen giftig.",
+      "Schreiben Sie auf, wann Ihnen die Schmerzen auffallen: nach dem Aufstehen, beim Treppensteigen, beim Hochheben.",
+      "Lassen Sie Ihr Tier an seinem Lieblingsplatz liegen und tragen Sie es nur, wenn nötig."
+    ]
+  },
+  "kosten": {
+    "titel": "Was auf Sie zukommt",
+    "satz": "Ich rechne nach der Gebührenordnung für Tierärzte ab, dazu kommt die Hausbesuchsgebühr. Bevor ich behandle, sage ich Ihnen, womit Sie rechnen müssen.",
+    "link": "Alles zur Abrechnung"
+  },
+  "fragen": {
+    "titel": "Häufige Fragen",
+    "liste": [
+      {
+        "f": "Woran erkenne ich Schmerzen bei meiner Katze?",
+        "a": "Katzen verstecken sich, putzen sich weniger, springen nicht mehr auf ihre Lieblingsplätze oder gehen nicht mehr ins Katzenklo. Auch ein angespanntes Gesicht mit zusammengekniffenen Augen ist ein Zeichen."
+      },
+      {
+        "f": "Kann mein alter Hund dauerhaft Schmerzmittel bekommen?",
+        "a": "Ja. Viele ältere Hunde mit Arthrose bekommen dauerhaft ein Schmerzmittel. Ich wähle eines aus, das zu seinen Blutwerten passt, und kontrolliere regelmäßig, ob er es gut verträgt."
+      }
+    ]
+  },
+  "abschluss": {
+    "titel": "Ich komme zu Ihnen nach Hause.",
+    "satz": "Rufen Sie an oder fragen Sie einen Termin an. Mein Team meldet sich so schnell wie möglich und macht mit Ihnen eine Uhrzeit aus.",
+    "anlass": "Schmerzbehandlung"
+  },
+  "weitere_titel": "Weitere Leistungen",
+  "freigabe": "[FEHLT: fachliche Freigabe der Texte durch Herrn Al Saeed]"
+}

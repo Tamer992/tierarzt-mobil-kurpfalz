@@ -69,5 +69,10 @@
     "anlass": "Durchfall und Erbrechen"
   },
   "weitere_titel": "Weitere Leistungen",
-  "freigabe": "[FEHLT: fachliche Freigabe der Texte durch Herrn Al Saeed]"
+  "freigabe": "[FEHLT: fachliche Freigabe der Texte durch Herrn Al Saeed]",
+  "anzeichen": [
+    "Erbricht",
+    "Wässriger Kot",
+    "Frisst nicht"
+  ]
 }

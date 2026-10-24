@@ -2,7 +2,7 @@
   "navigation": [
     {
       "text": "Leistungen",
-      "ziel": "#leistungen"
+      "ziel": "leistungen/"
     },
     {
       "text": "Hausbesuch",
@@ -11,6 +11,10 @@
     {
       "text": "Über mich",
       "ziel": "#tierarzt"
+    },
+    {
+      "text": "Ratgeber",
+      "ziel": "ratgeber/"
     },
     {
       "text": "Kontakt",
@@ -164,6 +168,31 @@
         ]
       },
       {
+        "stufe": "stadtteile",
+        "orte": [
+          "Innenstadt",
+          "Jungbusch",
+          "Neckarstadt",
+          "Lindenhof",
+          "Neckarau",
+          "Almenhof",
+          "Rheinau",
+          "Schwetzingerstadt",
+          "Oststadt",
+          "Neuostheim",
+          "Seckenheim",
+          "Friedrichsfeld",
+          "Feudenheim",
+          "Käfertal",
+          "Vogelstang",
+          "Wallstadt",
+          "Waldhof",
+          "Gartenstadt",
+          "Schönau",
+          "Sandhofen"
+        ]
+      },
+      {
         "stufe": 2,
         "orte": [
           "Ludwigshafen",
@@ -219,6 +248,10 @@
         "wert": "nach GOT"
       },
       {
+        "was": "Anfahrt außerhalb Mannheims",
+        "wert": "[FEHLT: Angabe]"
+      },
+      {
         "was": "Nach 18 Uhr, am Wochenende und an Feiertagen",
         "wert": "Zuschlag nach GOT"
       },
@@ -234,36 +267,72 @@
   },
   "fragen": {
     "titel": "Häufige Fragen",
-    "liste": [
+    "gruppen": [
       {
-        "f": "Wie vereinbare ich einen Termin?",
-        "a": "Rufen Sie an, schreiben Sie per WhatsApp oder nutzen Sie die Terminanfrage auf dieser Seite. Ich melde mich so schnell wie möglich und wir finden einen Termin."
+        "titel": "Termin",
+        "liste": [
+          {
+            "f": "Wie vereinbare ich einen Termin?",
+            "a": "Rufen Sie an, schreiben Sie per WhatsApp oder nutzen Sie die Terminanfrage auf dieser Seite. Ich melde mich so schnell wie möglich und wir finden einen Termin."
+          },
+          {
+            "f": "Wie kurzfristig bekomme ich einen Termin?",
+            "a": "Rufen Sie an, dann sagt Ihnen mein Team, wann ich bei Ihnen sein kann. Bei akuten Beschwerden komme ich innerhalb meiner Zeiten so schnell wie möglich. [FEHLT: übliche Wartezeit von Herrn Al Saeed]"
+          },
+          {
+            "f": "Kommen Sie auch am Wochenende?",
+            "a": "Ja, nach Vereinbarung am Samstag und in Ausnahmefällen am Sonntag. Am Wochenende fällt ein Zuschlag an."
+          },
+          {
+            "f": "Kann ich einen Termin absagen?",
+            "a": "Ja. Sagen Sie bitte bis 24 Stunden vorher ab. Bei einer späteren Absage berechne ich bis zur Hälfte der Hausbesuchsgebühr."
+          }
+        ]
       },
       {
-        "f": "Bieten Sie Notfallbehandlungen an?",
-        "a": "Ja, innerhalb meiner Zeiten versorge ich akute Erkrankungen und Verletzungen bei Ihnen zu Hause. Eine 24-Stunden-Versorgung biete ich nicht an. In Lebensgefahr fahren Sie bitte direkt in die nächste Tierklinik."
+        "titel": "Behandlung",
+        "liste": [
+          {
+            "f": "Bieten Sie Notfallbehandlungen an?",
+            "a": "Ja, innerhalb meiner Zeiten versorge ich akute Erkrankungen und Verletzungen bei Ihnen zu Hause. Eine 24-Stunden-Versorgung biete ich nicht an. In Lebensgefahr fahren Sie bitte direkt in die nächste Tierklinik."
+          },
+          {
+            "f": "Können Sie operieren?",
+            "a": "Größere Operationen sind mobil nicht möglich, dafür braucht Ihr Tier eine Klinik. Ich vermittle Sie an eine geeignete Klinik in Mannheim und übernehme die Vor- und Nachsorge."
+          },
+          {
+            "f": "Welche Tiere behandeln Sie?",
+            "a": "Vor allem Hunde und Katzen. Bei Kaninchen, Meerschweinchen und anderen Kleintieren rufen Sie mich bitte vorher an, dann besprechen wir, was möglich ist."
+          }
+        ]
       },
       {
-        "f": "Kommen Sie auch am Wochenende?",
-        "a": "Ja, nach Vereinbarung am Samstag und in Ausnahmefällen am Sonntag. Am Wochenende fällt ein Zuschlag an."
+        "titel": "Abrechnung",
+        "liste": [
+          {
+            "f": "Wie bezahle ich, und zahlt meine Versicherung?",
+            "a": "Sie zahlen bar, mit EC-Karte oder auf Rechnung. Die Rechnung bekommen Sie direkt nach der Behandlung per E-Mail. Viele Tierkrankenversicherungen erstatten die Behandlung, wie viel, hängt von Ihrem Tarif ab."
+          },
+          {
+            "f": "Berechnen Sie die Anfahrt?",
+            "a": "[FEHLT: Anfahrt im Stadtgebiet Mannheim inklusive? Pauschale außerhalb? Angabe von Herrn Al Saeed]"
+          }
+        ]
       },
       {
-        "f": "Können Sie operieren?",
-        "a": "Größere Operationen sind mobil nicht möglich, dafür braucht Ihr Tier eine Klinik. Ich vermittle Sie an eine geeignete Klinik in Mannheim und übernehme die Vor- und Nachsorge."
-      },
-      {
-        "f": "Wie bezahle ich, und zahlt meine Versicherung?",
-        "a": "Sie zahlen bar, mit EC-Karte oder auf Rechnung. Die Rechnung bekommen Sie direkt nach der Behandlung per E-Mail. Viele Tierkrankenversicherungen erstatten die Behandlung, wie viel, hängt von Ihrem Tarif ab."
-      },
-      {
-        "f": "Welche Tiere behandeln Sie?",
-        "a": "Vor allem Hunde und Katzen. Bei Kaninchen, Meerschweinchen und anderen Kleintieren rufen Sie mich bitte vorher an, dann besprechen wir, was möglich ist."
-      },
-      {
-        "f": "Kann ich einen Termin absagen?",
-        "a": "Ja. Sagen Sie bitte bis 24 Stunden vorher ab. Bei einer späteren Absage berechne ich bis zur Hälfte der Hausbesuchsgebühr."
+        "titel": "Einsatzgebiet",
+        "liste": [
+          {
+            "f": "Wie finde ich heraus, ob Sie zu mir kommen?",
+            "a": "Geben Sie oben unter „Wohin ich komme“ Ihre Postleitzahl ein. Steht Ihr Ort nicht auf der Liste, rufen Sie an, dann klären wir es."
+          }
+        ]
       }
-    ]
+    ],
+    "nicht_dabei": {
+      "titel": "Ihre Frage war nicht dabei?",
+      "satz": "Rufen Sie an oder schreiben Sie per WhatsApp: [FEHLT: Nummer]. Mein Team beantwortet Ihre Frage direkt."
+    }
   },
   "kontakt": {
     "titel": "Termin anfragen",
@@ -286,7 +355,7 @@
     "anlass_text_label": "Beschreiben Sie kurz, was Ihnen aufgefallen ist (freiwillig)",
     "anlass_text_hinweis": "Zum Beispiel: seit wann, wie oft, frisst und trinkt es noch?",
     "tier_anderes_label": "Welches Tier?",
-    "tier_anderes_hinweis": "Zum Beispiel: Kaninchen, Meerschweinchen"
+    "tier_anderes_hinweis": "Zum Beispiel Kaninchen oder Meerschweinchen. Andere Kleintiere behandle ich nach Absprache."
   },
   "erreichbarkeit": {
     "titel": "Erreichbar",
@@ -314,5 +383,10 @@
     ]
   },
   "erreichbar_zeile": "Erreichbar Montag bis Freitag von 9 bis 23 Uhr und Samstag von 8 bis 12 Uhr, Sonntag in Ausnahmefällen. In Lebensgefahr fahren Sie bitte direkt in die nächste Tierklinik.",
-  "leistungen_weitere_titel": "Weitere Leistungen"
+  "leistungen_weitere_titel": "Weitere Leistungen",
+  "ratgeber": {
+    "titel": "Ratgeber",
+    "satz": "Was Sie als Halter von Hund und Katze wissen sollten, bevor es ernst wird.",
+    "link": "Alle Artikel"
+  }
 }

@@ -1,0 +1,72 @@
+{
+  "pfad": "leistungen/akutversorgung/",
+  "seitentitel": "Akutversorgung und Stabilisierung bei Hund und Katze · Hausbesuch in Mannheim und Umgebung",
+  "beschreibung": "Wenn es Ihrem Tier plötzlich schlecht geht, zählt jede Stunde. Tierärztliche Behandlung bei Ihnen zu Hause in Mannheim, Ludwigshafen, Heidelberg und Umgebung.",
+  "brotkrumen": "Leistungen",
+  "titel": "Akutversorgung und Stabilisierung",
+  "einleitung": "Wenn es Ihrem Tier plötzlich schlecht geht, zählt jede Stunde. Ich komme zu Ihnen, untersuche Ihr Tier, stabilisiere seinen Kreislauf und lindere den Schmerz. Danach entscheiden wir gemeinsam, ob die Behandlung zu Hause reicht oder ob es in eine Klinik muss.",
+  "foto": "hund-bett-decke",
+  "foto_alt": "Ein Hund liegt im Sonnenstreifen auf einem Bett.",
+  "anzeichen": [
+    "Atemnot",
+    "Vergiftung",
+    "Kreislaufschwäche"
+  ],
+  "sofort": {
+    "titel": "Wann Sie sofort anrufen",
+    "satz": "Diese Zeichen brauchen eine Untersuchung am selben Tag.",
+    "liste": [
+      "Ihr Tier hat etwas Giftiges gefressen, zum Beispiel Rattengift, Schokolade, Trauben, Medikamente oder Lilien.",
+      "Es atmet schnell, mit offenem Maul oder mit sichtbarer Anstrengung.",
+      "Es ist plötzlich schwach, schwankt oder mag nicht aufstehen.",
+      "Es hatte einen Krampfanfall, auch wenn es danach wieder munter wirkt.",
+      "Es hat sich an einem heißen Tag überhitzt und hechelt stark."
+    ],
+    "klinik_titel": "Wenn Ihr Tier bewusstlos ist oder kaum Luft bekommt",
+    "klinik": "Ist Ihr Tier bewusstlos, sind seine Schleimhäute bläulich oder bekommt es kaum Luft, fahren Sie bitte sofort in die nächste Tierklinik. Dort steht Sauerstoff bereit, und jede Minute zählt."
+  },
+  "besuch": {
+    "titel": "Was ich bei Ihnen mache",
+    "absaetze": [
+      "Am Telefon frage ich nach, was passiert ist. Bei einer Vergiftung sage ich Ihnen schon dort, was Sie bis zu meinem Eintreffen tun und was Sie lassen.",
+      "Bei Ihnen prüfe ich zuerst Atmung, Puls, Schleimhäute und Temperatur. Daran erkenne ich, wie stabil Ihr Tier ist.",
+      "Braucht es Flüssigkeit, bekommt es eine Infusion. Gegen Schmerzen, Übelkeit oder Krämpfe gebe ich Medikamente aus meiner tierärztlichen Apotheke. Bei manchen Vergiftungen gibt es ein Gegenmittel.",
+      "Ist Ihr Tier stabil, besprechen wir die nächsten Tage. Ich rufe am nächsten Tag an und frage nach, wie es ihm geht."
+    ],
+    "klinik": "Braucht Ihr Tier Röntgen, Ultraschall, Sauerstoff oder eine Überwachung über Nacht, organisiere ich die Überweisung an eine Klinik in Mannheim und übernehme die Nachsorge."
+  },
+  "vorher": {
+    "titel": "Bis ich bei Ihnen bin",
+    "liste": [
+      "Halten Sie Ihr Tier ruhig und warm, bei Überhitzung kühl, aber nicht eiskalt.",
+      "Lösen Sie kein Erbrechen aus. Bei manchen Giften schadet das mehr, als es nützt.",
+      "Legen Sie mir Verpackung, Pflanze oder Reste von dem hin, was Ihr Tier gefressen hat.",
+      "Geben Sie kein Futter, kein Wasser mit Gewalt und keine eigenen Medikamente."
+    ]
+  },
+  "kosten": {
+    "titel": "Was auf Sie zukommt",
+    "satz": "Ich rechne nach der Gebührenordnung für Tierärzte ab, dazu kommt die Hausbesuchsgebühr. Bevor ich behandle, sage ich Ihnen, womit Sie rechnen müssen.",
+    "link": "Alles zur Abrechnung"
+  },
+  "fragen": {
+    "titel": "Häufige Fragen",
+    "liste": [
+      {
+        "f": "Was zählt als Notfall?",
+        "a": "Atemnot, Vergiftung, Krampfanfälle, starke Blutungen, Kreislaufschwäche und starke Schmerzen. Sind Sie unsicher, rufen Sie an. Mein Team sagt Ihnen, ob es Zeit hat oder ob ich gleich komme."
+      },
+      {
+        "f": "Kommen Sie auch nachts?",
+        "a": "Ich bin Montag bis Freitag bis 23 Uhr unterwegs. Eine 24-Stunden-Versorgung biete ich nicht an. Außerhalb meiner Zeiten fahren Sie bitte in die nächste Tierklinik."
+      }
+    ]
+  },
+  "abschluss": {
+    "titel": "Ich komme zu Ihnen nach Hause.",
+    "satz": "Rufen Sie an oder fragen Sie einen Termin an. Mein Team meldet sich so schnell wie möglich und macht mit Ihnen eine Uhrzeit aus.",
+    "anlass": "Akutversorgung und Stabilisierung"
+  },
+  "weitere_titel": "Weitere Leistungen",
+  "freigabe": "[FEHLT: fachliche Freigabe der Texte durch Herrn Al Saeed]"
+}

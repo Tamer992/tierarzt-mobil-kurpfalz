@@ -1,0 +1,71 @@
+{
+  "pfad": "leistungen/lahmheit-bewegung/",
+  "seitentitel": "Lahmheit und Bewegung bei Hund und Katze · Hausbesuch in Mannheim und Umgebung",
+  "beschreibung": "Humpelt Ihr Tier, steht es schwer auf oder springt es nicht mehr aufs Sofa, tut ihm etwas weh. Tierärztliche Behandlung bei Ihnen zu Hause in Mannheim, Ludwigshafen, Heidelberg und Umgebung.",
+  "brotkrumen": "Leistungen",
+  "titel": "Lahmheit und Bewegung",
+  "einleitung": "Humpelt Ihr Tier, steht es schwer auf oder springt es nicht mehr aufs Sofa, tut ihm etwas weh. Zu Hause sehe ich, wie es sich in seiner gewohnten Umgebung bewegt, finde heraus, wo der Schmerz sitzt, und behandle ihn.",
+  "foto": "hund-fenster",
+  "foto_alt": "Ein Hund liegt im Abendlicht vor dem Fenster.",
+  "anzeichen": [
+    "Humpeln",
+    "Steifer Gang",
+    "Springt nicht mehr"
+  ],
+  "sofort": {
+    "titel": "Wann Sie sofort anrufen",
+    "satz": "Diese Zeichen brauchen eine Untersuchung am selben Tag.",
+    "liste": [
+      "Ihr Tier setzt ein Bein gar nicht mehr auf.",
+      "Das Bein steht in einer ungewohnten Stellung oder ist stark geschwollen.",
+      "Es ist gestürzt, angefahren worden oder aus der Höhe gesprungen.",
+      "Es schreit, wenn Sie das Bein berühren."
+    ],
+    "klinik_titel": "Wenn das Bein gebrochen aussieht",
+    "klinik": "Steht das Bein schief oder ist ein Knochen zu sehen, fahren Sie bitte sofort in die nächste Tierklinik. Ein Bruch muss geröntgt und in vielen Fällen operiert werden."
+  },
+  "besuch": {
+    "titel": "Was ich bei Ihnen mache",
+    "absaetze": [
+      "Ich sehe mir an, wie Ihr Tier läuft, steht und sich hinlegt. Zu Hause bewegt es sich natürlicher als auf einem glatten Praxisboden.",
+      "Dann taste ich Pfoten, Gelenke, Muskeln und Rücken ab und bewege die Gelenke vorsichtig. So finde ich die schmerzhafte Stelle.",
+      "Gegen den Schmerz bekommt Ihr Tier ein Mittel. Bei einer Zerrung reicht oft Schonung für einige Tage, bei Arthrose stellen wir eine Behandlung auf Dauer zusammen.",
+      "Ich zeige Ihnen, wie Sie die Wohnung anpassen, zum Beispiel mit Teppichen auf glatten Böden oder einer Rampe zum Sofa."
+    ],
+    "klinik": "Bei Verdacht auf einen Bruch, einen Kreuzbandriss oder einen Bandscheibenvorfall braucht Ihr Tier Röntgen. Dann organisiere ich die Überweisung und übernehme danach die Behandlung zu Hause."
+  },
+  "vorher": {
+    "titel": "Bis ich bei Ihnen bin",
+    "liste": [
+      "Lassen Sie Ihr Tier ruhen, kein Toben und keine langen Spaziergänge.",
+      "Tragen Sie kleine Tiere die Treppe hinauf und hinunter.",
+      "Geben Sie keine Schmerzmittel aus Ihrer eigenen Hausapotheke.",
+      "Filmen Sie Ihr Tier beim Laufen, wenn die Lahmheit mal da ist und mal nicht."
+    ]
+  },
+  "kosten": {
+    "titel": "Was auf Sie zukommt",
+    "satz": "Ich rechne nach der Gebührenordnung für Tierärzte ab, dazu kommt die Hausbesuchsgebühr. Bevor ich behandle, sage ich Ihnen, womit Sie rechnen müssen.",
+    "link": "Alles zur Abrechnung"
+  },
+  "fragen": {
+    "titel": "Häufige Fragen",
+    "liste": [
+      {
+        "f": "Mein Hund humpelt nur nach dem Aufstehen. Ist das schlimm?",
+        "a": "Ein steifer Gang nach dem Liegen, der nach einigen Schritten besser wird, ist ein typisches Zeichen für Arthrose. Das ist gut behandelbar, und Ihr Hund muss die Schmerzen nicht aushalten."
+      },
+      {
+        "f": "Darf ich mein Tier kühlen?",
+        "a": "Bei einer frischen Verletzung mit Schwellung ja, mit einem Kühlpack in einem Tuch, einige Minuten lang. Nie Eis direkt auf die Haut."
+      }
+    ]
+  },
+  "abschluss": {
+    "titel": "Ich komme zu Ihnen nach Hause.",
+    "satz": "Rufen Sie an oder fragen Sie einen Termin an. Mein Team meldet sich so schnell wie möglich und macht mit Ihnen eine Uhrzeit aus.",
+    "anlass": "Lahmheit und Bewegung"
+  },
+  "weitere_titel": "Weitere Leistungen",
+  "freigabe": "[FEHLT: fachliche Freigabe der Texte durch Herrn Al Saeed]"
+}

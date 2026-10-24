@@ -1,6 +1,6 @@
 // Baut die drei Richtungen aus src/inhalt/*.json nach site/a, site/b, site/c.
 // Aufruf: node src/bauen.mjs
-import { readFile, writeFile, mkdir, cp } from 'node:fs/promises';
+import { readFile, writeFile, mkdir, cp, readdir } from 'node:fs/promises';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -14,7 +14,12 @@ import { startseiteA } from './seite-a.mjs';
 import { rahmen } from './rahmen.mjs';
 import { leistungsseite, terminseite, abschiedsseite } from './seiten-a.mjs';
 import { designsystem } from './designsystem.mjs';
-const lDurchfall = await lies('src/inhalt/leistung-durchfall.json');
+import { leistungenSeite, ratgeberSeite, ratgeberArtikel } from './seiten-mehr.mjs';
+// alle Leistungsseiten: src/inhalt/leistung-*.json
+const lSeiten = await Promise.all((await readdir(join(wurzel, 'src/inhalt'))).filter((f) => /^leistung-.+\.json$/.test(f)).sort().map((f) => lies(`src/inhalt/${f}`)));
+const lDurchfall = lSeiten.find((l) => l.pfad === 'leistungen/durchfall-erbrechen/');
+// Ratgeber: neueste zuerst
+const artikel = (await Promise.all((await readdir(join(wurzel, 'src/inhalt/ratgeber'))).filter((f) => f.endsWith('.json')).map((f) => lies(`src/inhalt/ratgeber/${f}`)))).sort((x, y) => y.datum.localeCompare(x.datum) || x.titel.localeCompare(y.titel));
 const termin = await lies('src/inhalt/termin.json');
 const abschied = await lies('src/inhalt/abschied.json');
 const schriften = await lies('src/inhalt/schriften.json');
@@ -195,7 +200,7 @@ function seiteC() {
 
 // Phase 2: A ist die vollständige Startseite, B und C bleiben als Stand aus Phase 1
 const rh = rahmen({ g, s, esc, txt, masse });
-const seiteAVoll = () => startseiteA({ g, r, s, esc, txt, rh });
+const seiteAVoll = () => startseiteA({ g, r, s, esc, txt, rh, artikel });
 for (const [k, f] of [['a', seiteAVoll], ['b', seiteB], ['c', seiteC]]) {
   await mkdir(join(wurzel, 'site', k), { recursive: true });
   await writeFile(join(wurzel, 'site', k, 'index.html'), f());
@@ -211,10 +216,14 @@ console.log('gebaut: site/a, site/b, site/c');
 
 // Phase 3: Unterseiten von Richtung A
 const schreibe = async (pfad, html) => { await mkdir(join(wurzel, 'site/a', pfad), { recursive: true }); await writeFile(join(wurzel, 'site/a', pfad, 'index.html'), html); };
-await schreibe(lDurchfall.pfad, leistungsseite({ g, s, l: lDurchfall, esc, txt, rh }));
+for (const l of lSeiten) await schreibe(l.pfad, leistungsseite({ g, s, l, esc, txt, rh }));
+const satzAbschluss = lDurchfall.abschluss.satz;
+await schreibe('leistungen/', leistungenSeite({ g, r, esc, txt, rh, satzAbschluss }));
+await schreibe('ratgeber/', ratgeberSeite({ g, artikel, esc, txt, rh, satzAbschluss }));
+for (const a of artikel) await schreibe(`ratgeber/${a.slug}/`, ratgeberArtikel({ g, a, artikel, esc, txt, rh, satzAbschluss }));
 await schreibe(termin.pfad, terminseite({ g, s, t: termin, esc, txt, rh }));
 await schreibe(abschied.pfad, abschiedsseite({ g, s, a: abschied, esc, txt, rh }));
 const ds = designsystem({ css: await readFile(join(wurzel, 'src/stil/a.css'), 'utf8'), schriften, esc, rh });
 await schreibe('designsystem/', ds.html);
 await writeFile(join(wurzel, 'site/a/designsystem/ds.css'), ds.css);
-console.log('gebaut: a/' + [lDurchfall.pfad, termin.pfad, abschied.pfad, 'designsystem/'].join(', a/'));
+console.log(`gebaut: ${lSeiten.length} Leistungsseiten, Übersicht, Ratgeber mit ${artikel.length} Artikeln, a/${termin.pfad}, a/${abschied.pfad}, a/designsystem/`);

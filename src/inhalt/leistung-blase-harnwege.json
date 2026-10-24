@@ -1,0 +1,70 @@
+{
+  "pfad": "leistungen/blase-harnwege/",
+  "seitentitel": "Blase und Harnwege bei Hund und Katze · Hausbesuch in Mannheim und Umgebung",
+  "beschreibung": "Muss Ihr Tier ständig Wasser lassen, presst es dabei oder ist Blut im Urin, steckt oft eine Entzündung der Blase dahinter. Tierärztliche Behandlung bei Ihnen zu Hause in Mannheim, Ludwigshafen, Heidelberg und Umgebung.",
+  "brotkrumen": "Leistungen",
+  "titel": "Blase und Harnwege",
+  "einleitung": "Muss Ihr Tier ständig Wasser lassen, presst es dabei oder ist Blut im Urin, steckt oft eine Entzündung der Blase dahinter. Ich kläre die Ursache bei Ihnen zu Hause und behandle Schmerz und Entzündung.",
+  "foto": "katzen-sofa-licht",
+  "foto_alt": "Zwei graue Katzen liegen im Fensterlicht auf dem Sofa.",
+  "anzeichen": [
+    "Häufiger Harndrang",
+    "Blut im Urin",
+    "Pressen"
+  ],
+  "sofort": {
+    "titel": "Wann Sie sofort anrufen",
+    "satz": "Bei diesen Zeichen braucht Ihr Tier noch heute Hilfe.",
+    "liste": [
+      "Ihr Tier presst, und es kommt kaum oder gar kein Urin.",
+      "Im Urin ist Blut.",
+      "Es leckt sich ständig im Genitalbereich und wirkt unruhig.",
+      "Es erbricht oder frisst nicht, zusätzlich zu den Beschwerden beim Wasserlassen."
+    ],
+    "klinik_titel": "Wenn Ihr Kater keinen Urin mehr absetzt",
+    "klinik": "Sitzt Ihr Kater immer wieder im Katzenklo und es kommt nichts, ist die Harnröhre wahrscheinlich verstopft. Das ist lebensgefährlich. Fahren Sie bitte sofort in die nächste Tierklinik."
+  },
+  "besuch": {
+    "titel": "Was ich bei Ihnen mache",
+    "absaetze": [
+      "Ich taste die Blase ab und frage nach Trinkmenge, Futter und Stress im Haushalt. Bei Katzen spielt Stress eine große Rolle.",
+      "Ich untersuche eine Urinprobe mit einem Teststreifen direkt vor Ort und schicke sie bei Bedarf ins Labor. So sehe ich, ob Bakterien, Kristalle oder Blut im Urin sind.",
+      "Je nach Ergebnis bekommt Ihr Tier ein Schmerzmittel, ein krampflösendes Mittel und, nur bei einer bakteriellen Entzündung, ein Antibiotikum.",
+      "Zum Schluss besprechen wir, was Sie bei Futter, Trinken und Katzenklo ändern, damit die Entzündung nicht wiederkommt."
+    ],
+    "klinik": "Braucht Ihr Tier Ultraschall oder Röntgen, etwa bei Verdacht auf Blasensteine, organisiere ich die Überweisung und übernehme danach die Behandlung zu Hause."
+  },
+  "vorher": {
+    "titel": "Bis ich bei Ihnen bin",
+    "liste": [
+      "Fangen Sie, wenn es geht, etwas Urin in einem sauberen Gefäß auf und stellen Sie es in den Kühlschrank.",
+      "Bei Katzen hilft ein leeres, gereinigtes Katzenklo ohne Streu oder mit Spezialstreu aus der Apotheke.",
+      "Stellen Sie frisches Wasser an mehrere Stellen in der Wohnung."
+    ]
+  },
+  "kosten": {
+    "titel": "Was auf Sie zukommt",
+    "satz": "Ich rechne nach der Gebührenordnung für Tierärzte ab, dazu kommt die Hausbesuchsgebühr. Bevor ich behandle, sage ich Ihnen, womit Sie rechnen müssen.",
+    "link": "Alles zur Abrechnung"
+  },
+  "fragen": {
+    "titel": "Häufige Fragen",
+    "liste": [
+      {
+        "f": "Warum bekommen Katzen so oft Blasenentzündungen?",
+        "a": "Bei Katzen steckt oft keine Infektion dahinter, sondern eine Reizung der Blase, die durch Stress, wenig Trinken oder Übergewicht ausgelöst wird. Deshalb gebe ich nicht jeder Katze ein Antibiotikum."
+      },
+      {
+        "f": "Wie bekomme ich eine Urinprobe?",
+        "a": "Beim Hund mit einer flachen Schale beim Gassigehen. Bei der Katze mit einem leeren Katzenklo. Ich sage Ihnen am Telefon, wie es bei Ihrem Tier am besten klappt."
+      }
+    ]
+  },
+  "abschluss": {
+    "titel": "Ich komme zu Ihnen nach Hause.",
+    "satz": "Rufen Sie an oder fragen Sie einen Termin an. Mein Team meldet sich so schnell wie möglich und macht mit Ihnen eine Uhrzeit aus.",
+    "anlass": "Blase und Harnwege"
+  },
+  "weitere_titel": "Weitere Leistungen",
+  "freigabe": "[FEHLT: fachliche Freigabe der Texte durch Herrn Al Saeed]"
+}

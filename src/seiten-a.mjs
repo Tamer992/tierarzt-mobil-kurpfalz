@@ -20,9 +20,10 @@ export function leistungsseite({ g, s, l, esc, txt, rh }) {
 <main id="inhalt">
   <section class="u-start" aria-labelledby="u-titel">
     <div class="u-start__text">
-      <nav class="brotkrumen auftritt" aria-label="Sie sind hier"><ol><li><a href="${p}#leistungen">${esc(l.brotkrumen)}</a></li><li aria-current="page">${esc(l.titel)}</li></ol></nav>
+      <nav class="brotkrumen auftritt" aria-label="Sie sind hier"><ol><li><a href="${p}leistungen/">${esc(l.brotkrumen)}</a></li><li aria-current="page">${esc(l.titel)}</li></ol></nav>
       <h1 id="u-titel" class="auftritt">${esc(l.titel)}</h1>
-      <p class="u-start__satz auftritt auftritt--2">${txt(l.einleitung)}</p>
+      <p class="u-start__satz auftritt auftritt--2">${txt(l.einleitung)}</p>${l.anzeichen ? `
+      <p class="anzeichen auftritt auftritt--2"><span class="anzeichen__wort">Woran Sie es merken:</span> ${l.anzeichen.map(esc).join(' · ')}</p>` : ''}
       <div class="start__kontakt auftritt auftritt--2">${tel}<a class="knopf knopf--gross" href="${terminHref}">${esc(g.termin_label)}</a></div>
     </div>
     <figure class="u-start__bild">${bild(l.foto, l.foto_alt, '(min-width: 900px) 42vw, 100vw', { p, prio: true, klasse: 'auftritt' })}</figure>
@@ -36,10 +37,11 @@ export function leistungsseite({ g, s, l, esc, txt, rh }) {
         <p class="sofort__nummer">${tel}</p>
       </div>
       ${satzliste(l.sofort.liste, 'satzliste')}
+${l.sofort.klinik ? `
       <aside class="klinikhinweis" aria-labelledby="klinik-titel">
         <h3 id="klinik-titel">${esc(l.sofort.klinik_titel)}</h3>
         <p>${txt(l.sofort.klinik)}</p>
-      </aside>
+      </aside>` : ''}
     </div>
   </section>
 
@@ -51,8 +53,8 @@ export function leistungsseite({ g, s, l, esc, txt, rh }) {
     </div>
   </section>
 
-  <section class="vorher" aria-labelledby="vorher-titel">
-    <figure class="vorher__bild einblenden">${bild(l.vorher.foto, l.vorher.foto_alt, '(min-width: 900px) 40vw, 100vw', { p })}</figure>
+  <section class="vorher${l.vorher.foto ? '' : ' vorher--ohne-bild'}" aria-labelledby="vorher-titel">${l.vorher.foto ? `
+    <figure class="vorher__bild einblenden">${bild(l.vorher.foto, l.vorher.foto_alt, '(min-width: 900px) 40vw, 100vw', { p })}</figure>` : ''}
     <div class="vorher__text">
       <h2 id="vorher-titel" class="einblenden">${esc(l.vorher.titel)}</h2>
       <div class="einblenden">${satzliste(l.vorher.liste, 'satzliste satzliste--hell')}</div>

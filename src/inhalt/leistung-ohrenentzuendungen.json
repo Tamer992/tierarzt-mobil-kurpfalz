@@ -1,0 +1,68 @@
+{
+  "pfad": "leistungen/ohrenentzuendungen/",
+  "seitentitel": "Ohrenentzündungen bei Hund und Katze · Hausbesuch in Mannheim und Umgebung",
+  "beschreibung": "Schüttelt Ihr Hund ständig den Kopf oder kratzt sich Ihre Katze am Ohr, steckt oft eine Entzündung dahinter. Tierärztliche Behandlung bei Ihnen zu Hause in Mannheim, Ludwigshafen, Heidelberg und Umgebung.",
+  "brotkrumen": "Leistungen",
+  "titel": "Ohrenentzündungen",
+  "einleitung": "Schüttelt Ihr Hund ständig den Kopf oder kratzt sich Ihre Katze am Ohr, steckt oft eine Entzündung dahinter. Ich sehe mir das Ohr bei Ihnen zu Hause in Ruhe an, finde die Ursache und behandle sie, damit die Entzündung nicht immer wiederkommt.",
+  "foto": "katze-sofa",
+  "foto_alt": "Eine getigerte Katze liegt auf einem hellen Sofa.",
+  "anzeichen": [
+    "Kopfschütteln",
+    "Kratzen am Ohr",
+    "Geruch"
+  ],
+  "sofort": {
+    "titel": "Wann Sie bald anrufen",
+    "satz": "Eine Ohrenentzündung ist schmerzhaft und wird ohne Behandlung schlimmer.",
+    "liste": [
+      "Ihr Tier hält den Kopf schief oder läuft unsicher.",
+      "Aus dem Ohr kommt Eiter oder Blut, oder es riecht stark.",
+      "Die Ohrmuschel ist plötzlich dick und prall wie ein Kissen.",
+      "Ihr Tier lässt sich nicht mehr am Kopf anfassen."
+    ]
+  },
+  "besuch": {
+    "titel": "Was ich bei Ihnen mache",
+    "absaetze": [
+      "Ich schaue mit einem Otoskop in den Gehörgang und prüfe, ob das Trommelfell heil ist. Davon hängt ab, welche Ohrentropfen ich verwenden darf.",
+      "Mit einem Wattetupfer nehme ich eine Probe aus dem Ohr. Darin erkenne ich, ob Bakterien, Hefepilze oder Milben die Entzündung verursachen.",
+      "Dann reinige ich das Ohr und zeige Ihnen, wie Sie die Tropfen geben. Gegen die Schmerzen bekommt Ihr Tier ein Mittel.",
+      "Kommt die Entzündung immer wieder, suchen wir nach dem Grund dahinter, zum Beispiel einer Allergie."
+    ],
+    "klinik": "Ist die Ohrmuschel prall mit Blut gefüllt, muss sie in Narkose behandelt werden. Dann organisiere ich die Überweisung und übernehme die Nachsorge."
+  },
+  "vorher": {
+    "titel": "Bis ich bei Ihnen bin",
+    "liste": [
+      "Reinigen Sie das Ohr nicht mit Wattestäbchen. Sie schieben den Schmutz tiefer hinein.",
+      "Geben Sie keine Tropfen aus einer alten Packung. Ist das Trommelfell verletzt, schaden manche Tropfen dem Gehör.",
+      "Achten Sie darauf, ob Ihr Tier auf beiden Ohren kratzt oder nur auf einem."
+    ]
+  },
+  "kosten": {
+    "titel": "Was auf Sie zukommt",
+    "satz": "Ich rechne nach der Gebührenordnung für Tierärzte ab, dazu kommt die Hausbesuchsgebühr. Bevor ich behandle, sage ich Ihnen, womit Sie rechnen müssen.",
+    "link": "Alles zur Abrechnung"
+  },
+  "fragen": {
+    "titel": "Häufige Fragen",
+    "liste": [
+      {
+        "f": "Woher kommen Ohrenentzündungen?",
+        "a": "Häufig von Allergien, Milben, Fremdkörpern wie Grannen oder einem engen, feuchten Gehörgang. Hunde mit Hängeohren sind öfter betroffen."
+      },
+      {
+        "f": "Wie lange dauert die Behandlung?",
+        "a": "In der Regel zwei Wochen mit Tropfen. Ich sehe mir das Ohr danach noch einmal an. Hört die Behandlung zu früh auf, kommt die Entzündung wieder."
+      }
+    ]
+  },
+  "abschluss": {
+    "titel": "Ich komme zu Ihnen nach Hause.",
+    "satz": "Rufen Sie an oder fragen Sie einen Termin an. Mein Team meldet sich so schnell wie möglich und macht mit Ihnen eine Uhrzeit aus.",
+    "anlass": "Ohrenentzündungen"
+  },
+  "weitere_titel": "Weitere Leistungen",
+  "freigabe": "[FEHLT: fachliche Freigabe der Texte durch Herrn Al Saeed]"
+}

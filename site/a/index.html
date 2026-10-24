@@ -17,11 +17,11 @@
 <header class="kopf">
   <div class="kopf__innen">
     <a class="marke" href="./"><img src="../logo/logo-quer.svg" width="497" height="150" alt="Mobile Tierarztpraxis Kurpfalz, Notfall-Tierarzt Al Saeed" fetchpriority="high"></a>
-    <nav class="kopf__nav" aria-label="Hauptmenü"><ul><li><a href="#leistungen">Leistungen</a></li><li><a href="#ablauf">Hausbesuch</a></li><li><a href="#tierarzt">Über mich</a></li><li><a href="#kontakt">Kontakt</a></li></ul></nav>
+    <nav class="kopf__nav" aria-label="Hauptmenü"><ul><li><a href="leistungen/">Leistungen</a></li><li><a href="#ablauf">Hausbesuch</a></li><li><a href="#tierarzt">Über mich</a></li><li><a href="ratgeber/">Ratgeber</a></li><li><a href="#kontakt">Kontakt</a></li></ul></nav>
     <div class="kopf__kontakt"><a class="nummer" href="tel:+496210000000"><span class="fehlt" title="FEHLT: neue Telefonnummer">0621 000 00 00</span></a><a class="knopf" href="#kontakt">Termin anfragen</a></div>
     <button class="menueknopf" type="button" aria-expanded="false" aria-controls="handymenue"><span class="unsichtbar">Menü öffnen</span><span class="menueknopf__strich"></span><span class="menueknopf__strich"></span></button>
   </div>
-  <nav class="handymenue" id="handymenue" aria-label="Menü" hidden><ul><li><a href="#leistungen">Leistungen</a></li><li><a href="#ablauf">Hausbesuch</a></li><li><a href="#tierarzt">Über mich</a></li><li><a href="#kontakt">Kontakt</a></li></ul></nav>
+  <nav class="handymenue" id="handymenue" aria-label="Menü" hidden><ul><li><a href="leistungen/">Leistungen</a></li><li><a href="#ablauf">Hausbesuch</a></li><li><a href="#tierarzt">Über mich</a></li><li><a href="ratgeber/">Ratgeber</a></li><li><a href="#kontakt">Kontakt</a></li></ul></nav>
 </header>
 <main id="inhalt">
 
@@ -58,7 +58,7 @@
         <div class="vorauswahl__gruppe tier-anderes" hidden>
           <label class="feld__label" for="tier-anderes">Welches Tier?</label>
           <input class="feld feld--kurz" id="tier-anderes" name="tier_anderes" type="text" maxlength="60" autocomplete="off" aria-describedby="tier-anderes-hinweis" disabled>
-          <p class="feld__hinweis" id="tier-anderes-hinweis">Zum Beispiel: Kaninchen, Meerschweinchen</p>
+          <p class="feld__hinweis" id="tier-anderes-hinweis">Zum Beispiel Kaninchen oder Meerschweinchen. Andere Kleintiere behandle ich nach Absprache.</p>
         </div>
         <div class="vorauswahl__gruppe">
           <label class="feld__label" for="anlass">Worum geht es?</label>
@@ -89,6 +89,7 @@
       <p class="einsatz__satz">Mein Schwerpunkt ist das Stadtgebiet Mannheim. Ich fahre auch nach Ludwigshafen, Heidelberg, Karlsruhe, Speyer, Schwetzingen, Weinheim, Worms und in die Orte dazwischen.</p>
       <div class="orte" role="group" aria-label="Orte im Einsatzgebiet">
         <ul class="orte__stufe orte__stufe--1"><li>Mannheim</li></ul>
+        <ul class="orte__stufe orte__stufe--stadtteile"><li>Innenstadt</li><li>Jungbusch</li><li>Neckarstadt</li><li>Lindenhof</li><li>Neckarau</li><li>Almenhof</li><li>Rheinau</li><li>Schwetzingerstadt</li><li>Oststadt</li><li>Neuostheim</li><li>Seckenheim</li><li>Friedrichsfeld</li><li>Feudenheim</li><li>Käfertal</li><li>Vogelstang</li><li>Wallstadt</li><li>Waldhof</li><li>Gartenstadt</li><li>Schönau</li><li>Sandhofen</li></ul>
         <ul class="orte__stufe orte__stufe--2"><li>Ludwigshafen</li><li>Heidelberg</li><li>Schwetzingen</li><li>Viernheim</li><li>Weinheim</li><li>Speyer</li></ul>
         <ul class="orte__stufe orte__stufe--3"><li>Karlsruhe</li><li>Worms</li><li>Neustadt</li><li>Bad Dürkheim</li><li>Hockenheim</li><li>Haßloch</li></ul>
         <ul class="orte__stufe orte__stufe--4"><li>Altrip</li><li>Neuhofen</li><li>Limburgerhof</li><li>Mutterstadt</li><li>Dannstadt</li><li>Fußgönheim</li><li>Ketsch</li><li>Otterstadt</li><li>Waldsee</li><li>Böhl-Iggelheim</li><li>Hochdorf-Assenheim</li><li>Rödersheim-Gronau</li><li>Römerberg</li><li>Dudenhofen</li><li>Neulußheim</li><li>Germersheim</li><li>Lingenfeld</li><li>Alzey</li></ul>
@@ -149,6 +150,7 @@
         <li class="dienst einblenden">
           <h3 class="dienst__titel">Akutversorgung und Stabilisierung</h3>
           <p class="dienst__satz">Bei Atemnot, Vergiftung oder Kreislaufproblemen untersuche ich Ihr Tier sofort, stabilisiere es und lindere den Schmerz.</p>
+          <a class="dienst__mehr" href="leistungen/akutversorgung/">Mehr dazu<span class="unsichtbar">: Akutversorgung und Stabilisierung</span><span class="pfeil" aria-hidden="true"></span></a>
         </li>
         <li class="dienst einblenden">
           <h3 class="dienst__titel">Durchfall und Erbrechen</h3>
@@ -158,6 +160,7 @@
         <li class="dienst einblenden">
           <h3 class="dienst__titel">Schmerzbehandlung</h3>
           <p class="dienst__satz">Ich behandle akute und chronische Schmerzen mit Medikamenten aus meiner tierärztlichen Apotheke.</p>
+          <a class="dienst__mehr" href="leistungen/schmerzbehandlung/">Mehr dazu<span class="unsichtbar">: Schmerzbehandlung</span><span class="pfeil" aria-hidden="true"></span></a>
         </li>
       </ul>
       <h3 class="leistungen__weitere-titel einblenden">Weitere Leistungen</h3>
@@ -165,37 +168,43 @@
         <li>
           <details class="dienst-kurz">
             <summary><span class="dienst-kurz__titel">Bisswunden und Verletzungen</span><span class="frage__zeichen" aria-hidden="true"></span></summary>
-            <div class="dienst-kurz__text"><p>Ich reinige und versorge die Wunde bei Ihnen zu Hause.</p></div>
+            <div class="dienst-kurz__text"><p>Ich reinige und versorge die Wunde bei Ihnen zu Hause.</p>
+          <a class="dienst__mehr" href="leistungen/bisswunden-verletzungen/">Mehr dazu<span class="unsichtbar">: Bisswunden und Verletzungen</span><span class="pfeil" aria-hidden="true"></span></a></div>
           </details>
         </li>
         <li>
           <details class="dienst-kurz">
             <summary><span class="dienst-kurz__titel">Ohrenentzündungen</span><span class="frage__zeichen" aria-hidden="true"></span></summary>
-            <div class="dienst-kurz__text"><p>Kratzt sich Ihr Hund ständig am Ohr oder schüttelt den Kopf, sehe ich mir das in Ruhe an.</p></div>
+            <div class="dienst-kurz__text"><p>Kratzt sich Ihr Hund ständig am Ohr oder schüttelt den Kopf, sehe ich mir das in Ruhe an.</p>
+          <a class="dienst__mehr" href="leistungen/ohrenentzuendungen/">Mehr dazu<span class="unsichtbar">: Ohrenentzündungen</span><span class="pfeil" aria-hidden="true"></span></a></div>
           </details>
         </li>
         <li>
           <details class="dienst-kurz">
             <summary><span class="dienst-kurz__titel">Augen und Bindehaut</span><span class="frage__zeichen" aria-hidden="true"></span></summary>
-            <div class="dienst-kurz__text"><p>Rote, tränende oder verklebte Augen untersuche und behandle ich vor Ort.</p></div>
+            <div class="dienst-kurz__text"><p>Rote, tränende oder verklebte Augen untersuche und behandle ich vor Ort.</p>
+          <a class="dienst__mehr" href="leistungen/augen-bindehaut/">Mehr dazu<span class="unsichtbar">: Augen und Bindehaut</span><span class="pfeil" aria-hidden="true"></span></a></div>
           </details>
         </li>
         <li>
           <details class="dienst-kurz">
             <summary><span class="dienst-kurz__titel">Blase und Harnwege</span><span class="frage__zeichen" aria-hidden="true"></span></summary>
-            <div class="dienst-kurz__text"><p>Muss Ihr Tier ständig oder unter Schmerzen Wasser lassen, kläre ich die Ursache und behandle die Entzündung.</p></div>
+            <div class="dienst-kurz__text"><p>Muss Ihr Tier ständig oder unter Schmerzen Wasser lassen, kläre ich die Ursache und behandle die Entzündung.</p>
+          <a class="dienst__mehr" href="leistungen/blase-harnwege/">Mehr dazu<span class="unsichtbar">: Blase und Harnwege</span><span class="pfeil" aria-hidden="true"></span></a></div>
           </details>
         </li>
         <li>
           <details class="dienst-kurz">
             <summary><span class="dienst-kurz__titel">Infektionen und Infusionen</span><span class="frage__zeichen" aria-hidden="true"></span></summary>
-            <div class="dienst-kurz__text"><p>Antibiotika und Infusionen gebe ich bei Ihnen zu Hause, wenn Ihr Tier sie braucht.</p></div>
+            <div class="dienst-kurz__text"><p>Antibiotika und Infusionen gebe ich bei Ihnen zu Hause, wenn Ihr Tier sie braucht.</p>
+          <a class="dienst__mehr" href="leistungen/infektionen-infusionen/">Mehr dazu<span class="unsichtbar">: Infektionen und Infusionen</span><span class="pfeil" aria-hidden="true"></span></a></div>
           </details>
         </li>
         <li>
           <details class="dienst-kurz">
             <summary><span class="dienst-kurz__titel">Lahmheit und Bewegung</span><span class="frage__zeichen" aria-hidden="true"></span></summary>
-            <div class="dienst-kurz__text"><p>Ich finde heraus, wo es weh tut, und lindere den Schmerz, auch wenn er schon länger besteht.</p></div>
+            <div class="dienst-kurz__text"><p>Ich finde heraus, wo es weh tut, und lindere den Schmerz, auch wenn er schon länger besteht.</p>
+          <a class="dienst__mehr" href="leistungen/lahmheit-bewegung/">Mehr dazu<span class="unsichtbar">: Lahmheit und Bewegung</span><span class="pfeil" aria-hidden="true"></span></a></div>
           </details>
         </li>
         <li>
@@ -233,43 +242,101 @@
     <p class="kosten__satz einblenden">Ich rechne nach der Gebührenordnung für Tierärzte ab. Vorab erstelle ich Ihnen einen Kostenvoranschlag.</p>
     <dl class="kosten__liste einblenden">
         <div class="kosten__zeile"><dt>Hausbesuch, Untersuchung und Behandlung</dt><dd>nach GOT</dd></div>
+        <div class="kosten__zeile"><dt>Anfahrt außerhalb Mannheims</dt><dd><span class="fehlt">[FEHLT: Angabe]</span></dd></div>
         <div class="kosten__zeile"><dt>Nach 18 Uhr, am Wochenende und an Feiertagen</dt><dd>Zuschlag nach GOT</dd></div>
         <div class="kosten__zeile"><dt>Bezahlen</dt><dd>bar, EC-Karte oder Rechnung</dd></div>
         <div class="kosten__zeile"><dt>Absagen</dt><dd>bis 24 Stunden vorher ohne Gebühr</dd></div>
     </dl>
   </section>
 
+  <section class="ratgeber" id="ratgeber" aria-labelledby="ratgeber-titel">
+    <div class="ratgeber__kopf einblenden">
+      <h2 id="ratgeber-titel">Ratgeber</h2>
+      <p>Was Sie als Halter von Hund und Katze wissen sollten, bevor es ernst wird.</p>
+      <a class="textlink" href="ratgeber/">Alle Artikel</a>
+    </div>
+    <ul class="ratgeber__liste einblenden">
+        <li class="ratgeber__eintrag">
+          <a class="ratgeber__link" href="ratgeber/giftig-fuer-hunde/"><span class="ratgeber__titel">Giftig für Hunde: Was im Haushalt gefährlich ist</span><span class="pfeil" aria-hidden="true"></span></a>
+          <p class="ratgeber__satz">Schokolade, Trauben, Birkenzucker und Medikamente: was Ihr Hund nie fressen darf. <span class="ratgeber__zeit">2 Min.</span></p>
+        </li>
+        <li class="ratgeber__eintrag">
+          <a class="ratgeber__link" href="ratgeber/schmerzen-erkennen/"><span class="ratgeber__titel">Schmerzen bei Hund und Katze erkennen</span><span class="pfeil" aria-hidden="true"></span></a>
+          <p class="ratgeber__satz">Woran Sie merken, dass Ihr Tier Schmerzen hat, obwohl es nicht jammert. <span class="ratgeber__zeit">1 Min.</span></p>
+        </li>
+        <li class="ratgeber__eintrag">
+          <a class="ratgeber__link" href="ratgeber/warnzeichen-notfall/"><span class="ratgeber__titel">Warnzeichen: Wann Ihr Tier sofort Hilfe braucht</span><span class="pfeil" aria-hidden="true"></span></a>
+          <p class="ratgeber__satz">Diese Zeichen bedeuten bei Hund und Katze: nicht bis morgen warten. <span class="ratgeber__zeit">2 Min.</span></p>
+        </li>
+    </ul>
+  </section>
+
   <section class="fragen" id="fragen" aria-labelledby="fragen-titel">
     <h2 id="fragen-titel" class="einblenden">Häufige Fragen</h2>
-    <div class="fragen__liste einblenden">
+      <div class="fragen__gruppe einblenden">
+        <h3 class="fragen__thema">Termin</h3>
+        <div class="fragen__liste">
         <details class="frage">
           <summary><span class="frage__text">Wie vereinbare ich einen Termin?</span><span class="frage__zeichen" aria-hidden="true"></span></summary>
           <div class="frage__antwort"><p>Rufen Sie an, schreiben Sie per WhatsApp oder nutzen Sie die Terminanfrage auf dieser Seite. Ich melde mich so schnell wie möglich und wir finden einen Termin.</p></div>
         </details>
         <details class="frage">
-          <summary><span class="frage__text">Bieten Sie Notfallbehandlungen an?</span><span class="frage__zeichen" aria-hidden="true"></span></summary>
-          <div class="frage__antwort"><p>Ja, innerhalb meiner Zeiten versorge ich akute Erkrankungen und Verletzungen bei Ihnen zu Hause. Eine 24-Stunden-Versorgung biete ich nicht an. In Lebensgefahr fahren Sie bitte direkt in die nächste Tierklinik.</p></div>
+          <summary><span class="frage__text">Wie kurzfristig bekomme ich einen Termin?</span><span class="frage__zeichen" aria-hidden="true"></span></summary>
+          <div class="frage__antwort"><p>Rufen Sie an, dann sagt Ihnen mein Team, wann ich bei Ihnen sein kann. Bei akuten Beschwerden komme ich innerhalb meiner Zeiten so schnell wie möglich. <span class="fehlt">[FEHLT: übliche Wartezeit von Herrn Al Saeed]</span></p></div>
         </details>
         <details class="frage">
           <summary><span class="frage__text">Kommen Sie auch am Wochenende?</span><span class="frage__zeichen" aria-hidden="true"></span></summary>
           <div class="frage__antwort"><p>Ja, nach Vereinbarung am Samstag und in Ausnahmefällen am Sonntag. Am Wochenende fällt ein Zuschlag an.</p></div>
         </details>
         <details class="frage">
-          <summary><span class="frage__text">Können Sie operieren?</span><span class="frage__zeichen" aria-hidden="true"></span></summary>
-          <div class="frage__antwort"><p>Größere Operationen sind mobil nicht möglich, dafür braucht Ihr Tier eine Klinik. Ich vermittle Sie an eine geeignete Klinik in Mannheim und übernehme die Vor- und Nachsorge.</p></div>
+          <summary><span class="frage__text">Kann ich einen Termin absagen?</span><span class="frage__zeichen" aria-hidden="true"></span></summary>
+          <div class="frage__antwort"><p>Ja. Sagen Sie bitte bis 24 Stunden vorher ab. Bei einer späteren Absage berechne ich bis zur Hälfte der Hausbesuchsgebühr.</p></div>
+        </details>
+        </div>
+      </div>
+      <div class="fragen__gruppe einblenden">
+        <h3 class="fragen__thema">Behandlung</h3>
+        <div class="fragen__liste">
+        <details class="frage">
+          <summary><span class="frage__text">Bieten Sie Notfallbehandlungen an?</span><span class="frage__zeichen" aria-hidden="true"></span></summary>
+          <div class="frage__antwort"><p>Ja, innerhalb meiner Zeiten versorge ich akute Erkrankungen und Verletzungen bei Ihnen zu Hause. Eine 24-Stunden-Versorgung biete ich nicht an. In Lebensgefahr fahren Sie bitte direkt in die nächste Tierklinik.</p></div>
         </details>
         <details class="frage">
-          <summary><span class="frage__text">Wie bezahle ich, und zahlt meine Versicherung?</span><span class="frage__zeichen" aria-hidden="true"></span></summary>
-          <div class="frage__antwort"><p>Sie zahlen bar, mit EC-Karte oder auf Rechnung. Die Rechnung bekommen Sie direkt nach der Behandlung per E-Mail. Viele Tierkrankenversicherungen erstatten die Behandlung, wie viel, hängt von Ihrem Tarif ab.</p></div>
+          <summary><span class="frage__text">Können Sie operieren?</span><span class="frage__zeichen" aria-hidden="true"></span></summary>
+          <div class="frage__antwort"><p>Größere Operationen sind mobil nicht möglich, dafür braucht Ihr Tier eine Klinik. Ich vermittle Sie an eine geeignete Klinik in Mannheim und übernehme die Vor- und Nachsorge.</p></div>
         </details>
         <details class="frage">
           <summary><span class="frage__text">Welche Tiere behandeln Sie?</span><span class="frage__zeichen" aria-hidden="true"></span></summary>
           <div class="frage__antwort"><p>Vor allem Hunde und Katzen. Bei Kaninchen, Meerschweinchen und anderen Kleintieren rufen Sie mich bitte vorher an, dann besprechen wir, was möglich ist.</p></div>
         </details>
+        </div>
+      </div>
+      <div class="fragen__gruppe einblenden">
+        <h3 class="fragen__thema">Abrechnung</h3>
+        <div class="fragen__liste">
         <details class="frage">
-          <summary><span class="frage__text">Kann ich einen Termin absagen?</span><span class="frage__zeichen" aria-hidden="true"></span></summary>
-          <div class="frage__antwort"><p>Ja. Sagen Sie bitte bis 24 Stunden vorher ab. Bei einer späteren Absage berechne ich bis zur Hälfte der Hausbesuchsgebühr.</p></div>
+          <summary><span class="frage__text">Wie bezahle ich, und zahlt meine Versicherung?</span><span class="frage__zeichen" aria-hidden="true"></span></summary>
+          <div class="frage__antwort"><p>Sie zahlen bar, mit EC-Karte oder auf Rechnung. Die Rechnung bekommen Sie direkt nach der Behandlung per E-Mail. Viele Tierkrankenversicherungen erstatten die Behandlung, wie viel, hängt von Ihrem Tarif ab.</p></div>
         </details>
+        <details class="frage">
+          <summary><span class="frage__text">Berechnen Sie die Anfahrt?</span><span class="frage__zeichen" aria-hidden="true"></span></summary>
+          <div class="frage__antwort"><p><span class="fehlt">[FEHLT: Anfahrt im Stadtgebiet Mannheim inklusive? Pauschale außerhalb? Angabe von Herrn Al Saeed]</span></p></div>
+        </details>
+        </div>
+      </div>
+      <div class="fragen__gruppe einblenden">
+        <h3 class="fragen__thema">Einsatzgebiet</h3>
+        <div class="fragen__liste">
+        <details class="frage">
+          <summary><span class="frage__text">Wie finde ich heraus, ob Sie zu mir kommen?</span><span class="frage__zeichen" aria-hidden="true"></span></summary>
+          <div class="frage__antwort"><p>Geben Sie oben unter „Wohin ich komme“ Ihre Postleitzahl ein. Steht Ihr Ort nicht auf der Liste, rufen Sie an, dann klären wir es.</p></div>
+        </details>
+        </div>
+      </div>
+    <div class="fragen__nicht-dabei einblenden">
+      <h3>Ihre Frage war nicht dabei?</h3>
+      <p>Rufen Sie an oder schreiben Sie per WhatsApp: <span class="fehlt">[FEHLT: Nummer]</span>. Mein Team beantwortet Ihre Frage direkt.</p>
+      <p class="fragen__nummer"><a class="nummer" href="tel:+496210000000"><span class="fehlt" title="FEHLT: neue Telefonnummer">0621 000 00 00</span></a></p>
     </div>
   </section>
 

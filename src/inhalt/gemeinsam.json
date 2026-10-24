@@ -15,48 +15,101 @@
     {
       "titel": "Akutversorgung und Stabilisierung",
       "satz": "Bei Atemnot, Vergiftung oder Kreislaufproblemen untersuche ich Ihr Tier sofort, stabilisiere es und lindere den Schmerz.",
-      "foto": "hund-teppich"
+      "foto": "hund-teppich",
+      "seite": "leistungen/akutversorgung/",
+      "anzeichen": [
+        "Atemnot",
+        "Vergiftung",
+        "Kreislaufschwäche"
+      ]
     },
     {
       "titel": "Durchfall und Erbrechen",
       "satz": "Ich untersuche Ihr Tier, suche die Ursache und gebe ihm Flüssigkeit, wenn es sie braucht.",
       "foto": "katze-unter-decke",
-      "seite": "leistungen/durchfall-erbrechen/"
+      "seite": "leistungen/durchfall-erbrechen/",
+      "anzeichen": [
+        "Erbricht",
+        "Wässriger Kot",
+        "Frisst nicht"
+      ]
     },
     {
       "titel": "Schmerzbehandlung",
       "satz": "Ich behandle akute und chronische Schmerzen mit Medikamenten aus meiner tierärztlichen Apotheke.",
-      "foto": "hund-boden2"
+      "foto": "hund-boden2",
+      "seite": "leistungen/schmerzbehandlung/",
+      "anzeichen": [
+        "Zieht sich zurück",
+        "Frisst schlechter",
+        "Leckt eine Stelle"
+      ]
     },
     {
       "titel": "Bisswunden und Verletzungen",
       "satz": "Ich reinige und versorge die Wunde bei Ihnen zu Hause.",
-      "foto": "hund-teppich"
+      "foto": "hund-teppich",
+      "seite": "leistungen/bisswunden-verletzungen/",
+      "anzeichen": [
+        "Blutet",
+        "Leckt die Wunde",
+        "Schwellung"
+      ]
     },
     {
       "titel": "Ohrenentzündungen",
       "satz": "Kratzt sich Ihr Hund ständig am Ohr oder schüttelt den Kopf, sehe ich mir das in Ruhe an.",
-      "foto": "katze-sofa"
+      "foto": "katze-sofa",
+      "seite": "leistungen/ohrenentzuendungen/",
+      "anzeichen": [
+        "Kopfschütteln",
+        "Kratzen am Ohr",
+        "Geruch"
+      ]
     },
     {
       "titel": "Augen und Bindehaut",
       "satz": "Rote, tränende oder verklebte Augen untersuche und behandle ich vor Ort.",
-      "foto": "katze-sofa"
+      "foto": "katze-sofa",
+      "seite": "leistungen/augen-bindehaut/",
+      "anzeichen": [
+        "Rote Augen",
+        "Tränen",
+        "Zukneifen"
+      ]
     },
     {
       "titel": "Blase und Harnwege",
       "satz": "Muss Ihr Tier ständig oder unter Schmerzen Wasser lassen, kläre ich die Ursache und behandle die Entzündung.",
-      "foto": "katze-grau-fenster"
+      "foto": "katze-grau-fenster",
+      "seite": "leistungen/blase-harnwege/",
+      "anzeichen": [
+        "Häufiger Harndrang",
+        "Blut im Urin",
+        "Pressen"
+      ]
     },
     {
       "titel": "Infektionen und Infusionen",
       "satz": "Antibiotika und Infusionen gebe ich bei Ihnen zu Hause, wenn Ihr Tier sie braucht.",
-      "foto": "katze-unter-decke"
+      "foto": "katze-unter-decke",
+      "seite": "leistungen/infektionen-infusionen/",
+      "anzeichen": [
+        "Fieber",
+        "Mattigkeit",
+        "Trinkt wenig"
+      ]
     },
     {
       "titel": "Lahmheit und Bewegung",
       "satz": "Ich finde heraus, wo es weh tut, und lindere den Schmerz, auch wenn er schon länger besteht.",
-      "foto": "hund-boden2"
+      "foto": "hund-boden2",
+      "seite": "leistungen/lahmheit-bewegung/",
+      "anzeichen": [
+        "Humpeln",
+        "Steifer Gang",
+        "Springt nicht mehr"
+      ]
     },
     {
       "titel": "Abschied zu Hause",

@@ -1,0 +1,49 @@
+{
+  "slug": "schmerzen-erkennen",
+  "titel": "Schmerzen bei Hund und Katze erkennen",
+  "kurz": "Woran Sie merken, dass Ihr Tier Schmerzen hat, obwohl es nicht jammert.",
+  "datum": "2026-10-24",
+  "leistung": "leistungen/schmerzbehandlung/",
+  "leistung_titel": "Schmerzbehandlung",
+  "einleitung": "Hunde und Katzen jammern selten. Schmerzen zu zeigen macht ein Tier verletzlich, deshalb verstecken sie ihn. Sie erkennen ihn trotzdem, an kleinen Veränderungen im Alltag.",
+  "abschnitte": [
+    {
+      "titel": "Bei der Katze",
+      "liste": [
+        "Sie zieht sich zurück, versteckt sich oder kommt nicht mehr zur Begrüßung.",
+        "Sie springt nicht mehr auf Fensterbank, Sofa oder Kratzbaum.",
+        "Sie putzt sich weniger, oder sie leckt immer wieder dieselbe Stelle.",
+        "Sie geht nicht mehr ins Katzenklo oder macht daneben.",
+        "Ihr Gesicht wirkt angespannt: Augen zusammengekniffen, Ohren nach außen gedreht, Kopf tiefer als sonst.",
+        "Sie schnurrt. Auch das kann ein Zeichen sein, Katzen schnurren zur Beruhigung."
+      ]
+    },
+    {
+      "titel": "Beim Hund",
+      "liste": [
+        "Er hechelt, obwohl es nicht warm ist und er sich nicht bewegt hat.",
+        "Er ist unruhig, steht immer wieder auf oder findet keine Liegeposition.",
+        "Er krümmt den Rücken oder streckt die Vorderbeine nach vorn und den Po in die Höhe. Diese Haltung zeigt oft Bauchschmerzen.",
+        "Er humpelt, steht schwer auf oder will nicht mehr Treppen steigen.",
+        "Er knurrt oder schnappt, wenn Sie eine bestimmte Stelle berühren.",
+        "Er frisst langsamer oder lässt harte Kauartikel liegen."
+      ]
+    },
+    {
+      "titel": "Wenn es heißt: Er wird halt alt",
+      "absaetze": [
+        "Ein älterer Hund, der langsamer aufsteht, und eine Katze, die nicht mehr springt, haben oft Arthrose. Das ist kein normales Altern, sondern ein Schmerz, der sich gut behandeln lässt. Viele Tiere werden nach einigen Tagen mit dem richtigen Schmerzmittel wieder sichtbar munterer."
+      ]
+    },
+    {
+      "titel": "Was Sie tun",
+      "liste": [
+        "Geben Sie kein Schmerzmittel aus Ihrer Hausapotheke. Ibuprofen, Diclofenac und Paracetamol sind für Hunde und Katzen giftig.",
+        "Schreiben Sie auf, wann Ihnen die Veränderung auffällt, und filmen Sie Ihr Tier beim Laufen oder Aufstehen.",
+        "Rufen Sie an. Zu Hause sehe ich, wie sich Ihr Tier wirklich bewegt, und finde die Ursache leichter als auf einem Behandlungstisch."
+      ]
+    }
+  ],
+  "lesezeit": 1,
+  "freigabe": "[FEHLT: fachliche Freigabe des Artikels durch Herrn Al Saeed]"
+}

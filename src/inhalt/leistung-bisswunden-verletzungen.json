@@ -1,0 +1,71 @@
+{
+  "pfad": "leistungen/bisswunden-verletzungen/",
+  "seitentitel": "Bisswunden und Verletzungen bei Hund und Katze · Hausbesuch in Mannheim und Umgebung",
+  "beschreibung": "Eine Bisswunde sieht von außen oft klein aus. Tierärztliche Behandlung bei Ihnen zu Hause in Mannheim, Ludwigshafen, Heidelberg und Umgebung.",
+  "brotkrumen": "Leistungen",
+  "titel": "Bisswunden und Verletzungen",
+  "einleitung": "Eine Bisswunde sieht von außen oft klein aus. Unter der Haut ist der Schaden größer, und Keime aus dem Maul des anderen Tieres entzünden die Wunde schnell. Ich reinige und versorge die Verletzung bei Ihnen zu Hause.",
+  "foto": "hund-boden",
+  "foto_alt": "Ein heller Hund liegt neben einer Tonvase auf dem Boden.",
+  "anzeichen": [
+    "Blutet",
+    "Leckt die Wunde",
+    "Schwellung"
+  ],
+  "sofort": {
+    "titel": "Wann Sie sofort anrufen",
+    "satz": "Bei einer Bisswunde lohnt sich der Anruf noch am selben Tag.",
+    "liste": [
+      "Die Wunde blutet stark oder hört nach zehn Minuten nicht auf zu bluten.",
+      "Der Biss sitzt am Hals, an der Brust, am Bauch oder in der Nähe der Augen.",
+      "Ihre Katze hat eine Beule, die warm ist und weh tut. Das ist oft ein Abszess nach einem Biss.",
+      "Ihr Tier humpelt nach dem Biss oder lässt sich nicht anfassen."
+    ],
+    "klinik_titel": "Wenn der Biss in die Brust oder den Bauch geht",
+    "klinik": "Ist die Wunde an Brust oder Bauch tief oder atmet Ihr Tier danach schwer, fahren Sie bitte sofort in die nächste Tierklinik. Dort lässt sich prüfen, ob innere Organe verletzt sind."
+  },
+  "besuch": {
+    "titel": "Was ich bei Ihnen mache",
+    "absaetze": [
+      "Ich schere das Fell rund um die Wunde, damit ich sehe, wie tief sie geht. Bei kleinen Wunden ist das oft schon die halbe Diagnose.",
+      "Dann spüle und desinfiziere ich die Wunde gründlich. Damit Ihr Tier dabei ruhig bleibt, bekommt es ein Schmerzmittel und, wenn nötig, ein Beruhigungsmittel.",
+      "Bisswunden behandle ich in der Regel mit einem Antibiotikum, weil sie sich häufig entzünden. Kleine Wunden versorge ich vor Ort, einen Abszess öffne und spüle ich.",
+      "Nach zwei bis drei Tagen sehe ich mir die Wunde noch einmal an."
+    ],
+    "klinik": "Muss eine große Wunde in Narkose genäht werden, organisiere ich die Überweisung an eine Klinik in Mannheim und übernehme die Nachsorge zu Hause."
+  },
+  "vorher": {
+    "titel": "Bis ich bei Ihnen bin",
+    "liste": [
+      "Drücken Sie bei starker Blutung ein sauberes Tuch auf die Wunde und halten Sie den Druck.",
+      "Lassen Sie Ihr Tier die Wunde nicht lecken. Ein altes T-Shirt oder ein Halskragen hilft.",
+      "Geben Sie keine Salben und keine Desinfektionsmittel aus dem Haushalt in die Wunde.",
+      "Wurde Ihr Tier von einem fremden Tier gebissen, notieren Sie, wann und wo das war."
+    ]
+  },
+  "kosten": {
+    "titel": "Was auf Sie zukommt",
+    "satz": "Ich rechne nach der Gebührenordnung für Tierärzte ab, dazu kommt die Hausbesuchsgebühr. Bevor ich behandle, sage ich Ihnen, womit Sie rechnen müssen.",
+    "link": "Alles zur Abrechnung"
+  },
+  "fragen": {
+    "titel": "Häufige Fragen",
+    "liste": [
+      {
+        "f": "Muss jede Bisswunde behandelt werden?",
+        "a": "Ja, auch kleine. Gerade bei Katzen entsteht aus einem kleinen Biss innerhalb von zwei, drei Tagen ein Abszess. Je früher ich die Wunde reinige, desto kürzer ist die Behandlung."
+      },
+      {
+        "f": "Braucht mein Tier einen Halskragen?",
+        "a": "Wenn es an die Wunde kommt, ja. Lecken hält die Wunde feucht und bringt neue Keime hinein."
+      }
+    ]
+  },
+  "abschluss": {
+    "titel": "Ich komme zu Ihnen nach Hause.",
+    "satz": "Rufen Sie an oder fragen Sie einen Termin an. Mein Team meldet sich so schnell wie möglich und macht mit Ihnen eine Uhrzeit aus.",
+    "anlass": "Bisswunden und Verletzungen"
+  },
+  "weitere_titel": "Weitere Leistungen",
+  "freigabe": "[FEHLT: fachliche Freigabe der Texte durch Herrn Al Saeed]"
+}

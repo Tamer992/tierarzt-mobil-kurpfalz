@@ -17,7 +17,7 @@
   },
   "felder": {
     "tier": { "label": "Für wen ist der Termin?", "fehler": "Bitte wählen Sie aus, für wen der Termin ist." },
-    "tier_anderes": { "label": "Welches Tier?", "hinweis": "Zum Beispiel: Kaninchen, Meerschweinchen", "fehler": "Bitte schreiben Sie, um welches Tier es geht." },
+    "tier_anderes": { "label": "Welches Tier?", "hinweis": "Zum Beispiel Kaninchen oder Meerschweinchen. Andere Kleintiere behandle ich nach Absprache.", "fehler": "Bitte schreiben Sie, um welches Tier es geht." },
     "tier_name": { "label": "Wie heißt Ihr Tier?" },
     "tier_alter": { "label": "Wie alt ist es?", "hinweis": "Zum Beispiel: 9 Jahre" },
     "anlass": { "label": "Worum geht es?", "fehler": "Bitte wählen Sie aus, worum es geht." },

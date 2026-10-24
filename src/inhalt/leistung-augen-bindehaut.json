@@ -1,0 +1,70 @@
+{
+  "pfad": "leistungen/augen-bindehaut/",
+  "seitentitel": "Augen und Bindehaut bei Hund und Katze · Hausbesuch in Mannheim und Umgebung",
+  "beschreibung": "Rote, tränende oder verklebte Augen sind für Ihr Tier unangenehm, und manche Augenerkrankungen gehen schnell aufs Sehen. Tierärztliche Behandlung bei Ihnen zu Hause in Mannheim, Ludwigshafen, Heidelberg und Umgebung.",
+  "brotkrumen": "Leistungen",
+  "titel": "Augen und Bindehaut",
+  "einleitung": "Rote, tränende oder verklebte Augen sind für Ihr Tier unangenehm, und manche Augenerkrankungen gehen schnell aufs Sehen. Ich untersuche die Augen bei Ihnen zu Hause und behandle die Ursache.",
+  "foto": "katze-grau-fenster",
+  "foto_alt": "Eine graue Katze sitzt auf der Fensterbank und schaut hinaus.",
+  "anzeichen": [
+    "Rote Augen",
+    "Tränen",
+    "Zukneifen"
+  ],
+  "sofort": {
+    "titel": "Wann Sie sofort anrufen",
+    "satz": "Beim Auge warten Sie bitte nicht bis morgen.",
+    "liste": [
+      "Ihr Tier kneift ein Auge fest zu oder reibt es ständig.",
+      "Das Auge ist plötzlich trüb, bläulich oder milchig.",
+      "Etwas steckt im Auge, oder Ihr Tier hat sich am Auge verletzt.",
+      "Die Pupillen sind unterschiedlich groß."
+    ],
+    "klinik_titel": "Wenn das Auge hervortritt",
+    "klinik": "Tritt das Auge aus der Augenhöhle hervor, legen Sie ein feuchtes, sauberes Tuch darauf und fahren Sie bitte sofort in die nächste Tierklinik."
+  },
+  "besuch": {
+    "titel": "Was ich bei Ihnen mache",
+    "absaetze": [
+      "Ich sehe mir beide Augen, die Lider und die Bindehaut genau an.",
+      "Mit einem Farbtest prüfe ich, ob die Hornhaut verletzt ist. Davon hängt ab, welche Augentropfen Ihr Tier bekommen darf.",
+      "Dann bekommt Ihr Tier passende Tropfen oder Salbe, und ich zeige Ihnen, wie Sie sie geben.",
+      "Nach einigen Tagen kontrolliere ich, ob das Auge heilt."
+    ],
+    "klinik": "Braucht Ihr Tier eine Messung des Augeninnendrucks oder einen Eingriff am Auge, überweise ich es an eine tierärztliche Augenpraxis oder Klinik."
+  },
+  "vorher": {
+    "titel": "Bis ich bei Ihnen bin",
+    "liste": [
+      "Geben Sie keine Augentropfen für Menschen und keine alten Tropfen aus dem Schrank. Bei einer Verletzung der Hornhaut schaden manche Wirkstoffe.",
+      "Wischen Sie verklebte Lider mit einem feuchten, sauberen Tuch von außen nach innen ab.",
+      "Halten Sie Ihr Tier davon ab, sich am Auge zu kratzen."
+    ]
+  },
+  "kosten": {
+    "titel": "Was auf Sie zukommt",
+    "satz": "Ich rechne nach der Gebührenordnung für Tierärzte ab, dazu kommt die Hausbesuchsgebühr. Bevor ich behandle, sage ich Ihnen, womit Sie rechnen müssen.",
+    "link": "Alles zur Abrechnung"
+  },
+  "fragen": {
+    "titel": "Häufige Fragen",
+    "liste": [
+      {
+        "f": "Ist eine Bindehautentzündung ansteckend?",
+        "a": "Das hängt von der Ursache ab. Bei Katzen stecken oft Viren dahinter, die andere Katzen im Haushalt anstecken. Ich sage Ihnen nach der Untersuchung, worauf Sie achten müssen."
+      },
+      {
+        "f": "Kann ich Kamillentee nehmen?",
+        "a": "Nein, bitte nicht. Kamille reizt das Auge zusätzlich. Ein Tuch mit klarem, abgekochtem Wasser reicht zum Säubern."
+      }
+    ]
+  },
+  "abschluss": {
+    "titel": "Ich komme zu Ihnen nach Hause.",
+    "satz": "Rufen Sie an oder fragen Sie einen Termin an. Mein Team meldet sich so schnell wie möglich und macht mit Ihnen eine Uhrzeit aus.",
+    "anlass": "Augen und Bindehaut"
+  },
+  "weitere_titel": "Weitere Leistungen",
+  "freigabe": "[FEHLT: fachliche Freigabe der Texte durch Herrn Al Saeed]"
+}
