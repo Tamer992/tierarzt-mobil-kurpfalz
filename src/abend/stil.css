@@ -37,7 +37,7 @@ h1, h2, h3 { margin: 0; font-weight: 600; }
 
 .sprung { position: absolute; left: 12px; top: -60px; z-index: 50; background: var(--licht); color: var(--nacht); padding: 10px 14px; text-decoration: none; font-weight: 600; }
 .sprung:focus { top: 12px; }
-.fehlt { font-family: var(--mono); font-size: .78em; background: rgba(219, 165, 100, .22); padding: 0 .3em; border-radius: 3px; }
+.fehlt { font-size: .8em; background: rgba(219, 165, 100, .22); padding: 0 .3em; border-radius: 3px; }
 .fehlt--block { display: table; margin-top: 8px; }
 .hell .fehlt { background: rgba(219, 165, 100, .35); }
 
@@ -47,7 +47,7 @@ h1, h2, h3 { margin: 0; font-weight: 600; }
 .untertitel { font-size: clamp(22px, 2vw, 28px); letter-spacing: -.02em; line-height: 1.2; }
 .einleitung { margin: 24px 0 0; max-width: 40ch; font-size: clamp(18px, 1.5vw, 21px); color: var(--asche); }
 .hell .einleitung { color: var(--stein); }
-.beschriftung { display: block; margin: 0 0 12px; font-family: var(--mono); font-size: 13px; font-weight: 400; letter-spacing: .1em; text-transform: uppercase; color: var(--asche); }
+.beschriftung { display: block; margin: 0 0 12px; font-size: 15px; font-weight: 500; color: var(--asche); }
 .hell .beschriftung { color: var(--stein); }
 .hinweis { margin: 10px 0 0; font-size: 15px; color: var(--asche); }
 .hell .hinweis { color: var(--stein); }
@@ -83,7 +83,7 @@ h1, h2, h3 { margin: 0; font-weight: 600; }
     linear-gradient(90deg, var(--nacht) 0%, rgba(20,17,14,.7) 16%, rgba(20,17,14,.2) 36%, rgba(20,17,14,0) 52%),
     linear-gradient(0deg, rgba(20,17,14,.9) 0%, rgba(20,17,14,0) 34%); }
 .start__text { padding: 0 var(--rand) clamp(120px, 17vh, 190px); max-width: 980px; }
-.start__marke { margin: 0 0 22px; font-family: var(--mono); font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--asche); }
+.start__marke { margin: 0 0 20px; font-size: 16px; color: var(--asche); }
 .start__titel { font-size: clamp(54px, 8.6vw, 136px); line-height: .94; letter-spacing: -.045em; }
 .start__titel span { display: block; }
 .start__satz { margin: 30px 0 0; max-width: 31ch; font-size: clamp(18px, 1.5vw, 21px); line-height: 1.5; opacity: .86; }
@@ -127,15 +127,15 @@ h1, h2, h3 { margin: 0; font-weight: 600; }
 /* 3 Wohin ich komme */
 .einsatz { padding: var(--abstand) var(--rand); text-align: center; }
 .einsatz__kopf .einleitung { margin-inline: auto; max-width: 52ch; }
-.plz { max-width: 640px; margin: 72px auto 0; text-align: center; }
-.plz__zeile { display: flex; gap: 14px; align-items: center; justify-content: center; border-bottom: 1px solid rgba(241, 235, 225, .35); padding-bottom: 14px; }
-.plz__feld { width: 6.2ch; min-width: 0; flex: 0 1 auto; background: transparent; border: 0; color: var(--licht); font: 300 clamp(56px, 8vw, 104px)/1 var(--mono); letter-spacing: -.02em; text-align: center; padding: 0; }
-.plz__feld::placeholder { color: rgba(241, 235, 225, .22); }
-.plz__feld:focus { outline: none; }
-.plz__zeile:focus-within { border-bottom-color: var(--licht); }
-.plz__feld[aria-invalid] { color: var(--lampe); }
+.plz { max-width: 520px; margin: 64px auto 0; text-align: left; }
+.plz__zeile { display: flex; gap: 10px; align-items: stretch; }
+.plz__feld { flex: 1 1 auto; min-width: 0; min-height: 60px; padding: 0 20px; border: 1px solid rgba(241, 235, 225, .3); border-radius: 999px; background: rgba(241, 235, 225, .06); color: var(--licht); font: 500 22px/1 var(--schrift); letter-spacing: .04em; }
+.plz__feld::placeholder { color: rgba(241, 235, 225, .4); }
+.plz__feld:focus { outline: none; border-color: var(--licht); background: rgba(241, 235, 225, .1); }
+.plz__feld[aria-invalid] { border-color: var(--lampe); }
+.plz__zeile .knopf { min-height: 60px; }
 .plz .hinweis { margin-top: 14px; }
-.plz__antwort { min-height: 1.6em; margin: 22px auto 0; max-width: 46ch; font-size: 19px; }
+.plz__antwort { min-height: 1.6em; margin: 18px 0 0; font-size: 18px; }
 .plz__antwort.ist-ja { color: var(--licht); }
 .plz__antwort.ist-ja::before { content: '✓ '; color: var(--lampe); }
 .plz__antwort.ist-nein, .plz__antwort.ist-fehler { color: var(--lampe); }
@@ -143,7 +143,7 @@ h1, h2, h3 { margin: 0; font-weight: 600; }
 .karte { max-width: 1100px; margin: clamp(80px, 10vw, 140px) auto 0; display: grid; gap: 18px; }
 .karte__stufe { margin: 0; display: flex; flex-wrap: wrap; justify-content: center; column-gap: .9em; row-gap: .2em; line-height: 1.1; }
 .karte__stufe--1 { font-size: clamp(64px, 11vw, 168px); font-weight: 600; letter-spacing: -.05em; }
-.karte__stufe--stadtteile { font-family: var(--mono); font-size: 13px; letter-spacing: .06em; color: var(--asche); max-width: 820px; margin: -4px auto 26px; column-gap: 1.4em; }
+.karte__stufe--stadtteile { font-size: 14px; color: var(--asche); max-width: 820px; margin: -4px auto 26px; column-gap: 1.4em; }
 .karte__stufe--2 { font-size: clamp(30px, 3.6vw, 52px); font-weight: 500; letter-spacing: -.03em; }
 .karte__stufe--3 { font-size: clamp(22px, 2.2vw, 30px); letter-spacing: -.02em; color: rgba(241, 235, 225, .82); }
 .karte__stufe--4 { font-size: 16px; color: var(--asche); max-width: 900px; margin: 8px auto 0; column-gap: 1.2em; }
@@ -190,7 +190,7 @@ h1, h2, h3 { margin: 0; font-weight: 600; }
 .tierarzt > * { max-width: 760px; }
 .tierarzt__portraet { justify-self: end; width: 100%; max-width: 480px; aspect-ratio: 4 / 5; border-radius: var(--rund); border: 1px solid var(--linie-hell); display: grid; place-content: center; gap: 10px; text-align: center; padding: 24px; background: linear-gradient(180deg, #ebe7df, #e3ded4); }
 .tierarzt__portraet small { color: var(--stein); font-size: 14px; max-width: 26ch; }
-.tierarzt__name { margin: 20px 0 28px; font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--stein); }
+.tierarzt__name { margin: 20px 0 28px; font-size: 16px; font-weight: 500; color: var(--stein); }
 .tierarzt__text > p:not(.tierarzt__name) { margin: 0 0 18px; max-width: 54ch; font-size: 19px; }
 .tierarzt__auto { margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--linie-hell); display: flex; gap: 18px; align-items: baseline; flex-wrap: wrap; }
 .tierarzt__auto p { margin: 0; color: var(--stein); font-size: 16px; max-width: 46ch; }
@@ -201,7 +201,7 @@ h1, h2, h3 { margin: 0; font-weight: 600; }
 .preise div { display: flex; justify-content: space-between; gap: 24px; padding: 22px 0; border-bottom: 1px solid var(--linie-dunkel); }
 .preise div:first-child { border-top: 1px solid var(--linie-dunkel); }
 .preise dt { font-size: 18px; }
-.preise dd { margin: 0; text-align: right; font-family: var(--mono); font-size: 15px; color: var(--asche); }
+.preise dd { margin: 0; text-align: right; font-size: 16px; color: var(--asche); }
 
 /* 9 Ratgeber */
 .ratgeber { padding: var(--abstand) var(--rand) 0; }
@@ -210,7 +210,7 @@ h1, h2, h3 { margin: 0; font-weight: 600; }
 .artikel figure { aspect-ratio: 4 / 3; border-radius: var(--rund); overflow: hidden; background: var(--nacht); }
 .artikel img { width: 100%; height: 100%; object-fit: cover; transition: transform 1200ms var(--kurve); }
 .artikel a:hover img { transform: scale(1.04); }
-.artikel__meta { margin: 20px 0 8px; font-family: var(--mono); font-size: 13px; color: var(--stein); }
+.artikel__meta { margin: 20px 0 8px; font-size: 14px; color: var(--stein); }
 .artikel h3 { font-size: 22px; letter-spacing: -.015em; line-height: 1.25; }
 
 /* 10 Häufige Fragen */
@@ -302,9 +302,7 @@ details p { margin: 0 0 22px; max-width: 56ch; color: var(--stein); }
   .uhr__zeit { font-size: 34px; }
   .vorauswahl { margin-top: 40px; }
   .wahl span { padding: 0 20px; }
-  .plz__zeile { flex-wrap: wrap; border-bottom: 0; padding-bottom: 0; }
-  .plz__feld { width: 100%; border-bottom: 1px solid rgba(241, 235, 225, .35); padding-bottom: 10px; }
-  .plz__zeile .knopf { width: 100%; }
+  .plz__zeile .knopf { padding: 0 22px; }
   .karte__stufe--1 { font-size: 64px; }
   .kachel a { min-height: 420px; }
   .kachel__text { padding: 24px; }
