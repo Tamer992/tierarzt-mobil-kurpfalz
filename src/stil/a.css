@@ -4,6 +4,9 @@
 @font-face { font-family: "Brygada 1918"; src: url("../schriften/Brygada1918.woff2") format("woff2"); font-weight: 400 700; font-display: swap; }
 @font-face { font-family: "Brygada 1918"; src: url("../schriften/Brygada1918-Italic.woff2") format("woff2"); font-weight: 400 700; font-style: italic; font-display: swap; }
 @font-face { font-family: "Albert Sans"; src: url("../schriften/AlbertSans.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+/* Ersatzschriften mit angeglichenen Maßen, damit beim Nachladen nichts springt (CLS 0) */
+@font-face { font-family: "Albert Sans Ersatz"; src: local("Arial"), local("Liberation Sans"), local("Helvetica"); size-adjust: 103.27%; ascent-override: 91.99%; descent-override: 24.21%; line-gap-override: 0%; }
+@font-face { font-family: "Brygada Ersatz"; src: local("Times New Roman"), local("Liberation Serif"), local("Times"); size-adjust: 115.4%; ascent-override: 79.72%; descent-override: 21.66%; line-gap-override: 0%; }
 
 :root {
   /* Farben: Grundfläche, Text, ein Akzent, abgeleitete Töne */
@@ -37,8 +40,8 @@
   --kurve-auftritt: cubic-bezier(0.16, 1, 0.3, 1);
   --zeit: 300ms;
 
-  --serif: "Brygada 1918", Georgia, serif;
-  --sans: "Albert Sans", system-ui, sans-serif;
+  --serif: "Brygada 1918", "Brygada Ersatz", Georgia, serif;
+  --sans: "Albert Sans", "Albert Sans Ersatz", system-ui, sans-serif;
 }
 @media (min-width: 900px) {
   :root { --s2: 1.1875rem; --s3: 1.4375rem; --s4: 1.75rem; --s5: 2.5rem; --s6: 3.375rem; --rand: 48px; --spalte-abstand: 24px; }
@@ -52,7 +55,9 @@ body {
   font-feature-settings: "kern"; text-rendering: optimizeLegibility;
 }
 img { display: block; max-width: 100%; height: auto; }
-button, input, select { font: inherit; color: inherit; }
+button, input, select, textarea { font: inherit; color: inherit; }
+input, select, textarea { caret-color: var(--akzent); accent-color: var(--akzent); }
+::selection { background: var(--akzent); color: var(--auf-akzent); }
 button { border: 0; }
 h1, h2, h3 { font-family: var(--serif); font-weight: 500; margin: 0; text-wrap: balance; }
 p { margin: 0; text-wrap: pretty; }
@@ -63,6 +68,7 @@ figure { margin: 0; }
 :focus-visible { outline: 3px solid var(--akzent); outline-offset: 3px; }
 .sprung { position: absolute; left: var(--rand); top: -100px; background: var(--text); color: var(--flaeche); padding: var(--a3) var(--a4); z-index: 30; }
 .sprung:focus { top: var(--a3); }
+.am-stueck { white-space: nowrap; }
 .unsichtbar { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .fehlt { background: var(--akzent-hell); color: var(--akzent-tief); padding: 0 0.2em; border-radius: 2px; }
 .hinweis-fehlt { grid-column: 1 / -1; font-size: var(--s1); color: var(--leise); margin-top: var(--a7); }
@@ -137,7 +143,7 @@ figure { margin: 0; }
   .start__bild img { object-position: 50% 30%; }
   .start__unten { max-width: var(--max); margin: 0 auto; padding: 0 var(--rand); display: grid; grid-template-columns: minmax(0, 880px) minmax(0, 1fr); column-gap: var(--a8); align-items: end; }
   .start__tafel { margin: -168px 0 0; padding: var(--a7) var(--a8) var(--a6) var(--a7); }
-  .kurzkosten { padding: 0 0 var(--a7); max-width: 340px; justify-self: end; }
+  .kurzkosten { padding: var(--a6) 0 var(--a7); max-width: 340px; justify-self: end; }
   .start h1 { line-height: 1.06; }
   /* optische Ausrichtung: Serif-Versal sitzt etwas eingerückt, Ausgleich am linken Rand */
   .start h1 { margin-left: -0.04em; }
@@ -364,6 +370,7 @@ section h2 { font-size: var(--s5); line-height: 1.12; }
 .fuss__nummer .nummer { font-size: var(--s3); }
 .zeiten { border-collapse: collapse; margin-top: var(--a3); font-size: var(--s1); }
 .zeiten caption { text-align: left; font-weight: 600; padding-bottom: var(--a2); }
+.zeiten th, .zeiten td { vertical-align: baseline; }
 .zeiten th { white-space: nowrap; text-align: left; font-weight: 400; color: var(--leise); padding: var(--a1) var(--a5) var(--a1) 0; }
 .zeiten td { font-variant-numeric: tabular-nums; padding: var(--a1) 0; }
 .fuss__links ul { display: flex; flex-wrap: wrap; gap: var(--a2) var(--a5); }
@@ -433,7 +440,7 @@ section h2 { font-size: var(--s5); line-height: 1.12; }
 .sofort__kopf p { margin-top: var(--a3); color: var(--leise); max-width: 26em; }
 .sofort__kopf .sofort__nummer { margin-top: var(--a5); color: var(--text); }
 .sofort__nummer .nummer { font-size: var(--s4); }
-.klinikhinweis { border-left: 4px solid var(--text); padding: var(--a1) 0 var(--a1) var(--a5); max-width: 46rem; }
+.klinikhinweis { border-top: 2px solid var(--text); padding: var(--a5) 0 0; max-width: 46rem; }
 .klinikhinweis h3 { font-size: var(--s3); line-height: 1.25; }
 .klinikhinweis p { margin-top: var(--a2); }
 @media (min-width: 900px) {
@@ -506,7 +513,7 @@ section h2 { font-size: var(--s5); line-height: 1.12; }
 .termin__satz { margin-top: var(--a4); color: var(--leise); max-width: 34em; }
 .termin__raster { margin-top: var(--a7); display: grid; gap: var(--a8); }
 .termin__haupt { min-width: 0; }
-.eilig { border-left: 4px solid var(--text); padding: var(--a1) 0 var(--a1) var(--a4); max-width: 40em; }
+.eilig { border-top: 2px solid var(--text); padding: var(--a4) 0 0; max-width: 40em; }
 .eilig .nummer { display: inline-block; margin-top: var(--a1); }
 .anfrage { margin-top: var(--a6); }
 .anfrage__pflicht { font-size: var(--s1); color: var(--leise); }
@@ -551,7 +558,7 @@ input[type="date"].feld { appearance: none; -webkit-appearance: none; min-width:
 .textlink--klein { display: inline-block; margin: var(--a2) 0 0 calc(24px + var(--a3)); font-size: var(--s1); }
 
 /* Fehlerübersicht: rotbraune Kante, keine Warnfläche */
-.fehlerliste { margin-top: var(--a6); background: var(--flaeche); border-left: 4px solid var(--fehler); padding: var(--a5); }
+.fehlerliste { margin-top: var(--a6); background: var(--flaeche); border-top: 3px solid var(--fehler); padding: var(--a5); }
 .fehlerliste[hidden] { display: none; }
 .fehlerliste:focus { outline: none; }
 .fehlerliste:focus-visible { outline: none; }

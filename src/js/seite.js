@@ -271,7 +271,10 @@
     }
     var werte = { tier: tier, anlass: anlass, ort: wertVon('strasse') + ', ' + wertVon('plz') + ' ' + wertVon('ort'), wann: wann };
     gesendet.querySelectorAll('[data-zeile]').forEach(function (dd) { dd.textContent = werte[dd.getAttribute('data-zeile')] || ''; });
-    gesendet.querySelector('.gesendet__satz').textContent = gesendet.getAttribute('data-satz').replace('{telefon}', wertVon('telefon'));
+    // Telefonnummer am Stück halten, sie darf nicht umbrechen
+    var satz = gesendet.querySelector('.gesendet__satz'), teile = gesendet.getAttribute('data-satz').split('{telefon}');
+    var nr = document.createElement('span'); nr.className = 'am-stueck'; nr.textContent = wertVon('telefon');
+    satz.replaceChildren(document.createTextNode(teile[0]), nr, document.createTextNode(teile.slice(1).join('')));
     form.hidden = true; liste.hidden = true;
     gesendet.hidden = false;
     gesendet.scrollIntoView({ block: 'start' });
@@ -288,7 +291,8 @@
     // Deaktivierter Zustand, solange gesendet wird
     knopf.setAttribute('aria-disabled', 'true');
     wort.textContent = form.getAttribute('data-laeuft');
-    setTimeout(zeigeGesendet, 700);
+    // unter 500 ms, damit der Wechsel als Folge der Eingabe gilt und nicht als Layout-Sprung
+    setTimeout(zeigeGesendet, 400);
   });
 
   bedingt();

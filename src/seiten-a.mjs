@@ -114,7 +114,7 @@ export function terminseite({ g, s, t, esc, txt, rh }) {
   const anlaesse = `<option value="">${esc(s.kontakt.anlass_leer)}</option>` + [s.kontakt.anlass_erst, ...g.leistungen.map((l) => l.titel), s.kontakt.anlass_sonst].map((x) => `<option>${esc(x)}</option>`).join('');
   const plzDaten = esc(JSON.stringify(s.einsatz.plz_liste));
 
-  return `${rh.dokument(t.seitentitel, p)}${rh.kopfzeile(p, { termin: false })}
+  return `${rh.dokument(t.seitentitel, p, { beschreibung: t.beschreibung })}${rh.kopfzeile(p, { termin: false })}
 <main id="inhalt" class="termin">
   <div class="termin__kopf">
     <nav class="brotkrumen" aria-label="Sie sind hier"><ol><li><a href="${p}">Startseite</a></li><li aria-current="page">${esc(t.titel)}</li></ol></nav>

@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "bauen": "node src/bauen.mjs",
+    "pruefen": "node src/bauen.mjs && node scripts/feinschliff.mjs http://127.0.0.1:4391 /a/ /a/leistungen/durchfall-erbrechen/ /a/termin/ '/a/termin/?vorschau=fehler' '/a/termin/?vorschau=gesendet' /a/abschied/ /a/designsystem/ ; node scripts/axe.mjs http://127.0.0.1:4391 /a/ /a/leistungen/durchfall-erbrechen/ /a/termin/ '/a/termin/?vorschau=fehler' '/a/termin/?vorschau=gesendet' /a/abschied/ /a/designsystem/ && node scripts/formtest.mjs"
   },
   "keywords": [],
   "author": "",
@@ -11,6 +12,8 @@
   "description": "",
   "devDependencies": {
     "axe-core": "^4.14.0",
+    "chrome-launcher": "^1.2.2",
+    "lighthouse": "^12.8.2",
     "playwright": "1.49"
   }
 }

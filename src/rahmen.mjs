@@ -20,6 +20,7 @@ export function rahmen({ g, s, esc, txt, masse }) {
 <meta name="robots" content="noindex, nofollow">
 <title>${esc(titel)}</title>${beschreibung ? `\n<meta name="description" content="${esc(beschreibung)}">` : ''}
 <link rel="preload" href="${p}../schriften/Brygada1918.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="${p}../schriften/AlbertSans.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="icon" href="${p}../logo/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="${p}stil.css">${css.map((c) => `\n<link rel="stylesheet" href="${c}">`).join('')}
 <script src="${p}../js/seite.js" defer></script>
@@ -38,7 +39,7 @@ export function rahmen({ g, s, esc, txt, masse }) {
     return `
 <header class="kopf">
   <div class="kopf__innen">
-    <a class="marke" href="${p || './'}"><img src="${p}../logo/logo-quer.svg" width="497" height="150" alt="${logoAlt}"></a>
+    <a class="marke" href="${p || './'}"><img src="${p}../logo/logo-quer.svg" width="497" height="150" alt="${logoAlt}" fetchpriority="high"></a>
     <nav class="kopf__nav" aria-label="Hauptmenü"><ul>${nav}</ul></nav>
     <div class="kopf__kontakt">${tel}${termin ? `<a class="knopf" href="${terminZiel(p)}">${esc(g.termin_label)}</a>` : ''}</div>
     <button class="menueknopf" type="button" aria-expanded="false" aria-controls="handymenue"><span class="unsichtbar">Menü öffnen</span><span class="menueknopf__strich"></span><span class="menueknopf__strich"></span></button>

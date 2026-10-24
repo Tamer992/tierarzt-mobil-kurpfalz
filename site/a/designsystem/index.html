@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Designsystem · Richtung A „Auf Augenhöhe“</title>
+<meta name="description" content="Farben, Schriften, Abstände, Bausteine und Zustände der Webseite der Mobilen Tierarztpraxis Kurpfalz.">
 <link rel="preload" href="../../schriften/Brygada1918.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../schriften/AlbertSans.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="icon" href="../../logo/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../stil.css">
 <link rel="stylesheet" href="ds.css">
@@ -15,7 +17,7 @@
 <a class="sprung" href="#inhalt">Zum Inhalt springen</a>
 <header class="kopf">
   <div class="kopf__innen">
-    <a class="marke" href="../"><img src="../../logo/logo-quer.svg" width="497" height="150" alt="Mobile Tierarztpraxis Kurpfalz, Notfall-Tierarzt Al Saeed"></a>
+    <a class="marke" href="../"><img src="../../logo/logo-quer.svg" width="497" height="150" alt="Mobile Tierarztpraxis Kurpfalz, Notfall-Tierarzt Al Saeed" fetchpriority="high"></a>
     <nav class="kopf__nav" aria-label="Hauptmenü"><ul><li><a href="../#leistungen">Leistungen</a></li><li><a href="../#ablauf">Hausbesuch</a></li><li><a href="../#tierarzt">Über mich</a></li><li><a href="../#kontakt">Kontakt</a></li></ul></nav>
     <div class="kopf__kontakt"><a class="nummer" href="tel:+496210000000"><span class="fehlt" title="FEHLT: neue Telefonnummer">0621 000 00 00</span></a><a class="knopf" href="../termin/">Termin anfragen</a></div>
     <button class="menueknopf" type="button" aria-expanded="false" aria-controls="handymenue"><span class="unsichtbar">Menü öffnen</span><span class="menueknopf__strich"></span><span class="menueknopf__strich"></span></button>
@@ -123,13 +125,13 @@
     <p class="ds__satz">Zwei Familien, sechs feste Stufen. Überschriften mit <code>text-wrap: balance</code>, Fließtext mit <code>text-wrap: pretty</code> und höchstens 70 Zeichen pro Zeile. Ziffern in Zeiten, Preisen und Nummern tabellarisch.</p>
     <div class="ds-schriften">
       <div class="ds-schrift">
-        <p class="ds-schrift__probe ds-serif">Äußerst ruhig, für Hund &amp; Katze · Mo bis Fr 9–23 Uhr · 68159</p>
+        <p class="ds-schrift__probe ds-serif">Äußerst ruhig, für Hund &amp; Katze · Mo bis Fr <span class="am-stueck">9–23 Uhr</span> · 68159</p>
         <h3>Brygada 1918</h3>
         <p>Überschriften. Eine Antiqua nach einer polnischen Buchschrift von 1918. Die Federführung ist sichtbar, die Formen bleiben ruhig. Das gibt der Seite eine menschliche Hand ohne Verschnörkelung.</p>
         <p class="ds-klein">Google Fonts, Projekt github.com/kosmynkab/Brygada-1918 · SIL Open Font License 1.1, lokal eingebunden</p>
       </div>
       <div class="ds-schrift">
-        <p class="ds-schrift__probe ds-sans">Äußerst ruhig, für Hund &amp; Katze · Mo bis Fr 9–23 Uhr · 68159</p>
+        <p class="ds-schrift__probe ds-sans">Äußerst ruhig, für Hund &amp; Katze · Mo bis Fr <span class="am-stueck">9–23 Uhr</span> · 68159</p>
         <h3>Albert Sans</h3>
         <p>Text, Nummer, Knöpfe. Eine klare skandinavische Grotesk mit offenen Formen und gut unterscheidbaren Ziffern. Sie trägt lange Texte am Handy und die Telefonnummer.</p>
         <p class="ds-klein">Google Fonts, Projekt github.com/usted/Albert-Sans · SIL Open Font License 1.1, lokal eingebunden</p>
@@ -278,7 +280,7 @@
     <div class="ds-flaechen">
       <div class="ds-flaeche ds-flaeche--tafel"><h3>Tafel</h3><p>Kalk auf Grundfläche. Für Termin anfragen und den Startbereich.</p></div>
       <div class="ds-flaeche ds-flaeche--graphit"><h3>Graphit-Band</h3><p>Randlos, für den Taktwechsel in der Mitte einer Seite.</p></div>
-      <div class="ds-flaeche klinikhinweis"><h3>Hinweis mit Kante</h3><p>Graphit-Kante links, für Klinik und Lebensgefahr. Keine Warnfarbe.</p></div>
+      <div class="ds-flaeche klinikhinweis"><h3>Hinweis mit Linie</h3><p>Graphit-Linie oben, für Klinik und Lebensgefahr. Keine Warnfarbe.</p></div>
       <div class="ds-flaeche tierarzt__portraet ds-platzhalter"><span class="platzhalter__titel">[FEHLT: Porträt]</span><span class="platzhalter__hinweis">Platzhalter in den Farben der Seite</span></div>
     </div>
   </section>

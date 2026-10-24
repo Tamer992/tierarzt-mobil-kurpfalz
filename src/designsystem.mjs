@@ -85,7 +85,7 @@ export function designsystem({ css, schriften, esc, rh }) {
 
   const schriftKarten = schriften.a.map((x) => `
       <div class="ds-schrift">
-        <p class="ds-schrift__probe ${x.name.startsWith('Brygada') ? 'ds-serif' : 'ds-sans'}">Äußerst ruhig, für Hund &amp; Katze · Mo bis Fr 9–23 Uhr · 68159</p>
+        <p class="ds-schrift__probe ${x.name.startsWith('Brygada') ? 'ds-serif' : 'ds-sans'}">Äußerst ruhig, für Hund &amp; Katze · Mo bis Fr <span class="am-stueck">9–23 Uhr</span> · 68159</p>
         <h3>${esc(x.name)}</h3>
         <p>${esc(x.rolle)}. ${esc(x.warum)}</p>
         <p class="ds-klein">${esc(x.quelle)} · ${esc(x.lizenz)}, lokal eingebunden</p>
@@ -99,7 +99,7 @@ export function designsystem({ css, schriften, esc, rh }) {
   // Farbmuster als eigene Klassen, weil die CSP Inline-Stile verbietet
   const dsCss = paare.map(([, vg, hg, min], i) => (min === 3 ? `.ds-paar-${i} { background: ${hg}; border: 3px solid ${vg}; }` : `.ds-paar-${i} { color: ${vg}; background: ${hg}; }`)).join('\n')
     + '\n' + farben.map(([k]) => `.ds-f-${k} { background: var(--${k}); }`).join('\n') + '\n';
-  const html = `${rh.dokument('Designsystem · Richtung A „Auf Augenhöhe“', p, { css: ['ds.css'] })}${rh.kopfzeile(p)}
+  const html = `${rh.dokument('Designsystem · Richtung A „Auf Augenhöhe“', p, { css: ['ds.css'], beschreibung: 'Farben, Schriften, Abstände, Bausteine und Zustände der Webseite der Mobilen Tierarztpraxis Kurpfalz.' })}${rh.kopfzeile(p)}
 <main id="inhalt" class="ds">
   <header class="ds__kopf">
     <h1>Designsystem</h1>
@@ -197,7 +197,7 @@ export function designsystem({ css, schriften, esc, rh }) {
     <div class="ds-flaechen">
       <div class="ds-flaeche ds-flaeche--tafel"><h3>Tafel</h3><p>Kalk auf Grundfläche. Für Termin anfragen und den Startbereich.</p></div>
       <div class="ds-flaeche ds-flaeche--graphit"><h3>Graphit-Band</h3><p>Randlos, für den Taktwechsel in der Mitte einer Seite.</p></div>
-      <div class="ds-flaeche klinikhinweis"><h3>Hinweis mit Kante</h3><p>Graphit-Kante links, für Klinik und Lebensgefahr. Keine Warnfarbe.</p></div>
+      <div class="ds-flaeche klinikhinweis"><h3>Hinweis mit Linie</h3><p>Graphit-Linie oben, für Klinik und Lebensgefahr. Keine Warnfarbe.</p></div>
       <div class="ds-flaeche tierarzt__portraet ds-platzhalter"><span class="platzhalter__titel">[FEHLT: Porträt]</span><span class="platzhalter__hinweis">Platzhalter in den Farben der Seite</span></div>
     </div>
   </section>

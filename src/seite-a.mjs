@@ -32,7 +32,7 @@ export function startseiteA({ g, r, s, esc, txt, rh }) {
 
   const plzDaten = esc(JSON.stringify(s.einsatz.plz_liste));
 
-  return `${rh.dokument(`${g.praxisname} · Mobiler Tierarzt in Mannheim und Umgebung`, '')}${rh.kopfzeile('')}
+  return `${rh.dokument(`${g.praxisname} · Mobiler Tierarzt in Mannheim und Umgebung`, '', { beschreibung: 'Tierarzt für Hund und Katze mit Hausbesuch in Mannheim, Ludwigshafen, Heidelberg und Umgebung. Behandlung zu Hause, Mo bis Fr 9 bis 23 Uhr, Sa 8 bis 12 Uhr.' })}${rh.kopfzeile('')}
 <main id="inhalt">
 
   <section class="start" aria-labelledby="start-titel">
