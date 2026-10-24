@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Designsystem · Richtung A „Auf Augenhöhe“</title>
+<link rel="preload" href="../../schriften/Brygada1918.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="../../logo/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../stil.css">
+<link rel="stylesheet" href="ds.css">
+<script src="../../js/seite.js" defer></script>
+</head>
+<body>
+<a class="sprung" href="#inhalt">Zum Inhalt springen</a>
+<header class="kopf">
+  <div class="kopf__innen">
+    <a class="marke" href="../"><img src="../../logo/logo-quer.svg" width="497" height="150" alt="Mobile Tierarztpraxis Kurpfalz, Notfall-Tierarzt Al Saeed"></a>
+    <nav class="kopf__nav" aria-label="Hauptmenü"><ul><li><a href="../#leistungen">Leistungen</a></li><li><a href="../#ablauf">Hausbesuch</a></li><li><a href="../#tierarzt">Über mich</a></li><li><a href="../#kontakt">Kontakt</a></li></ul></nav>
+    <div class="kopf__kontakt"><a class="nummer" href="tel:+496210000000"><span class="fehlt" title="FEHLT: neue Telefonnummer">0621 000 00 00</span></a><a class="knopf" href="../termin/">Termin anfragen</a></div>
+    <button class="menueknopf" type="button" aria-expanded="false" aria-controls="handymenue"><span class="unsichtbar">Menü öffnen</span><span class="menueknopf__strich"></span><span class="menueknopf__strich"></span></button>
+  </div>
+  <nav class="handymenue" id="handymenue" aria-label="Menü" hidden><ul><li><a href="../#leistungen">Leistungen</a></li><li><a href="../#ablauf">Hausbesuch</a></li><li><a href="../#tierarzt">Über mich</a></li><li><a href="../#kontakt">Kontakt</a></li></ul></nav>
+</header>
+<main id="inhalt" class="ds">
+  <header class="ds__kopf">
+    <h1>Designsystem</h1>
+    <p>Richtung A „Auf Augenhöhe“ für die Mobile Tierarztpraxis Kurpfalz. Grundlage für den zweiten Auftrag: Jeder Wert auf dieser Seite steht als Variable in <code>stil.css</code>, die Kontraste rechnet der Generator beim Bauen aus der CSS-Datei aus.</p>
+    <ul class="ds__seiten"><li><a class="textlink" href="../">Startseite</a></li><li><a class="textlink" href="../leistungen/durchfall-erbrechen/">Muster-Unterseite Durchfall und Erbrechen</a></li><li><a class="textlink" href="../termin/">Termin anfragen</a></li><li><a class="textlink" href="../termin/?vorschau=fehler">Termin anfragen, Zustand Fehler</a></li><li><a class="textlink" href="../termin/?vorschau=gesendet">Termin anfragen, Zustand gesendet</a></li><li><a class="textlink" href="../abschied/">Stille Seite Abschied zu Hause</a></li></ul>
+  </header>
+
+  <section class="ds__abschnitt" aria-labelledby="ds-farben">
+    <h2 id="ds-farben">Farben</h2>
+    <p class="ds__satz">Eine Grundfläche, eine Textfarbe, ein Akzent. Kobalt erscheint nur dort, wo jemand anruft oder einen Termin anfragt. Notfall und Fehler bekommen keine Warnfläche.</p>
+    <ul class="ds-farben">
+      <li class="ds-farbe">
+        <span class="ds-farbe__flaeche ds-f-grund" aria-hidden="true"></span>
+        <span class="ds-farbe__name">--grund</span>
+        <span class="ds-farbe__wert">#E9E9E4</span>
+        <span class="ds-farbe__rolle">Grundfläche der Seite</span>
+      </li>
+      <li class="ds-farbe">
+        <span class="ds-farbe__flaeche ds-f-flaeche" aria-hidden="true"></span>
+        <span class="ds-farbe__name">--flaeche</span>
+        <span class="ds-farbe__wert">#F6F6F2</span>
+        <span class="ds-farbe__rolle">Tafeln, Fuß, Text auf Graphit und Kobalt</span>
+      </li>
+      <li class="ds-farbe">
+        <span class="ds-farbe__flaeche ds-f-text" aria-hidden="true"></span>
+        <span class="ds-farbe__name">--text</span>
+        <span class="ds-farbe__wert">#1F2328</span>
+        <span class="ds-farbe__rolle">Text, Graphit-Band, Kontaktleiste</span>
+      </li>
+      <li class="ds-farbe">
+        <span class="ds-farbe__flaeche ds-f-leise" aria-hidden="true"></span>
+        <span class="ds-farbe__name">--leise</span>
+        <span class="ds-farbe__wert">#4B5058</span>
+        <span class="ds-farbe__rolle">Nebentext, Hinweise</span>
+      </li>
+      <li class="ds-farbe">
+        <span class="ds-farbe__flaeche ds-f-akzent" aria-hidden="true"></span>
+        <span class="ds-farbe__name">--akzent</span>
+        <span class="ds-farbe__wert">#2B44A3</span>
+        <span class="ds-farbe__rolle">Kobalt, nur für Anrufen und Termin</span>
+      </li>
+      <li class="ds-farbe">
+        <span class="ds-farbe__flaeche ds-f-akzent-tief" aria-hidden="true"></span>
+        <span class="ds-farbe__name">--akzent-tief</span>
+        <span class="ds-farbe__wert">#1E3383</span>
+        <span class="ds-farbe__rolle">Kobalt bei Hover und Druck</span>
+      </li>
+      <li class="ds-farbe">
+        <span class="ds-farbe__flaeche ds-f-akzent-hell" aria-hidden="true"></span>
+        <span class="ds-farbe__name">--akzent-hell</span>
+        <span class="ds-farbe__wert">#DCE1F2</span>
+        <span class="ds-farbe__rolle">Gewählte Antwort, Fokusring, Platzhalter</span>
+      </li>
+      <li class="ds-farbe">
+        <span class="ds-farbe__flaeche ds-f-fehler" aria-hidden="true"></span>
+        <span class="ds-farbe__name">--fehler</span>
+        <span class="ds-farbe__wert">#8C2F1B</span>
+        <span class="ds-farbe__rolle">Fehler am Feld, nie als Warnfläche</span>
+      </li>
+      <li class="ds-farbe">
+        <span class="ds-farbe__flaeche ds-f-linie" aria-hidden="true"></span>
+        <span class="ds-farbe__name">--linie</span>
+        <span class="ds-farbe__wert">#C9CAC3</span>
+        <span class="ds-farbe__rolle">Haarlinien zwischen Einträgen</span>
+      </li>
+      <li class="ds-farbe">
+        <span class="ds-farbe__flaeche ds-f-leise-dunkel" aria-hidden="true"></span>
+        <span class="ds-farbe__name">--leise-dunkel</span>
+        <span class="ds-farbe__wert">#B4B8BF</span>
+        <span class="ds-farbe__rolle">Nebentext auf Graphit</span>
+      </li>
+    </ul>
+    <div class="ds-tabelle" tabindex="0" role="region" aria-label="Tabelle Kontraste">
+      <table>
+        <caption>Kontraste nach WCAG 2.1</caption>
+        <thead><tr><th scope="col">Paar</th><th scope="col">Muster</th><th scope="col">Werte</th><th scope="col">Kontrast</th><th scope="col">Stufe AA</th></tr></thead>
+        <tbody>
+        <tr><th scope="row">Text auf Grundfläche</th><td><span class="ds-muster ds-paar-0">Aa</span></td><td>#1F2328 auf #E9E9E4</td><td class="ds-zahl">12,97 : 1</td><td>erfüllt (4,5 : 1)</td></tr>
+        <tr><th scope="row">Text auf Tafel</th><td><span class="ds-muster ds-paar-1">Aa</span></td><td>#1F2328 auf #F6F6F2</td><td class="ds-zahl">14,58 : 1</td><td>erfüllt (4,5 : 1)</td></tr>
+        <tr><th scope="row">Nebentext auf Grundfläche</th><td><span class="ds-muster ds-paar-2">Aa</span></td><td>#4B5058 auf #E9E9E4</td><td class="ds-zahl">6,66 : 1</td><td>erfüllt (4,5 : 1)</td></tr>
+        <tr><th scope="row">Nebentext auf Tafel</th><td><span class="ds-muster ds-paar-3">Aa</span></td><td>#4B5058 auf #F6F6F2</td><td class="ds-zahl">7,49 : 1</td><td>erfüllt (4,5 : 1)</td></tr>
+        <tr><th scope="row">Knopfschrift auf Kobalt</th><td><span class="ds-muster ds-paar-4">Aa</span></td><td>#F6F6F2 auf #2B44A3</td><td class="ds-zahl">7,88 : 1</td><td>erfüllt (4,5 : 1)</td></tr>
+        <tr><th scope="row">Knopfschrift auf Kobalt (Hover)</th><td><span class="ds-muster ds-paar-5">Aa</span></td><td>#F6F6F2 auf #1E3383</td><td class="ds-zahl">10,44 : 1</td><td>erfüllt (4,5 : 1)</td></tr>
+        <tr><th scope="row">Kobalt-Text auf Hellblau (gewählt, Platzhalter)</th><td><span class="ds-muster ds-paar-6">Aa</span></td><td>#1E3383 auf #DCE1F2</td><td class="ds-zahl">8,67 : 1</td><td>erfüllt (4,5 : 1)</td></tr>
+        <tr><th scope="row">Kobalt auf Grundfläche (Fokusring)</th><td><span class="ds-muster ds-muster--rand ds-paar-7" aria-hidden="true"></span></td><td>#2B44A3 auf #E9E9E4</td><td class="ds-zahl">7,01 : 1</td><td>erfüllt (3 : 1)</td></tr>
+        <tr><th scope="row">Fehlertext im Feld</th><td><span class="ds-muster ds-paar-8">Aa</span></td><td>#8C2F1B auf #FFFFFE</td><td class="ds-zahl">8,27 : 1</td><td>erfüllt (4,5 : 1)</td></tr>
+        <tr><th scope="row">Fehlertext auf Tafel</th><td><span class="ds-muster ds-paar-9">Aa</span></td><td>#8C2F1B auf #F6F6F2</td><td class="ds-zahl">7,64 : 1</td><td>erfüllt (4,5 : 1)</td></tr>
+        <tr><th scope="row">Fehlertext auf Grundfläche</th><td><span class="ds-muster ds-paar-10">Aa</span></td><td>#8C2F1B auf #E9E9E4</td><td class="ds-zahl">6,79 : 1</td><td>erfüllt (4,5 : 1)</td></tr>
+        <tr><th scope="row">Kalk auf Graphit</th><td><span class="ds-muster ds-paar-11">Aa</span></td><td>#F6F6F2 auf #1F2328</td><td class="ds-zahl">14,58 : 1</td><td>erfüllt (4,5 : 1)</td></tr>
+        <tr><th scope="row">Nebentext auf Graphit</th><td><span class="ds-muster ds-paar-12">Aa</span></td><td>#B4B8BF auf #1F2328</td><td class="ds-zahl">7,94 : 1</td><td>erfüllt (4,5 : 1)</td></tr>
+        <tr><th scope="row">Feldrand auf Feld (Bedienelement)</th><td><span class="ds-muster ds-muster--rand ds-paar-13" aria-hidden="true"></span></td><td>#8C9098 auf #FFFFFE</td><td class="ds-zahl">3,20 : 1</td><td>erfüllt (3 : 1)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="ds__abschnitt" aria-labelledby="ds-schrift">
+    <h2 id="ds-schrift">Schrift</h2>
+    <p class="ds__satz">Zwei Familien, sechs feste Stufen. Überschriften mit <code>text-wrap: balance</code>, Fließtext mit <code>text-wrap: pretty</code> und höchstens 70 Zeichen pro Zeile. Ziffern in Zeiten, Preisen und Nummern tabellarisch.</p>
+    <div class="ds-schriften">
+      <div class="ds-schrift">
+        <p class="ds-schrift__probe ds-serif">Äußerst ruhig, für Hund &amp; Katze · Mo bis Fr 9–23 Uhr · 68159</p>
+        <h3>Brygada 1918</h3>
+        <p>Überschriften. Eine Antiqua nach einer polnischen Buchschrift von 1918. Die Federführung ist sichtbar, die Formen bleiben ruhig. Das gibt der Seite eine menschliche Hand ohne Verschnörkelung.</p>
+        <p class="ds-klein">Google Fonts, Projekt github.com/kosmynkab/Brygada-1918 · SIL Open Font License 1.1, lokal eingebunden</p>
+      </div>
+      <div class="ds-schrift">
+        <p class="ds-schrift__probe ds-sans">Äußerst ruhig, für Hund &amp; Katze · Mo bis Fr 9–23 Uhr · 68159</p>
+        <h3>Albert Sans</h3>
+        <p>Text, Nummer, Knöpfe. Eine klare skandinavische Grotesk mit offenen Formen und gut unterscheidbaren Ziffern. Sie trägt lange Texte am Handy und die Telefonnummer.</p>
+        <p class="ds-klein">Google Fonts, Projekt github.com/usted/Albert-Sans · SIL Open Font License 1.1, lokal eingebunden</p>
+      </div>
+    </div>
+    <div class="ds-skala">
+      <div class="ds-stufe">
+        <p class="ds-stufe__mass"><code>--s1</code> 16 px am Handy, 16 px am Computer<br><span>Hinweise, Knöpfe, Navigation, Tabellen</span></p>
+        <p class="ds-stufe__probe ds-probe-s1 ds-sans">Ihr Tier bleibt zu Hause.</p>
+      </div>
+      <div class="ds-stufe">
+        <p class="ds-stufe__mass"><code>--s2</code> 18 px am Handy, 19 px am Computer<br><span>Fließtext</span></p>
+        <p class="ds-stufe__probe ds-probe-s2 ds-sans">Ihr Tier bleibt zu Hause.</p>
+      </div>
+      <div class="ds-stufe">
+        <p class="ds-stufe__mass"><code>--s3</code> 22 px am Handy, 23 px am Computer<br><span>Fragen, Zwischenzeilen, Postleitzahl</span></p>
+        <p class="ds-stufe__probe ds-probe-s3 ds-serif">Ihr Tier bleibt zu Hause.</p>
+      </div>
+      <div class="ds-stufe">
+        <p class="ds-stufe__mass"><code>--s4</code> 28 px am Handy, 28 px am Computer<br><span>Überschriften der Einträge, Nummer im Startbereich</span></p>
+        <p class="ds-stufe__probe ds-probe-s4 ds-serif">Ihr Tier bleibt zu Hause.</p>
+      </div>
+      <div class="ds-stufe">
+        <p class="ds-stufe__mass"><code>--s5</code> 36 px am Handy, 40 px am Computer<br><span>Abschnittsüberschriften</span></p>
+        <p class="ds-stufe__probe ds-probe-s5 ds-serif">Ihr Tier bleibt zu Hause.</p>
+      </div>
+      <div class="ds-stufe">
+        <p class="ds-stufe__mass"><code>--s6</code> 36 px am Handy, 54 px am Computer<br><span>Startbereich und Hauptabschnitte</span></p>
+        <p class="ds-stufe__probe ds-probe-s6 ds-serif">Ihr Tier bleibt zu Hause.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ds__abschnitt" aria-labelledby="ds-raster">
+    <h2 id="ds-raster">Raster und Abstände</h2>
+    <p class="ds__satz">Zwölf Spalten, höchstens 1280 px breit. Seitenrand 20 px am Handy und 48 px ab 900 px, Spaltenabstand 20 und 24 px. Alle Abstände folgen dem 4er-Raster.</p>
+    <div class="ds-raster" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <ul class="ds-abstaende">
+      <li><code>--a1</code><span class="ds-abstand ds-abstand-1" aria-hidden="true"></span><span>4 px</span></li>
+      <li><code>--a2</code><span class="ds-abstand ds-abstand-2" aria-hidden="true"></span><span>8 px</span></li>
+      <li><code>--a3</code><span class="ds-abstand ds-abstand-3" aria-hidden="true"></span><span>12 px</span></li>
+      <li><code>--a4</code><span class="ds-abstand ds-abstand-4" aria-hidden="true"></span><span>16 px</span></li>
+      <li><code>--a5</code><span class="ds-abstand ds-abstand-5" aria-hidden="true"></span><span>24 px</span></li>
+      <li><code>--a6</code><span class="ds-abstand ds-abstand-6" aria-hidden="true"></span><span>32 px</span></li>
+      <li><code>--a7</code><span class="ds-abstand ds-abstand-7" aria-hidden="true"></span><span>48 px</span></li>
+      <li><code>--a8</code><span class="ds-abstand ds-abstand-8" aria-hidden="true"></span><span>64 px</span></li>
+      <li><code>--a9</code><span class="ds-abstand ds-abstand-9" aria-hidden="true"></span><span>96 px</span></li>
+      <li><code>--a10</code><span class="ds-abstand ds-abstand-10" aria-hidden="true"></span><span>128 px</span></li>
+    </ul>
+  </section>
+
+  <section class="ds__abschnitt" aria-labelledby="ds-knoepfe">
+    <h2 id="ds-knoepfe">Knöpfe</h2>
+    <p class="ds__satz">Harte Kante mit 2 px Radius, kein Schatten. Höhe 48 px, groß 56 px. Gedrückt rückt der Knopf 1 px nach unten. Am Computer zeigt der Fokus einen Graphit-Ring mit 3 px Abstand.</p>
+    <h3 class="ds__zwischen">Standard</h3>
+    <div class="ds-zustaende">
+        <div class="ds-zustand"><span class="ds-zustand__name">Ruhe</span><span class="knopf">Termin anfragen</span></div>
+        <div class="ds-zustand"><span class="ds-zustand__name">Hover</span><span class="knopf ist-hover">Termin anfragen</span></div>
+        <div class="ds-zustand"><span class="ds-zustand__name">Fokus</span><span class="knopf ist-fokus">Termin anfragen</span></div>
+        <div class="ds-zustand"><span class="ds-zustand__name">Gedrückt</span><span class="knopf ist-gedrueckt">Termin anfragen</span></div>
+        <div class="ds-zustand"><span class="ds-zustand__name">Deaktiviert</span><span class="knopf" aria-disabled="true">Termin anfragen</span></div>
+    </div>
+    <h3 class="ds__zwischen">Groß</h3>
+    <div class="ds-zustaende">
+        <div class="ds-zustand"><span class="ds-zustand__name">Ruhe</span><span class="knopf knopf--gross">Anfrage senden</span></div>
+        <div class="ds-zustand"><span class="ds-zustand__name">Hover</span><span class="knopf knopf--gross ist-hover">Anfrage senden</span></div>
+        <div class="ds-zustand"><span class="ds-zustand__name">Fokus</span><span class="knopf knopf--gross ist-fokus">Anfrage senden</span></div>
+        <div class="ds-zustand"><span class="ds-zustand__name">Gedrückt</span><span class="knopf knopf--gross ist-gedrueckt">Anfrage senden</span></div>
+        <div class="ds-zustand"><span class="ds-zustand__name">Deaktiviert</span><span class="knopf knopf--gross" aria-disabled="true">Anfrage senden</span></div>
+    </div>
+    <h3 class="ds__zwischen">Hell auf Graphit</h3>
+    <div class="ds-zustaende ds-zustaende--dunkel">
+        <div class="ds-zustand"><span class="ds-zustand__name">Ruhe</span><span class="knopf knopf--hell">Termin anfragen</span></div>
+        <div class="ds-zustand"><span class="ds-zustand__name">Hover</span><span class="knopf knopf--hell ist-hover">Termin anfragen</span></div>
+        <div class="ds-zustand"><span class="ds-zustand__name">Fokus</span><span class="knopf knopf--hell ist-fokus">Termin anfragen</span></div>
+        <div class="ds-zustand"><span class="ds-zustand__name">Gedrückt</span><span class="knopf knopf--hell ist-gedrueckt">Termin anfragen</span></div>
+        <div class="ds-zustand"><span class="ds-zustand__name">Deaktiviert</span><span class="knopf knopf--hell" aria-disabled="true">Termin anfragen</span></div>
+    </div>
+  </section>
+
+  <section class="ds__abschnitt" aria-labelledby="ds-links">
+    <h2 id="ds-links">Links und Nummer</h2>
+    <div class="ds-zustaende">
+      <div class="ds-zustand"><span class="ds-zustand__name">Textlink, Ruhe</span><a class="textlink" href="#ds-links">Alles zur Abrechnung</a></div>
+      <div class="ds-zustand"><span class="ds-zustand__name">Textlink, Hover</span><a class="textlink ist-hover" href="#ds-links">Alles zur Abrechnung</a></div>
+      <div class="ds-zustand"><span class="ds-zustand__name">Textlink, Fokus</span><a class="textlink ist-fokus" href="#ds-links">Alles zur Abrechnung</a></div>
+      <div class="ds-zustand"><span class="ds-zustand__name">Telefonnummer</span><a class="nummer" href="tel:+496210000000"><span class="fehlt" title="FEHLT: neue Telefonnummer">0621 000 00 00</span></a></div>
+      <div class="ds-zustand"><span class="ds-zustand__name">Mehr-Link mit Pfeil</span><a class="weitere__link" href="#ds-links">Durchfall und Erbrechen<span class="pfeil" aria-hidden="true"></span></a></div>
+    </div>
+    <p class="ds__satz">Die Nummer bricht nie um und steht überall als lesbarer Text. Platzhalter <span class="fehlt">[FEHLT: …]</span> sind hellblau markiert, damit sie beim Prüfen auffallen.</p>
+  </section>
+
+  <section class="ds__abschnitt" aria-labelledby="ds-formular">
+    <h2 id="ds-formular">Formularfelder</h2>
+    <p class="ds__satz">Felder 56 px hoch, Rand 1,5 px. Fokus mit Kobalt-Rand und hellblauem Ring, Fehler mit rotbraunem Rand und dem Satz direkt unter dem Feld. Ein Fehler erscheint erst, wenn jemand senden will, und verschwindet beim Tippen.</p>
+    <div class="ds-zustaende ds-zustaende--felder">
+        <div class="ds-zustand ds-zustand--feld">
+          <label class="feld__label" for="ds-feld-0">Ruhe</label>
+          <input class="feld" id="ds-feld-0" type="text" value="">
+          
+        </div>
+        <div class="ds-zustand ds-zustand--feld">
+          <label class="feld__label" for="ds-feld-1">Hover</label>
+          <input class="feld ist-hover" id="ds-feld-1" type="text" value="">
+          
+        </div>
+        <div class="ds-zustand ds-zustand--feld">
+          <label class="feld__label" for="ds-feld-2">Fokus</label>
+          <input class="feld ist-fokus" id="ds-feld-2" type="text" value="Mannheim">
+          
+        </div>
+        <div class="ds-zustand ds-zustand--feld">
+          <label class="feld__label" for="ds-feld-3">Deaktiviert</label>
+          <input class="feld" id="ds-feld-3" type="text" value="Mannheim" disabled>
+          
+        </div>
+        <div class="ds-zustand ds-zustand--feld">
+          <label class="feld__label" for="ds-feld-4">Fehler</label>
+          <input class="feld" id="ds-feld-4" type="text" value="Mannheim" aria-invalid="true" aria-describedby="ds-feld-fehler">
+          <p class="feld__fehler" id="ds-feld-fehler">Bitte geben Sie Ihren Ort ein.</p>
+        </div>
+    </div>
+    <h3 class="ds__zwischen">Auswahl, Wahlknöpfe, Haken</h3>
+    <div class="ds-zustaende ds-zustaende--felder">
+      <div class="ds-zustand ds-zustand--feld"><label class="feld__label" for="ds-auswahl">Auswahl</label><div class="auswahl"><select class="feld" id="ds-auswahl"><option>Durchfall und Erbrechen</option></select></div></div>
+      <div class="ds-zustand ds-zustand--feld"><label class="feld__label" for="ds-text">Mehrzeilig</label><textarea class="feld feld--text" id="ds-text" rows="3">Seit gestern Abend dreimal erbrochen, trinkt wenig.</textarea></div>
+    </div>
+    <div class="ds-zustaende">
+      <div class="ds-zustand"><span class="ds-zustand__name">Wahl, Ruhe</span><label class="wahl ds-wahl"><input type="radio" name="ds-w1"><span>Katze</span></label></div>
+      <div class="ds-zustand"><span class="ds-zustand__name">Wahl, Hover</span><label class="wahl ds-wahl ist-hover"><input type="radio" name="ds-w2"><span>Katze</span></label></div>
+      <div class="ds-zustand"><span class="ds-zustand__name">Wahl, gewählt</span><label class="wahl ds-wahl"><input type="radio" name="ds-w3" checked><span>Katze</span></label></div>
+      <div class="ds-zustand"><span class="ds-zustand__name">Wahl, Fehler</span><label class="wahl ds-wahl ist-fehler"><input type="radio" name="ds-w4"><span>Katze</span></label></div>
+      <div class="ds-zustand"><span class="ds-zustand__name">Haken, Ruhe</span><label class="haken"><input type="checkbox"><span class="haken__kasten" aria-hidden="true"></span><span class="haken__text">Einverstanden</span></label></div>
+      <div class="ds-zustand"><span class="ds-zustand__name">Haken, gesetzt</span><label class="haken"><input type="checkbox" checked><span class="haken__kasten" aria-hidden="true"></span><span class="haken__text">Einverstanden</span></label></div>
+    </div>
+    <h3 class="ds__zwischen">Fehlerübersicht über dem Formular</h3>
+    <div class="fehlerliste ds-fehlerliste">
+      <p class="fehlerliste__titel">Bitte prüfen Sie noch 2 Angaben.</p>
+      <ul><li><a href="#ds-formular">Bitte geben Sie fünf Ziffern ein.</a></li><li><a href="#ds-formular">Bitte geben Sie Ihren Namen ein.</a></li></ul>
+    </div>
+  </section>
+
+  <section class="ds__abschnitt" aria-labelledby="ds-flaechen">
+    <h2 id="ds-flaechen">Flächen und Karten</h2>
+    <p class="ds__satz">Keine Kartenraster und keine weichen Schatten. Eine Seite hat höchstens eine helle Tafel und ein Graphit-Band. Die Tafel greift mit harter Kante ins Foto, wie im Startbereich.</p>
+    <div class="ds-flaechen">
+      <div class="ds-flaeche ds-flaeche--tafel"><h3>Tafel</h3><p>Kalk auf Grundfläche. Für Termin anfragen und den Startbereich.</p></div>
+      <div class="ds-flaeche ds-flaeche--graphit"><h3>Graphit-Band</h3><p>Randlos, für den Taktwechsel in der Mitte einer Seite.</p></div>
+      <div class="ds-flaeche klinikhinweis"><h3>Hinweis mit Kante</h3><p>Graphit-Kante links, für Klinik und Lebensgefahr. Keine Warnfarbe.</p></div>
+      <div class="ds-flaeche tierarzt__portraet ds-platzhalter"><span class="platzhalter__titel">[FEHLT: Porträt]</span><span class="platzhalter__hinweis">Platzhalter in den Farben der Seite</span></div>
+    </div>
+  </section>
+
+  <section class="ds__abschnitt" aria-labelledby="ds-leiste">
+    <h2 id="ds-leiste">Kontaktleiste am Handy</h2>
+    <p class="ds__satz">Fest am unteren Rand, nur bei Touch-Geräten. Graphit mit Kobalt-Fläche für den Termin. Auf der Terminseite steht nur Anrufen, auf der stillen Seite ist der Termin eine ruhige Graphit-Fläche.</p>
+    <div class="ds-leisten">
+      <div class="leiste ds-leiste"><span class="leiste__anruf"><span class="leiste__wort">Anrufen</span><span class="leiste__nr"><span class="fehlt" title="FEHLT: neue Telefonnummer">0621 000 00 00</span></span></span><span class="leiste__termin">Termin anfragen</span></div>
+      <div class="leiste leiste--still ds-leiste"><span class="leiste__anruf"><span class="leiste__wort">Anrufen</span><span class="leiste__nr"><span class="fehlt" title="FEHLT: neue Telefonnummer">0621 000 00 00</span></span></span><span class="leiste__termin">Termin anfragen</span></div>
+      <div class="leiste leiste--allein ds-leiste"><span class="leiste__anruf"><span class="leiste__wort">Anrufen</span><span class="leiste__nr"><span class="fehlt" title="FEHLT: neue Telefonnummer">0621 000 00 00</span></span></span></div>
+    </div>
+  </section>
+
+  <section class="ds__abschnitt" aria-labelledby="ds-bewegung">
+    <h2 id="ds-bewegung">Bewegung</h2>
+    <div class="ds-tabelle" tabindex="0" role="region" aria-label="Tabelle Bewegung">
+      <table>
+        <caption>Nur <code>transform</code> und <code>opacity</code></caption>
+        <thead><tr><th scope="col">Was</th><th scope="col">Dauer</th><th scope="col">Kurve</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Texte und Fotos beim Erscheinen</th><td class="ds-zahl">900 ms</td><td><code>cubic-bezier(0.16, 1, 0.3, 1)</code>, Anlauf sofort</td></tr>
+          <tr><th scope="row">Hover, Fokus, Farbwechsel</th><td class="ds-zahl">300 ms</td><td><code>cubic-bezier(0.25, 1, 0.5, 1)</code></td></tr>
+          <tr><th scope="row">Knopf gedrückt</th><td class="ds-zahl">120 ms</td><td><code>cubic-bezier(0.25, 1, 0.5, 1)</code></td></tr>
+          <tr><th scope="row">Stille Seite</th><td class="ds-zahl">0 ms</td><td>keine Bewegung</td></tr>
+          <tr><th scope="row">„Bewegung reduzieren“ im System</th><td class="ds-zahl">0 ms</td><td>alles sofort sichtbar</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="ds__abschnitt" aria-labelledby="ds-fotos">
+    <h2 id="ds-fotos">Fotos und Logo</h2>
+    <p class="ds__satz">Hunde und Katzen zu Hause, Tageslicht, Kamera auf Höhe des Tieres. Alle Fotos laufen durch <code>scripts/fotos.py</code> (Sättigung 0,86, Kontrast 0,96, leicht kühl) und liegen in 640, 1100 und 1800 px als WebP vor. Kein Mensch im Kittel, kein Stethoskop. Das Logo steht in den Seitenfarben in <code>logo/</code>: quer, quer negativ, Symbol, Favicon.</p>
+    <div class="ds-logos">
+      <img src="../../logo/logo-quer.svg" width="497" height="150" alt="Logo quer">
+      <span class="ds-logos__dunkel"><img src="../../logo/logo-quer-negativ.svg" width="497" height="150" alt="Logo quer, negativ"></span>
+      <img src="../../logo/logo-symbol.svg" width="100" height="110" alt="Logo-Symbol">
+    </div>
+  </section>
+</main>
+
+<footer class="fuss" id="fuss">
+  <div class="fuss__innen">
+    <div class="fuss__marke">
+      <p class="marke"><img src="../../logo/logo-quer.svg" width="497" height="150" alt="Mobile Tierarztpraxis Kurpfalz, Notfall-Tierarzt Al Saeed" loading="lazy"></p>
+      <p>Mobile Notfall- und Akutversorgung für Hunde und Katzen in Mannheim, Ludwigshafen, Heidelberg und Umgebung.</p>
+    </div>
+    <div class="fuss__kontakt">
+      <p class="fuss__nummer"><a class="nummer" href="tel:+496210000000"><span class="fehlt" title="FEHLT: neue Telefonnummer">0621 000 00 00</span></a></p>
+      <table class="zeiten zeiten--klein">
+        <caption>Erreichbar</caption>
+        <tbody><tr><th scope="row">Montag bis Freitag</th><td>9 bis 23 Uhr</td></tr><tr><th scope="row">Samstag</th><td>8 bis 12 Uhr</td></tr><tr><th scope="row">Sonntag</th><td>in Ausnahmefällen nach Absprache</td></tr></tbody>
+      </table>
+    </div>
+    <nav class="fuss__links" aria-label="Rechtliches"><ul><li><a href="#inhalt">Impressum</a></li><li><a href="#inhalt">Datenschutz</a></li><li><a href="#inhalt">Bildnachweis</a></li></ul></nav>
+  </div>
+</footer>
+<div class="leiste" role="region" aria-label="Kontakt">
+  <a class="leiste__anruf" href="tel:+496210000000"><span class="leiste__wort">Anrufen</span><span class="leiste__nr"><span class="fehlt" title="FEHLT: neue Telefonnummer">0621 000 00 00</span></span></a>
+  <a class="leiste__termin" href="../termin/">Termin anfragen</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+{
+  "pfad": "termin/",
+  "seitentitel": "Termin anfragen · Mobile Tierarztpraxis Kurpfalz",
+  "titel": "Termin anfragen",
+  "satz": "Schreiben Sie uns, was Ihrem Tier fehlt und wo Sie wohnen. Mein Team ruft Sie zurück und macht mit Ihnen eine Uhrzeit aus.",
+  "eilig": "Hat Ihr Tier Atemnot, eine Vergiftung oder starke Schmerzen, rufen Sie bitte direkt an.",
+  "pflicht_hinweis": "Freiwillige Angaben sind markiert. Alles andere brauchen wir, um zu Ihnen zu kommen.",
+  "fehler_eins": "Bitte prüfen Sie noch eine Angabe.",
+  "fehler_mehr": "Bitte prüfen Sie noch {n} Angaben.",
+  "gruppen": {
+    "tier": "Ihr Tier",
+    "anlass": "Was ihm fehlt",
+    "ort": "Wo ich hinkomme",
+    "wann": "Wann es Ihnen passt",
+    "sie": "Wie wir Sie erreichen"
+  },
+  "felder": {
+    "tier": { "label": "Für wen ist der Termin?", "fehler": "Bitte wählen Sie aus, für wen der Termin ist." },
+    "tier_anderes": { "label": "Welches Tier?", "hinweis": "Zum Beispiel: Kaninchen, Meerschweinchen", "fehler": "Bitte schreiben Sie, um welches Tier es geht." },
+    "tier_name": { "label": "Wie heißt Ihr Tier?" },
+    "tier_alter": { "label": "Wie alt ist es?", "hinweis": "Zum Beispiel: 9 Jahre" },
+    "anlass": { "label": "Worum geht es?", "fehler": "Bitte wählen Sie aus, worum es geht." },
+    "anlass_text": { "fehler": "Bitte beschreiben Sie kurz, worum es geht." },
+    "seit": { "label": "Seit wann?", "werte": ["Seit heute", "Seit gestern", "Seit ein paar Tagen", "Schon länger"] },
+    "strasse": { "label": "Straße und Hausnummer", "fehler": "Bitte geben Sie Straße und Hausnummer ein." },
+    "plz": { "label": "Postleitzahl", "fehler": "Bitte geben Sie fünf Ziffern ein.", "ausserhalb": "Diese Postleitzahl steht nicht auf meiner Liste. Schicken Sie die Anfrage trotzdem, mein Team sagt Ihnen dann, ob ich komme." },
+    "ort": { "label": "Ort", "fehler": "Bitte geben Sie Ihren Ort ein." },
+    "zugang": { "label": "Was sollte ich vor der Tür wissen?", "hinweis": "Zum Beispiel: dritter Stock ohne Aufzug, Klingel bei Müller" },
+    "wann": { "label": "Wann soll ich kommen?", "werte": ["So bald wie möglich", "An einem bestimmten Tag"], "fehler": "Bitte wählen Sie aus, wann ich kommen soll." },
+    "datum": { "label": "Tag", "fehler": "Bitte wählen Sie einen Tag ab heute." },
+    "tageszeit": { "label": "Tageszeit", "werte": ["Egal", "Vormittag", "Nachmittag", "Abend"] },
+    "name": { "label": "Ihr Name", "fehler": "Bitte geben Sie Ihren Namen ein." },
+    "telefon": { "label": "Telefonnummer für den Rückruf", "hinweis": "Am besten eine Handynummer, dann erreichen wir Sie auch unterwegs.", "fehler": "Bitte geben Sie eine Telefonnummer ein, unter der wir Sie erreichen." },
+    "email": { "label": "E-Mail für die Rechnung", "fehler": "Bitte prüfen Sie die E-Mail-Adresse, ihr fehlt noch etwas." },
+    "datenschutz": { "label": "Ich bin einverstanden, dass meine Angaben gespeichert werden, damit mein Termin geplant werden kann.", "link": "Datenschutz", "fehler": "Bitte stimmen Sie zu, damit wir Ihre Anfrage bearbeiten dürfen." }
+  },
+  "freiwillig": "freiwillig",
+  "senden": "Anfrage senden",
+  "senden_laeuft": "Wird gesendet",
+  "telefon_titel": "Lieber anrufen?",
+  "telefon_satz": "Am Telefon klären wir am schnellsten, was Ihr Tier braucht.",
+  "danach_titel": "Nach Ihrer Anfrage",
+  "danach_satz": "Mein Team ruft Sie zurück und nennt Ihnen die Uhrzeit, zu der ich komme.",
+  "gesendet": {
+    "titel": "Ihre Anfrage ist angekommen.",
+    "satz": "Mein Team ruft Sie unter {telefon} zurück und macht mit Ihnen eine Uhrzeit aus. Geht es Ihrem Tier in der Zwischenzeit schlechter, rufen Sie bitte direkt an.",
+    "zusammenfassung": "Ihre Angaben",
+    "zeilen": { "tier": "Tier", "anlass": "Anlass", "ort": "Adresse", "wann": "Wunschtermin" },
+    "zurueck": "Zurück zur Startseite",
+    "fehlt": "[FEHLT: Versand an das Praxisteam folgt im zweiten Auftrag. Diese Seite sendet noch nichts.]"
+  }
+}

@@ -20,7 +20,8 @@
     {
       "titel": "Durchfall und Erbrechen",
       "satz": "Ich untersuche Ihr Tier, suche die Ursache und gebe ihm Flüssigkeit, wenn es sie braucht.",
-      "foto": "katze-unter-decke"
+      "foto": "katze-unter-decke",
+      "seite": "leistungen/durchfall-erbrechen/"
     },
     {
       "titel": "Schmerzbehandlung",
@@ -60,7 +61,8 @@
     {
       "titel": "Abschied zu Hause",
       "satz": "Wenn es Zeit ist, komme ich zu Ihnen. Ihr Tier schläft dort ein, wo es sein Leben verbracht hat.",
-      "foto": "hund-senior-boden"
+      "foto": "hund-senior-boden",
+      "seite": "abschied/"
     }
   ],
   "leistungen_fehlt": "",

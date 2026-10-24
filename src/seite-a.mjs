@@ -1,12 +1,13 @@
 // Startseite Richtung A „Auf Augenhöhe“, komplett (Phase 2). Texte aus src/inhalt/startseite.json und gemeinsam.json.
-export function startseiteA({ g, r, s, esc, txt, bild, nr, tel, kopf }) {
+export function startseiteA({ g, r, s, esc, txt, rh }) {
   const a = r.a;
-  const nav = s.navigation.map((n) => `<li><a href="${n.ziel}">${esc(n.text)}</a></li>`).join('');
+  const { tel, bild } = rh;
 
   const leistungen = g.leistungen.map((l) => `
         <li class="dienst einblenden">
           <h3 class="dienst__titel">${esc(l.titel)}</h3>
-          <p class="dienst__satz">${esc(l.satz)}</p>
+          <p class="dienst__satz">${esc(l.satz)}</p>${l.seite ? `
+          <a class="dienst__mehr" href="${l.seite}">${esc(a.leistungen_mehr)}<span class="unsichtbar">: ${esc(l.titel)}</span><span class="pfeil" aria-hidden="true"></span></a>` : ''}
         </li>`).join('');
 
   const schritte = s.ablauf.schritte.map((st) => `
@@ -24,7 +25,6 @@ export function startseiteA({ g, r, s, esc, txt, bild, nr, tel, kopf }) {
           <div class="frage__antwort"><p>${txt(f.a)}</p></div>
         </details>`).join('');
 
-  const zeiten = s.erreichbarkeit.zeilen.map((z) => `<tr><th scope="row">${esc(z.tage)}</th><td>${txt(z.zeit)}</td></tr>`).join('');
 
   const tiere = s.kontakt.tiere.map((t, i) => `
             <label class="wahl"><input type="radio" name="tier" value="${esc(t.toLowerCase().replace(/\s+/g, '-'))}"${i === 0 ? ' required' : ''}><span>${esc(t)}</span></label>`).join('');
@@ -32,16 +32,7 @@ export function startseiteA({ g, r, s, esc, txt, bild, nr, tel, kopf }) {
 
   const plzDaten = esc(JSON.stringify(s.einsatz.plz_liste));
 
-  return `${kopf(`${g.praxisname} · Mobiler Tierarzt in Mannheim und Umgebung`, { schrift: 'Brygada1918.woff2' })}
-<header class="kopf">
-  <div class="kopf__innen">
-    <a class="marke" href="./"><img src="../logo/logo-quer.svg" width="497" height="150" alt="Mobile Tierarztpraxis Kurpfalz, Notfall-Tierarzt Al Saeed"></a>
-    <nav class="kopf__nav" aria-label="Hauptmenü"><ul>${nav}</ul></nav>
-    <div class="kopf__kontakt">${tel}<a class="knopf" href="#kontakt">${esc(g.termin_label)}</a></div>
-    <button class="menueknopf" type="button" aria-expanded="false" aria-controls="handymenue"><span class="unsichtbar">Menü öffnen</span><span class="menueknopf__strich"></span><span class="menueknopf__strich"></span></button>
-  </div>
-  <nav class="handymenue" id="handymenue" aria-label="Menü" hidden><ul>${nav}</ul></nav>
-</header>
+  return `${rh.dokument(`${g.praxisname} · Mobiler Tierarzt in Mannheim und Umgebung`, '')}${rh.kopfzeile('')}
 <main id="inhalt">
 
   <section class="start" aria-labelledby="start-titel">
@@ -92,10 +83,7 @@ export function startseiteA({ g, r, s, esc, txt, bild, nr, tel, kopf }) {
       <h3>${esc(s.kontakt.telefon_titel)}</h3>
       <p>${esc(s.kontakt.telefon_satz)}</p>
       <p class="kontakt__nummer">${tel}</p>
-      <table class="zeiten">
-        <caption>${esc(s.erreichbarkeit.titel)}</caption>
-        <tbody>${zeiten}</tbody>
-      </table>
+      ${rh.zeiten()}
     </div>
   </section>
 
@@ -180,26 +168,5 @@ export function startseiteA({ g, r, s, esc, txt, bild, nr, tel, kopf }) {
   </section>
 </main>
 
-<footer class="fuss" id="fuss">
-  <div class="fuss__innen">
-    <div class="fuss__marke">
-      <p class="marke"><img src="../logo/logo-quer.svg" width="497" height="150" alt="Mobile Tierarztpraxis Kurpfalz, Notfall-Tierarzt Al Saeed" loading="lazy"></p>
-      <p>${txt(s.fuss.satz)}</p>
-    </div>
-    <div class="fuss__kontakt">
-      <p class="fuss__nummer">${tel}</p>
-      <table class="zeiten zeiten--klein">
-        <caption>${esc(s.erreichbarkeit.titel)}</caption>
-        <tbody>${zeiten}</tbody>
-      </table>
-    </div>
-    <nav class="fuss__links" aria-label="Rechtliches"><ul>${s.fuss.links.map((l) => `<li><a href="#inhalt">${esc(l)}</a></li>`).join('')}</ul></nav>
-  </div>
-</footer>
-<div class="leiste" role="region" aria-label="Kontakt">
-  <a class="leiste__anruf" href="tel:${g.telefon_link}"><span class="leiste__wort">${esc(g.anrufen_label)}</span><span class="leiste__nr">${nr()}</span></a>
-  <a class="leiste__termin" href="#kontakt">${esc(g.termin_label)}</a>
-</div>
-</body>
-</html>`;
+${rh.fuss('')}${rh.leiste('')}${rh.ende}`;
 }

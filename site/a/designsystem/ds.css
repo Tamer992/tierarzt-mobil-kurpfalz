@@ -1,0 +1,24 @@
+.ds-paar-0 { color: #1F2328; background: #E9E9E4; }
+.ds-paar-1 { color: #1F2328; background: #F6F6F2; }
+.ds-paar-2 { color: #4B5058; background: #E9E9E4; }
+.ds-paar-3 { color: #4B5058; background: #F6F6F2; }
+.ds-paar-4 { color: #F6F6F2; background: #2B44A3; }
+.ds-paar-5 { color: #F6F6F2; background: #1E3383; }
+.ds-paar-6 { color: #1E3383; background: #DCE1F2; }
+.ds-paar-7 { background: #E9E9E4; border: 3px solid #2B44A3; }
+.ds-paar-8 { color: #8C2F1B; background: #FFFFFE; }
+.ds-paar-9 { color: #8C2F1B; background: #F6F6F2; }
+.ds-paar-10 { color: #8C2F1B; background: #E9E9E4; }
+.ds-paar-11 { color: #F6F6F2; background: #1F2328; }
+.ds-paar-12 { color: #B4B8BF; background: #1F2328; }
+.ds-paar-13 { background: #FFFFFE; border: 3px solid #8C9098; }
+.ds-f-grund { background: var(--grund); }
+.ds-f-flaeche { background: var(--flaeche); }
+.ds-f-text { background: var(--text); }
+.ds-f-leise { background: var(--leise); }
+.ds-f-akzent { background: var(--akzent); }
+.ds-f-akzent-tief { background: var(--akzent-tief); }
+.ds-f-akzent-hell { background: var(--akzent-hell); }
+.ds-f-fehler { background: var(--fehler); }
+.ds-f-linie { background: var(--linie); }
+.ds-f-leise-dunkel { background: var(--leise-dunkel); }

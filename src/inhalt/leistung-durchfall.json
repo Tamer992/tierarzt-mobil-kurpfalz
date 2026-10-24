@@ -1,0 +1,73 @@
+{
+  "pfad": "leistungen/durchfall-erbrechen/",
+  "seitentitel": "Durchfall und Erbrechen bei Hund und Katze · Hausbesuch in Mannheim und Umgebung",
+  "beschreibung": "Ihr Hund oder Ihre Katze hat Durchfall oder erbricht? Ich untersuche und behandle Ihr Tier bei Ihnen zu Hause in Mannheim, Ludwigshafen, Heidelberg und Umgebung.",
+  "brotkrumen": "Leistungen",
+  "titel": "Durchfall und Erbrechen",
+  "einleitung": "Ein Tier, das erbricht oder Durchfall hat, verliert schnell Flüssigkeit, eine Katze oder ein kleiner Hund schon innerhalb eines Tages. Ich suche bei Ihnen zu Hause nach der Ursache und gebe Ihrem Tier Flüssigkeit, wenn es sie braucht.",
+  "foto": "katze-rot-decke",
+  "foto_alt": "Eine rote Katze liegt mit geschlossenen Augen auf einer Decke.",
+  "sofort": {
+    "titel": "Wann Sie sofort anrufen",
+    "satz": "Warten Sie nicht ab, wenn eines davon auf Ihr Tier zutrifft.",
+    "liste": [
+      "Im Erbrochenen oder im Kot ist Blut, oder der Kot ist schwarz wie Teer.",
+      "Ihr Tier erbricht mehrmals in wenigen Stunden und behält auch Wasser nicht bei sich.",
+      "Sie vermuten, dass es etwas Giftiges gefressen oder einen Gegenstand verschluckt hat.",
+      "Ihr Tier ist sehr jung oder sehr alt, oder es hat eine Vorerkrankung wie Diabetes.",
+      "Es liegt teilnahmslos da, oder sein Zahnfleisch ist blass."
+    ],
+    "klinik_titel": "Wenn Ihr Hund würgt und nichts kommt",
+    "klinik": "Würgt Ihr Hund, ohne dass etwas kommt, und wird sein Bauch dick und hart, fahren Sie bitte sofort in die nächste Tierklinik. Dahinter steckt oft eine Magendrehung, und die muss operiert werden."
+  },
+  "besuch": {
+    "titel": "Was ich bei Ihnen mache",
+    "absaetze": [
+      "Zuerst frage ich nach. Seit wann geht es Ihrem Tier schlecht, wie oft hat es erbrochen, was hat es zuletzt gefressen, trinkt es noch? Vieles klärt sich schon im Gespräch.",
+      "Dann untersuche ich Ihr Tier in Ruhe. Ich taste den Bauch ab, messe die Temperatur und sehe mir Schleimhäute und Haut an. Daran erkenne ich, wie viel Flüssigkeit ihm fehlt.",
+      "Fehlt ihm Flüssigkeit, bekommt es eine Infusion, auf dem Sofa oder in seinem Körbchen. Gegen Übelkeit und Schmerzen gebe ich Medikamente aus meiner tierärztlichen Apotheke. Wenn nötig nehme ich Blut ab und lasse es im Labor untersuchen.",
+      "Zum Schluss bekommen Sie einen Plan für die nächsten Tage: was Ihr Tier fressen darf und ab wann es wieder sein normales Futter bekommt."
+    ],
+    "klinik": "Besteht der Verdacht auf einen verschluckten Gegenstand, braucht Ihr Tier Röntgen oder Ultraschall. Dann organisiere ich die Überweisung an eine Klinik in Mannheim und übernehme die Nachsorge."
+  },
+  "vorher": {
+    "titel": "Bis ich bei Ihnen bin",
+    "liste": [
+      "Lassen Sie frisches Wasser stehen. Futter geben Sie bitte erst wieder, wenn ich Ihr Tier gesehen habe.",
+      "Geben Sie keine Medikamente aus Ihrer eigenen Hausapotheke. Ibuprofen und Paracetamol sind für Hunde und Katzen giftig.",
+      "Fotografieren Sie Erbrochenes und Kot, oder heben Sie eine kleine Probe in einer Tüte auf.",
+      "Hat Ihr Tier etwas Ungewöhnliches gefressen, legen Sie mir die Verpackung oder die Reste hin."
+    ],
+    "foto": "katze-unter-decke",
+    "foto_alt": "Eine rote Katze schläft unter einer Wolldecke auf dem Sofa."
+  },
+  "kosten": {
+    "titel": "Was auf Sie zukommt",
+    "satz": "Ich rechne nach der Gebührenordnung für Tierärzte ab, dazu kommt die Hausbesuchsgebühr. Bevor ich behandle, sage ich Ihnen, womit Sie rechnen müssen.",
+    "link": "Alles zur Abrechnung"
+  },
+  "fragen": {
+    "titel": "Häufige Fragen",
+    "liste": [
+      {
+        "f": "Wann ist Durchfall harmlos?",
+        "a": "Hat Ihr Tier einmal Durchfall, frisst aber und ist munter, beobachten Sie es einen Tag lang. Hält der Durchfall an oder kommt Erbrechen dazu, rufen Sie mich an. Bei Welpen und Kitten warten Sie bitte nicht."
+      },
+      {
+        "f": "Darf ich Schonkost geben?",
+        "a": "Erst nach der Untersuchung. Ich sage Ihnen dann, was Ihr Tier fressen darf und in welcher Menge."
+      },
+      {
+        "f": "Muss mein Tier in die Klinik?",
+        "a": "Nur wenn es Röntgen, Ultraschall oder eine Operation braucht. Alles andere behandle ich bei Ihnen zu Hause."
+      }
+    ]
+  },
+  "abschluss": {
+    "titel": "Ich komme zu Ihnen nach Hause.",
+    "satz": "Rufen Sie an oder fragen Sie einen Termin an. Mein Team meldet sich so schnell wie möglich und macht mit Ihnen eine Uhrzeit aus.",
+    "anlass": "Durchfall und Erbrechen"
+  },
+  "weitere_titel": "Weitere Leistungen",
+  "freigabe": "[FEHLT: fachliche Freigabe der Texte durch Herrn Al Saeed]"
+}
