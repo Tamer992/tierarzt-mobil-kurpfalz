@@ -1,0 +1,97 @@
+[
+ {"gruppe":"Vorbilder","id":"smalldoorvet_com","name":"smalldoorvet.com","fokus":"Tiermedizin, die sich nach Hotel anfühlt","zeilen":[
+  "Raster: Startbereich halb Text links, halb Foto rechts bis an den Rand. Inhalt etwa 1200 px breit, Abschnitte als Bänder in Sand, Pfirsich und Hellgrau.",
+  "Schrift: Gibson (Grotesk) als Titel 72/74 px, w600. Zweite Ebene Adonis (Serif) 38 px. Fließtext 18 px w300 am Computer, am Handy nur 15 px.",
+  "Weißraum: großzügig, jeder Abschnitt hat eine eigene Fläche. Die Bänder gliedern statt Linien.",
+  "Fotos: Hund von oben auf einer Fußmatte „WELCOME“. Ein Motiv, eine Idee: Ankommen. Die Praxisräume sehen aus wie eine Hotel-Lobby, Holz, Pflanzen, weiches Licht.",
+  "Farbe: Sandfläche plus ein Orange, das nur für „Book now“ steht.",
+  "Bewegung: kaum. Farbwechsel 150 bis 200 ms.",
+  "Teuer wirkt: die Raumfotos und die gesperrten Versalien im Knopf. Die Nummer steht als kleiner Text neben dem Knopf.",
+  "Meiden: Siegel-Leiste, Sterne-Bewertungen, Presse-Logos, Icon-Kacheln."]},
+ {"gruppe":"Vorbilder","id":"modernanimal_com","name":"modernanimal.com","fokus":"klare Typografie, ruhige Farbflächen","zeilen":[
+  "Raster: Startbereich mittig gesetzt, darunter Bild und Text in zwei Spalten. Standorte als Liste über die volle Breite, jede Zeile mit feiner Linie.",
+  "Schrift: Rza (Serif) 60/63 px mit −2,4 px Laufweite, sehr eng. Text FT Regola Neue 18 px.",
+  "Farbe: Fläche warmes Hellbeige #F4F0E2, Text Dunkelbraun #341C03 statt Schwarz. Akzent ein ruhiges Fliederblau, das ganze Abschnitte trägt.",
+  "Fotos: Editorial mit Blitz, Menschen mit ihren Tieren in echten Wohnungen, kräftige Farben. Eigene Bildsprache.",
+  "Bewegung: Farbwechsel 400 ms mit sanftem Auslauf.",
+  "Teuer wirkt: der braune Text, die enge Serif und große Bildflächen ohne Rahmen.",
+  "Meiden: Gutschein-Fenster über dem Startbild, Sterne-Leiste."]},
+ {"gruppe":"Vorbilder","id":"thefarmersdog_com","name":"thefarmersdog.com","fokus":"warme Tierfotos im Großformat, menschlicher Ton","zeilen":[
+  "Raster: Startbild randlos, Text weiß im Foto links oben. Danach zentrierte Abschnitte.",
+  "Schrift: Neue Haas Grotesk Display 48 px w900, Fließtext 18 px fett. Freundlich und laut.",
+  "Fotos: Hund in einer echten Küche, Kamera auf Augenhöhe des Hundes, der Mensch nur als Hand und Bein angeschnitten. Das Tier ist die Hauptperson.",
+  "Ton: „More good years start here.“ Kurz, warm, ohne Fachsprache.",
+  "Farbe: Dunkelgrün, Creme und das Orange des Logos.",
+  "Teuer wirkt: nur der Startbereich. Darunter Icon-Listen, Ablauf 1-2-3 mit großen Ziffern, Presse-Logos: genau die Muster, die bei uns verboten sind."]},
+ {"gruppe":"Vorbilder","id":"wildone_com","name":"wildone.com","fokus":"Farbe mit Haltung, eigene Bildsprache","zeilen":[
+  "Raster: Farbfläche und Foto je halb, harte Kante, kein Radius, kein Schatten. Am Handy gestapelt.",
+  "Schrift: Modern Era (Grotesk), Titel nur 40 px. Die Farbe trägt, nicht die Schriftgröße.",
+  "Farbe: Flieder als Fläche, dazu ein grüner Streifen an der Bildkante und Rosa. Wenige Farben, aber flächig und selbstbewusst.",
+  "Fotos: Tiere im Alltag mit Produkt im Gebrauch, Handyvideos von Kunden als Karussell.",
+  "Teuer wirkt: die harte Kante zwischen Fläche und Foto.",
+  "Meiden: Shop-Raster, viel Leerlauf beim Nachladen."]},
+ {"gruppe":"Vorbilder","id":"aesop_com_de","name":"aesop.com","fokus":"Wärme durch Material und Zurückhaltung","zeilen":[
+  "Nicht ansehbar: Die Seite sperrt automatisierte Browser und zeigt nur eine Prüfseite (Screenshot). Eine Umgehung habe ich bewusst nicht versucht.",
+  "Notizen folgen, wenn du die Seite am PC ansiehst oder mir Screenshots schickst."]},
+ {"gruppe":"Vorbilder","id":"kinfolk_com","name":"kinfolk.com","fokus":"Bildsprache, Weißraum, Ruhe","zeilen":[
+  "Raster: Start strikt auf der Mittelachse, danach ein Magazinraster mit Abschnittstiteln klein links und „View all“ rechts.",
+  "Schrift: Kinfolk Serif 50 px in Versalien, Lesetext Sans 25 px am Computer.",
+  "Weißraum: das Heftcover steht allein auf Weiß, darüber und darunter je eine halbe Bildschirmhöhe Luft.",
+  "Fotos: gedeckte, gleiche Farbstimmung, viel Material (Stein, Holz, Papier, Stoff). Alles wie aus einem Shooting.",
+  "Farbe: Schwarz und Weiß. Farbe kommt nur aus den Fotos.",
+  "Teuer wirkt: der Verzicht. Fotos dürfen allein stehen, nichts erklärt sie."]},
+ {"gruppe":"Vorbilder","id":"stripe_com_de","name":"stripe.com","fokus":"Präzision im Kleinen","zeilen":[
+  "Schrift: Söhne in w300, Titel 44 px. Die Überschrift ist ein ganzer Satz, der erste Teil dunkel, die Fortsetzung grau.",
+  "Knöpfe: 40 px hoch, Radius 4 px, Haupt- und Nebenknopf exakt gleich hoch und auf einer Linie.",
+  "Übergänge gemessen: Farben 300 ms mit der Kurve cubic-bezier(0.25, 1, 0.5, 1), Deckkraft 240 ms. Überall dieselbe Dauer und Kurve.",
+  "Raster: Spaltenlinien sichtbar als feine Hilfslinien. Das ist bei uns verboten (Haarlinien-Raster als tragendes Mittel).",
+  "Teuer wirkt: die Konsistenz. Kein Element tanzt aus der Reihe, jeder Zustand ist gestaltet."]},
+ {"gruppe":"Awwwards","id":"odysseeclinic_com_au","name":"Odyssée (Site of the Day 08.10.2026)","fokus":"Klinik für medizinische Ästhetik, Sydney","zeilen":[
+  "Warum: die nächste Verwandte zu „Hotel statt Klinik“ unter allen Tagessiegern.",
+  "Raster: Video über die volle Fläche, Menü als eine Zeile mitten im Bild. Danach große Serif-Absätze mit Einzug.",
+  "Fotos: alle in derselben kühlen Tönung, wie aus einem Shooting. Genau das brauchen wir mit Unsplash-Fotos.",
+  "Farbe: Hellbeige plus Blaugrau aus den Fotos, sonst nichts.",
+  "Teuer wirkt: Öffnungszeiten unten als ruhige Tabelle mit gleich breiten Ziffern.",
+  "Meiden: Menüpunkte in winzigen Versalien auf Bild, schlecht lesbar."]},
+ {"gruppe":"Awwwards","id":"aventuradentalarts_com","name":"Aventura Dental Arts (Site of the Day 19.03.2026)","fokus":"Zahnarztpraxis, Florida","zeilen":[
+  "Warum: Medizin mit technischer Präzision.",
+  "Geräte freigestellt auf Schwarz, große Serif-Titel mit Kursiv-Wechsel, Formular mit Linien statt Kästen.",
+  "Lehre für uns: Technik als Bild für Sorgfalt, die Feldgestaltung im Formular.",
+  "Meiden: Ladebildschirm und lange leere Scroll-Strecken. Wer unter Druck sucht, wartet darauf nicht."]},
+ {"gruppe":"Awwwards","id":"maximatherapy_com","name":"Maxima Therapy (Site of the Day 07.04.2026)","fokus":"Therapie für neurodivergente Kinder","zeilen":[
+  "Warum: Wärme durch eine eigene, gezeichnete Bildwelt und Mut zur Farbe.",
+  "Lehre: Eine Seite wirkt warm, wenn sie eine erkennbare eigene Welt hat.",
+  "Gegenbeispiel für uns: Das ist das Kinderzimmer, das der Auftrag ausschließt."]},
+ {"gruppe":"Awwwards","id":"vibrant_noomoagency_com","name":"Vibrant Wellness (Site of the Day 20.02.2026)","fokus":"Labordiagnostik als 3D-Erlebnis","zeilen":[
+  "Warum: zeigt, wohin Gesundheitsseiten auf Awwwards kippen.",
+  "Flieder-Fläche, Partikel, Pillen-Knöpfe, „Start Experience“. Alles Merkmale, die bei uns verboten sind.",
+  "Lehre: Erlebnis vor Inhalt passt nicht zu einer Halterin mit krankem Tier."]},
+ {"gruppe":"Awwwards","id":"d2c-lifescience_com","name":"D2C Life Science (Site of the Day 22.02.2026)","fokus":"Beratung für Pharma-Qualität","zeilen":[
+  "Warum: eine Farbe als ganze Fläche in mehreren Tonwerten statt vieler Farben.",
+  "Graugrün als Grund, technische Angaben in einer Mono-Schrift. Wirkt präzise.",
+  "Lehre: Mono oder tabellarische Ziffern für Zeiten und Preise.",
+  "Meiden: Fließtext in Mono-Versalien, schlecht lesbar."]},
+ {"gruppe":"Deine Seiten","id":"ihreitrn_de","name":"ihreitrn.de (live)","fokus":"meiden","zeilen":[
+  "Off-White #FBFAF7, Text Navy #0F1B2D, Knopf Bernstein.",
+  "Schibsted Grotesk fett, Titel 71 px, zweizeilig „Ihre IT. / Sicher und einfach gelöst.“",
+  "Laptop-Foto rechts, läuft per Verlauf ins Weiß aus. QR-Code-Kasten neben der Nummer.",
+  "Dreier-Leiste mit Haarlinie oben („Eine Person / 10+ Jahre / Keine Laufzeit“).",
+  "Handy: helle, schwebende Leiste mit Rundung und Schatten, Anrufen in Bernstein plus WhatsApp."]},
+ {"gruppe":"Deine Seiten","id":"herzglanz-service_de","name":"herzglanz-service.de (live)","fokus":"meiden","zeilen":[
+  "Creme #F6F1E8, Text Waldgrün #17221B, Literata als Serif 80 px, Atkinson im Text.",
+  "Eyebrow in Ocker-Versalien über dem Titel, Titel aus kurzen Sätzen („Alltag. Zuhause.“).",
+  "Foto im Rundbogen oben rechts mit schwebender Hinweiskarte.",
+  "Dreierspalten mit Haarlinie, Kartenraster mit Foto oben, dunkelgrüner Abschnitt, QR-Codes im Kontakt.",
+  "Pillenknöpfe dunkelgrün mit Pfeil, am Handy zwei Pillen als Leiste."]},
+ {"gruppe":"Deine Seiten","id":"","name":"Desktop/ihreitrn-hell (nur aus deinen Notizen)","fokus":"meiden","zeilen":[
+  "Liegt nur auf deinem PC, von hier nicht erreichbar. Merkmale laut Projektnotiz:",
+  "fast weiß, sehr großer Grotesk-Titel linksbündig (Instrument Sans), kaum Farbe.",
+  "Nur Text-Links mit Unterstrich, Menü als Wort „Menü“.",
+  "Chrom-Kabel-Renderings als Scroll-Animation, Haarlinien-Raster."]},
+ {"gruppe":"Deine Seiten","id":"","name":"Desktop/Tierarztpraxis-Kurpfalz (nur aus deinen Notizen)","fokus":"meiden, gleiche Branche","zeilen":[
+  "Liegt nur auf deinem PC. Merkmale laut Projektnotiz und Prompt:",
+  "Petrol #1F6F78, Mint #E8F3F1, Warmorange #F28C38, Text #1F2D3A. Newsreader und Public Sans.",
+  "Foto im Türbogen auf Mint-Band, Überschrift „Wir kommen zu Ihnen.“, Notfall-Band.",
+  "Ablauf in vier Schritten ohne Ziffern, Porträt-Platzhalter in Mint mit Logo, selbst gezeichnete SVG-Karte.",
+  "Kontakt im flachen Torbogen, Fuß in Petrol tief. Logo: Ortsmarke mit Pfote."]}
+]
