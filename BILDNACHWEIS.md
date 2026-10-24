@@ -30,3 +30,13 @@ Frei nutzbar unter der Pexels-Lizenz (https://www.pexels.com/license/), auch ges
 |---|---|---|
 | start-blick | Katze liegt im Lampenlicht auf dem Sofa und schaut in die Kamera (Startbild) | https://www.pexels.com/photo/photo-of-a-white-and-black-cat-8408703/ |
 | start-schlaf | Schlafende Katze im warmen Licht, gespiegelt (nicht verwendet, Reserve) | https://www.pexels.com/photo/close-up-of-a-sleeping-cat-18691812/ |
+| nacht-scheinwerfer | A mysterious car driving at night through foggy Coatepec, headlights illuminating the road. Stock Photo | https://www.pexels.com/photo/bright-lights-from-a-car-driving-on-a-dark-road-11914217/ |
+| katze-kissen-dunkel | Adorable tabby cat peeking from between soft pillows, creating a cozy home vibe. Stock Photo | https://www.pexels.com/photo/cozy-cat-peeking-from-between-comfy-pillows-33312308/ |
+| hand-katze | A peaceful scene of a tattooed hand gently stroking a relaxed cat, perfect for themes of companionship and tra | https://www.pexels.com/photo/a-person-petting-a-cat-with-a-tattoo-on-their-arm-18586141/ |
+| katze-decken | A snug tabby cat nestled in layers of soft, knitted blankets, radiating warmth and comfort. Stock Photo | https://www.pexels.com/photo/cat-under-knitted-clothes-10348922/ |
+| hund-alt-dunkel | A close-up portrait of a dog lying on the ground, conveying serenity. Stock Photo | https://www.pexels.com/photo/a-dog-lying-on-the-ground-14690600/ |
+| hund-sofa-kopf | A brown dog laying comfortably on a couch, showing a calm and relaxed expression. Stock Photo | https://www.pexels.com/photo/a-close-up-shot-of-a-dog-resting-on-a-couch-10331253/ |
+| hund-hand-futter | A gentle interaction as a human hand holds a dog's paw, symbolizing trust and friendship. Stock Photo | https://www.pexels.com/photo/tender-moment-human-hand-holding-dog-s-paw-32635783/ |
+| katze-seitenlicht | A tabby cat basks in sunlight, highlighting its keen eye and whiskers. Stock Photo | https://www.pexels.com/photo/close-up-of-a-tabby-cat-in-sunlight-38103897/ |
+| katze-decke-grau | Adorable tabby cat snuggled up under a blanket, showcasing a cute and cozy moment. Stock Photo | https://www.pexels.com/photo/close-up-photo-of-a-cute-furry-tabby-cat-7162888/ |
+| hund-verband | A small dog with an IV is receiving treatment at a vet clinic, focusing on its paws. Stock Photo | https://www.pexels.com/photo/dog-with-intravenous-line-on-his-leg-4074725/ |

@@ -7,7 +7,7 @@
 <title>Mobile Tierarztpraxis Kurpfalz · Al Saeed</title>
 <meta name="description" content="Mobiler Notfall-Tierarzt für Hunde und Katzen in Mannheim, Ludwigshafen, Heidelberg und Umgebung. Behandlung zu Hause, Montag bis Freitag bis 23 Uhr.">
 <link rel="preload" href="../schriften/Geist.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" href="img/start-blick-1800.webp" imagesrcset="img/start-blick-640.webp 640w, img/start-blick-1100.webp 1100w, img/start-blick-1800.webp 1800w, img/start-blick-2400.webp 2400w" imagesizes="(max-width: 700px) 100vw, 74vw">
+<link rel="preload" as="image" href="img/start-blick-1800.webp" imagesrcset="img/start-blick-640.webp 640w, img/start-blick-1100.webp 1100w, img/start-blick-1800.webp 1800w" imagesizes="(max-width: 700px) 100vw, 74vw">
 <link rel="icon" href="../logo/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="stil.css">
 <script src="abend.js" defer></script>
@@ -16,46 +16,257 @@
 <a class="sprung" href="#inhalt">Zum Inhalt springen</a>
 
 <header class="kopf" data-kopf>
-  <a class="kopf__marke" href="./" aria-label="Mobile Tierarztpraxis Kurpfalz, zur Startseite">
-    <img src="../logo/logo-quer-negativ.svg" width="166" height="50" alt="">
-  </a>
-  <nav class="kopf__nav" aria-label="Hauptnavigation">
-    <ul>
-      <li><a href="#inhalt">Leistungen</a></li>
-      <li><a href="#inhalt">Hausbesuch</a></li>
-      <li><a href="#inhalt">Über mich</a></li>
-      <li><a href="#inhalt">Ratgeber</a></li>
-      <li><a href="#inhalt">Kontakt</a></li>
-    </ul>
-  </nav>
+  <a class="kopf__marke" href="./" aria-label="Mobile Tierarztpraxis Kurpfalz, zur Startseite"><img src="../logo/logo-quer-negativ.svg" width="166" height="50" alt=""></a>
+  <nav class="kopf__nav" aria-label="Hauptnavigation"><ul>
+    <li><a href="#leistungen">Leistungen</a></li>
+    <li><a href="#ablauf">Hausbesuch</a></li>
+    <li><a href="#tierarzt">Über mich</a></li>
+    <li><a href="../a/ratgeber/">Ratgeber</a></li>
+    <li><a href="#termin">Kontakt</a></li>
+  </ul></nav>
   <a class="kopf__tel" href="tel:+496210000000">0621 000 00 00</a>
 </header>
-
 <main id="inhalt">
-  <section class="start" aria-labelledby="start-titel">
-    <figure class="start__bild">
-      <img src="img/start-blick-1800.webp" srcset="img/start-blick-640.webp 640w, img/start-blick-1100.webp 1100w, img/start-blick-1800.webp 1800w, img/start-blick-2400.webp 2400w" sizes="(max-width: 700px) 100vw, 74vw" width="2400" height="1600" alt="Eine Katze liegt auf dem Sofa im warmen Licht einer Lampe und schaut ruhig in die Kamera." fetchpriority="high">
-    </figure>
 
-    <div class="start__text">
-      <p class="start__marke">Mannheim · Ludwigshafen · Heidelberg</p>
-      <h1 id="start-titel" class="start__titel"><span>Wir kommen</span> <span>zu Ihnen.</span></h1>
-      <p class="start__satz">Notfall- und Akutversorgung für Hunde und Katzen, bei Ihnen zu Hause. Kein Transportkorb, keine Fahrt, kein Wartezimmer.</p>
-      <div class="start__knoepfe">
-        <a class="knopf knopf--voll" href="#inhalt">Termin anfragen</a>
-        <a class="knopf knopf--linie" href="tel:+496210000000">Anrufen</a>
-      </div>
+<section class="start" aria-labelledby="start-titel">
+  <figure class="start__bild"><img src="img/start-blick-1100.webp" srcset="img/start-blick-640.webp 640w, img/start-blick-1100.webp 1100w, img/start-blick-1800.webp 1800w" sizes="(max-width: 700px) 100vw, 74vw" width="2400" height="1600" alt="Eine Katze liegt auf dem Sofa im warmen Licht einer Lampe und schaut ruhig in die Kamera." fetchpriority="high"></figure>
+  <div class="start__text">
+    <p class="start__marke">Mannheim · Ludwigshafen · Heidelberg</p>
+    <h1 id="start-titel" class="start__titel"><span>Wir kommen</span> <span>zu Ihnen.</span></h1>
+    <p class="start__satz">Notfall- und Akutversorgung für Hunde und Katzen, bei Ihnen zu Hause. Kein Transportkorb, keine Fahrt, kein Wartezimmer.</p>
+    <div class="start__knoepfe">
+      <a class="knopf knopf--hell" href="#termin">Termin anfragen</a>
+      <a class="knopf knopf--linie" href="tel:+496210000000">Anrufen</a>
     </div>
+  </div>
+  <p class="uhr" aria-live="off">
+    <span class="uhr__zeit" data-uhr-zeit>9–23</span>
+    <span class="uhr__satz" data-uhr-satz>Montag bis Freitag 9 bis 23 Uhr erreichbar, Samstag 8 bis 12 Uhr.</span>
+  </p>
+</section>
 
-    <p class="uhr" data-uhr aria-live="off">
-      <span class="uhr__zeit" data-uhr-zeit>Mo–Fr</span>
-      <span class="uhr__satz" data-uhr-satz>Montag bis Freitag bis 23 Uhr erreichbar, Samstag bis 12 Uhr.</span>
-    </p>
-  </section>
+<section class="termin hell" id="termin" aria-labelledby="termin-titel">
+  <div class="termin__innen">
+    <div class="termin__links zeige">
+      <h2 id="termin-titel" class="titel">Termin anfragen.</h2>
+      <p class="einleitung">Zwei kurze Fragen, dann geht es zur Anfrage. Mein Team meldet sich so schnell wie möglich bei Ihnen.</p>
+      <form class="vorauswahl" action="../a/termin/" method="get">
+        <fieldset class="gruppe">
+          <legend class="beschriftung">Für wen ist der Termin?</legend>
+          <div class="wahlen"><label class="wahl"><input type="radio" name="tier" value="hund" required><span>Hund</span></label><label class="wahl"><input type="radio" name="tier" value="katze"><span>Katze</span></label><label class="wahl"><input type="radio" name="tier" value="anderes-tier"><span>Anderes Tier</span></label></div>
+        </fieldset>
+        <div class="gruppe tier-anderes" hidden>
+          <label class="beschriftung" for="tier-anderes">Welches Tier?</label>
+          <input class="feld feld--kurz" id="tier-anderes" name="tier_anderes" type="text" maxlength="60" autocomplete="off" aria-describedby="tier-anderes-hinweis" disabled>
+          <p class="hinweis" id="tier-anderes-hinweis">Zum Beispiel Kaninchen oder Meerschweinchen. Andere Kleintiere behandle ich nach Absprache.</p>
+        </div>
+        <div class="gruppe">
+          <label class="beschriftung" for="anlass">Worum geht es?</label>
+          <div class="auswahl"><select class="feld" id="anlass" name="anlass" required data-sonst="Etwas anderes"><option value="" selected disabled>Bitte wählen</option><option>Frisst nicht oder wirkt krank</option><option>Akutversorgung und Stabilisierung</option><option>Durchfall und Erbrechen</option><option>Schmerzbehandlung</option><option>Bisswunden und Verletzungen</option><option>Ohrenentzündungen</option><option>Augen und Bindehaut</option><option>Blase und Harnwege</option><option>Infektionen und Infusionen</option><option>Lahmheit und Bewegung</option><option>Abschied zu Hause</option><option>Etwas anderes</option></select></div>
+        </div>
+        <div class="gruppe anlass-text" hidden data-label-sonst="Worum geht es genau?" data-hinweis-sonst="Zum Beispiel: hinkt seit gestern, hat etwas verschluckt" data-label="Beschreiben Sie kurz, was Ihnen aufgefallen ist (freiwillig)" data-hinweis="Zum Beispiel: seit wann, wie oft, frisst und trinkt es noch?">
+          <label class="beschriftung" for="anlass-text">Beschreiben Sie kurz, was Ihnen aufgefallen ist (freiwillig)</label>
+          <textarea class="feld feld--text" id="anlass-text" name="anlass_text" rows="3" maxlength="300" aria-describedby="anlass-text-hinweis" disabled></textarea>
+          <p class="hinweis" id="anlass-text-hinweis">Zum Beispiel: seit wann, wie oft, frisst und trinkt es noch?</p>
+        </div>
+        <button class="knopf knopf--dunkel" type="submit">Weiter zur Anfrage <span aria-hidden="true">→</span></button>
+      </form>
+    </div>
+    <aside class="termin__rechts zeige" aria-labelledby="anrufen-titel">
+      <h3 id="anrufen-titel" class="untertitel">Lieber anrufen?</h3>
+      <p>Am Telefon klären wir am schnellsten, was Ihr Tier braucht. Schreiben können Sie mir auch per WhatsApp: <span class="fehlt">[FEHLT: Nummer]</span>.</p>
+      <a class="grossnummer" href="tel:+496210000000">0621 000 00 00</a><span class="fehlt fehlt--block">[FEHLT: neue Nummer]</span>
+      <dl class="zeiten">
+        <div><dt>Montag bis Freitag</dt><dd>9 bis 23 Uhr</dd></div>
+        <div><dt>Samstag</dt><dd>8 bis 12 Uhr</dd></div>
+        <div><dt>Sonntag</dt><dd>in Ausnahmefällen</dd></div>
+      </dl>
+    </aside>
+  </div>
+</section>
 
-  <section class="folgt">
-    <p>Entwurf: Hier folgen Leistungen, Hausbesuch, Tierarzt, Einsatzgebiet und Kontakt.</p>
-  </section>
+<section class="einsatz" id="einsatz" aria-labelledby="einsatz-titel">
+  <div class="einsatz__kopf zeige">
+    <h2 id="einsatz-titel" class="titel">Wohin ich komme.</h2>
+    <p class="einleitung">Mein Schwerpunkt ist das Stadtgebiet Mannheim. Ich fahre auch nach Ludwigshafen, Heidelberg, Karlsruhe, Speyer, Schwetzingen, Weinheim, Worms und in die Orte dazwischen.</p>
+  </div>
+  <form class="plz zeige" data-plz='{&quot;55232&quot;:&quot;Alzey&quot;,&quot;67059&quot;:&quot;Ludwigshafen&quot;,&quot;67061&quot;:&quot;Ludwigshafen&quot;,&quot;67063&quot;:&quot;Ludwigshafen&quot;,&quot;67065&quot;:&quot;Ludwigshafen&quot;,&quot;67067&quot;:&quot;Ludwigshafen&quot;,&quot;67069&quot;:&quot;Ludwigshafen&quot;,&quot;67071&quot;:&quot;Ludwigshafen&quot;,&quot;67098&quot;:&quot;Bad Dürkheim&quot;,&quot;67112&quot;:&quot;Mutterstadt&quot;,&quot;67117&quot;:&quot;Limburgerhof&quot;,&quot;67122&quot;:&quot;Altrip&quot;,&quot;67125&quot;:&quot;Dannstadt&quot;,&quot;67126&quot;:&quot;Hochdorf-Assenheim&quot;,&quot;67127&quot;:&quot;Rödersheim-Gronau&quot;,&quot;67136&quot;:&quot;Fußgönheim&quot;,&quot;67141&quot;:&quot;Neuhofen&quot;,&quot;67165&quot;:&quot;Waldsee&quot;,&quot;67166&quot;:&quot;Otterstadt&quot;,&quot;67245&quot;:&quot;Lambsheim&quot;,&quot;67346&quot;:&quot;Speyer&quot;,&quot;67354&quot;:&quot;Römerberg&quot;,&quot;67360&quot;:&quot;Lingenfeld&quot;,&quot;67373&quot;:&quot;Dudenhofen&quot;,&quot;67433&quot;:&quot;Neustadt&quot;,&quot;67434&quot;:&quot;Neustadt&quot;,&quot;67435&quot;:&quot;Neustadt&quot;,&quot;67454&quot;:&quot;Haßloch&quot;,&quot;67459&quot;:&quot;Böhl-Iggelheim&quot;,&quot;67547&quot;:&quot;Worms&quot;,&quot;67549&quot;:&quot;Worms&quot;,&quot;67550&quot;:&quot;Worms&quot;,&quot;67551&quot;:&quot;Worms&quot;,&quot;68159&quot;:&quot;Mannheim&quot;,&quot;68161&quot;:&quot;Mannheim&quot;,&quot;68163&quot;:&quot;Mannheim&quot;,&quot;68165&quot;:&quot;Mannheim&quot;,&quot;68167&quot;:&quot;Mannheim&quot;,&quot;68169&quot;:&quot;Mannheim&quot;,&quot;68199&quot;:&quot;Mannheim&quot;,&quot;68219&quot;:&quot;Mannheim&quot;,&quot;68229&quot;:&quot;Mannheim&quot;,&quot;68239&quot;:&quot;Mannheim&quot;,&quot;68259&quot;:&quot;Mannheim&quot;,&quot;68305&quot;:&quot;Mannheim&quot;,&quot;68307&quot;:&quot;Mannheim&quot;,&quot;68309&quot;:&quot;Mannheim&quot;,&quot;68519&quot;:&quot;Viernheim&quot;,&quot;68723&quot;:&quot;Schwetzingen&quot;,&quot;68766&quot;:&quot;Hockenheim&quot;,&quot;68775&quot;:&quot;Ketsch&quot;,&quot;68809&quot;:&quot;Neulußheim&quot;,&quot;69115&quot;:&quot;Heidelberg&quot;,&quot;69117&quot;:&quot;Heidelberg&quot;,&quot;69118&quot;:&quot;Heidelberg&quot;,&quot;69120&quot;:&quot;Heidelberg&quot;,&quot;69121&quot;:&quot;Heidelberg&quot;,&quot;69123&quot;:&quot;Heidelberg&quot;,&quot;69124&quot;:&quot;Heidelberg&quot;,&quot;69126&quot;:&quot;Heidelberg&quot;,&quot;69469&quot;:&quot;Weinheim&quot;,&quot;76131&quot;:&quot;Karlsruhe&quot;,&quot;76133&quot;:&quot;Karlsruhe&quot;,&quot;76135&quot;:&quot;Karlsruhe&quot;,&quot;76137&quot;:&quot;Karlsruhe&quot;,&quot;76139&quot;:&quot;Karlsruhe&quot;,&quot;76149&quot;:&quot;Karlsruhe&quot;,&quot;76185&quot;:&quot;Karlsruhe&quot;,&quot;76187&quot;:&quot;Karlsruhe&quot;,&quot;76189&quot;:&quot;Karlsruhe&quot;,&quot;76199&quot;:&quot;Karlsruhe&quot;,&quot;76227&quot;:&quot;Karlsruhe&quot;,&quot;76228&quot;:&quot;Karlsruhe&quot;,&quot;76229&quot;:&quot;Karlsruhe&quot;,&quot;76726&quot;:&quot;Germersheim&quot;}' data-ja="Ja, ich komme zu Ihnen nach {ort}." data-nein="Diese Postleitzahl steht nicht auf meiner Liste. Schicken Sie mir Ihre Adresse, dann sage ich Ihnen, ob und zu welchen Bedingungen ich komme." data-fehler="Bitte geben Sie fünf Ziffern ein." novalidate>
+    <label class="beschriftung" for="plz-feld">Ihre Postleitzahl</label>
+    <div class="plz__zeile">
+      <input id="plz-feld" class="plz__feld" name="plz" inputmode="numeric" autocomplete="postal-code" maxlength="5" placeholder="68159" aria-describedby="plz-hinweis plz-antwort">
+      <button class="knopf knopf--hell" type="submit">Prüfen</button>
+    </div>
+    <p class="hinweis" id="plz-hinweis">Fünf Ziffern, zum Beispiel 68159 <span class="fehlt">[FEHLT: Postleitzahlen aus der Ortsliste vom Kunden prüfen lassen]</span></p>
+    <p class="plz__antwort" id="plz-antwort" role="status"></p>
+  </form>
+  <div class="karte zeige" aria-label="Orte im Einsatzgebiet" role="group">
+      <p class="karte__stufe karte__stufe--1"><span>Mannheim</span></p>
+      <p class="karte__stufe karte__stufe--stadtteile"><span>Innenstadt</span> <span>Jungbusch</span> <span>Neckarstadt</span> <span>Lindenhof</span> <span>Neckarau</span> <span>Almenhof</span> <span>Rheinau</span> <span>Schwetzingerstadt</span> <span>Oststadt</span> <span>Neuostheim</span> <span>Seckenheim</span> <span>Friedrichsfeld</span> <span>Feudenheim</span> <span>Käfertal</span> <span>Vogelstang</span> <span>Wallstadt</span> <span>Waldhof</span> <span>Gartenstadt</span> <span>Schönau</span> <span>Sandhofen</span></p>
+      <p class="karte__stufe karte__stufe--2"><span>Ludwigshafen</span> <span>Heidelberg</span> <span>Schwetzingen</span> <span>Viernheim</span> <span>Weinheim</span> <span>Speyer</span></p>
+      <p class="karte__stufe karte__stufe--3"><span>Karlsruhe</span> <span>Worms</span> <span>Neustadt</span> <span>Bad Dürkheim</span> <span>Hockenheim</span> <span>Haßloch</span></p>
+      <p class="karte__stufe karte__stufe--4"><span>Altrip</span> <span>Neuhofen</span> <span>Limburgerhof</span> <span>Mutterstadt</span> <span>Dannstadt</span> <span>Fußgönheim</span> <span>Ketsch</span> <span>Otterstadt</span> <span>Waldsee</span> <span>Böhl-Iggelheim</span> <span>Hochdorf-Assenheim</span> <span>Rödersheim-Gronau</span> <span>Römerberg</span> <span>Dudenhofen</span> <span>Neulußheim</span> <span>Germersheim</span> <span>Lingenfeld</span> <span>Alzey</span></p>
+  </div>
+</section>
+
+<section class="ablauf" id="ablauf" aria-labelledby="ablauf-titel">
+  <div class="ablauf__buehne" aria-hidden="true">
+    <figure class="ablauf__bild ist-aktiv" data-bild="katze-kissen-dunkel"><img src="img/katze-kissen-dunkel-1100.webp" srcset="img/katze-kissen-dunkel-640.webp 640w, img/katze-kissen-dunkel-1100.webp 1100w, img/katze-kissen-dunkel-1800.webp 1800w" sizes="(max-width: 900px) 100vw, 50vw" width="2400" height="1350" alt="" loading="lazy" decoding="async"></figure>
+    <figure class="ablauf__bild" data-bild="hand-katze"><img src="img/hand-katze-1100.webp" srcset="img/hand-katze-640.webp 640w, img/hand-katze-1100.webp 1100w, img/hand-katze-1800.webp 1800w" sizes="(max-width: 900px) 100vw, 50vw" width="2400" height="1600" alt="" loading="lazy" decoding="async"></figure>
+    <figure class="ablauf__bild" data-bild="start-schlaf"><img src="img/start-schlaf-1100.webp" srcset="img/start-schlaf-640.webp 640w, img/start-schlaf-1100.webp 1100w, img/start-schlaf-1800.webp 1800w" sizes="(max-width: 900px) 100vw, 50vw" width="2400" height="1600" alt="" loading="lazy" decoding="async"></figure>
+    <figure class="ablauf__bild" data-bild="hund-hand-futter"><img src="img/hund-hand-futter-1100.webp" srcset="img/hund-hand-futter-640.webp 640w, img/hund-hand-futter-1100.webp 1100w, img/hund-hand-futter-1800.webp 1800w" sizes="(max-width: 900px) 100vw, 50vw" width="2400" height="1602" alt="" loading="lazy" decoding="async"></figure>
+  </div>
+  <div class="ablauf__text">
+    <h2 id="ablauf-titel" class="titel zeige">So läuft ein Hausbesuch.</h2>
+    <ol class="schritte">
+      <li class="schritt zeige" data-zeigt="katze-kissen-dunkel"><h3 class="schritt__wann">Am Telefon</h3><p>Sie schildern, was los ist. Mein Team oder ich fragen nach und machen mit Ihnen eine Uhrzeit aus. Sie erreichen uns auch per WhatsApp oder über die Terminanfrage.</p></li>
+      <li class="schritt zeige" data-zeigt="katze-kissen-dunkel"><h3 class="schritt__wann">Vor dem Besuch</h3><p>Halten Sie Ihr Tier in einem ruhigen, gut beleuchteten Raum bereit. Katzen am besten schon vorher, bevor sie sich verstecken.</p></li>
+      <li class="schritt zeige" data-zeigt="hand-katze"><h3 class="schritt__wann">Bei Ihnen</h3><p>Ich untersuche Ihr Tier in seiner vertrauten Umgebung, ohne Transportkäfig und ohne Fahrt. Sie bleiben die ganze Zeit dabei, und ich erkläre Ihnen jeden Schritt.</p></li>
+      <li class="schritt zeige" data-zeigt="start-schlaf"><h3 class="schritt__wann">Nach dem Besuch</h3><p>Die Rechnung kommt direkt per E-Mail. Sie können sie bei Ihrer Tierkrankenversicherung einreichen.</p></li>
+      <li class="schritt zeige" data-zeigt="hund-hand-futter"><h3 class="schritt__wann">Wenn mehr nötig ist</h3><p>Braucht Ihr Tier eine Operation oder stationäre Behandlung, vermittle ich Sie an eine geeignete Klinik in Mannheim und übernehme die Vor- und Nachsorge.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="leistungen hell" id="leistungen" aria-labelledby="leistungen-titel">
+  <div class="abschnittkopf zeige">
+    <h2 id="leistungen-titel" class="titel">Wobei ich helfe.</h2>
+    <a class="textlink" href="../a/leistungen/">Alle Leistungen</a>
+  </div>
+  <ul class="kacheln">
+    <li class="kachel zeige">
+      <a href="../a/leistungen/akutversorgung/">
+        <figure class="kachel__bild"><img src="img/akut-b-1100.webp" srcset="img/akut-b-640.webp 640w, img/akut-b-1100.webp 1100w" sizes="(max-width: 900px) 100vw, 33vw" width="1200" height="1200" alt="Ein Stethoskop liegt im Lichtkegel einer Lampe auf dunklem Holz." loading="lazy" decoding="async"></figure>
+        <div class="kachel__text"><h3>Akutversorgung und Stabilisierung</h3><p>Bei Atemnot, Vergiftung oder Kreislaufproblemen untersuche ich Ihr Tier sofort, stabilisiere es und lindere den Schmerz.</p><span class="kachel__mehr">Mehr dazu <span aria-hidden="true">→</span></span></div>
+      </a>
+    </li>
+    <li class="kachel zeige">
+      <a href="../a/leistungen/durchfall-erbrechen/">
+        <figure class="kachel__bild"><img src="img/katze-decken-1100.webp" srcset="img/katze-decken-640.webp 640w, img/katze-decken-1100.webp 1100w, img/katze-decken-1800.webp 1800w" sizes="(max-width: 900px) 100vw, 33vw" width="2400" height="1667" alt="Eine Katze liegt müde zwischen gestrickten Decken." loading="lazy" decoding="async"></figure>
+        <div class="kachel__text"><h3>Durchfall und Erbrechen</h3><p>Ich untersuche Ihr Tier, suche die Ursache und gebe ihm Flüssigkeit, wenn es sie braucht.</p><span class="kachel__mehr">Mehr dazu <span aria-hidden="true">→</span></span></div>
+      </a>
+    </li>
+    <li class="kachel zeige">
+      <a href="../a/leistungen/schmerzbehandlung/">
+        <figure class="kachel__bild"><img src="img/hund-alt-dunkel-1100.webp" srcset="img/hund-alt-dunkel-640.webp 640w, img/hund-alt-dunkel-1100.webp 1100w, img/hund-alt-dunkel-1800.webp 1800w" sizes="(max-width: 900px) 100vw, 33vw" width="2400" height="1600" alt="Ein Hund liegt erschöpft am Boden und schaut zur Seite." loading="lazy" decoding="async"></figure>
+        <div class="kachel__text"><h3>Schmerzbehandlung</h3><p>Ich behandle akute und chronische Schmerzen mit Medikamenten aus meiner tierärztlichen Apotheke.</p><span class="kachel__mehr">Mehr dazu <span aria-hidden="true">→</span></span></div>
+      </a>
+    </li>
+  </ul>
+  <h3 class="untertitel zeige">Weitere Leistungen</h3>
+  <ul class="zeilen">
+    <li class="zeige"><a href="../a/leistungen/bisswunden-verletzungen/"><span class="zeilen__titel">Bisswunden und Verletzungen</span><span class="zeilen__anzeichen">Blutet, Leckt die Wunde, Schwellung</span><span class="zeilen__pfeil" aria-hidden="true">→</span></a></li>
+    <li class="zeige"><a href="../a/leistungen/ohrenentzuendungen/"><span class="zeilen__titel">Ohrenentzündungen</span><span class="zeilen__anzeichen">Kopfschütteln, Kratzen am Ohr, Geruch</span><span class="zeilen__pfeil" aria-hidden="true">→</span></a></li>
+    <li class="zeige"><a href="../a/leistungen/augen-bindehaut/"><span class="zeilen__titel">Augen und Bindehaut</span><span class="zeilen__anzeichen">Rote Augen, Tränen, Zukneifen</span><span class="zeilen__pfeil" aria-hidden="true">→</span></a></li>
+    <li class="zeige"><a href="../a/leistungen/blase-harnwege/"><span class="zeilen__titel">Blase und Harnwege</span><span class="zeilen__anzeichen">Häufiger Harndrang, Blut im Urin, Pressen</span><span class="zeilen__pfeil" aria-hidden="true">→</span></a></li>
+    <li class="zeige"><a href="../a/leistungen/infektionen-infusionen/"><span class="zeilen__titel">Infektionen und Infusionen</span><span class="zeilen__anzeichen">Fieber, Mattigkeit, Trinkt wenig</span><span class="zeilen__pfeil" aria-hidden="true">→</span></a></li>
+    <li class="zeige"><a href="../a/leistungen/lahmheit-bewegung/"><span class="zeilen__titel">Lahmheit und Bewegung</span><span class="zeilen__anzeichen">Humpeln, Steifer Gang, Springt nicht mehr</span><span class="zeilen__pfeil" aria-hidden="true">→</span></a></li>
+    <li class="zeige"><a href="../a/abschied/"><span class="zeilen__titel">Abschied zu Hause</span><span class="zeilen__anzeichen"></span><span class="zeilen__pfeil" aria-hidden="true">→</span></a></li>
+  </ul>
+</section>
+
+<section class="zeitband" aria-labelledby="zeitband-titel">
+  <figure class="zeitband__bild"><img src="img/nacht-scheinwerfer-1100.webp" srcset="img/nacht-scheinwerfer-640.webp 640w, img/nacht-scheinwerfer-1100.webp 1100w, img/nacht-scheinwerfer-1800.webp 1800w" sizes="100vw" width="2400" height="1600" alt="" loading="lazy" decoding="async"></figure>
+  <div class="zeitband__text zeige">
+    <p class="start__marke">Montag bis Freitag</p>
+    <h2 id="zeitband-titel" class="zeitband__zahl">9–23<span> Uhr</span></h2>
+    <p class="zeitband__satz">Auch abends, wenn die meisten Praxen geschlossen haben. Samstag von 8 bis 12 Uhr, Sonntag in Ausnahmefällen.</p>
+  </div>
+</section>
+
+<section class="tierarzt hell" id="tierarzt" aria-labelledby="tierarzt-titel">
+  <figure class="tierarzt__portraet zeige"><span class="fehlt">[FEHLT: Porträt]</span><small>Hochformat 4 : 5, Tageslicht, mit einem Patienten auf dem Boden</small></figure>
+  <div class="tierarzt__text zeige">
+    <h2 id="tierarzt-titel" class="titel titel--mittel">Ich bringe die Praxis zu Ihnen nach Hause.</h2>
+    <p class="tierarzt__name">Rasheed Al Saeed, approbierter Tierarzt, Schwerpunkt Kleintiermedizin</p>
+    <p>Transport und fremde Gerüche bedeuten für ein krankes Tier Stress. Das verschlechtert nicht nur sein Befinden, er erschwert auch die Untersuchung. Zu Hause untersuche ich ruhiger und sehe mehr.</p>
+    <p>Meine tierärztliche Kenntnisprüfung habe ich an der Justus-Liebig-Universität Gießen abgelegt. Erfahrung habe ich in einem Internship bei AniCura in Bielefeld und in Tierarztpraxen und Kliniken in Essen gesammelt. Dort habe ich gelernt, wie viel eine sorgfältige Anamnese und eine ruhige, klare Entscheidung wert sind, wenn es eilt.</p>
+    <p>Ich behandle allein. Mein Praxisteam kümmert sich um Termine, Erreichbarkeit und Medikamente, damit ich mich ganz auf Ihr Tier konzentrieren kann.</p>
+    <div class="tierarzt__auto"><span class="fehlt">[FEHLT: Foto Praxisauto]</span><p>Mit diesem Auto komme ich. Darin ist meine tierärztliche Apotheke mit den wichtigsten Medikamenten.</p></div>
+  </div>
+</section>
+
+<section class="kosten" id="kosten" aria-labelledby="kosten-titel">
+  <div class="kosten__kopf zeige">
+    <h2 id="kosten-titel" class="titel titel--mittel">Was auf Sie zukommt.</h2>
+    <p class="einleitung">Ich rechne nach der Gebührenordnung für Tierärzte ab. Vorab erstelle ich Ihnen einen Kostenvoranschlag.</p>
+  </div>
+  <dl class="preise zeige">
+    <div><dt>Hausbesuch, Untersuchung und Behandlung</dt><dd>nach GOT</dd></div>
+    <div><dt>Anfahrt außerhalb Mannheims</dt><dd><span class="fehlt">[FEHLT: Angabe]</span></dd></div>
+    <div><dt>Nach 18 Uhr, am Wochenende und an Feiertagen</dt><dd>Zuschlag nach GOT</dd></div>
+    <div><dt>Bezahlen</dt><dd>bar, EC-Karte oder Rechnung</dd></div>
+    <div><dt>Absagen</dt><dd>bis 24 Stunden vorher ohne Gebühr</dd></div>
+  </dl>
+</section>
+
+<section class="ratgeber hell" aria-labelledby="ratgeber-titel">
+  <div class="abschnittkopf zeige">
+    <h2 id="ratgeber-titel" class="titel titel--mittel">Ratgeber.</h2>
+    <a class="textlink" href="../a/ratgeber/">Alle Artikel</a>
+  </div>
+  <ul class="artikel">
+    <li class="zeige"><a href="../a/ratgeber/giftig-fuer-hunde/">
+      <figure><img src="img/hund-verband-1100.webp" srcset="img/hund-verband-640.webp 640w, img/hund-verband-1100.webp 1100w, img/hund-verband-1800.webp 1800w" sizes="(max-width: 900px) 100vw, 33vw" width="2400" height="1600" alt="Ein Hund liegt mit einem Venenzugang am Bein auf einer Decke." loading="lazy" decoding="async"></figure>
+      <p class="artikel__meta">2 Min. Lesezeit</p>
+      <h3>Giftig für Hunde: Was im Haushalt gefährlich ist</h3>
+    </a></li>
+    <li class="zeige"><a href="../a/ratgeber/schmerzen-erkennen/">
+      <figure><img src="img/katze-seitenlicht-1100.webp" srcset="img/katze-seitenlicht-640.webp 640w, img/katze-seitenlicht-1100.webp 1100w, img/katze-seitenlicht-1800.webp 1800w" sizes="(max-width: 900px) 100vw, 33vw" width="2400" height="1600" alt="Eine getigerte Katze im seitlichen Licht." loading="lazy" decoding="async"></figure>
+      <p class="artikel__meta">1 Min. Lesezeit</p>
+      <h3>Schmerzen bei Hund und Katze erkennen</h3>
+    </a></li>
+    <li class="zeige"><a href="../a/ratgeber/warnzeichen-notfall/">
+      <figure><img src="img/hund-sofa-kopf-1100.webp" srcset="img/hund-sofa-kopf-640.webp 640w, img/hund-sofa-kopf-1100.webp 1100w, img/hund-sofa-kopf-1800.webp 1800w" sizes="(max-width: 900px) 100vw, 33vw" width="2400" height="1600" alt="Ein Hund liegt mit dem Kopf auf dem Sofa und schaut müde." loading="lazy" decoding="async"></figure>
+      <p class="artikel__meta">2 Min. Lesezeit</p>
+      <h3>Warnzeichen: Wann Ihr Tier sofort Hilfe braucht</h3>
+    </a></li>
+  </ul>
+</section>
+
+<section class="fragen hell" id="fragen" aria-labelledby="fragen-titel">
+  <h2 id="fragen-titel" class="titel titel--mittel zeige">Häufige Fragen.</h2>
+  <div class="fragen__gruppen">
+    <div class="fragen__gruppe zeige"><h3 class="beschriftung">Termin</h3>
+      <details><summary>Wie vereinbare ich einen Termin?</summary><p>Rufen Sie an, schreiben Sie per WhatsApp oder nutzen Sie die Terminanfrage auf dieser Seite. Ich melde mich so schnell wie möglich und wir finden einen Termin.</p></details>
+      <details><summary>Wie kurzfristig bekomme ich einen Termin?</summary><p>Rufen Sie an, dann sagt Ihnen mein Team, wann ich bei Ihnen sein kann. Bei akuten Beschwerden komme ich innerhalb meiner Zeiten so schnell wie möglich. <span class="fehlt">[FEHLT: übliche Wartezeit von Herrn Al Saeed]</span></p></details>
+      <details><summary>Kommen Sie auch am Wochenende?</summary><p>Ja, nach Vereinbarung am Samstag und in Ausnahmefällen am Sonntag. Am Wochenende fällt ein Zuschlag an.</p></details>
+      <details><summary>Kann ich einen Termin absagen?</summary><p>Ja. Sagen Sie bitte bis 24 Stunden vorher ab. Bei einer späteren Absage berechne ich bis zur Hälfte der Hausbesuchsgebühr.</p></details>
+    </div>
+    <div class="fragen__gruppe zeige"><h3 class="beschriftung">Behandlung</h3>
+      <details><summary>Bieten Sie Notfallbehandlungen an?</summary><p>Ja, innerhalb meiner Zeiten versorge ich akute Erkrankungen und Verletzungen bei Ihnen zu Hause. Eine 24-Stunden-Versorgung biete ich nicht an. In Lebensgefahr fahren Sie bitte direkt in die nächste Tierklinik.</p></details>
+      <details><summary>Können Sie operieren?</summary><p>Größere Operationen sind mobil nicht möglich, dafür braucht Ihr Tier eine Klinik. Ich vermittle Sie an eine geeignete Klinik in Mannheim und übernehme die Vor- und Nachsorge.</p></details>
+      <details><summary>Welche Tiere behandeln Sie?</summary><p>Vor allem Hunde und Katzen. Bei Kaninchen, Meerschweinchen und anderen Kleintieren rufen Sie mich bitte vorher an, dann besprechen wir, was möglich ist.</p></details>
+    </div>
+    <div class="fragen__gruppe zeige"><h3 class="beschriftung">Abrechnung</h3>
+      <details><summary>Wie bezahle ich, und zahlt meine Versicherung?</summary><p>Sie zahlen bar, mit EC-Karte oder auf Rechnung. Die Rechnung bekommen Sie direkt nach der Behandlung per E-Mail. Viele Tierkrankenversicherungen erstatten die Behandlung, wie viel, hängt von Ihrem Tarif ab.</p></details>
+      <details><summary>Berechnen Sie die Anfahrt?</summary><p><span class="fehlt">[FEHLT: Anfahrt im Stadtgebiet Mannheim inklusive? Pauschale außerhalb? Angabe von Herrn Al Saeed]</span></p></details>
+    </div>
+    <div class="fragen__gruppe zeige"><h3 class="beschriftung">Einsatzgebiet</h3>
+      <details><summary>Wie finde ich heraus, ob Sie zu mir kommen?</summary><p>Geben Sie oben unter „Wohin ich komme“ Ihre Postleitzahl ein. Steht Ihr Ort nicht auf der Liste, rufen Sie an, dann klären wir es.</p></details>
+    </div>
+  </div>
+  <div class="fragen__mehr zeige"><h3 class="untertitel">Ihre Frage war nicht dabei?</h3><p>Rufen Sie an oder schreiben Sie per WhatsApp: <span class="fehlt">[FEHLT: Nummer]</span>. Mein Team beantwortet Ihre Frage direkt.</p></div>
+</section>
+
+<section class="notfall" aria-labelledby="notfall-titel">
+  <div class="zeige">
+    <h2 id="notfall-titel" class="titel">Im Notfall.</h2>
+    <p class="notfall__text">Bei Atemnot, Vergiftung, Verletzungen, starken Schmerzen oder Kreislaufproblemen rufen Sie mich an. Ich komme so schnell wie möglich, untersuche Ihr Tier und stabilisiere es. Die wichtigsten Medikamente habe ich dabei.</p>
+    <a class="grossnummer grossnummer--hell" href="tel:+496210000000">0621 000 00 00</a>
+    <p class="notfall__klinik">Eine 24-Stunden-Versorgung biete ich nicht an. Ist das Leben Ihres Tieres in Gefahr oder erreichen Sie mich außerhalb meiner Zeiten, fahren Sie bitte direkt in die nächste Tierklinik.</p>
+  </div>
+</section>
 </main>
+
+<footer class="fuss">
+  <div class="fuss__innen">
+    <div><img src="../logo/logo-quer-negativ.svg" width="166" height="50" alt="Mobile Tierarztpraxis Kurpfalz, Notfall-Tierarzt Al Saeed"></div>
+    <div><h2 class="beschriftung">Erreichbar</h2><p>Montag bis Freitag 9 bis 23 Uhr<br>Samstag 8 bis 12 Uhr<br>Sonntag in Ausnahmefällen</p></div>
+    <div><h2 class="beschriftung">Kontakt</h2><p><a href="tel:+496210000000">0621 000 00 00</a><span class="fehlt fehlt--block">[FEHLT: neue Nummer]</span><br><span class="fehlt">[FEHLT: E-Mail]</span></p></div>
+    <div><h2 class="beschriftung">Praxis</h2><p>Freinsheimer Str. 30<br>67245 Lambsheim</p></div>
+  </div>
+  <p class="fuss__recht"><a href="#">Impressum</a> <a href="#">Datenschutz</a> <span>Fotos: Pexels, Stethoskop KI-generiert</span></p>
+</footer>
+<nav class="leiste" aria-label="Schnellkontakt"><a class="knopf knopf--hell" href="#termin">Termin anfragen</a><a class="knopf knopf--linie" href="tel:+496210000000">Anrufen</a></nav>
 </body>
 </html>
