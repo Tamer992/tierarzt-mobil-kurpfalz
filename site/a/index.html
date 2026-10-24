@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Auf Augenhöhe · Entwurf A</title>
+<title>Praxisname · Mobiler Tierarzt für Hunde und Katzen</title>
 <link rel="preload" href="../schriften/Brygada1918.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="stil.css">
 <script src="../js/seite.js" defer></script>
@@ -14,78 +14,237 @@
 <header class="kopf">
   <div class="kopf__innen">
     <a class="marke" href="./"><span class="fehlt">[Praxisname]</span></a>
-    <nav class="kopf__nav" aria-label="Hauptmenü"><ul><li><a href="#leistungen">Leistungen</a></li><li><a href="#inhalt">Hausbesuch</a></li><li><a href="#inhalt">Über mich</a></li><li><a href="#inhalt">Kontakt</a></li></ul></nav>
-    <div class="kopf__kontakt"><a class="nummer" href="tel:+496210000000"><span class="fehlt" title="FEHLT: Telefonnummer">0621 000 00 00</span></a><a class="knopf" href="#termin">Termin anfragen</a></div>
+    <nav class="kopf__nav" aria-label="Hauptmenü"><ul><li><a href="#leistungen">Leistungen</a></li><li><a href="#ablauf">Hausbesuch</a></li><li><a href="#tierarzt">Über mich</a></li><li><a href="#kontakt">Kontakt</a></li></ul></nav>
+    <div class="kopf__kontakt"><a class="nummer" href="tel:+496210000000"><span class="fehlt" title="FEHLT: Telefonnummer">0621 000 00 00</span></a><a class="knopf" href="#kontakt">Termin anfragen</a></div>
     <button class="menueknopf" type="button" aria-expanded="false" aria-controls="handymenue"><span class="unsichtbar">Menü öffnen</span><span class="menueknopf__strich"></span><span class="menueknopf__strich"></span></button>
   </div>
-  <nav class="handymenue" id="handymenue" aria-label="Menü" hidden><ul><li><a href="#leistungen">Leistungen</a></li><li><a href="#inhalt">Hausbesuch</a></li><li><a href="#inhalt">Über mich</a></li><li><a href="#inhalt">Kontakt</a></li></ul></nav>
+  <nav class="handymenue" id="handymenue" aria-label="Menü" hidden><ul><li><a href="#leistungen">Leistungen</a></li><li><a href="#ablauf">Hausbesuch</a></li><li><a href="#tierarzt">Über mich</a></li><li><a href="#kontakt">Kontakt</a></li></ul></nav>
 </header>
 <main id="inhalt">
+
   <section class="start" aria-labelledby="start-titel">
-    <div class="start__bild"><img class="auftritt" src="img/hund-senior-boden-1100.webp" srcset="img/hund-senior-boden-640.webp 640w, img/hund-senior-boden-1100.webp 1100w, img/hund-senior-boden-1800.webp 1800w" sizes="100vw" width="2400" height="1500" alt="Ein älterer Hund liegt auf dem Holzboden und hat den Kopf auf die Pfoten gelegt." fetchpriority="high"></div>
-    <div class="start__tafel auftritt auftritt--2">
-      <h1 id="start-titel">Ich behandle Ihr Tier dort, wo es sich sicher fühlt.</h1>
-      <p class="start__zeile">Hausbesuche für Hunde und Katzen in <span class="fehlt">[FEHLT: Ort und Umgebung]</span>. Rufen Sie an, ich sage Ihnen, wann ich bei Ihnen sein kann.</p>
-      <div class="start__kontakt"><a class="nummer" href="tel:+496210000000"><span class="fehlt" title="FEHLT: Telefonnummer">0621 000 00 00</span></a><a class="knopf knopf--gross" href="#termin">Termin anfragen</a></div>
+    <div class="start__bild"><img class="auftritt" src="img/hund-teppich-1100.webp" srcset="img/hund-teppich-640.webp 640w, img/hund-teppich-1100.webp 1100w, img/hund-teppich-1800.webp 1800w" sizes="100vw" width="2400" height="1600" alt="Ein Hund liegt auf dem Teppich unter dem Tisch und schaut mit wachen Augen in die Kamera." fetchpriority="high"></div>
+    <div class="start__unten">
+      <div class="start__tafel auftritt auftritt--2">
+        <h1 id="start-titel">Ich behandle Ihr Tier dort, wo es sich sicher fühlt.</h1>
+        <p class="start__zeile">Hausbesuche für Hunde und Katzen in <span class="fehlt">[FEHLT: Ort und Umgebung]</span>. Rufen Sie an, ich sage Ihnen, wann ich bei Ihnen sein kann.</p>
+        <div class="start__kontakt"><a class="nummer" href="tel:+496210000000"><span class="fehlt" title="FEHLT: Telefonnummer">0621 000 00 00</span></a><a class="knopf knopf--gross" href="#kontakt">Termin anfragen</a></div>
+        <p class="start__erreichbar">Telefonisch erreichbar <span class="fehlt">[FEHLT: Montag bis Freitag 8 bis 20 Uhr]</span>. Außerhalb dieser Zeiten hilft die Tierklinik <span class="fehlt">[FEHLT: Name und Telefon]</span>.</p>
+      </div>
+      <aside class="kurzkosten auftritt auftritt--2" aria-labelledby="kurzkosten-titel">
+        <h2 id="kurzkosten-titel" class="kurzkosten__titel">Abrechnung</h2>
+        <p>Für den Hausbesuch berechne ich <span class="fehlt">[FEHLT: Betrag Hausbesuch]</span>. Die Behandlung rechne ich nach der Gebührenordnung für Tierärzte ab.</p>
+        <a class="textlink" href="#kosten">Alles zur Abrechnung</a>
+      </aside>
     </div>
   </section>
+
+  <section class="notfall" aria-labelledby="notfall-titel">
+    <div class="notfall__innen einblenden">
+      <h2 id="notfall-titel">Im Notfall</h2>
+      <div class="notfall__text">
+        <p>Atmet Ihr Tier schwer, blutet es stark oder hat es etwas Giftiges gefressen, rufen Sie mich sofort an. Rufen Sie auch an, wenn Ihr Tier seit mehr als einem Tag nicht frisst. Ich sage Ihnen am Telefon, was Sie bis zu meiner Ankunft tun können.</p>
+        <p class="notfall__klinik">Bin ich nicht schnell genug bei Ihnen, ist die nächste Tierklinik der richtige Ort: <span class="fehlt">[FEHLT: Tierklinik mit Adresse und Telefon]</span>.</p>
+      </div>
+      <p class="notfall__nummer"><a class="nummer" href="tel:+496210000000"><span class="fehlt" title="FEHLT: Telefonnummer">0621 000 00 00</span></a></p>
+    </div>
+  </section>
+
+  <section class="ablauf" id="ablauf" aria-labelledby="ablauf-titel">
+    <div class="ablauf__kopf">
+      <h2 id="ablauf-titel" class="einblenden">So läuft ein Hausbesuch</h2>
+      
+      <figure class="ablauf__bild einblenden"><img class="" src="img/katze-unter-decke-1100.webp" srcset="img/katze-unter-decke-640.webp 640w, img/katze-unter-decke-1100.webp 1100w, img/katze-unter-decke-1800.webp 1800w" sizes="(min-width: 900px) 30vw, 100vw" width="2400" height="1800" alt="Eine rote Katze schläft unter einer Wolldecke auf dem Sofa." loading="lazy" decoding="async"></figure>
+    </div>
+    <ol class="ablauf__liste">
+        <li class="schritt einblenden">
+          <p class="schritt__wann">Am Telefon</p>
+          <p class="schritt__text">Sie schildern mir, was los ist. Ich frage nach, sage Ihnen, ob ein Hausbesuch passt, und wir machen eine Uhrzeit aus.</p>
+        </li>
+        <li class="schritt einblenden">
+          <p class="schritt__wann">Vor dem Besuch</p>
+          <p class="schritt__text">Halten Sie Ihr Tier in einem ruhigen, hellen Raum. Katzen am besten schon vorher, bevor sie sich verstecken. Impfpass und Medikamente legen Sie bereit.</p>
+        </li>
+        <li class="schritt einblenden">
+          <p class="schritt__wann">Bei Ihnen</p>
+          <p class="schritt__text">Ich untersuche Ihr Tier dort, wo es liegt, auf dem Teppich oder im Körbchen. Ich erkläre Ihnen jeden Schritt und was ich finde.</p>
+        </li>
+        <li class="schritt einblenden">
+          <p class="schritt__wann">Nach dem Besuch</p>
+          <p class="schritt__text">Die Rechnung kommt per E-Mail. Sie können sie bei Ihrer Tierkrankenversicherung einreichen.</p>
+        </li>
+        <li class="schritt einblenden">
+          <p class="schritt__wann">Am nächsten Tag</p>
+          <p class="schritt__text">Ich melde mich und frage, wie es Ihrem Tier geht. <span class="fehlt">[FEHLT: mit dem Kunden klären, ob er nachfragt]</span></p>
+        </li>
+    </ol>
+  </section>
+
   <section class="leistungen" id="leistungen" aria-labelledby="leistungen-titel">
     <div class="leistungen__seite">
       <h2 id="leistungen-titel" class="einblenden">Wobei ich helfe</h2>
       <p class="leistungen__satz einblenden">Viele Beschwerden behandle ich direkt bei Ihnen. Wenn Ihr Tier in eine Klinik muss, sage ich es Ihnen und kümmere mich um die Überweisung.</p>
-      <figure class="leistungen__bild einblenden"><img class="" src="img/katze-sofa-1100.webp" srcset="img/katze-sofa-640.webp 640w, img/katze-sofa-1100.webp 1100w, img/katze-sofa-1800.webp 1800w" sizes="(min-width: 900px) 34vw, 100vw" width="2400" height="1600" alt="Eine getigerte Katze liegt auf einem hellen Sofa und schaut in den Raum." loading="lazy" decoding="async"></figure>
+      <figure class="leistungen__bild einblenden"><img class="" src="img/katze-sonnenfenster-1100.webp" srcset="img/katze-sonnenfenster-640.webp 640w, img/katze-sonnenfenster-1100.webp 1100w, img/katze-sonnenfenster-1800.webp 1800w" sizes="(min-width: 900px) 34vw, 100vw" width="2400" height="3600" alt="Eine Katze sitzt am Fenster im Licht und schaut hinaus." loading="lazy" decoding="async"></figure>
     </div>
     <ul class="leistungen__liste">
-      <li class="dienst einblenden">
-        <a class="dienst__link" href="#leistungen">
+        <li class="dienst einblenden">
           <h3 class="dienst__titel">Durchfall und Erbrechen</h3>
           <p class="dienst__satz">Ich untersuche Ihr Tier, suche die Ursache und gebe ihm Flüssigkeit, wenn es sie braucht.</p>
-          <span class="dienst__mehr">Mehr dazu<span class="pfeil" aria-hidden="true"></span></span>
-        </a>
-      </li>
-      <li class="dienst einblenden">
-        <a class="dienst__link" href="#leistungen">
+        </li>
+        <li class="dienst einblenden">
           <h3 class="dienst__titel">Ohren und Augen</h3>
           <p class="dienst__satz">Kratzt sich Ihr Hund ständig am Ohr oder kneift Ihre Katze ein Auge zu, sehe ich mir das in Ruhe an.</p>
-          <span class="dienst__mehr">Mehr dazu<span class="pfeil" aria-hidden="true"></span></span>
-        </a>
-      </li>
-      <li class="dienst einblenden">
-        <a class="dienst__link" href="#leistungen">
+        </li>
+        <li class="dienst einblenden">
           <h3 class="dienst__titel">Schmerzen und Lahmheit</h3>
-          <p class="dienst__satz">Ich finde heraus, wo es weh tut, und lindere den Schmerz. Auch wenn er schon länger besteht.</p>
-          <span class="dienst__mehr">Mehr dazu<span class="pfeil" aria-hidden="true"></span></span>
-        </a>
-      </li>
-      <li class="dienst einblenden">
-        <a class="dienst__link" href="#leistungen">
+          <p class="dienst__satz">Ich finde heraus, wo es weh tut, und lindere den Schmerz, auch wenn er schon länger besteht.</p>
+        </li>
+        <li class="dienst einblenden">
           <h3 class="dienst__titel">Wunden und Bisse</h3>
           <p class="dienst__satz">Ich reinige und versorge die Wunde bei Ihnen zu Hause, oft auf dem Sofa oder am Küchentisch.</p>
-          <span class="dienst__mehr">Mehr dazu<span class="pfeil" aria-hidden="true"></span></span>
-        </a>
-      </li>
-      <li class="dienst einblenden">
-        <a class="dienst__link" href="#leistungen">
+        </li>
+        <li class="dienst einblenden">
           <h3 class="dienst__titel">Impfung und Vorsorge</h3>
           <p class="dienst__satz">Für Tiere, die in der Praxis in Panik geraten, ist die Impfung im eigenen Flur der ruhigere Weg.</p>
-          <span class="dienst__mehr">Mehr dazu<span class="pfeil" aria-hidden="true"></span></span>
-        </a>
-      </li>
-      <li class="dienst einblenden">
-        <a class="dienst__link" href="#leistungen">
+        </li>
+        <li class="dienst einblenden">
           <h3 class="dienst__titel">Abschied zu Hause</h3>
           <p class="dienst__satz">Wenn es Zeit ist, komme ich zu Ihnen. Ihr Tier schläft dort ein, wo es sein Leben verbracht hat.</p>
-          <span class="dienst__mehr">Mehr dazu<span class="pfeil" aria-hidden="true"></span></span>
-        </a>
-      </li>
+        </li>
     </ul>
     <p class="hinweis-fehlt"><span class="fehlt">[FEHLT: Leistungen vom Kunden bestätigen]</span></p>
   </section>
-  <div id="termin"></div>
+
+  <section class="tierarzt" id="tierarzt" aria-labelledby="tierarzt-titel">
+    <div class="tierarzt__portraet einblenden" role="img" aria-label="Platzhalter für das Porträt des Tierarztes">
+      <span class="platzhalter__titel">[FEHLT: Porträt]</span>
+      <span class="platzhalter__hinweis">Hochformat 4 : 5, Tageslicht, mit einem Patienten auf dem Boden</span>
+    </div>
+    <div class="tierarzt__text">
+      <h2 id="tierarzt-titel" class="einblenden">Ich komme allein und bleibe, bis alles geklärt ist.</h2>
+      <p class="tierarzt__name einblenden"><span class="fehlt">[FEHLT: Vorname Nachname]</span>, Tierarzt</p>
+      <p class="einblenden">Ich behandle Hunde und Katzen in ihrem Zuhause, weil sie dort ruhiger sind und ich mehr sehe als in der Praxis: wie Ihr Tier liegt und wie es sich bewegt.</p>
+      <p class="einblenden"><span class="fehlt">[FEHLT: Werdegang in zwei bis drei Sätzen, zum Beispiel Studium, Stationen in Praxen und Kliniken, Schwerpunkte. Keine Jahreszahlen erfinden.]</span></p>
+      <figure class="auto einblenden">
+        <div class="auto__bild" role="img" aria-label="Platzhalter für ein Foto des Praxisautos"><span class="platzhalter__titel">[FEHLT: Foto Praxisauto]</span></div>
+        <figcaption>Mit diesem Auto komme ich. Darin habe ich alles für die Untersuchung und die wichtigsten Medikamente.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="einsatz" id="einsatz" aria-labelledby="einsatz-titel">
+    <div class="einsatz__tafel einblenden">
+      <h2 id="einsatz-titel">Wohin ich komme</h2>
+      <p class="einsatz__satz">Ich fahre zu Ihnen nach <span class="fehlt">[FEHLT: fünf bis acht Orte, zum Beispiel Hauptort, Nachbarorte und Stadtteile]</span>.</p>
+      <form class="plz" data-plz="{&quot;10000&quot;:&quot;[FEHLT: Ort]&quot;,&quot;10001&quot;:&quot;[FEHLT: Ort]&quot;,&quot;10002&quot;:&quot;[FEHLT: Ort]&quot;}" data-ja="Ja, ich komme zu Ihnen nach {ort}." data-nein="Diese Postleitzahl liegt außerhalb meines Gebiets. Rufen Sie mich trotzdem an, dann sage ich Ihnen, ob und wann ich kommen kann." data-fehler="Bitte geben Sie fünf Ziffern ein." novalidate>
+        <label class="feld__label" for="plz-eingabe">Ihre Postleitzahl</label>
+        <div class="plz__zeile">
+          <input class="feld" id="plz-eingabe" name="plz" inputmode="numeric" autocomplete="postal-code" maxlength="5" pattern="[0-9]{5}" aria-describedby="plz-hinweis plz-antwort">
+          <button class="knopf" type="submit">Prüfen</button>
+        </div>
+        <p class="feld__hinweis" id="plz-hinweis">Fünf Ziffern, zum Beispiel 10000</p>
+        <p class="plz__antwort" id="plz-antwort" role="status" aria-live="polite"></p>
+      </form>
+      <p class="hinweis-fehlt"><span class="fehlt">[FEHLT: Liste der Postleitzahlen. Zum Testen 10000 eingeben.]</span></p>
+    </div>
+  </section>
+
+  <section class="kosten" id="kosten" aria-labelledby="kosten-titel">
+    <h2 id="kosten-titel" class="einblenden">Was auf Sie zukommt</h2>
+    <p class="kosten__satz einblenden">Ich rechne nach der Gebührenordnung für Tierärzte ab. Vor der Behandlung sage ich Ihnen, womit Sie rechnen können.</p>
+    <dl class="kosten__liste einblenden">
+        <div class="kosten__zeile"><dt>Hausbesuch</dt><dd><span class="fehlt">[FEHLT: Betrag]</span></dd></div>
+        <div class="kosten__zeile"><dt>Abends ab 18 Uhr, am Wochenende und an Feiertagen</dt><dd><span class="fehlt">[FEHLT: Zuschlag]</span></dd></div>
+        <div class="kosten__zeile"><dt>Untersuchung und Behandlung</dt><dd>nach Gebührenordnung (GOT)</dd></div>
+        <div class="kosten__zeile"><dt>Bezahlen</dt><dd><span class="fehlt">[FEHLT: bar, EC-Karte oder Rechnung]</span></dd></div>
+        <div class="kosten__zeile"><dt>Absagen</dt><dd><span class="fehlt">[FEHLT: bis 24 Stunden vorher ohne Kosten]</span></dd></div>
+    </dl>
+  </section>
+
+  <section class="fragen" id="fragen" aria-labelledby="fragen-titel">
+    <h2 id="fragen-titel" class="einblenden">Häufige Fragen</h2>
+    <div class="fragen__liste einblenden">
+        <details class="frage">
+          <summary><span class="frage__text">Womit muss ich bei einem Hausbesuch rechnen?</span><span class="frage__zeichen" aria-hidden="true"></span></summary>
+          <div class="frage__antwort"><p>Für die Anfahrt berechne ich <span class="fehlt">[FEHLT: Betrag]</span>. Dazu kommt die Behandlung nach der Gebührenordnung für Tierärzte. Am Telefon sage ich Ihnen, womit Sie rechnen können.</p></div>
+        </details>
+        <details class="frage">
+          <summary><span class="frage__text">Wie bezahle ich?</span><span class="frage__zeichen" aria-hidden="true"></span></summary>
+          <div class="frage__antwort"><p><span class="fehlt">[FEHLT: Zahlungsarten]</span>. Die Rechnung bekommen Sie per E-Mail, Sie können sie direkt bei Ihrer Tierkrankenversicherung einreichen.</p></div>
+        </details>
+        <details class="frage">
+          <summary><span class="frage__text">Können Sie bei einem Besuch mehrere Tiere behandeln?</span><span class="frage__zeichen" aria-hidden="true"></span></summary>
+          <div class="frage__antwort"><p>Ja. Sagen Sie mir bei der Anfrage, wie viele Tiere es sind, dann plane ich genug Zeit ein.</p></div>
+        </details>
+        <details class="frage">
+          <summary><span class="frage__text">Welche Tiere behandeln Sie?</span><span class="frage__zeichen" aria-hidden="true"></span></summary>
+          <div class="frage__antwort"><p>Hunde und Katzen. <span class="fehlt">[FEHLT: andere Kleintiere nach Absprache, ja oder nein]</span></p></div>
+        </details>
+        <details class="frage">
+          <summary><span class="frage__text">Was mache ich, bis Sie da sind?</span><span class="frage__zeichen" aria-hidden="true"></span></summary>
+          <div class="frage__antwort"><p>Bringen Sie Ihr Tier in einen ruhigen Raum und schließen Sie die Tür. Geben Sie ihm kein Futter und keine Medikamente, ohne vorher mit mir zu sprechen.</p></div>
+        </details>
+        <details class="frage">
+          <summary><span class="frage__text">Wann muss mein Tier doch in eine Klinik?</span><span class="frage__zeichen" aria-hidden="true"></span></summary>
+          <div class="frage__antwort"><p>Wenn es operiert werden muss oder ein Röntgenbild braucht. Dann sage ich es Ihnen offen und kümmere mich um die Überweisung.</p></div>
+        </details>
+        <details class="frage">
+          <summary><span class="frage__text">Wie sage ich einen Termin ab?</span><span class="frage__zeichen" aria-hidden="true"></span></summary>
+          <div class="frage__antwort"><p>Rufen Sie mich an oder schreiben Sie mir. <span class="fehlt">[FEHLT: Absagefrist]</span></p></div>
+        </details>
+    </div>
+  </section>
+
+  <section class="kontakt" id="kontakt" aria-labelledby="kontakt-titel">
+    <div class="kontakt__anfrage">
+      <h2 id="kontakt-titel">Termin anfragen</h2>
+      <p class="kontakt__satz">Zwei kurze Fragen, dann geht es zur Anfrage. Ich melde mich <span class="fehlt">[FEHLT: wann, zum Beispiel noch am selben Tag]</span>.</p>
+      <form class="vorauswahl" action="termin/" method="get">
+        <fieldset class="vorauswahl__gruppe">
+          <legend class="feld__label">Für wen ist der Termin?</legend>
+          <div class="wahlreihe">
+            <label class="wahl"><input type="radio" name="tier" value="hund" required><span>Hund</span></label>
+            <label class="wahl"><input type="radio" name="tier" value="katze"><span>Katze</span></label>
+          </div>
+        </fieldset>
+        <div class="vorauswahl__gruppe">
+          <label class="feld__label" for="anlass">Worum geht es?</label>
+          <div class="auswahl"><select class="feld" id="anlass" name="anlass" required><option value="" selected disabled>Bitte wählen</option><option>Frisst nicht oder wirkt krank</option><option>Durchfall und Erbrechen</option><option>Ohren und Augen</option><option>Schmerzen und Lahmheit</option><option>Wunden und Bisse</option><option>Impfung und Vorsorge</option><option>Abschied zu Hause</option><option>Etwas anderes</option></select></div>
+        </div>
+        <button class="knopf knopf--gross" type="submit">Weiter zur Anfrage<span class="pfeil" aria-hidden="true"></span></button>
+      </form>
+    </div>
+    <div class="kontakt__telefon">
+      <h3>Lieber anrufen?</h3>
+      <p>Am Telefon klären wir am schnellsten, was Ihr Tier braucht.</p>
+      <p class="kontakt__nummer"><a class="nummer" href="tel:+496210000000"><span class="fehlt" title="FEHLT: Telefonnummer">0621 000 00 00</span></a></p>
+      <table class="zeiten">
+        <caption>Telefonisch erreichbar</caption>
+        <tbody><tr><th scope="row">Montag bis Freitag</th><td><span class="fehlt">[FEHLT: 8 bis 20 Uhr]</span></td></tr><tr><th scope="row">Samstag</th><td><span class="fehlt">[FEHLT: 9 bis 14 Uhr]</span></td></tr><tr><th scope="row">Sonntag und Feiertage</th><td><span class="fehlt">[FEHLT: im Notfall]</span></td></tr></tbody>
+      </table>
+    </div>
+  </section>
 </main>
-<div class="leiste " role="region" aria-label="Kontakt">
+
+<footer class="fuss" id="fuss">
+  <div class="fuss__innen">
+    <div class="fuss__marke">
+      <p class="marke"><span class="fehlt">[Praxisname]</span></p>
+      <p>Mobile Tierarztpraxis für Hunde und Katzen in <span class="fehlt">[FEHLT: Ort und Umgebung]</span>.</p>
+    </div>
+    <div class="fuss__kontakt">
+      <p class="fuss__nummer"><a class="nummer" href="tel:+496210000000"><span class="fehlt" title="FEHLT: Telefonnummer">0621 000 00 00</span></a></p>
+      <table class="zeiten zeiten--klein">
+        <caption>Telefonisch erreichbar</caption>
+        <tbody><tr><th scope="row">Montag bis Freitag</th><td><span class="fehlt">[FEHLT: 8 bis 20 Uhr]</span></td></tr><tr><th scope="row">Samstag</th><td><span class="fehlt">[FEHLT: 9 bis 14 Uhr]</span></td></tr><tr><th scope="row">Sonntag und Feiertage</th><td><span class="fehlt">[FEHLT: im Notfall]</span></td></tr></tbody>
+      </table>
+    </div>
+    <nav class="fuss__links" aria-label="Rechtliches"><ul><li><a href="#inhalt">Impressum</a></li><li><a href="#inhalt">Datenschutz</a></li><li><a href="#inhalt">Bildnachweis</a></li></ul></nav>
+  </div>
+</footer>
+<div class="leiste" role="region" aria-label="Kontakt">
   <a class="leiste__anruf" href="tel:+496210000000"><span class="leiste__wort">Anrufen</span><span class="leiste__nr"><span class="fehlt" title="FEHLT: Telefonnummer">0621 000 00 00</span></span></a>
-  <a class="leiste__termin" href="#termin">Termin anfragen</a>
+  <a class="leiste__termin" href="#kontakt">Termin anfragen</a>
 </div>
 </body>
 </html>

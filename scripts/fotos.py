@@ -8,7 +8,7 @@ STIL = {
   'c': dict(sat=0.92, con=1.06, hel=0.99, ton=(1.05,1.0,0.94)),   # Abendlicht, warm, mehr Tiefe
 }
 JE = {
-  'a': ['hund-senior-boden','katze-sofa','hund-boden2','katze-unter-decke','hund-teppich'],
+  'a': ['hund-teppich','katze-sonnenfenster','katze-unter-decke','hund-senior-boden','katze-sofa','hund-boden2'],
   'b': ['katze-sonnenfenster','katzen-sofa-licht','katze-fensterbank-schlaf','hund-boden'],
   'c': ['hund-fenster','katze-unter-decke','katze-sofa','hund-boden2','hund-teppich','katze-grau-fenster','hund-senior-boden'],
 }

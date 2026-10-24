@@ -1,0 +1,187 @@
+{
+  "navigation": [
+    {
+      "text": "Leistungen",
+      "ziel": "#leistungen"
+    },
+    {
+      "text": "Hausbesuch",
+      "ziel": "#ablauf"
+    },
+    {
+      "text": "Über mich",
+      "ziel": "#tierarzt"
+    },
+    {
+      "text": "Kontakt",
+      "ziel": "#kontakt"
+    }
+  ],
+  "kosten_kurz": {
+    "titel": "Abrechnung",
+    "satz": "Für den Hausbesuch berechne ich [FEHLT: Betrag Hausbesuch]. Die Behandlung rechne ich nach der Gebührenordnung für Tierärzte ab.",
+    "link": "Alles zur Abrechnung"
+  },
+  "notfall": {
+    "titel": "Im Notfall",
+    "text": "Atmet Ihr Tier schwer, blutet es stark oder hat es etwas Giftiges gefressen, rufen Sie mich sofort an. Rufen Sie auch an, wenn Ihr Tier seit mehr als einem Tag nicht frisst. Ich sage Ihnen am Telefon, was Sie bis zu meiner Ankunft tun können.",
+    "klinik": "Bin ich nicht schnell genug bei Ihnen, ist die nächste Tierklinik der richtige Ort: [FEHLT: Tierklinik mit Adresse und Telefon]."
+  },
+  "ablauf": {
+    "titel": "So läuft ein Hausbesuch",
+    "einleitung": "",
+    "schritte": [
+      {
+        "wann": "Am Telefon",
+        "text": "Sie schildern mir, was los ist. Ich frage nach, sage Ihnen, ob ein Hausbesuch passt, und wir machen eine Uhrzeit aus."
+      },
+      {
+        "wann": "Vor dem Besuch",
+        "text": "Halten Sie Ihr Tier in einem ruhigen, hellen Raum. Katzen am besten schon vorher, bevor sie sich verstecken. Impfpass und Medikamente legen Sie bereit."
+      },
+      {
+        "wann": "Bei Ihnen",
+        "text": "Ich untersuche Ihr Tier dort, wo es liegt, auf dem Teppich oder im Körbchen. Ich erkläre Ihnen jeden Schritt und was ich finde."
+      },
+      {
+        "wann": "Nach dem Besuch",
+        "text": "Die Rechnung kommt per E-Mail. Sie können sie bei Ihrer Tierkrankenversicherung einreichen."
+      },
+      {
+        "wann": "Am nächsten Tag",
+        "text": "Ich melde mich und frage, wie es Ihrem Tier geht. [FEHLT: mit dem Kunden klären, ob er nachfragt]"
+      }
+    ],
+    "foto": "katze-unter-decke",
+    "foto_alt": "Eine rote Katze schläft unter einer Wolldecke auf dem Sofa."
+  },
+  "tierarzt": {
+    "titel": "Ich komme allein und bleibe, bis alles geklärt ist.",
+    "name": "[FEHLT: Vorname Nachname], Tierarzt",
+    "absaetze": [
+      "Ich behandle Hunde und Katzen in ihrem Zuhause, weil sie dort ruhiger sind und ich mehr sehe als in der Praxis: wie Ihr Tier liegt und wie es sich bewegt.",
+      "[FEHLT: Werdegang in zwei bis drei Sätzen, zum Beispiel Studium, Stationen in Praxen und Kliniken, Schwerpunkte. Keine Jahreszahlen erfinden.]"
+    ],
+    "portraet": "[FEHLT: Porträt]",
+    "portraet_hinweis": "Hochformat 4 : 5, Tageslicht, mit einem Patienten auf dem Boden",
+    "auto": "[FEHLT: Foto Praxisauto]",
+    "auto_satz": "Mit diesem Auto komme ich. Darin habe ich alles für die Untersuchung und die wichtigsten Medikamente."
+  },
+  "einsatz": {
+    "titel": "Wohin ich komme",
+    "satz": "Ich fahre zu Ihnen nach [FEHLT: fünf bis acht Orte, zum Beispiel Hauptort, Nachbarorte und Stadtteile].",
+    "plz_label": "Ihre Postleitzahl",
+    "plz_knopf": "Prüfen",
+    "plz_hinweis": "Fünf Ziffern, zum Beispiel 10000",
+    "antwort_ja": "Ja, ich komme zu Ihnen nach {ort}.",
+    "antwort_nein": "Diese Postleitzahl liegt außerhalb meines Gebiets. Rufen Sie mich trotzdem an, dann sage ich Ihnen, ob und wann ich kommen kann.",
+    "antwort_fehler": "Bitte geben Sie fünf Ziffern ein.",
+    "plz_liste": {
+      "10000": "[FEHLT: Ort]",
+      "10001": "[FEHLT: Ort]",
+      "10002": "[FEHLT: Ort]"
+    },
+    "plz_fehlt": "[FEHLT: Liste der Postleitzahlen. Zum Testen 10000 eingeben.]"
+  },
+  "kosten": {
+    "titel": "Was auf Sie zukommt",
+    "satz": "Ich rechne nach der Gebührenordnung für Tierärzte ab. Vor der Behandlung sage ich Ihnen, womit Sie rechnen können.",
+    "zeilen": [
+      {
+        "was": "Hausbesuch",
+        "wert": "[FEHLT: Betrag]"
+      },
+      {
+        "was": "Abends ab 18 Uhr, am Wochenende und an Feiertagen",
+        "wert": "[FEHLT: Zuschlag]"
+      },
+      {
+        "was": "Untersuchung und Behandlung",
+        "wert": "nach Gebührenordnung (GOT)"
+      },
+      {
+        "was": "Bezahlen",
+        "wert": "[FEHLT: bar, EC-Karte oder Rechnung]"
+      },
+      {
+        "was": "Absagen",
+        "wert": "[FEHLT: bis 24 Stunden vorher ohne Kosten]"
+      }
+    ]
+  },
+  "fragen": {
+    "titel": "Häufige Fragen",
+    "liste": [
+      {
+        "f": "Womit muss ich bei einem Hausbesuch rechnen?",
+        "a": "Für die Anfahrt berechne ich [FEHLT: Betrag]. Dazu kommt die Behandlung nach der Gebührenordnung für Tierärzte. Am Telefon sage ich Ihnen, womit Sie rechnen können."
+      },
+      {
+        "f": "Wie bezahle ich?",
+        "a": "[FEHLT: Zahlungsarten]. Die Rechnung bekommen Sie per E-Mail, Sie können sie direkt bei Ihrer Tierkrankenversicherung einreichen."
+      },
+      {
+        "f": "Können Sie bei einem Besuch mehrere Tiere behandeln?",
+        "a": "Ja. Sagen Sie mir bei der Anfrage, wie viele Tiere es sind, dann plane ich genug Zeit ein."
+      },
+      {
+        "f": "Welche Tiere behandeln Sie?",
+        "a": "Hunde und Katzen. [FEHLT: andere Kleintiere nach Absprache, ja oder nein]"
+      },
+      {
+        "f": "Was mache ich, bis Sie da sind?",
+        "a": "Bringen Sie Ihr Tier in einen ruhigen Raum und schließen Sie die Tür. Geben Sie ihm kein Futter und keine Medikamente, ohne vorher mit mir zu sprechen."
+      },
+      {
+        "f": "Wann muss mein Tier doch in eine Klinik?",
+        "a": "Wenn es operiert werden muss oder ein Röntgenbild braucht. Dann sage ich es Ihnen offen und kümmere mich um die Überweisung."
+      },
+      {
+        "f": "Wie sage ich einen Termin ab?",
+        "a": "Rufen Sie mich an oder schreiben Sie mir. [FEHLT: Absagefrist]"
+      }
+    ]
+  },
+  "kontakt": {
+    "titel": "Termin anfragen",
+    "satz": "Zwei kurze Fragen, dann geht es zur Anfrage. Ich melde mich [FEHLT: wann, zum Beispiel noch am selben Tag].",
+    "frage_tier": "Für wen ist der Termin?",
+    "tiere": [
+      "Hund",
+      "Katze"
+    ],
+    "frage_anlass": "Worum geht es?",
+    "anlass_sonst": "Etwas anderes",
+    "weiter": "Weiter zur Anfrage",
+    "telefon_titel": "Lieber anrufen?",
+    "telefon_satz": "Am Telefon klären wir am schnellsten, was Ihr Tier braucht.",
+    "anlass_leer": "Bitte wählen",
+    "anlass_erst": "Frisst nicht oder wirkt krank"
+  },
+  "erreichbarkeit": {
+    "titel": "Telefonisch erreichbar",
+    "zeilen": [
+      {
+        "tage": "Montag bis Freitag",
+        "zeit": "[FEHLT: 8 bis 20 Uhr]"
+      },
+      {
+        "tage": "Samstag",
+        "zeit": "[FEHLT: 9 bis 14 Uhr]"
+      },
+      {
+        "tage": "Sonntag und Feiertage",
+        "zeit": "[FEHLT: im Notfall]"
+      }
+    ]
+  },
+  "fuss": {
+    "satz": "Mobile Tierarztpraxis für Hunde und Katzen in [FEHLT: Ort und Umgebung].",
+    "links": [
+      "Impressum",
+      "Datenschutz",
+      "Bildnachweis"
+    ]
+  },
+  "erreichbar_zeile": "Telefonisch erreichbar [FEHLT: Montag bis Freitag 8 bis 20 Uhr]. Außerhalb dieser Zeiten hilft die Tierklinik [FEHLT: Name und Telefon]."
+}

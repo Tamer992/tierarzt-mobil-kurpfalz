@@ -9,6 +9,8 @@ const lies = async (p) => JSON.parse(await readFile(join(wurzel, p), 'utf8'));
 const g = await lies('src/inhalt/gemeinsam.json');
 const r = await lies('src/inhalt/richtungen.json');
 const masse = await lies('src/inhalt/fotomasse.json');
+const s = await lies('src/inhalt/startseite.json');
+import { startseiteA } from './seite-a.mjs';
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 // [FEHLT: …] sichtbar markieren, damit Platzhalter beim Prüfen auffallen
@@ -183,7 +185,9 @@ function seiteC() {
 </html>`;
 }
 
-for (const [k, f] of [['a', seiteA], ['b', seiteB], ['c', seiteC]]) {
+// Phase 2: A ist die vollständige Startseite, B und C bleiben als Stand aus Phase 1
+const seiteAVoll = () => startseiteA({ g, r, s, esc, txt, bild, nr, tel, kopf });
+for (const [k, f] of [['a', seiteAVoll], ['b', seiteB], ['c', seiteC]]) {
   await mkdir(join(wurzel, 'site', k), { recursive: true });
   await writeFile(join(wurzel, 'site', k, 'index.html'), f());
   await cp(join(wurzel, 'src/stil', `${k}.css`), join(wurzel, 'site', k, 'stil.css'));
@@ -194,3 +198,9 @@ await cp(join(wurzel, 'schriften/lizenzen'), join(wurzel, 'site/schriften/lizenz
 await mkdir(join(wurzel, 'site/js'), { recursive: true });
 await cp(join(wurzel, 'src/js/seite.js'), join(wurzel, 'site/js/seite.js'));
 console.log('gebaut: site/a, site/b, site/c');
+
+// Platzhalter für die Terminseite, bis Phase 3 das Formular baut
+await mkdir(join(wurzel, 'site/a/termin'), { recursive: true });
+await writeFile(join(wurzel, 'site/a/termin/index.html'), `<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Termin anfragen</title><link rel="stylesheet" href="../stil.css"></head>
+<body><main id="inhalt" class="kosten"><h1>Termin anfragen</h1><p class="kosten__satz"><span class="fehlt">[FEHLT: Formular mit allen Zuständen folgt in Phase 3]</span></p><p class="kosten__satz"><a class="textlink" href="../">Zurück zur Startseite</a></p></main></body></html>`);

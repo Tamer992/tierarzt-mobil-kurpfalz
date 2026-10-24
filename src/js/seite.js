@@ -54,3 +54,32 @@
     });
   }
 })();
+
+// Richtung A: Postleitzahl prüfen, ohne Server, aus der Liste im data-Attribut
+(function () {
+  var form = document.querySelector('.plz');
+  if (!form) return;
+  var liste = JSON.parse(form.getAttribute('data-plz') || '{}');
+  var feld = form.querySelector('input');
+  var antwort = form.querySelector('.plz__antwort');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var wert = feld.value.replace(/\D/g, '');
+    antwort.classList.remove('ist-ja', 'ist-nein', 'ist-fehler');
+    if (wert.length !== 5) {
+      feld.setAttribute('aria-invalid', 'true');
+      antwort.textContent = form.getAttribute('data-fehler');
+      antwort.classList.add('ist-fehler');
+      return;
+    }
+    feld.removeAttribute('aria-invalid');
+    if (Object.prototype.hasOwnProperty.call(liste, wert)) {
+      antwort.textContent = form.getAttribute('data-ja').replace('{ort}', liste[wert]);
+      antwort.classList.add('ist-ja');
+    } else {
+      antwort.textContent = form.getAttribute('data-nein');
+      antwort.classList.add('ist-nein');
+    }
+  });
+  feld.addEventListener('input', function () { if (feld.getAttribute('aria-invalid')) feld.removeAttribute('aria-invalid'); });
+})();

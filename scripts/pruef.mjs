@@ -15,7 +15,7 @@ for (const p of pfade) {
     const h = await s.evaluate(()=>document.documentElement.scrollHeight);
     for (let y=0;y<h;y+=500){ await s.evaluate(y=>scrollTo(0,y),y); await s.waitForTimeout(120); }
     await s.evaluate(()=>scrollTo(0,0)); await s.waitForTimeout(1000);
-    await s.setViewportSize({ width: opt.viewport.width, height: Math.min(h, 6000) });
+    await s.setViewportSize({ width: opt.viewport.width, height: Math.min(h, 12000) });
     await s.waitForTimeout(500);
     await s.screenshot({ path:`${ziel}/${name}-${tag}-voll.png` });
     const ueber = await s.evaluate(()=>document.documentElement.scrollWidth - document.documentElement.clientWidth);
