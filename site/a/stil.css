@@ -287,6 +287,8 @@ section h2 { font-size: var(--s5); line-height: 1.12; }
 .feld:focus-visible { outline: none; }
 .feld[aria-invalid="true"] { border-color: var(--fehler); box-shadow: 0 0 0 3px #F3DCD5; }
 .feld:disabled { background: var(--grund); color: #5F636B; border-style: dashed; }
+.feld--text { min-height: 112px; padding: var(--a3) var(--a4); margin-top: var(--a2); max-width: 26rem; resize: vertical; line-height: 1.5; }
+.anlass-text[hidden] { display: none; }
 
 /* Kosten: Preisliste mit Punktlinie */
 .kosten { max-width: 52rem; margin: 0 auto; padding: var(--a10) var(--rand) 0; }
@@ -326,7 +328,7 @@ section h2 { font-size: var(--s5); line-height: 1.12; }
 .wahl { position: relative; display: block; }
 .wahl input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
 .wahl span {
-  display: flex; align-items: center; justify-content: center; min-height: 64px; font-weight: 600; font-size: var(--s2);
+  display: flex; align-items: center; justify-content: center; min-height: 64px; font-weight: 600; font-size: var(--s2); padding: var(--a2) var(--a3); text-align: center; line-height: 1.25;
   background: #FFFFFE; border: 1.5px solid #8C9098; border-radius: 2px; transition: border-color var(--zeit) var(--kurve), background-color var(--zeit) var(--kurve), color var(--zeit) var(--kurve);
 }
 .wahl:hover span { border-color: var(--text); }

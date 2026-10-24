@@ -230,7 +230,9 @@
     "telefon_titel": "Lieber anrufen?",
     "telefon_satz": "Am Telefon klären wir am schnellsten, was Ihr Tier braucht. Schreiben können Sie mir auch per WhatsApp: [FEHLT: Nummer].",
     "anlass_leer": "Bitte wählen",
-    "anlass_erst": "Frisst nicht oder wirkt krank"
+    "anlass_erst": "Frisst nicht oder wirkt krank",
+    "anlass_sonst_label": "Worum geht es genau?",
+    "anlass_sonst_hinweis": "Zum Beispiel: hinkt seit gestern, hat etwas verschluckt"
   },
   "erreichbarkeit": {
     "titel": "Erreichbar",

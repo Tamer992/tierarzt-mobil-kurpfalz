@@ -73,7 +73,12 @@ export function startseiteA({ g, r, s, esc, txt, bild, nr, tel, kopf }) {
         </fieldset>
         <div class="vorauswahl__gruppe">
           <label class="feld__label" for="anlass">${esc(s.kontakt.frage_anlass)}</label>
-          <div class="auswahl"><select class="feld" id="anlass" name="anlass" required>${anlaesse}</select></div>
+          <div class="auswahl"><select class="feld" id="anlass" name="anlass" required data-sonst="${esc(s.kontakt.anlass_sonst)}">${anlaesse}</select></div>
+        </div>
+        <div class="vorauswahl__gruppe anlass-text" hidden>
+          <label class="feld__label" for="anlass-text">${esc(s.kontakt.anlass_sonst_label)}</label>
+          <textarea class="feld feld--text" id="anlass-text" name="anlass_text" rows="3" maxlength="300" aria-describedby="anlass-text-hinweis" disabled></textarea>
+          <p class="feld__hinweis" id="anlass-text-hinweis">${esc(s.kontakt.anlass_sonst_hinweis)}</p>
         </div>
         <button class="knopf knopf--gross" type="submit">${esc(s.kontakt.weiter)}<span class="pfeil" aria-hidden="true"></span></button>
       </form>

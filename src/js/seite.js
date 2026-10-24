@@ -82,4 +82,22 @@
     }
   });
   feld.addEventListener('input', function () { if (feld.getAttribute('aria-invalid')) feld.removeAttribute('aria-invalid'); });
+
+})();
+
+// Termin-Vorauswahl: bei „Etwas anderes“ ein Textfeld zeigen
+(function () {
+  var anlass = document.getElementById('anlass');
+  var anlassText = document.querySelector('.anlass-text');
+  if (anlass && anlassText) {
+    var textfeld = anlassText.querySelector('textarea');
+    var pruefeAnlass = function () {
+      var sonst = anlass.value === anlass.getAttribute('data-sonst');
+      anlassText.hidden = !sonst;
+      textfeld.disabled = !sonst;
+      textfeld.required = sonst;
+    };
+    anlass.addEventListener('change', pruefeAnlass);
+    pruefeAnlass();
+  }
 })();

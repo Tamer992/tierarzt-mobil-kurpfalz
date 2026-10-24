@@ -55,7 +55,12 @@
         </fieldset>
         <div class="vorauswahl__gruppe">
           <label class="feld__label" for="anlass">Worum geht es?</label>
-          <div class="auswahl"><select class="feld" id="anlass" name="anlass" required><option value="" selected disabled>Bitte wählen</option><option>Frisst nicht oder wirkt krank</option><option>Akutversorgung und Stabilisierung</option><option>Durchfall und Erbrechen</option><option>Schmerzbehandlung</option><option>Bisswunden und Verletzungen</option><option>Ohrenentzündungen</option><option>Augen und Bindehaut</option><option>Blase und Harnwege</option><option>Infektionen und Infusionen</option><option>Lahmheit und Bewegung</option><option>Abschied zu Hause</option><option>Etwas anderes</option></select></div>
+          <div class="auswahl"><select class="feld" id="anlass" name="anlass" required data-sonst="Etwas anderes"><option value="" selected disabled>Bitte wählen</option><option>Frisst nicht oder wirkt krank</option><option>Akutversorgung und Stabilisierung</option><option>Durchfall und Erbrechen</option><option>Schmerzbehandlung</option><option>Bisswunden und Verletzungen</option><option>Ohrenentzündungen</option><option>Augen und Bindehaut</option><option>Blase und Harnwege</option><option>Infektionen und Infusionen</option><option>Lahmheit und Bewegung</option><option>Abschied zu Hause</option><option>Etwas anderes</option></select></div>
+        </div>
+        <div class="vorauswahl__gruppe anlass-text" hidden>
+          <label class="feld__label" for="anlass-text">Worum geht es genau?</label>
+          <textarea class="feld feld--text" id="anlass-text" name="anlass_text" rows="3" maxlength="300" aria-describedby="anlass-text-hinweis" disabled></textarea>
+          <p class="feld__hinweis" id="anlass-text-hinweis">Zum Beispiel: hinkt seit gestern, hat etwas verschluckt</p>
         </div>
         <button class="knopf knopf--gross" type="submit">Weiter zur Anfrage<span class="pfeil" aria-hidden="true"></span></button>
       </form>
