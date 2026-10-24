@@ -60,7 +60,7 @@ function dokument(titel, p, { beschreibung = '', koerper = '' } = {}) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>${esc(titel)}</title>${beschreibung ? `\n<meta name="description" content="${esc(beschreibung)}">` : ''}
-<link rel="preload" href="${p}../schriften/Geist.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="${p}../schriften/SourceSerif4.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="icon" href="${p}../logo/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="${p}unterseiten.css">
 <script src="${p}../js/seite.js" defer></script>

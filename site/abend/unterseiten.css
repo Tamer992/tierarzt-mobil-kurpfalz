@@ -834,13 +834,13 @@ input[type="date"].feld { appearance: none; -webkit-appearance: none; min-width:
 .artikel__text strong { font-weight: 600; }
 
 /* ===== Richtung „Abendlicht“: Anpassungen für die Unterseiten ===== */
-@font-face { font-family: 'Geist'; src: url('../schriften/Geist.woff2') format('woff2'); font-weight: 100 900; font-display: swap; }
-@font-face { font-family: 'Geist Mono'; src: url('../schriften/GeistMono.woff2') format('woff2'); font-weight: 100 900; font-display: swap; }
-@font-face { font-family: 'Geist Ersatz'; src: local('Arial'); size-adjust: 104%; ascent-override: 92%; descent-override: 24%; }
+@font-face { font-family: 'Source Serif 4'; src: url('../schriften/SourceSerif4.woff2') format('woff2'); font-weight: 200 900; font-display: swap; }
+@font-face { font-family: 'Source Serif 4'; src: url('../schriften/SourceSerif4-Italic.woff2') format('woff2'); font-weight: 200 900; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Albert Sans'; src: url('../schriften/AlbertSans.woff2') format('woff2'); font-weight: 100 900; font-display: swap; }
 
 :root {
-  --nacht: #14110e; --nacht-2: #1c1814; --licht: #f1ebe1; --asche: #a99f92; --lampe: #dba564;
-  --kalk: #f2efe8; --tinte: #1f1b17; --stein: #5f574e;
+  --nacht: #1a1612; --nacht-2: #221d18; --licht: #f4ede2; --asche: #b3a898; --lampe: #e0ac6a;
+  --kalk: #f6f2eb; --sand: #ede4d5; --tinte: #2a241e; --stein: #62584d; --honig: #8a5520;
   /* Variablen von Richtung A auf Abendlicht umgestellt */
   --grund: var(--kalk);
   --flaeche: #faf8f3;
@@ -852,43 +852,41 @@ input[type="date"].feld { appearance: none; -webkit-appearance: none; min-width:
   --auf-akzent: var(--kalk);
   --linie: rgba(31, 27, 23, .16);
   --leise-dunkel: var(--asche);
-  --serif: 'Geist', 'Geist Ersatz', system-ui, sans-serif;
-  --sans: 'Geist', 'Geist Ersatz', system-ui, sans-serif;
-  --mono: 'Geist Mono', ui-monospace, monospace;
-  --rund: 20px;
+  --serif: 'Source Serif 4', Georgia, serif;
+  --sans: 'Albert Sans', system-ui, sans-serif;
+  --rund: 14px;
 }
 body { -webkit-font-smoothing: antialiased; }
 ::selection { background: var(--lampe); color: var(--nacht); }
 input, select, textarea { caret-color: var(--tinte); accent-color: var(--tinte); }
 
-/* Überschriften: Geist kräftig und eng statt Antiqua */
-h1, h2, h3 { font-weight: 600; letter-spacing: -.03em; }
-.u-start h1, .termin__kopf h1, .seitenkopf h1, h1 { font-size: clamp(42px, 5.6vw, 84px); line-height: 1; letter-spacing: -.042em; }
-.still h1 { font-size: clamp(36px, 4.4vw, 60px); font-weight: 600; }
-.schritt__wann, .frage summary, .gruppe__titel, .plzhinweis, .fehlerliste__titel, .still__einleitung { font-style: normal; }
-.still__text { font-family: var(--sans); }
+/* Überschriften in Source Serif 4, ruhig und warm */
+h1, h2, h3 { font-weight: 500; letter-spacing: -.01em; }
+.u-start h1, .termin__kopf h1, .seitenkopf h1, h1 { font-size: clamp(40px, 4.8vw, 68px); line-height: 1.06; letter-spacing: -.015em; }
+.still h1 { font-size: clamp(36px, 4vw, 56px); }
 
 /* Knöpfe rund wie auf der Startseite */
-.knopf { border-radius: 999px; padding-inline: 28px; font-weight: 500; }
-.feld, .formfeld input, .formfeld select, .formfeld textarea, input[type="text"], input[type="tel"], input[type="email"], input[type="date"], select, textarea { border-radius: 14px; }
-.wahl span, .wahlreihe label span { border-radius: 999px; }
+.knopf { border-radius: 12px; padding-inline: 26px; font-weight: 600; }
+.knopf:hover { background: var(--honig); }
+.feld, .formfeld input, .formfeld select, .formfeld textarea, input[type="text"], input[type="tel"], input[type="email"], input[type="date"], select, textarea { border-radius: 12px; }
+.wahl span, .wahlreihe label span { border-radius: 12px; }
 
 /* Fotos mit runden Ecken */
 .vorher__bild img, .still__bild img, .uebersicht img, .artikel img { border-radius: var(--rund); }
 
-/* Telefonnummer in Geist Mono, wie auf der Startseite */
-.nummer, .start__kontakt .nummer, a.nummer { font-family: var(--mono) !important; font-weight: 400; letter-spacing: -.02em; }
+/* Telefonnummer kräftig mit gleich breiten Ziffern */
+.nummer, .start__kontakt .nummer, a.nummer { font-family: var(--sans) !important; font-weight: 600; font-variant-numeric: tabular-nums; }
 
-.fehlt { font-family: var(--sans); font-size: .8em; background: rgba(219, 165, 100, .35); padding: 0 .3em; border-radius: 3px; }
+.fehlt { font-family: var(--sans); font-size: .8em; background: rgba(224, 172, 106, .35); padding: 0 .3em; border-radius: 3px; }
 
 /* ----- Kopf ----- */
 .ab-kopf { position: sticky; top: 0; z-index: 20; display: flex; flex-wrap: wrap; align-items: center; gap: 32px; padding: 14px var(--rand); background: var(--nacht); color: var(--licht); }
 .ab-kopf__marke img { width: 140px; height: auto; display: block; }
 .ab-kopf__nav { margin-left: auto; }
 .ab-kopf__nav ul { display: flex; gap: 30px; list-style: none; margin: 0; padding: 0; }
-.ab-kopf__nav a, .ab-kopf__tel { font-size: 14px; text-decoration: none; color: var(--licht); opacity: .82; }
+.ab-kopf__nav a, .ab-kopf__tel { font-size: 15px; text-decoration: none; color: var(--licht); opacity: .82; }
 .ab-kopf__nav a:hover, .ab-kopf__tel:hover { opacity: 1; }
-.ab-kopf__tel { font-family: var(--mono); font-size: 13px; opacity: 1; padding-left: 30px; border-left: 1px solid rgba(241, 235, 225, .22); white-space: nowrap; }
+.ab-kopf__tel { font-weight: 600; font-variant-numeric: tabular-nums; font-size: 15px; opacity: 1; padding-left: 30px; border-left: 1px solid rgba(241, 235, 225, .22); white-space: nowrap; }
 .ab-kopf .menueknopf { display: none; color: var(--licht); margin-left: auto; }
 .ab-kopf .handymenue { flex-basis: 100%; background: var(--nacht); padding: 8px 0 20px; margin: 0; }
 .ab-kopf .handymenue ul { list-style: none; margin: 0; padding: 0; }
@@ -899,7 +897,7 @@ h1, h2, h3 { font-weight: 600; letter-spacing: -.03em; }
 }
 
 /* ----- Fuß ----- */
-.ab-fuss { background: #0e0c0a; padding: 80px var(--rand) 40px; color: var(--asche); font-size: 15px; }
+.ab-fuss { background: #120f0c; padding: 80px var(--rand) 40px; color: var(--asche); font-size: 15px; }
 .ab-fuss__innen { max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; }
 .ab-fuss img { width: 150px; }
 .ab-fuss p { margin: 0; line-height: 1.7; }
@@ -912,7 +910,7 @@ h1, h2, h3 { font-weight: 600; letter-spacing: -.03em; }
 
 /* ----- Leiste am Handy ----- */
 .ab-leiste { display: none; }
-.ab-knopf { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 12px; border-radius: 999px; border: 1px solid transparent; font: 500 16px/1 var(--sans); text-decoration: none; }
+.ab-knopf { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 12px; border-radius: 12px; border: 1px solid transparent; font: 500 16px/1 var(--sans); text-decoration: none; }
 .ab-knopf--hell { background: var(--licht); color: var(--nacht); }
 .ab-knopf--linie { border-color: rgba(241, 235, 225, .45); color: var(--licht); }
 @media (max-width: 700px) {
@@ -921,3 +919,7 @@ h1, h2, h3 { font-weight: 600; letter-spacing: -.03em; }
 }
 .ab-fuss .fehlt { color: var(--licht); background: rgba(219, 165, 100, .22); }
 .ab-fuss p a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(241, 235, 225, .4); }
+
+/* Akzent Honig für Links und Pfeile */
+.textlink, .brotkrumen a { text-decoration-color: var(--honig); }
+.weitere__link:hover, .uebersicht a:hover h2 { color: var(--honig); }

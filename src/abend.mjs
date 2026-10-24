@@ -58,6 +58,7 @@ const start = `
       <a class="knopf knopf--hell" href="#termin">Termin anfragen</a>
       <a class="knopf knopf--linie" href="${telLink}">Anrufen</a>
     </div>
+    <a class="start__arzt" href="#tierarzt"><span class="start__portraet" aria-hidden="true">RA</span><span><strong>Rasheed Al Saeed</strong><br>Ihr Tierarzt, kommt selbst zu Ihnen</span></a>
   </div>
   <p class="uhr" aria-live="off">
     <span class="uhr__zeit" data-uhr-zeit>9–23</span>
@@ -71,7 +72,7 @@ const termin = `
 <section class="termin hell" id="termin" aria-labelledby="termin-titel">
   <div class="termin__innen">
     <div class="termin__links zeige">
-      <h2 id="termin-titel" class="titel">${esc(k.titel)}.</h2>
+      <h2 id="termin-titel" class="titel">${esc(k.titel)}</h2>
       <p class="einleitung">${esc(k.satz)}</p>
       <form class="vorauswahl" action="${A}termin/" method="get">
         <fieldset class="gruppe">
@@ -109,24 +110,30 @@ const termin = `
 </section>`;
 
 const e = s.einsatz;
-const stufen = e.orte.map((st) => `<p class="karte__stufe karte__stufe--${st.stufe}">${st.orte.map((o) => `<span>${esc(o)}</span>`).join(' ')}</p>`).join('\n      ');
+const teile = e.orte.find((st) => st.stufe === 'stadtteile').orte;
+const umgebung = e.orte.filter((st) => st.stufe !== 1 && st.stufe !== 'stadtteile').flatMap((st) => st.orte);
 const einsatz = `
 <section class="einsatz" id="einsatz" aria-labelledby="einsatz-titel">
-  <div class="einsatz__kopf zeige">
-    <h2 id="einsatz-titel" class="titel">${esc(e.titel)}.</h2>
-    <p class="einleitung">${esc(e.satz)}</p>
-  </div>
-  <form class="plz zeige" data-plz='${esc(JSON.stringify(e.plz_liste))}' data-ja="${esc(e.antwort_ja)}" data-nein="${esc(e.antwort_nein)}" data-fehler="${esc(e.antwort_fehler)}" novalidate>
-    <label class="beschriftung" for="plz-feld">${esc(e.plz_label)}</label>
-    <div class="plz__zeile">
-      <input id="plz-feld" class="plz__feld" name="plz" inputmode="numeric" autocomplete="postal-code" maxlength="5" placeholder="68159" aria-describedby="plz-hinweis plz-antwort">
-      <button class="knopf knopf--hell" type="submit">${esc(e.plz_knopf)}</button>
+  <div class="einsatz__innen">
+    <div class="einsatz__links zeige">
+      <h2 id="einsatz-titel" class="titel">${esc(e.titel)}</h2>
+      <p class="einleitung">${esc(e.satz)}</p>
+      <form class="plz" data-plz='${esc(JSON.stringify(e.plz_liste))}' data-ja="${esc(e.antwort_ja)}" data-nein="${esc(e.antwort_nein)}" data-fehler="${esc(e.antwort_fehler)}" novalidate>
+        <label class="beschriftung" for="plz-feld">${esc(e.plz_label)}</label>
+        <div class="plz__zeile">
+          <input id="plz-feld" class="plz__feld" name="plz" inputmode="numeric" autocomplete="postal-code" maxlength="5" placeholder="68159" aria-describedby="plz-hinweis plz-antwort">
+          <button class="knopf knopf--dunkel" type="submit">${esc(e.plz_knopf)}</button>
+        </div>
+        <p class="hinweis" id="plz-hinweis">${esc(e.plz_hinweis)} <span class="fehlt">${esc(e.plz_fehlt)}</span></p>
+        <p class="plz__antwort" id="plz-antwort" role="status"></p>
+      </form>
     </div>
-    <p class="hinweis" id="plz-hinweis">${esc(e.plz_hinweis)} <span class="fehlt">${esc(e.plz_fehlt)}</span></p>
-    <p class="plz__antwort" id="plz-antwort" role="status"></p>
-  </form>
-  <div class="karte zeige" aria-label="${esc(e.orte_titel)}" role="group">
-      ${stufen}
+    <div class="einsatz__orte zeige" role="group" aria-label="${esc(e.orte_titel)}">
+      <h3 class="untertitel">Mannheim</h3>
+      <p class="einsatz__teile">${teile.map(esc).join(', ')}</p>
+      <h3 class="untertitel">Rund um Mannheim</h3>
+      <ul class="einsatz__liste">${umgebung.map((o) => `<li>${esc(o)}</li>`).join('')}</ul>
+    </div>
   </div>
 </section>`;
 
@@ -145,7 +152,7 @@ const ablauf = `
     ${eindeutig.map(([n], i) => `<figure class="ablauf__bild${i === 0 ? ' ist-aktiv' : ''}" data-bild="${n}">${bild(n, '', '(max-width: 900px) 100vw, 50vw')}</figure>`).join('\n    ')}
   </div>
   <div class="ablauf__text">
-    <h2 id="ablauf-titel" class="titel zeige">${esc(ab.titel)}.</h2>
+    <h2 id="ablauf-titel" class="titel zeige">${esc(ab.titel)}</h2>
     <ol class="schritte">
       ${ab.schritte.map((st, i) => `<li class="schritt zeige" data-zeigt="${ablaufBilder[i][0]}"><h3 class="schritt__wann">${esc(st.wann)}</h3><p>${txt(st.text)}</p></li>`).join('\n      ')}
     </ol>
@@ -158,7 +165,7 @@ const weitere = g.leistungen.filter((l) => !grossBilder[l.titel]);
 const leistungen = `
 <section class="leistungen hell" id="leistungen" aria-labelledby="leistungen-titel">
   <div class="abschnittkopf zeige">
-    <h2 id="leistungen-titel" class="titel">Wobei ich helfe.</h2>
+    <h2 id="leistungen-titel" class="titel">Wobei ich helfe</h2>
     <a class="textlink" href="${A}leistungen/">Alle Leistungen</a>
   </div>
   <ul class="kacheln">
@@ -178,21 +185,28 @@ const leistungen = `
 
 const t = s.tierarzt;
 const tierarzt = `
-<section class="tierarzt hell" id="tierarzt" aria-labelledby="tierarzt-titel">
-  <figure class="tierarzt__portraet zeige"><span class="fehlt">${esc(t.portraet)}</span><small>${esc(t.portraet_hinweis)}</small></figure>
-  <div class="tierarzt__text zeige">
-    <h2 id="tierarzt-titel" class="titel titel--mittel">${esc(t.titel)}</h2>
-    <p class="tierarzt__name">${esc(t.name)}</p>
-    ${t.absaetze.map((a) => `<p>${txt(a)}</p>`).join('\n    ')}
+<section class="tierarzt" id="tierarzt" aria-labelledby="tierarzt-titel">
+  <div class="tierarzt__innen">
+    <figure class="tierarzt__portraet zeige"><span class="fehlt">${esc(t.portraet)}</span><small>${esc(t.portraet_hinweis)}</small></figure>
+    <div class="tierarzt__text zeige">
+      <h2 id="tierarzt-titel" class="titel">${esc(t.titel)}</h2>
+      <p class="tierarzt__name">${esc(t.name)}</p>
+      ${t.absaetze.map((a) => `<p>${txt(a)}</p>`).join('\n      ')}
+    </div>
+  </div>
+  <figure class="tierarzt__zitat zeige"><blockquote><p>${esc(t.zitat)}</p></blockquote><figcaption>Rasheed Al Saeed</figcaption></figure>
+  <div class="tierarzt__werte zeige">
+    <h3 class="untertitel">${esc(t.werte_titel)}</h3>
+    <ul>${t.werte.map((w) => `<li>${esc(w)}</li>`).join('')}</ul>
     <div class="tierarzt__auto"><span class="fehlt">${esc(t.auto)}</span><p>${esc(t.auto_satz)}</p></div>
   </div>
 </section>`;
 
 const ko = s.kosten;
 const kosten = `
-<section class="kosten" id="kosten" aria-labelledby="kosten-titel">
+<section class="kosten hell" id="kosten" aria-labelledby="kosten-titel">
   <div class="kosten__kopf zeige">
-    <h2 id="kosten-titel" class="titel titel--mittel">${esc(ko.titel)}.</h2>
+    <h2 id="kosten-titel" class="titel titel--mittel">${esc(ko.titel)}</h2>
     <p class="einleitung">${esc(ko.satz)}</p>
   </div>
   <dl class="preise zeige">
@@ -204,7 +218,7 @@ const ratBilder = { 'warnzeichen-notfall': ['hund-sofa-kopf', 'Ein Hund liegt mi
 const ratgeber = `
 <section class="ratgeber hell" aria-labelledby="ratgeber-titel">
   <div class="abschnittkopf zeige">
-    <h2 id="ratgeber-titel" class="titel titel--mittel">Ratgeber.</h2>
+    <h2 id="ratgeber-titel" class="titel titel--mittel">Ratgeber</h2>
     <a class="textlink" href="${A}ratgeber/">Alle Artikel</a>
   </div>
   <ul class="artikel">
@@ -219,7 +233,7 @@ const ratgeber = `
 const fr = s.fragen;
 const fragen = `
 <section class="fragen hell" id="fragen" aria-labelledby="fragen-titel">
-  <h2 id="fragen-titel" class="titel titel--mittel zeige">${esc(fr.titel)}.</h2>
+  <h2 id="fragen-titel" class="titel titel--mittel zeige">${esc(fr.titel)}</h2>
   <div class="fragen__gruppen">
     ${fr.gruppen.map((gr) => `<div class="fragen__gruppe zeige"><h3 class="beschriftung">${esc(gr.titel)}</h3>
       ${gr.liste.map((q) => `<details><summary>${esc(q.f)}</summary><p>${txt(q.a)}</p></details>`).join('\n      ')}
@@ -232,7 +246,7 @@ const n = s.notfall;
 const notfall = `
 <section class="notfall" aria-labelledby="notfall-titel">
   <div class="zeige">
-    <h2 id="notfall-titel" class="titel">${esc(n.titel)}.</h2>
+    <h2 id="notfall-titel" class="titel">${esc(n.titel)}</h2>
     <p class="notfall__text">${esc(n.text)}</p>
     <a class="grossnummer grossnummer--hell" href="${telLink}">${esc(tel)}</a>
     <p class="notfall__klinik">${esc(n.klinik)}</p>
@@ -258,7 +272,8 @@ const html = `<!doctype html>
 <meta name="robots" content="noindex, nofollow">
 <title>Mobile Tierarztpraxis Kurpfalz · Al Saeed</title>
 <meta name="description" content="Mobiler Notfall-Tierarzt für Hunde und Katzen in Mannheim, Ludwigshafen, Heidelberg und Umgebung. Behandlung zu Hause, Montag bis Freitag bis 23 Uhr.">
-<link rel="preload" href="../schriften/Geist.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../schriften/SourceSerif4.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../schriften/AlbertSans.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" href="img/start-blick-1800.webp" imagesrcset="img/start-blick-640.webp 640w, img/start-blick-1100.webp 1100w, img/start-blick-1800.webp 1800w" imagesizes="(max-width: 700px) 100vw, 74vw">
 <link rel="icon" href="../logo/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="stil.css">
@@ -272,8 +287,8 @@ ${start}
 ${termin}
 ${leistungen}
 ${ablauf}
-${einsatz}
 ${tierarzt}
+${einsatz}
 ${kosten}
 ${ratgeber}
 ${fragen}
@@ -289,5 +304,5 @@ const ziel = join(wurzel, 'site/abend');
 await mkdir(ziel, { recursive: true });
 await writeFile(join(ziel, 'index.html'), html);
 for (const f of ['stil.css', 'abend.js']) await cp(join(wurzel, 'src/abend', f), join(ziel, f));
-for (const f of ['Geist.woff2', 'GeistMono.woff2']) await cp(join(wurzel, 'schriften/woff2', f), join(wurzel, 'site/schriften', f));
+for (const f of ['SourceSerif4.woff2', 'SourceSerif4-Italic.woff2', 'AlbertSans.woff2']) await cp(join(wurzel, 'schriften/woff2', f), join(wurzel, 'site/schriften', f));
 console.log('site/abend/index.html gebaut');

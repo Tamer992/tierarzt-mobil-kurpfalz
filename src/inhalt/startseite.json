@@ -70,7 +70,17 @@
     "portraet": "[FEHLT: Porträt]",
     "portraet_hinweis": "Hochformat 4 : 5, Tageslicht, mit einem Patienten auf dem Boden",
     "auto": "[FEHLT: Foto Praxisauto]",
-    "auto_satz": "Mit diesem Auto komme ich. Darin ist meine tierärztliche Apotheke mit den wichtigsten Medikamenten."
+    "auto_satz": "Mit diesem Auto komme ich. Darin ist meine tierärztliche Apotheke mit den wichtigsten Medikamenten.",
+    "zitat": "Ihr Tier ist für Sie ein Familienmitglied. Ich behandle es mit Ruhe, Sorgfalt und fachlicher Gewissenhaftigkeit, zum Wohl von Tier und Mensch.",
+    "werte_titel": "Was mir wichtig ist",
+    "werte": [
+      "Eine einfühlsame, stressarme Behandlung",
+      "Verständliche Erklärungen, damit Sie wissen, was passiert",
+      "Zeit und Geduld für jedes Tier",
+      "Eine Betreuung, die zu Ihrem Tier und Ihrer Familie passt",
+      "Schonende Behandlung nach dem aktuellen Stand der Tiermedizin",
+      "Enge Zusammenarbeit mit Ihnen und, wenn nötig, mit Praxen und Kliniken"
+    ]
   },
   "einsatz": {
     "titel": "Wohin ich komme",
