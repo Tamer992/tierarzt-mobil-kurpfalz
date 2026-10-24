@@ -21,3 +21,12 @@ Alle Fotos von Unsplash, frei nutzbar unter der Unsplash-Lizenz (https://unsplas
 ## KI-Bilder (Richtung „Abendlicht“, ab 24.10.2026)
 
 Erzeugt mit FLUX.1 schnell (Black Forest Labs, Apache-2.0-Lizenz, geschäftliche Nutzung erlaubt) über die öffentliche Hugging-Face-Seite, Skript `scripts/ki-bild.sh`. Keine echten Personen, keine Gesichter. Rohbilder in `fotos/ki-test/`, Seitenbilder in `site/abend/img/`.
+
+## Pexels (Richtung „Abendlicht“, ab 24.10.2026)
+
+Frei nutzbar unter der Pexels-Lizenz (https://www.pexels.com/license/), auch geschäftlich, ohne Namensnennung. Originale in `fotos/pexels/`. Echte Fotos für alle Tiere, KI nur für Gegenstände.
+
+| Datei | Motiv | Quelle |
+|---|---|---|
+| start-blick | Katze liegt im Lampenlicht auf dem Sofa und schaut in die Kamera (Startbild) | https://www.pexels.com/photo/photo-of-a-white-and-black-cat-8408703/ |
+| start-schlaf | Schlafende Katze im warmen Licht, gespiegelt (nicht verwendet, Reserve) | https://www.pexels.com/photo/close-up-of-a-sleeping-cat-18691812/ |

@@ -41,13 +41,13 @@ a { color: inherit; }
 
 /* Startbereich */
 .start { position: relative; min-height: 100svh; display: grid; grid-template-columns: minmax(0, 1fr); align-content: end; overflow: hidden; isolation: isolate; }
-.start__bild { position: absolute; inset: 0; margin: 0; z-index: -1; }
-.start__bild img { width: 100%; height: 100%; object-fit: cover; object-position: 18% 50%; }
+.start__bild { position: absolute; inset: 0 0 0 26%; margin: 0; z-index: -1; }
+.start__bild img { width: 100%; height: 100%; object-fit: cover; object-position: 62% 50%; }
 /* Abdunklung links und unten, damit die Schrift auf dem Sofa steht und nicht auf der Katze */
 .start__bild::after { content: ''; position: absolute; inset: 0;
   background:
-    linear-gradient(90deg, rgba(20,17,14,.88) 0%, rgba(20,17,14,.55) 34%, rgba(20,17,14,0) 62%),
-    linear-gradient(0deg, rgba(20,17,14,.95) 0%, rgba(20,17,14,0) 38%); }
+    linear-gradient(90deg, var(--nacht) 0%, rgba(20,17,14,.7) 16%, rgba(20,17,14,.2) 36%, rgba(20,17,14,0) 52%),
+    linear-gradient(0deg, rgba(20,17,14,.9) 0%, rgba(20,17,14,0) 34%); }
 
 .start__text { padding: 0 var(--rand) clamp(120px, 17vh, 190px); max-width: 980px; }
 .start__marke { margin: 0 0 22px; font-family: var(--mono); font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--asche); }
@@ -85,6 +85,7 @@ a { color: inherit; }
 @media (prefers-reduced-motion: reduce) { .js .start *, .js .uhr { animation: none !important; } .kopf { transition: none; } }
 
 @media (max-width: 980px) {
+  .start__bild { left: 12%; }
   .kopf__nav { display: none; }
   .kopf__tel { margin-left: auto; border-left: 0; padding-left: 0; }
 }
@@ -92,9 +93,9 @@ a { color: inherit; }
   .kopf { padding-block: 14px; }
   .kopf__marke img { width: 128px; }
   .start { align-items: end; }
-  .start__bild { bottom: 40%; }
-  .start__bild img { object-position: 80% 60%; }
-  .start__bild::after { background: linear-gradient(0deg, rgba(20,17,14,1) 0%, rgba(20,17,14,0) 34%), linear-gradient(180deg, rgba(20,17,14,.55) 0%, rgba(20,17,14,0) 22%); }
+  .start__bild { inset: 0 0 40% 0; }
+  .start__bild img { object-position: 58% 40%; }
+  .start__bild::after { background: linear-gradient(0deg, var(--nacht) 0%, rgba(20,17,14,.92) 22%, rgba(20,17,14,0) 58%), linear-gradient(180deg, rgba(20,17,14,.55) 0%, rgba(20,17,14,0) 22%); }
   .start__text { padding-bottom: 28px; }
   .start__marke { margin-bottom: 14px; font-size: 12px; }
   .start__satz { margin-top: 20px; }
