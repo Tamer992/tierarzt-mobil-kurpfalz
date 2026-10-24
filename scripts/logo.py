@@ -7,7 +7,9 @@ from fontTools.pens.svgPathPen import SVGPathPen
 from fontTools.pens.transformPen import TransformPen
 
 QUELLE = 'kunde/logo/Nunito-wght.ttf'
-PETROL, NAVY, ORANGE, PFIRSICH = '#1F6F78', '#1F2D3A', '#F18C3A', '#F6D5B0'
+# Farben der Webseite (Richtung A), nicht die Originalfarben des Logos (Tamer, 24.10.2026)
+PETROL, NAVY, ORANGE, PFIRSICH = '#2B44A3', '#1F2328', '#1F2328', '#DCE1F2'
+KREUZ = '#F6F6F2'
 _cache = {}
 
 def schrift(w):
@@ -41,7 +43,7 @@ def symbol(dx, dy, h, pin, pfote, schnitt_id):
             f'<path d="{pin_pfad}" fill="{pin}" mask="url(#{schnitt_id})"/>'
             f'<g fill="{pfote}" transform="translate(51.5 42) scale(0.86) translate(-51.5 -42)">{pfote_teile}</g>'
             f'<circle cx="80" cy="91" r="14.5" fill="{ORANGE}"/>'
-            f'<path d="M77 82.5 h6 a1.4 1.4 0 0 1 1.4 1.4 v4.7 h4.7 a1.4 1.4 0 0 1 1.4 1.4 v2 a1.4 1.4 0 0 1 -1.4 1.4 h-4.7 v4.7 a1.4 1.4 0 0 1 -1.4 1.4 h-6 a1.4 1.4 0 0 1 -1.4 -1.4 v-4.7 h-4.7 a1.4 1.4 0 0 1 -1.4 -1.4 v-2 a1.4 1.4 0 0 1 1.4 -1.4 h4.7 v-4.7 a1.4 1.4 0 0 1 1.4 -1.4 Z" fill="{NAVY}"/>'
+            f'<path d="M77 82.5 h6 a1.4 1.4 0 0 1 1.4 1.4 v4.7 h4.7 a1.4 1.4 0 0 1 1.4 1.4 v2 a1.4 1.4 0 0 1 -1.4 1.4 h-4.7 v4.7 a1.4 1.4 0 0 1 -1.4 1.4 h-6 a1.4 1.4 0 0 1 -1.4 -1.4 v-4.7 h-4.7 a1.4 1.4 0 0 1 -1.4 -1.4 v-2 a1.4 1.4 0 0 1 1.4 -1.4 h4.7 v-4.7 a1.4 1.4 0 0 1 1.4 -1.4 Z" fill="{KREUZ}"/>'
             '</g>')
 
 def quer(farben, titel):
@@ -72,5 +74,5 @@ open(f'{ziel}/logo-symbol.svg', 'w').write(
     f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 110" role="img" aria-label="{titel}">' + symbol(0, 0, 110, PETROL, '#FFFFFF', 's') + '</svg>')
 # App-Symbol: Petrol-Quadrat, weißer Pin
 open(f'{ziel}/favicon.svg', 'w').write(
-    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><rect width="120" height="120" rx="26" fill="#1F6F78"/>' + symbol(17, 11, 96, '#FFFFFF', PETROL, 'f') + '</svg>')
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><rect width="120" height="120" rx="26" fill="#2B44A3"/>' + symbol(17, 11, 96, '#FFFFFF', PETROL, 'f') + '</svg>')
 print('Logo geschrieben nach', ziel)
