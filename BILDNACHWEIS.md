@@ -17,3 +17,7 @@ Alle Fotos von Unsplash, frei nutzbar unter der Unsplash-Lizenz (https://unsplas
 | katze-grau-fenster | Graue Katze auf der Fensterbank, schaut hinaus | Sarah Windeler (@hyggepause) | https://unsplash.com/photos/7wNZYV2nHgc |
 | hund-boden | Heller Hund liegt neben einer Tonvase auf dem Boden | Lindsey Duncan (@lindseyrose8) | https://unsplash.com/photos/p92rr2PSrC0 |
 | katze-rot-decke | Rote Katze schläft auf einer Decke | YASH18 (@y2j_x) | https://unsplash.com/photos/qpdjlWZprqw |
+
+## KI-Bilder (Richtung „Abendlicht“, ab 24.10.2026)
+
+Erzeugt mit FLUX.1 schnell (Black Forest Labs, Apache-2.0-Lizenz, geschäftliche Nutzung erlaubt) über die öffentliche Hugging-Face-Seite, Skript `scripts/ki-bild.sh`. Keine echten Personen, keine Gesichter. Rohbilder in `fotos/ki-test/`, Seitenbilder in `site/abend/img/`.

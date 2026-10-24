@@ -1,0 +1,105 @@
+/* Richtung „Abendlicht“: dunkel, ein warmes Licht, Kobalt als einziger Akzent. Vorbilder: apple.com, rolex.com */
+@font-face { font-family: 'Geist'; src: url('../schriften/Geist.woff2') format('woff2'); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: 'Geist Mono'; src: url('../schriften/GeistMono.woff2') format('woff2'); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: 'Geist Ersatz'; src: local('Arial'); size-adjust: 104%; ascent-override: 92%; descent-override: 24%; }
+
+:root {
+  --nacht: #14110e;      /* Grund, warmes Fast-Schwarz */
+  --nacht-2: #1d1915;
+  --licht: #f1ebe1;      /* Schrift auf dunkel */
+  --asche: #a99f92;      /* leise Schrift auf dunkel, 7:1 auf --nacht */
+  --kalk: #f2f0ea;       /* helle Flächen der späteren Abschnitte */
+  --kobalt: #2f48b0;     /* einziger Akzent, Knopf */
+  --kobalt-tief: #263c96;
+  --schrift: 'Geist', 'Geist Ersatz', system-ui, sans-serif;
+  --mono: 'Geist Mono', ui-monospace, monospace;
+  --rand: clamp(20px, 4.5vw, 72px);
+  --dauer: 900ms;
+  --kurve: cubic-bezier(.2, .7, .2, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--nacht); color: var(--licht); font-family: var(--schrift); font-size: 18px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+::selection { background: var(--kobalt); color: #fff; }
+:focus-visible { outline: 2px solid var(--licht); outline-offset: 3px; border-radius: 2px; }
+
+.sprung { position: absolute; left: 12px; top: -60px; z-index: 50; background: var(--licht); color: var(--nacht); padding: 10px 14px; text-decoration: none; font-weight: 600; }
+.sprung:focus { top: 12px; }
+
+/* Kopf: liegt über dem Bild, wird beim Scrollen zur ruhigen dunklen Leiste */
+.kopf { position: fixed; inset: 0 0 auto; z-index: 20; display: flex; align-items: center; gap: 32px; padding: 18px var(--rand); transition: background-color 400ms ease, padding 400ms ease; }
+.kopf.ist-fest { background: rgba(20, 17, 14, .94); padding-block: 12px; }
+.kopf__marke img { width: 150px; height: auto; }
+.kopf__nav { margin-left: auto; }
+.kopf__nav ul { display: flex; gap: 30px; list-style: none; margin: 0; padding: 0; }
+.kopf__nav a, .kopf__tel { font-size: 14px; letter-spacing: .01em; text-decoration: none; color: var(--licht); opacity: .82; transition: opacity 200ms ease; }
+.kopf__nav a:hover, .kopf__tel:hover { opacity: 1; }
+.kopf__tel { font-family: var(--mono); font-size: 13px; opacity: 1; padding-left: 30px; border-left: 1px solid rgba(241, 235, 225, .22); white-space: nowrap; }
+
+/* Startbereich */
+.start { position: relative; min-height: 100svh; display: grid; grid-template-columns: minmax(0, 1fr); align-content: end; overflow: hidden; isolation: isolate; }
+.start__bild { position: absolute; inset: 0; margin: 0; z-index: -1; }
+.start__bild img { width: 100%; height: 100%; object-fit: cover; object-position: 18% 50%; }
+/* Abdunklung links und unten, damit die Schrift auf dem Sofa steht und nicht auf der Katze */
+.start__bild::after { content: ''; position: absolute; inset: 0;
+  background:
+    linear-gradient(90deg, rgba(20,17,14,.88) 0%, rgba(20,17,14,.55) 34%, rgba(20,17,14,0) 62%),
+    linear-gradient(0deg, rgba(20,17,14,.95) 0%, rgba(20,17,14,0) 38%); }
+
+.start__text { padding: 0 var(--rand) clamp(120px, 17vh, 190px); max-width: 980px; }
+.start__marke { margin: 0 0 22px; font-family: var(--mono); font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--asche); }
+.start__titel { margin: 0; font-weight: 600; font-size: clamp(54px, 8.6vw, 136px); line-height: .94; letter-spacing: -.045em; }
+.start__titel span { display: block; }
+.start__satz { margin: 30px 0 0; max-width: 31ch; font-size: clamp(18px, 1.5vw, 21px); line-height: 1.5; color: var(--licht); opacity: .86; }
+.start__knoepfe { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 40px; }
+
+.knopf { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 28px; border-radius: 999px; font-size: 16px; font-weight: 500; text-decoration: none; transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease; }
+.knopf--voll { background: var(--kobalt); color: #fff; }
+.knopf--voll:hover { background: var(--kobalt-tief); }
+.knopf--linie { border: 1px solid rgba(241, 235, 225, .45); color: var(--licht); }
+.knopf--linie:hover { border-color: var(--licht); background: rgba(241, 235, 225, .08); }
+
+/* Uhr: die aktuelle Uhrzeit in Mannheim und ob die Praxis gerade erreichbar ist */
+.uhr { position: absolute; right: var(--rand); bottom: clamp(36px, 6vh, 64px); margin: 0; display: grid; justify-items: end; gap: 6px; text-align: right; }
+.uhr__zeit { font-family: var(--mono); font-weight: 300; font-size: clamp(40px, 4.6vw, 72px); line-height: 1; letter-spacing: -.04em; font-variant-numeric: tabular-nums; }
+.uhr__zeit i { font-style: normal; margin-inline: -.18em; }
+.uhr__satz { font-size: 14px; color: var(--asche); max-width: 30ch; }
+.uhr__satz b { font-weight: 500; color: var(--licht); }
+
+.folgt { background: var(--kalk); color: #2a2622; padding: 120px var(--rand); font-size: 16px; }
+.folgt p { margin: 0; }
+
+/* Auftritt: Bild wird ruhig scharf, Text steigt zeilenweise auf */
+.js .start__bild img { animation: bild 1600ms var(--kurve) both; }
+.js .start__marke, .js .start__titel span, .js .start__satz, .js .start__knoepfe, .js .uhr { animation: auf var(--dauer) var(--kurve) both; }
+.js .start__titel span:nth-child(1) { animation-delay: 120ms; }
+.js .start__titel span:nth-child(2) { animation-delay: 220ms; }
+.js .start__satz { animation-delay: 360ms; }
+.js .start__knoepfe { animation-delay: 460ms; }
+.js .uhr { animation-delay: 700ms; }
+@keyframes bild { from { transform: scale(1.05); opacity: .4; } to { transform: none; opacity: 1; } }
+@keyframes auf { from { transform: translateY(28px); opacity: 0; } to { transform: none; opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .js .start *, .js .uhr { animation: none !important; } .kopf { transition: none; } }
+
+@media (max-width: 980px) {
+  .kopf__nav { display: none; }
+  .kopf__tel { margin-left: auto; border-left: 0; padding-left: 0; }
+}
+@media (max-width: 700px) {
+  .kopf { padding-block: 14px; }
+  .kopf__marke img { width: 128px; }
+  .start { align-items: end; }
+  .start__bild { bottom: 40%; }
+  .start__bild img { object-position: 80% 60%; }
+  .start__bild::after { background: linear-gradient(0deg, rgba(20,17,14,1) 0%, rgba(20,17,14,0) 34%), linear-gradient(180deg, rgba(20,17,14,.55) 0%, rgba(20,17,14,0) 22%); }
+  .start__text { padding-bottom: 28px; }
+  .start__marke { margin-bottom: 14px; font-size: 12px; }
+  .start__satz { margin-top: 20px; }
+  .start__knoepfe { margin-top: 28px; }
+  .knopf { flex: 1 1 auto; }
+  .uhr { position: static; justify-items: start; text-align: left; padding: 22px var(--rand) 36px; margin-top: 4px; border-top: 1px solid rgba(241, 235, 225, .14); margin-inline: var(--rand); padding-inline: 0; grid-template-columns: auto 1fr; align-items: center; gap: 16px; }
+  .uhr__zeit { font-size: 34px; }
+}
