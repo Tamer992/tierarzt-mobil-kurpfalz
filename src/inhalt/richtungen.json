@@ -1,0 +1,97 @@
+{
+  "a": {
+    "name": "Auf Augenhöhe",
+    "startidee": "Die Kamera liegt auf dem Boden neben dem Tier, und der erste Satz steht auf einer hellen Kalkfläche, die mit harter Kante in das Foto greift.",
+    "titel": "Ich behandle Ihr Tier dort, wo es sich sicher fühlt.",
+    "unterzeile": "Hausbesuche für Hunde und Katzen in [FEHLT: Ort und Umgebung]. Rufen Sie an, ich sage Ihnen, wann ich bei Ihnen sein kann.",
+    "foto": "hund-senior-boden",
+    "foto_alt": "Ein älterer Hund liegt auf dem Holzboden und hat den Kopf auf die Pfoten gelegt.",
+    "leistungen_titel": "Wobei ich helfe",
+    "leistungen_satz": "Viele Beschwerden behandle ich direkt bei Ihnen. Wenn Ihr Tier in eine Klinik muss, sage ich es Ihnen und kümmere mich um die Überweisung.",
+    "leistungen_mehr": "Mehr dazu",
+    "warum": [
+      "Edel wirkt sie durch Verzicht: eine Kalkfläche, ein Kobaltblau nur für Anrufen und Termin, eine Antiqua mit klarer Federführung, harte Kanten statt Rundungen.",
+      "Warm wird sie durch die Perspektive: Jedes Foto ist auf Höhe des Tieres aufgenommen, so sieht die Halterin ihr Tier, wie sie es vom Wohnzimmerboden kennt."
+    ]
+  },
+  "b": {
+    "name": "Ein ruhiger Brief",
+    "startidee": "Die Seite liest sich wie ein Brief des Tierarztes: ein großer Satz in Petrona, daneben ein hohes Katzenfoto im Fensterlicht, und die Leistungen stehen als ganzer Satz.",
+    "titel_1": "Ihr Tier bleibt auf seinem Platz.",
+    "titel_2": "Ich komme dazu.",
+    "unterzeile": "Ich bin Tierarzt für Hunde und Katzen und behandle bei Ihnen zu Hause. Ihr Tier bleibt in seinem Revier, und Sie sparen sich Fahrt und Wartezimmer.",
+    "foto": "katze-sonnenfenster",
+    "foto_alt": "Eine Katze sitzt am Fenster im seitlichen Licht und schaut hinaus.",
+    "telefon_vorsatz": "Sie erreichen mich unter",
+    "leistungen_titel": "Wobei ich helfe",
+    "leistungen_satz_teile": [
+      "Ich behandle ",
+      [
+        "Durchfall und Erbrechen",
+        0
+      ],
+      ", ",
+      [
+        "Entzündungen an Ohren und Augen",
+        1
+      ],
+      ", ",
+      [
+        "Schmerzen und Lahmheit",
+        2
+      ],
+      " und ",
+      [
+        "Wunden nach Bissen oder Stürzen",
+        3
+      ],
+      ". Ich ",
+      [
+        "impfe Ihr Tier zu Hause",
+        4
+      ],
+      ", und wenn es Zeit für den Abschied ist, ",
+      [
+        "komme ich auch dafür zu Ihnen",
+        5
+      ],
+      "."
+    ],
+    "leistungen_nachsatz": "Muss Ihr Tier in eine Klinik, sage ich es Ihnen offen und organisiere die Überweisung.",
+    "fotos_leistungen": [
+      "katzen-sofa-licht",
+      "hund-boden"
+    ],
+    "fotos_alt": [
+      "Zwei graue Katzen liegen auf der Sofalehne im Fensterlicht.",
+      "Ein heller Hund liegt neben einer Tonvase auf dem Boden."
+    ],
+    "warum": [
+      "Edel wirkt sie durch die Typografie: ein einziger großer Satz, eine Antiqua mit Kursive, viel Raum um wenig Text, wie bei einem guten Briefpapier.",
+      "Warm wird sie durch die Stimme: Der Tierarzt spricht in ganzen Sätzen zu der Halterin, und das gedämpfte Rosengrau mit Pflaume wirkt wie Abendlicht in einem Zimmer."
+    ]
+  },
+  "c": {
+    "name": "Licht an",
+    "startidee": "Ein Hund liegt im letzten Abendlicht vor dem Fenster, und das einzige Gelb der Seite ist der Knopf zum Anrufen, wie ein Fenster, hinter dem noch Licht brennt.",
+    "unterzeile": "Hausbesuche für Hunde und Katzen in [FEHLT: Ort und Umgebung], auch am Abend. [FEHLT: Sprechzeiten]",
+    "foto": "hund-fenster",
+    "foto_alt": "Ein Hund liegt im Abendlicht vor einem großen Fenster.",
+    "leistungen_titel": "Wobei ich helfe",
+    "leistungen_satz": "Ich behandle die häufigsten Beschwerden direkt bei Ihnen. Tippen Sie auf ein Thema, dann erkläre ich, was ich vor Ort mache.",
+    "fotos_alt": {
+      "katze-unter-decke": "Eine Katze schläft unter einer Decke auf dem Sofa.",
+      "katze-sofa": "Eine getigerte Katze liegt auf einem hellen Sofa.",
+      "hund-boden2": "Ein brauner Hund ruht auf dem Boden.",
+      "hund-teppich": "Ein Hund liegt auf dem Teppich und schaut in die Kamera.",
+      "katze-grau-fenster": "Eine graue Katze sitzt auf der Fensterbank.",
+      "hund-senior-boden": "Ein älterer Hund liegt auf dem Holzboden."
+    },
+    "warum": [
+      "Edel wirkt sie durch Präzision: eine breite Grotesk in festen Stufen, Porzellanweiß und Ruß, ein einziges Gelb, das nur dort steht, wo Sie handeln.",
+      "Warm wird sie durch das Abendlicht in den Fotos und durch den Gedanken dahinter: Hier brennt noch Licht, hier geht jemand ans Telefon."
+    ],
+    "titel_1": "Rufen Sie an.",
+    "titel_2": "Ich bringe alles mit."
+  }
+}

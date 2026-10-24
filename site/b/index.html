@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Ein ruhiger Brief · Entwurf B</title>
+<link rel="preload" href="../schriften/Petrona.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="stil.css">
+<script src="../js/seite.js" defer></script>
+</head>
+<body>
+<a class="sprung" href="#inhalt">Zum Inhalt springen</a>
+<header class="kopf">
+  <a class="marke" href="./"><span class="fehlt">[Praxisname]</span></a>
+  <nav class="kopf__nav" aria-label="Hauptmenü"><ul><li><a href="#leistungen">Leistungen</a></li><li><a href="#inhalt">Hausbesuch</a></li><li><a href="#inhalt">Über mich</a></li><li><a href="#inhalt">Kontakt</a></li></ul></nav>
+  <a class="kopf__termin" href="#termin">Termin anfragen</a>
+  <button class="menueknopf" type="button" aria-expanded="false" aria-controls="handymenue"><span class="unsichtbar">Menü öffnen</span><span class="menueknopf__strich"></span><span class="menueknopf__strich"></span></button>
+  <nav class="handymenue" id="handymenue" aria-label="Menü" hidden><ul><li><a href="#leistungen">Leistungen</a></li><li><a href="#inhalt">Hausbesuch</a></li><li><a href="#inhalt">Über mich</a></li><li><a href="#inhalt">Kontakt</a></li></ul></nav>
+</header>
+<main id="inhalt">
+  <section class="start" aria-labelledby="start-titel">
+    <div class="start__text">
+      <h1 id="start-titel" class="auftritt">Ihr Tier bleibt auf seinem Platz. <em>Ich komme dazu.</em></h1>
+      <p class="start__zeile auftritt auftritt--2">Ich bin Tierarzt für Hunde und Katzen und behandle bei Ihnen zu Hause. Ihr Tier bleibt in seinem Revier, und Sie sparen sich Fahrt und Wartezimmer.</p>
+      <div class="start__kontakt auftritt auftritt--3">
+        <p class="start__telefon">Sie erreichen mich unter<br><a class="nummer" href="tel:+496210000000"><span class="fehlt" title="FEHLT: Telefonnummer">0621 000 00 00</span></a></p>
+        <a class="knopf" href="#termin">Termin anfragen</a>
+      </div>
+    </div>
+    <figure class="start__bild auftritt auftritt--2"><img class="" src="img/katze-sonnenfenster-1100.webp" srcset="img/katze-sonnenfenster-640.webp 640w, img/katze-sonnenfenster-1100.webp 1100w, img/katze-sonnenfenster-1800.webp 1800w" sizes="(min-width: 900px) 38vw, 100vw" width="2400" height="3600" alt="Eine Katze sitzt am Fenster im seitlichen Licht und schaut hinaus." fetchpriority="high"></figure>
+  </section>
+  <section class="leistungen" id="leistungen" aria-labelledby="leistungen-titel">
+    <h2 id="leistungen-titel" class="einblenden">Wobei ich helfe</h2>
+    <p class="leistungen__satz einblenden">Ich behandle <a href="#leistungen">Durchfall und Erbrechen</a>, <a href="#leistungen">Entzündungen an Ohren und Augen</a>, <a href="#leistungen">Schmerzen und Lahmheit</a> und <a href="#leistungen">Wunden nach Bissen oder Stürzen</a>. Ich <a href="#leistungen">impfe Ihr Tier zu Hause</a>, und wenn es Zeit für den Abschied ist, <a href="#leistungen">komme ich auch dafür zu Ihnen</a>.</p>
+    <p class="leistungen__nachsatz einblenden">Muss Ihr Tier in eine Klinik, sage ich es Ihnen offen und organisiere die Überweisung.</p>
+    <div class="leistungen__bilder">
+      <figure class="leistungen__bild leistungen__bild--1 einblenden"><img class="" src="img/katzen-sofa-licht-1100.webp" srcset="img/katzen-sofa-licht-640.webp 640w, img/katzen-sofa-licht-1100.webp 1100w, img/katzen-sofa-licht-1800.webp 1800w" sizes="(min-width: 900px) 30vw, 70vw" width="2400" height="3200" alt="Zwei graue Katzen liegen auf der Sofalehne im Fensterlicht." loading="lazy" decoding="async"></figure>
+      <figure class="leistungen__bild leistungen__bild--2 einblenden"><img class="" src="img/hund-boden-1100.webp" srcset="img/hund-boden-640.webp 640w, img/hund-boden-1100.webp 1100w, img/hund-boden-1800.webp 1800w" sizes="(min-width: 900px) 40vw, 90vw" width="2400" height="1600" alt="Ein heller Hund liegt neben einer Tonvase auf dem Boden." loading="lazy" decoding="async"></figure>
+    </div>
+    <p class="hinweis-fehlt"><span class="fehlt">[FEHLT: Leistungen vom Kunden bestätigen]</span></p>
+  </section>
+  <div id="termin"></div>
+</main>
+<div class="leiste " role="region" aria-label="Kontakt">
+  <a class="leiste__anruf" href="tel:+496210000000"><span class="leiste__wort">Anrufen</span><span class="leiste__nr"><span class="fehlt" title="FEHLT: Telefonnummer">0621 000 00 00</span></span></a>
+  <a class="leiste__termin" href="#termin">Termin anfragen</a>
+</div>
+</body>
+</html>

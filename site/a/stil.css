@@ -1,0 +1,191 @@
+/* Richtung A · Auf Augenhöhe
+   Kalk, Graphit, Kobalt · Brygada 1918 + Albert Sans · harte Kanten, Radius 2 px nur an Bedienelementen */
+
+@font-face { font-family: "Brygada 1918"; src: url("../schriften/Brygada1918.woff2") format("woff2"); font-weight: 400 700; font-display: swap; }
+@font-face { font-family: "Brygada 1918"; src: url("../schriften/Brygada1918-Italic.woff2") format("woff2"); font-weight: 400 700; font-style: italic; font-display: swap; }
+@font-face { font-family: "Albert Sans"; src: url("../schriften/AlbertSans.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+
+:root {
+  /* Farben: Grundfläche, Text, ein Akzent, abgeleitete Töne */
+  --grund: #E9E9E4;
+  --flaeche: #F6F6F2;
+  --text: #1F2328;
+  --leise: #4B5058;
+  --akzent: #2B44A3;
+  --akzent-tief: #1E3383;
+  --akzent-hell: #DCE1F2;
+  --auf-akzent: #F6F6F2;
+
+  /* Schriftskala, feste Stufen (Handy) */
+  --s1: 1rem;      /* 16 */
+  --s2: 1.125rem;  /* 18 Fließtext */
+  --s3: 1.375rem;  /* 22 */
+  --s4: 1.75rem;   /* 28 */
+  --s5: 2.25rem;   /* 36 */
+  --s6: 2.25rem;   /* 36 */
+
+  /* Abstände: 4er-Raster */
+  --a1: 4px; --a2: 8px; --a3: 12px; --a4: 16px; --a5: 24px; --a6: 32px; --a7: 48px; --a8: 64px; --a9: 96px; --a10: 128px;
+  --rand: 20px;
+  --spalte-abstand: 20px;
+  --max: 1280px;
+
+  --kurve: cubic-bezier(0.25, 1, 0.5, 1);
+  --kurve-auftritt: cubic-bezier(0.16, 1, 0.3, 1);
+  --zeit: 300ms;
+
+  --serif: "Brygada 1918", Georgia, serif;
+  --sans: "Albert Sans", system-ui, sans-serif;
+}
+@media (min-width: 900px) {
+  :root { --s2: 1.1875rem; --s3: 1.4375rem; --s4: 1.75rem; --s5: 2.5rem; --s6: 3.375rem; --rand: 48px; --spalte-abstand: 24px; }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--grund); color: var(--text);
+  font-family: var(--sans); font-size: var(--s2); line-height: 1.6; font-weight: 400;
+  font-feature-settings: "kern"; text-rendering: optimizeLegibility;
+}
+img { display: block; max-width: 100%; height: auto; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 500; margin: 0; text-wrap: balance; }
+p { margin: 0; text-wrap: pretty; }
+a { color: inherit; }
+ul { list-style: none; margin: 0; padding: 0; }
+figure { margin: 0; }
+
+:focus-visible { outline: 3px solid var(--akzent); outline-offset: 3px; }
+.sprung { position: absolute; left: var(--rand); top: -100px; background: var(--text); color: var(--flaeche); padding: var(--a3) var(--a4); z-index: 30; }
+.sprung:focus { top: var(--a3); }
+.unsichtbar { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.fehlt { background: var(--akzent-hell); color: var(--akzent-tief); padding: 0 0.2em; border-radius: 2px; }
+.hinweis-fehlt { grid-column: 1 / -1; font-size: var(--s1); color: var(--leise); margin-top: var(--a7); }
+
+/* Nummer: immer in einer Zeile, Ziffern tabellarisch */
+.nummer { white-space: nowrap; font-variant-numeric: tabular-nums; font-weight: 600; text-decoration: none; letter-spacing: 0.01em; }
+.nummer:hover { color: var(--akzent); }
+
+/* Knopf: alle Zustände */
+.knopf {
+  display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 22px;
+  background: var(--akzent); color: var(--auf-akzent); text-decoration: none; font-weight: 600; font-size: var(--s1);
+  border-radius: 2px; white-space: nowrap;
+  transition: background-color var(--zeit) var(--kurve), transform 120ms var(--kurve);
+}
+.knopf:hover { background: var(--akzent-tief); }
+.knopf:active { transform: translateY(1px); }
+.knopf:focus-visible { outline-color: var(--text); }
+.knopf[aria-disabled="true"] { background: #B9BCC4; color: #3B3F46; pointer-events: none; }
+.knopf--gross { min-height: 56px; padding: 0 28px; font-size: var(--s2); }
+
+/* Kopfzeile */
+.kopf { background: var(--grund); position: relative; z-index: 10; }
+.kopf__innen { max-width: var(--max); margin: 0 auto; padding: 0 var(--rand); height: 64px; display: flex; align-items: center; gap: var(--a6); }
+.marke { font-family: var(--serif); font-size: var(--s3); font-weight: 600; text-decoration: none; white-space: nowrap; margin-right: auto; }
+.marke .fehlt { background: none; color: inherit; padding: 0; }
+.kopf__nav, .kopf__kontakt { display: none; }
+.kopf__nav ul { display: flex; gap: var(--a6); }
+.kopf__nav a { text-decoration: none; font-size: var(--s1); font-weight: 500; padding: var(--a2) 0; background: linear-gradient(currentColor, currentColor) 0 100% / 0 1.5px no-repeat; transition: background-size var(--zeit) var(--kurve); }
+.kopf__nav a:hover { background-size: 100% 1.5px; }
+.kopf__kontakt { align-items: center; gap: var(--a5); }
+.kopf__kontakt .nummer { font-size: var(--s2); }
+
+.menueknopf { width: 44px; height: 44px; border: 0; background: transparent; display: grid; place-content: center; gap: 7px; cursor: pointer; color: var(--text); }
+.menueknopf__strich { display: block; width: 24px; height: 2px; background: currentColor; transition: transform var(--zeit) var(--kurve); }
+.menueknopf[aria-expanded="true"] .menueknopf__strich:first-of-type { transform: translateY(4.5px) rotate(45deg); }
+.menueknopf[aria-expanded="true"] .menueknopf__strich:last-of-type { transform: translateY(-4.5px) rotate(-45deg); }
+.handymenue { background: var(--flaeche); padding: var(--a4) var(--rand) var(--a6); }
+.handymenue a { display: block; padding: var(--a3) 0; font-family: var(--serif); font-size: var(--s4); text-decoration: none; }
+
+@media (min-width: 1000px) {
+  .kopf__innen { height: 80px; }
+  .kopf__nav, .kopf__kontakt { display: flex; }
+  .menueknopf, .handymenue { display: none; }
+}
+
+/* Startbereich: Foto randlos, Tafel greift mit harter Kante hinein */
+.start { position: relative; }
+.start__bild { aspect-ratio: 4 / 3.4; overflow: hidden; background: #CFCFC8; }
+.start__bild img { width: 100%; height: 100%; object-fit: cover; object-position: 30% 70%; }
+.start__tafel {
+  position: relative; background: var(--flaeche); margin: -48px var(--a3) 0; padding: var(--a6) var(--a5) var(--a6);
+}
+.start h1 { font-size: var(--s6); line-height: 1.08; letter-spacing: -0.012em; }
+.start__zeile { margin-top: var(--a4); color: var(--leise); max-width: 34em; }
+.start__kontakt { margin-top: var(--a6); display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4) var(--a6); }
+.start__kontakt .nummer { font-size: var(--s4); font-family: var(--sans); }
+.start__kontakt .knopf { display: none; }
+
+@media (min-width: 900px) {
+  .start__bild { aspect-ratio: auto; height: min(64vh, 620px); min-height: 440px; }
+  .start__bild img { object-position: 50% 68%; }
+  .start__tafel {
+    width: min(880px, 64vw); margin: -200px 0 0 max(var(--rand), calc((100vw - var(--max)) / 2 + var(--rand)));
+    padding: var(--a7) var(--a8) var(--a7) var(--a7);
+  }
+  .start h1 { line-height: 1.06; }
+  /* optische Ausrichtung: Serif-Versal sitzt etwas eingerückt, Ausgleich am linken Rand */
+  .start h1 { margin-left: -0.04em; }
+}
+@media (hover: hover) and (pointer: fine) {
+  .start__kontakt .knopf { display: inline-flex; }
+}
+
+/* Leistungen: links ruhige Spalte mit Bild, rechts Liste ohne Linien */
+.leistungen { max-width: var(--max); margin: 0 auto; padding: var(--a9) var(--rand) var(--a10); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--spalte-abstand); }
+.leistungen__seite { grid-column: 1 / -1; }
+.leistungen h2 { font-size: var(--s5); line-height: 1.12; }
+.leistungen__satz { margin-top: var(--a4); color: var(--leise); max-width: 30em; }
+.leistungen__bild { margin-top: var(--a6); aspect-ratio: 4 / 3; overflow: hidden; }
+.leistungen__bild img { width: 100%; height: 100%; object-fit: cover; object-position: 55% 50%; }
+.leistungen__liste { grid-column: 1 / -1; margin-top: var(--a7); display: grid; gap: var(--a2); }
+
+.dienst__link { display: block; text-decoration: none; padding: var(--a5) var(--a5) var(--a5) 0; position: relative; transition: background-color var(--zeit) var(--kurve), padding var(--zeit) var(--kurve); }
+.dienst__titel { font-size: var(--s4); line-height: 1.2; transition: color var(--zeit) var(--kurve); }
+.dienst__satz { margin-top: var(--a2); color: var(--leise); max-width: 34em; }
+.dienst__mehr { display: inline-flex; align-items: center; gap: var(--a3); margin-top: var(--a3); font-size: var(--s1); font-weight: 600; color: var(--akzent); }
+.pfeil { position: relative; width: 18px; height: 2px; background: currentColor; transition: transform var(--zeit) var(--kurve); }
+.pfeil::after { content: ""; position: absolute; right: 0; top: -4px; width: 8px; height: 8px; border-top: 2px solid currentColor; border-right: 2px solid currentColor; transform: rotate(45deg); transform-origin: 100% 0; box-sizing: border-box; translate: 1px 1px; }
+.dienst__link:hover .dienst__titel { color: var(--akzent); }
+.dienst__link:hover .pfeil { transform: translateX(4px); }
+.dienst__link:active { transform: translateY(1px); }
+.dienst__link:focus-visible { outline-offset: 0; }
+
+@media (min-width: 900px) {
+  .leistungen { padding-top: var(--a10); }
+  .leistungen__seite { grid-column: 1 / span 4; align-self: start; position: sticky; top: var(--a6); }
+  .leistungen__bild { aspect-ratio: 4 / 5; }
+  .leistungen__liste li:nth-child(-n+2) .dienst__link { padding-top: 6px; }
+  .leistungen__liste { grid-column: 6 / -1; margin-top: 0; grid-template-columns: 1fr 1fr; column-gap: var(--a7); row-gap: var(--a5); }
+  .hinweis-fehlt { grid-column: 6 / -1; }
+}
+
+/* Kontaktleiste am Handy: Graphit, Nummer als Text, Termin als Kobalt-Fläche */
+.leiste {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; display: grid; grid-template-columns: 1fr auto;
+  background: var(--text); color: var(--flaeche); padding-bottom: env(safe-area-inset-bottom);
+}
+.leiste__anruf { display: grid; align-content: center; padding: var(--a2) var(--a4); min-height: 64px; text-decoration: none; }
+.leiste__wort { font-size: 0.875rem; font-weight: 500; letter-spacing: 0.02em; opacity: 0.85; }
+.leiste__nr { font-size: var(--s2); font-weight: 600; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.leiste__nr .fehlt { background: transparent; color: inherit; padding: 0; }
+.leiste__termin { display: flex; align-items: center; padding: 0 var(--a5); background: var(--akzent); color: var(--auf-akzent); text-decoration: none; font-weight: 600; font-size: var(--s1); white-space: nowrap; transition: background-color var(--zeit) var(--kurve); }
+.leiste__termin:active { background: var(--akzent-tief); }
+.leiste a:focus-visible { outline-color: var(--flaeche); outline-offset: -4px; }
+body { padding-bottom: 80px; }
+@media (hover: hover) and (pointer: fine) {
+  .leiste { display: none; }
+  body { padding-bottom: 0; }
+}
+
+/* Bewegung: nur transform und opacity, 900 ms mit sofortigem Anlauf */
+@media (prefers-reduced-motion: no-preference) {
+  .auftritt { animation: auftritt 900ms var(--kurve-auftritt) both; }
+  .auftritt--2 { animation-delay: 60ms; }
+  .start__bild .auftritt { animation-name: bild-auftritt; }
+  .js-bewegung .einblenden { opacity: 0; transform: translateY(18px); transition: opacity 900ms var(--kurve-auftritt), transform 900ms var(--kurve-auftritt); }
+  .js-bewegung .einblenden.ist-sichtbar { opacity: 1; transform: none; }
+}
+@keyframes auftritt { from { opacity: 0; transform: translateY(16px); } }
+@keyframes bild-auftritt { from { opacity: 0; transform: scale(1.03); } }

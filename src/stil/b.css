@@ -1,0 +1,148 @@
+/* Richtung B · Ein ruhiger Brief
+   Rosengrau, Aubergine, Pflaume · Petrona (mit Kursive) + Golos Text · Radius 4 px an Bedienelementen, Fotos ohne Radius */
+
+@font-face { font-family: "Petrona"; src: url("../schriften/Petrona.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Petrona"; src: url("../schriften/Petrona-Italic.woff2") format("woff2"); font-weight: 100 900; font-style: italic; font-display: swap; }
+@font-face { font-family: "Golos Text"; src: url("../schriften/GolosText.woff2") format("woff2"); font-weight: 400 900; font-display: swap; }
+
+:root {
+  --grund: #F2EDEC;
+  --flaeche: #E7DEDF;
+  --text: #2B1A28;
+  --leise: #5C4858;
+  --akzent: #6C2D5C;
+  --akzent-tief: #54214A;
+  --akzent-hell: #EADDE6;
+  --auf-akzent: #F7F2F1;
+
+  --s1: 1rem; --s2: 1.125rem; --s3: 1.375rem; --s4: 1.625rem; --s5: 2rem; --s6: 2.5rem;
+  --a1: 4px; --a2: 8px; --a3: 12px; --a4: 16px; --a5: 24px; --a6: 32px; --a7: 48px; --a8: 64px; --a9: 96px; --a10: 144px;
+  --rand: 20px;
+  --kurve: cubic-bezier(0.25, 1, 0.5, 1);
+  --kurve-auftritt: cubic-bezier(0.16, 1, 0.3, 1);
+  --zeit: 300ms;
+  --serif: "Petrona", Georgia, serif;
+  --sans: "Golos Text", system-ui, sans-serif;
+}
+@media (min-width: 900px) {
+  :root { --s2: 1.1875rem; --s3: 1.5rem; --s4: 2.125rem; --s5: 2.5rem; --s6: 4.25rem; --rand: 48px; }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--grund); color: var(--text); font-family: var(--sans); font-size: var(--s2); line-height: 1.62; }
+img { display: block; max-width: 100%; height: auto; }
+h1, h2 { font-family: var(--serif); font-weight: 400; margin: 0; text-wrap: balance; }
+p { margin: 0; text-wrap: pretty; }
+a { color: inherit; }
+ul { list-style: none; margin: 0; padding: 0; }
+figure { margin: 0; }
+:focus-visible { outline: 3px solid var(--akzent); outline-offset: 3px; }
+.sprung { position: absolute; left: var(--rand); top: -100px; background: var(--text); color: var(--grund); padding: var(--a3) var(--a4); z-index: 30; }
+.sprung:focus { top: var(--a3); }
+.unsichtbar { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.fehlt { background: var(--akzent-hell); color: var(--akzent-tief); padding: 0 0.2em; border-radius: 3px; }
+.hinweis-fehlt { font-size: var(--s1); color: var(--leise); margin-top: var(--a7); }
+
+.nummer { white-space: nowrap; font-variant-numeric: tabular-nums lining-nums; text-decoration: none; }
+
+.knopf {
+  display: inline-flex; align-items: center; min-height: 52px; padding: 0 26px; border-radius: 4px; white-space: nowrap;
+  background: var(--akzent); color: var(--auf-akzent); text-decoration: none; font-weight: 500; font-size: var(--s1); letter-spacing: 0.01em;
+  transition: background-color var(--zeit) var(--kurve), transform 120ms var(--kurve);
+}
+.knopf:hover { background: var(--akzent-tief); }
+.knopf:active { transform: translateY(1px); }
+.knopf:focus-visible { outline-color: var(--text); }
+.knopf[aria-disabled="true"] { background: #C9BEC3; color: #4A3B46; pointer-events: none; }
+
+/* Kopfzeile: Name in der Kursive, Menü leise */
+.kopf { position: relative; z-index: 10; display: flex; align-items: center; gap: var(--a6); height: 68px; padding: 0 var(--rand); flex-wrap: wrap; }
+.marke { font-family: var(--serif); font-style: italic; font-size: var(--s3); text-decoration: none; margin-right: auto; white-space: nowrap; }
+.marke .fehlt { background: none; color: inherit; padding: 0; }
+.kopf__nav, .kopf__termin { display: none; }
+.kopf__nav ul { display: flex; gap: var(--a6); }
+.kopf__nav a, .kopf__termin { text-decoration: none; font-size: var(--s1); color: var(--leise); transition: color var(--zeit) var(--kurve); }
+.kopf__nav a:hover { color: var(--text); }
+.kopf__termin { color: var(--akzent); font-weight: 500; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 0.3em; }
+.kopf__termin:hover { color: var(--akzent-tief); }
+.menueknopf { width: 44px; height: 44px; border: 0; background: transparent; display: grid; place-content: center; gap: 7px; cursor: pointer; color: var(--text); }
+.menueknopf__strich { display: block; width: 22px; height: 1.5px; background: currentColor; transition: transform var(--zeit) var(--kurve); }
+.menueknopf[aria-expanded="true"] .menueknopf__strich:first-of-type { transform: translateY(4.25px) rotate(45deg); }
+.menueknopf[aria-expanded="true"] .menueknopf__strich:last-of-type { transform: translateY(-4.25px) rotate(-45deg); }
+.handymenue { flex-basis: 100%; background: var(--grund); padding: var(--a3) 0 var(--a6); }
+.handymenue a { display: block; padding: var(--a3) 0; font-family: var(--serif); font-size: var(--s4); text-decoration: none; }
+@media (min-width: 1000px) {
+  .kopf { height: 88px; }
+  .kopf__nav, .kopf__termin { display: block; }
+  .menueknopf, .handymenue { display: none; }
+}
+
+/* Startbereich: Text links im Raster, hohes Foto rechts bis an den Rand */
+.start { display: grid; grid-template-columns: var(--rand) minmax(0, 1fr) var(--rand); padding-top: var(--a5); }
+.start__text { grid-column: 2; }
+.start h1 { font-size: var(--s6); line-height: 1.06; letter-spacing: -0.015em; font-weight: 400; }
+.start h1 em { font-style: italic; color: var(--akzent); }
+.start__zeile { margin-top: var(--a5); color: var(--leise); max-width: 31em; }
+.start__kontakt { margin-top: var(--a6); display: flex; flex-wrap: wrap; align-items: flex-end; gap: var(--a5) var(--a7); }
+.start__telefon { font-size: var(--s1); color: var(--leise); }
+.start__telefon .nummer { display: inline-block; margin-top: var(--a1); font-family: var(--serif); font-size: var(--s5); color: var(--text); line-height: 1.1; }
+.start__telefon .nummer:hover { color: var(--akzent); }
+.start__kontakt .knopf { display: none; }
+.start__bild { grid-column: 1 / -1; margin-top: var(--a7); aspect-ratio: 4 / 4.6; overflow: hidden; }
+.start__bild img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; }
+
+@media (min-width: 900px) {
+  .start { grid-template-columns: minmax(var(--rand), 1fr) repeat(12, minmax(0, 92px)) minmax(var(--rand), 1fr); column-gap: 24px; padding-top: var(--a8); align-items: start; }
+  .start__text { grid-column: 2 / span 7; align-self: center; padding-bottom: var(--a7); }
+  .start__bild { grid-column: 10 / -1; margin-top: 0; aspect-ratio: 4 / 5.4; max-height: 86vh; }
+  .start h1 { margin-left: -0.03em; }
+}
+@media (hover: hover) and (pointer: fine) { .start__kontakt .knopf { display: inline-flex; } }
+
+/* Leistungen als ganzer Satz */
+.leistungen { padding: var(--a9) var(--rand) var(--a10); display: grid; grid-template-columns: minmax(0, 1fr); }
+.leistungen h2 { font-size: var(--s3); font-style: italic; color: var(--leise); }
+.leistungen__satz { margin-top: var(--a5); font-family: var(--serif); font-size: var(--s4); line-height: 1.38; max-width: 26em; }
+.leistungen__satz a {
+  color: var(--akzent); text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 0.18em;
+  transition: background-color var(--zeit) var(--kurve), color var(--zeit) var(--kurve); border-radius: 2px;
+}
+.leistungen__satz a:hover { background: var(--akzent-hell); color: var(--akzent-tief); }
+.leistungen__satz a:active { color: var(--text); }
+.leistungen__nachsatz { margin-top: var(--a5); color: var(--leise); max-width: 34em; }
+.leistungen__bilder { margin-top: var(--a8); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 12px; }
+.leistungen__bild { overflow: hidden; }
+.leistungen__bild img { width: 100%; height: 100%; object-fit: cover; }
+.leistungen__bild--1 { grid-column: 1 / span 7; aspect-ratio: 3 / 4; }
+.leistungen__bild--2 { grid-column: 5 / -1; aspect-ratio: 3 / 2; margin-top: -24%; }
+
+@media (min-width: 900px) {
+  .leistungen { grid-template-columns: minmax(var(--rand), 1fr) repeat(12, minmax(0, 92px)) minmax(var(--rand), 1fr); column-gap: 24px; padding-left: 0; padding-right: 0; padding-top: var(--a10); }
+  .leistungen > * { grid-column: 3 / span 9; }
+  .leistungen__bilder { grid-column: 2 / span 12; column-gap: 24px; }
+  .leistungen__bild--1 { grid-column: 2 / span 4; }
+  .leistungen__bild--2 { grid-column: 7 / -1; margin-top: var(--a10); }
+}
+
+/* Kontaktleiste am Handy: Pflaume, Nummer in der Briefschrift */
+.leiste { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; display: grid; grid-template-columns: 1fr auto; background: var(--akzent); color: var(--auf-akzent); padding-bottom: env(safe-area-inset-bottom); }
+.leiste__anruf { display: flex; align-items: baseline; gap: var(--a3); padding: 0 var(--a4); min-height: 64px; align-items: center; text-decoration: none; }
+.leiste__wort { font-size: var(--s1); font-weight: 500; }
+.leiste__nr { font-family: var(--serif); font-size: var(--s2); white-space: nowrap; font-variant-numeric: tabular-nums lining-nums; }
+.leiste__nr .fehlt { background: transparent; color: inherit; padding: 0; }
+.leiste__termin { display: flex; align-items: center; margin: var(--a2); padding: 0 var(--a4); border-radius: 4px; background: var(--grund); color: var(--akzent); text-decoration: none; font-weight: 500; font-size: var(--s1); white-space: nowrap; }
+.leiste__termin:active { background: var(--akzent-hell); }
+.leiste a:focus-visible { outline-color: var(--auf-akzent); outline-offset: -3px; }
+body { padding-bottom: 80px; }
+@media (max-width: 380px) { .leiste__wort { display: none; } }
+@media (hover: hover) and (pointer: fine) { .leiste { display: none; } body { padding-bottom: 0; } }
+
+@media (prefers-reduced-motion: no-preference) {
+  .auftritt { animation: auftritt 900ms var(--kurve-auftritt) both; }
+  .auftritt--2 { animation-delay: 60ms; }
+  .auftritt--3 { animation-delay: 120ms; }
+  .js-bewegung .einblenden { opacity: 0; transform: translateY(18px); transition: opacity 900ms var(--kurve-auftritt), transform 900ms var(--kurve-auftritt); }
+  .js-bewegung .einblenden.ist-sichtbar { opacity: 1; transform: none; }
+}
+@keyframes auftritt { from { opacity: 0; transform: translateY(16px); } }

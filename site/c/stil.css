@@ -1,0 +1,152 @@
+/* Richtung C · Licht an
+   Porzellan, Ruß, Rapsgelb · Mona Sans (breit für Überschriften, normal für Text) · Radius 0, harte Flächen */
+
+@font-face { font-family: "Mona Sans"; src: url("../schriften/MonaSans.woff2") format("woff2"); font-weight: 200 900; font-stretch: 75% 125%; font-display: swap; }
+
+:root {
+  --grund: #F4F4F1;
+  --flaeche: #E6E6E1;
+  --text: #1B1C1E;
+  --leise: #4A4C51;
+  --akzent: #F0C93A;
+  --akzent-tief: #E0B41C;
+  --akzent-hell: #FBF0C8;
+  --auf-akzent: #1B1C1E;
+
+  --s1: 1rem; --s2: 1.125rem; --s3: 1.25rem; --s4: 1.5rem; --s5: 2rem; --s6: 2.375rem;
+  --a1: 4px; --a2: 8px; --a3: 12px; --a4: 16px; --a5: 24px; --a6: 32px; --a7: 48px; --a8: 64px; --a9: 96px; --a10: 128px;
+  --rand: 20px;
+  --kurve: cubic-bezier(0.25, 1, 0.5, 1);
+  --kurve-auftritt: cubic-bezier(0.16, 1, 0.3, 1);
+  --zeit: 300ms;
+  --schrift: "Mona Sans", system-ui, sans-serif;
+}
+@media (min-width: 900px) {
+  :root { --s2: 1.1875rem; --s3: 1.375rem; --s4: 1.75rem; --s5: 2.75rem; --s6: 3.25rem; --rand: 48px; }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--grund); color: var(--text); font-family: var(--schrift); font-size: var(--s2); line-height: 1.6; font-stretch: 100%; }
+img { display: block; max-width: 100%; height: auto; }
+h1, h2 { margin: 0; font-stretch: 125%; font-weight: 600; text-wrap: balance; letter-spacing: -0.02em; }
+p { margin: 0; text-wrap: pretty; }
+a { color: inherit; }
+ul { list-style: none; margin: 0; padding: 0; }
+figure { margin: 0; }
+:focus-visible { outline: 3px solid var(--text); outline-offset: 3px; }
+.sprung { position: absolute; left: var(--rand); top: -100px; background: var(--text); color: var(--grund); padding: var(--a3) var(--a4); z-index: 30; }
+.sprung:focus { top: var(--a3); }
+.unsichtbar { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.fehlt { background: var(--akzent-hell); padding: 0 0.2em; }
+.hinweis-fehlt { font-size: var(--s1); color: var(--leise); margin-top: var(--a7); }
+
+/* Kopfzeile */
+.kopf { display: flex; align-items: center; gap: var(--a6); height: 64px; padding: 0 var(--rand); flex-wrap: wrap; position: relative; z-index: 10; }
+.marke { font-stretch: 125%; font-weight: 700; font-size: var(--s3); text-decoration: none; margin-right: auto; letter-spacing: -0.01em; white-space: nowrap; }
+.marke .fehlt { background: none; padding: 0; }
+.kopf__nav { display: none; }
+.kopf__nav ul { display: flex; gap: var(--a6); }
+.kopf__nav a { text-decoration: none; font-size: var(--s1); font-weight: 500; padding: var(--a2) 0; position: relative; }
+.kopf__nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 2px; height: 2px; background: var(--text); transform: scaleX(0); transform-origin: 0 50%; transition: transform var(--zeit) var(--kurve); }
+.kopf__nav a:hover::after { transform: scaleX(1); }
+.menueknopf { width: 44px; height: 44px; border: 0; background: transparent; display: grid; place-content: center; gap: 6px; cursor: pointer; color: var(--text); }
+.menueknopf__strich { display: block; width: 26px; height: 2.5px; background: currentColor; transition: transform var(--zeit) var(--kurve); }
+.menueknopf[aria-expanded="true"] .menueknopf__strich:first-of-type { transform: translateY(4.25px) rotate(45deg); }
+.menueknopf[aria-expanded="true"] .menueknopf__strich:last-of-type { transform: translateY(-4.25px) rotate(-45deg); }
+.handymenue { flex-basis: 100%; padding: var(--a3) 0 var(--a6); background: var(--grund); }
+.handymenue a { display: block; padding: var(--a3) 0; font-stretch: 125%; font-weight: 600; font-size: var(--s4); text-decoration: none; }
+@media (min-width: 1000px) {
+  .kopf { height: 80px; }
+  .kopf__nav { display: block; }
+  .menueknopf, .handymenue { display: none; }
+}
+
+/* Startbereich: Abendfoto links bis an den Rand, Text rechts unten */
+.start { display: grid; }
+.start__bild { aspect-ratio: 4 / 4.4; overflow: hidden; background: #3A332B; }
+.start__bild img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 62%; }
+.start__text { padding: var(--a6) var(--rand) 0; }
+.start h1 { font-size: var(--s6); line-height: 1.04; }
+.start h1 .satz { display: block; }
+@media (min-width: 900px) { .start h1 { font-stretch: 112%; } }
+.start__zeile { margin-top: var(--a4); color: var(--leise); max-width: 30em; }
+.start__kontakt { margin-top: var(--a6); display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4) var(--a6); }
+
+/* Lichtschalter: das einzige Gelb der Seite */
+.lichtschalter {
+  display: inline-grid; padding: var(--a3) var(--a5); min-height: 72px; align-content: center;
+  background: var(--akzent); color: var(--auf-akzent); text-decoration: none; box-shadow: inset 0 0 0 2px var(--text);
+  transition: background-color var(--zeit) var(--kurve), transform 120ms var(--kurve);
+}
+.lichtschalter__wort { font-size: var(--s1); font-weight: 600; }
+.lichtschalter__nr { font-size: var(--s4); font-weight: 700; font-stretch: 112%; white-space: nowrap; font-variant-numeric: tabular-nums; line-height: 1.2; }
+.lichtschalter__nr .fehlt { background: transparent; }
+.lichtschalter:hover { background: var(--akzent-tief); }
+.lichtschalter:active { transform: translateY(1px); }
+.lichtschalter:focus-visible { outline-offset: 4px; }
+.textknopf { display: inline-flex; align-items: center; gap: var(--a3); min-height: 48px; font-weight: 600; text-decoration: none; }
+.textknopf .pfeil { position: relative; width: 20px; height: 2px; background: currentColor; transition: transform var(--zeit) var(--kurve); }
+.textknopf .pfeil::after { content: ""; position: absolute; right: 0; top: -4px; width: 8px; height: 8px; border-top: 2px solid currentColor; border-right: 2px solid currentColor; transform: rotate(45deg); transform-origin: 100% 0; translate: 1px 1px; }
+.textknopf:hover .pfeil { transform: translateX(5px); }
+.start__kontakt .textknopf { display: none; }
+@media (hover: hover) and (pointer: fine) { .start__kontakt .textknopf { display: inline-flex; } }
+
+@media (min-width: 900px) {
+  .start { grid-template-columns: 56fr 44fr; min-height: min(calc(100vh - 80px), 860px); }
+  .start__bild { aspect-ratio: auto; height: 100%; }
+  .start__text { align-self: center; padding: var(--a8) var(--rand) var(--a8) var(--a8); max-width: 660px; }
+  .start__bild img { object-position: 50% 82%; }
+}
+
+/* Leistungen: Index in breiter Schrift, Foto wechselt rechts (Computer), kleines Foto je Zeile (Handy) */
+.leistungen { padding: var(--a9) var(--rand) var(--a10); max-width: 1440px; margin: 0 auto; }
+.leistungen h2 { font-size: var(--s5); line-height: 1.08; }
+.leistungen__satz { margin-top: var(--a4); color: var(--leise); max-width: 32em; }
+.leistungen__inhalt { margin-top: var(--a7); display: grid; gap: var(--a7); }
+.index { display: grid; gap: var(--a1); }
+.index__link { display: grid; grid-template-columns: 72px 1fr; column-gap: var(--a4); align-items: start; padding: var(--a4) 0; text-decoration: none; }
+.index__bildchen { grid-row: 1 / span 2; width: 72px; aspect-ratio: 1; overflow: hidden; }
+.index__bildchen img { width: 100%; height: 100%; object-fit: cover; }
+.index__titel { font-stretch: 125%; font-weight: 600; font-size: var(--s4); line-height: 1.15; letter-spacing: -0.015em; }
+.index__satz { margin-top: var(--a2); color: var(--leise); font-size: var(--s1); }
+.buehne { display: none; }
+
+@media (min-width: 1000px) {
+  .leistungen { padding-top: var(--a10); }
+  .leistungen__inhalt { grid-template-columns: 7fr 5fr; gap: var(--a8); }
+  .index__link { grid-template-columns: 1fr; padding: var(--a4) var(--a5); margin: 0 calc(var(--a5) * -1); transition: background-color var(--zeit) var(--kurve); }
+  .index__bildchen { display: none; }
+  .index__titel { font-size: var(--s5); transition: transform var(--zeit) var(--kurve); }
+  .index__satz { font-size: var(--s2); max-width: 30em; }
+  .index__link:hover, .index__link:focus-visible { background: var(--flaeche); }
+  .index__link:hover .index__titel { transform: translateX(6px); }
+  .index__link:active { transform: translateY(1px); }
+  .buehne { display: block; position: sticky; top: var(--a6); align-self: start; aspect-ratio: 4 / 5; overflow: hidden; background: var(--flaeche); }
+  .buehne__bild { position: absolute; inset: 0; opacity: 0; transition: opacity 400ms var(--kurve); }
+  .buehne__bild.ist-aktiv { opacity: 1; }
+  .buehne__bild img { width: 100%; height: 100%; object-fit: cover; }
+}
+
+/* Kontaktleiste am Handy: Rußfläche, gelber Anrufteil, Termin hell */
+.leiste { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; display: grid; grid-template-columns: 1fr auto; background: var(--text); padding: var(--a2); gap: var(--a2); padding-bottom: calc(var(--a2) + env(safe-area-inset-bottom)); }
+.leiste__anruf { display: grid; align-content: center; padding: 0 var(--a4); min-height: 56px; background: var(--akzent); color: var(--auf-akzent); text-decoration: none; }
+.leiste__wort { font-size: 0.875rem; font-weight: 600; }
+.leiste__nr { font-size: var(--s2); font-weight: 700; font-stretch: 110%; white-space: nowrap; font-variant-numeric: tabular-nums; line-height: 1.2; }
+.leiste__nr .fehlt { background: transparent; }
+.leiste__termin { display: flex; align-items: center; padding: 0 var(--a4); color: var(--grund); text-decoration: none; font-weight: 600; font-size: var(--s1); white-space: nowrap; box-shadow: inset 0 0 0 1.5px #8A8C90; }
+.leiste__anruf:active { background: var(--akzent-tief); }
+.leiste a:focus-visible { outline-color: var(--grund); outline-offset: 2px; }
+body { padding-bottom: 88px; }
+@media (hover: hover) and (pointer: fine) { .leiste { display: none; } body { padding-bottom: 0; } }
+
+@media (prefers-reduced-motion: no-preference) {
+  .auftritt { animation: auftritt 900ms var(--kurve-auftritt) both; }
+  .auftritt--2 { animation-delay: 60ms; }
+  .auftritt--3 { animation-delay: 120ms; }
+  .start__bild .auftritt { animation-name: bild-auftritt; }
+  .js-bewegung .einblenden { opacity: 0; transform: translateY(18px); transition: opacity 900ms var(--kurve-auftritt), transform 900ms var(--kurve-auftritt); }
+  .js-bewegung .einblenden.ist-sichtbar { opacity: 1; transform: none; }
+}
+@keyframes auftritt { from { opacity: 0; transform: translateY(16px); } }
+@keyframes bild-auftritt { from { opacity: 0; transform: scale(1.03); } }

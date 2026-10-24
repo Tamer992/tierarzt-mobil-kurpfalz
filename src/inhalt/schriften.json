@@ -1,0 +1,14 @@
+{
+  "a": [
+    { "name": "Brygada 1918", "rolle": "Überschriften", "quelle": "Google Fonts, Projekt github.com/kosmynkab/Brygada-1918", "lizenz": "SIL Open Font License 1.1", "warum": "Eine Antiqua nach einer polnischen Buchschrift von 1918. Die Federführung ist sichtbar, die Formen bleiben ruhig. Das gibt der Seite eine menschliche Hand ohne Verschnörkelung." },
+    { "name": "Albert Sans", "rolle": "Text, Nummer, Knöpfe", "quelle": "Google Fonts, Projekt github.com/usted/Albert-Sans", "lizenz": "SIL Open Font License 1.1", "warum": "Eine klare skandinavische Grotesk mit offenen Formen und gut unterscheidbaren Ziffern. Sie trägt lange Texte am Handy und die Telefonnummer." }
+  ],
+  "b": [
+    { "name": "Petrona", "rolle": "Überschriften, Leistungssatz, Nummer", "quelle": "Google Fonts, Projekt github.com/RingoSeeber/Petrona", "lizenz": "SIL Open Font License 1.1", "warum": "Eine Antiqua mit einer Kursive, die nach Handschrift aussieht. Der zweite Satz der Überschrift steht in dieser Kursive, so klingt die Seite wie ein Brief." },
+    { "name": "Golos Text", "rolle": "Text, Knöpfe", "quelle": "Google Fonts, Projekt github.com/googlefonts/golos-text", "lizenz": "SIL Open Font License 1.1", "warum": "Eine ruhige Grotesk von Paratype, gebaut für Bildschirmtext. Sie bleibt neben der Petrona im Hintergrund." }
+  ],
+  "c": [
+    { "name": "Mona Sans (breit)", "rolle": "Überschriften, Leistungsliste, Nummer", "quelle": "GitHub, github.com/github/mona-sans", "lizenz": "SIL Open Font License 1.1, ungekürzt eingebunden wegen des geschützten Namens „Mona“", "warum": "Eine Grotesk mit Breitenachse. In 112 bis 125 Prozent Breite wirkt sie präzise und selbstbewusst, ohne laut zu werden." },
+    { "name": "Mona Sans (normal)", "rolle": "Text", "quelle": "dieselbe Datei", "lizenz": "wie oben", "warum": "Dieselbe Familie in normaler Breite für den Fließtext. Eine Familie für alles hält die Richtung streng." }
+  ]
+}

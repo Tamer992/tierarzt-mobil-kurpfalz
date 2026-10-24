@@ -1,0 +1,48 @@
+{
+  "praxisname": "[Praxisname]",
+  "telefon_anzeige": "0621 000 00 00",
+  "telefon_link": "+496210000000",
+  "ort": "[FEHLT: Ort und Umgebung]",
+  "termin_label": "Termin anfragen",
+  "anrufen_label": "Anrufen",
+  "navigation": [
+    "Leistungen",
+    "Hausbesuch",
+    "Über mich",
+    "Kontakt"
+  ],
+  "leistungen": [
+    {
+      "titel": "Durchfall und Erbrechen",
+      "satz": "Ich untersuche Ihr Tier, suche die Ursache und gebe ihm Flüssigkeit, wenn es sie braucht.",
+      "foto": "katze-unter-decke"
+    },
+    {
+      "titel": "Ohren und Augen",
+      "satz": "Kratzt sich Ihr Hund ständig am Ohr oder kneift Ihre Katze ein Auge zu, sehe ich mir das in Ruhe an.",
+      "foto": "katze-sofa"
+    },
+    {
+      "titel": "Schmerzen und Lahmheit",
+      "satz": "Ich finde heraus, wo es weh tut, und lindere den Schmerz. Auch wenn er schon länger besteht.",
+      "foto": "hund-boden2"
+    },
+    {
+      "titel": "Wunden und Bisse",
+      "satz": "Ich reinige und versorge die Wunde bei Ihnen zu Hause, oft auf dem Sofa oder am Küchentisch.",
+      "foto": "hund-teppich"
+    },
+    {
+      "titel": "Impfung und Vorsorge",
+      "satz": "Für Tiere, die in der Praxis in Panik geraten, ist die Impfung im eigenen Flur der ruhigere Weg.",
+      "foto": "katze-grau-fenster"
+    },
+    {
+      "titel": "Abschied zu Hause",
+      "satz": "Wenn es Zeit ist, komme ich zu Ihnen. Ihr Tier schläft dort ein, wo es sein Leben verbracht hat.",
+      "foto": "hund-senior-boden"
+    }
+  ],
+  "leistungen_fehlt": "[FEHLT: Leistungen vom Kunden bestätigen]",
+  "telefon_fehlt": "FEHLT: Telefonnummer"
+}
