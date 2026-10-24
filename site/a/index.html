@@ -40,14 +40,51 @@
     </div>
   </section>
 
-  <section class="notfall" aria-labelledby="notfall-titel">
-    <div class="notfall__innen einblenden">
-      <h2 id="notfall-titel">Im Notfall</h2>
-      <div class="notfall__text">
-        <p>Bei Atemnot, Vergiftung, Verletzungen, starken Schmerzen oder Kreislaufproblemen rufen Sie mich an. Ich komme so schnell wie möglich, untersuche Ihr Tier und stabilisiere es. Die wichtigsten Medikamente habe ich dabei.</p>
-        <p class="notfall__klinik">Eine 24-Stunden-Versorgung biete ich nicht an. Ist das Leben Ihres Tieres in Gefahr oder erreichen Sie mich außerhalb meiner Zeiten, fahren Sie bitte direkt in die nächste Tierklinik.</p>
-      </div>
-      <p class="notfall__nummer"><a class="nummer" href="tel:+496210000000"><span class="fehlt" title="FEHLT: neue Telefonnummer">0621 000 00 00</span></a></p>
+  <section class="kontakt" id="kontakt" aria-labelledby="kontakt-titel">
+    <div class="kontakt__anfrage">
+      <h2 id="kontakt-titel">Termin anfragen</h2>
+      <p class="kontakt__satz">Zwei kurze Fragen, dann geht es zur Anfrage. Mein Team meldet sich so schnell wie möglich bei Ihnen.</p>
+      <form class="vorauswahl" action="termin/" method="get">
+        <fieldset class="vorauswahl__gruppe">
+          <legend class="feld__label">Für wen ist der Termin?</legend>
+          <div class="wahlreihe">
+            <label class="wahl"><input type="radio" name="tier" value="hund" required><span>Hund</span></label>
+            <label class="wahl"><input type="radio" name="tier" value="katze"><span>Katze</span></label>
+            <label class="wahl"><input type="radio" name="tier" value="anderes-tier"><span>Anderes Tier</span></label>
+          </div>
+        </fieldset>
+        <div class="vorauswahl__gruppe">
+          <label class="feld__label" for="anlass">Worum geht es?</label>
+          <div class="auswahl"><select class="feld" id="anlass" name="anlass" required><option value="" selected disabled>Bitte wählen</option><option>Frisst nicht oder wirkt krank</option><option>Akutversorgung und Stabilisierung</option><option>Durchfall und Erbrechen</option><option>Schmerzbehandlung</option><option>Bisswunden und Verletzungen</option><option>Ohrenentzündungen</option><option>Augen und Bindehaut</option><option>Blase und Harnwege</option><option>Infektionen und Infusionen</option><option>Lahmheit und Bewegung</option><option>Abschied zu Hause</option><option>Etwas anderes</option></select></div>
+        </div>
+        <button class="knopf knopf--gross" type="submit">Weiter zur Anfrage<span class="pfeil" aria-hidden="true"></span></button>
+      </form>
+    </div>
+    <div class="kontakt__telefon">
+      <h3>Lieber anrufen?</h3>
+      <p>Am Telefon klären wir am schnellsten, was Ihr Tier braucht. Schreiben können Sie mir auch per WhatsApp: [FEHLT: Nummer].</p>
+      <p class="kontakt__nummer"><a class="nummer" href="tel:+496210000000"><span class="fehlt" title="FEHLT: neue Telefonnummer">0621 000 00 00</span></a></p>
+      <table class="zeiten">
+        <caption>Erreichbar</caption>
+        <tbody><tr><th scope="row">Montag bis Freitag</th><td>9 bis 23 Uhr</td></tr><tr><th scope="row">Samstag</th><td>8 bis 12 Uhr</td></tr><tr><th scope="row">Sonntag</th><td>in Ausnahmefällen nach Absprache</td></tr></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="einsatz" id="einsatz" aria-labelledby="einsatz-titel">
+    <div class="einsatz__tafel einblenden">
+      <h2 id="einsatz-titel">Wohin ich komme</h2>
+      <p class="einsatz__satz">Mein Schwerpunkt ist das Stadtgebiet Mannheim. Ich fahre auch nach Ludwigshafen, Heidelberg, Karlsruhe, Speyer, Schwetzingen, Weinheim, Worms und in die Orte dazwischen.</p>
+      <form class="plz" data-plz="{&quot;55232&quot;:&quot;Alzey&quot;,&quot;67059&quot;:&quot;Ludwigshafen&quot;,&quot;67061&quot;:&quot;Ludwigshafen&quot;,&quot;67063&quot;:&quot;Ludwigshafen&quot;,&quot;67065&quot;:&quot;Ludwigshafen&quot;,&quot;67067&quot;:&quot;Ludwigshafen&quot;,&quot;67069&quot;:&quot;Ludwigshafen&quot;,&quot;67071&quot;:&quot;Ludwigshafen&quot;,&quot;67098&quot;:&quot;Bad Dürkheim&quot;,&quot;67112&quot;:&quot;Mutterstadt&quot;,&quot;67117&quot;:&quot;Limburgerhof&quot;,&quot;67122&quot;:&quot;Altrip&quot;,&quot;67125&quot;:&quot;Dannstadt&quot;,&quot;67126&quot;:&quot;Hochdorf-Assenheim&quot;,&quot;67127&quot;:&quot;Rödersheim-Gronau&quot;,&quot;67136&quot;:&quot;Fußgönheim&quot;,&quot;67141&quot;:&quot;Neuhofen&quot;,&quot;67165&quot;:&quot;Waldsee&quot;,&quot;67166&quot;:&quot;Otterstadt&quot;,&quot;67245&quot;:&quot;Lambsheim&quot;,&quot;67346&quot;:&quot;Speyer&quot;,&quot;67354&quot;:&quot;Römerberg&quot;,&quot;67360&quot;:&quot;Lingenfeld&quot;,&quot;67373&quot;:&quot;Dudenhofen&quot;,&quot;67433&quot;:&quot;Neustadt&quot;,&quot;67434&quot;:&quot;Neustadt&quot;,&quot;67435&quot;:&quot;Neustadt&quot;,&quot;67454&quot;:&quot;Haßloch&quot;,&quot;67459&quot;:&quot;Böhl-Iggelheim&quot;,&quot;67547&quot;:&quot;Worms&quot;,&quot;67549&quot;:&quot;Worms&quot;,&quot;67550&quot;:&quot;Worms&quot;,&quot;67551&quot;:&quot;Worms&quot;,&quot;68159&quot;:&quot;Mannheim&quot;,&quot;68161&quot;:&quot;Mannheim&quot;,&quot;68163&quot;:&quot;Mannheim&quot;,&quot;68165&quot;:&quot;Mannheim&quot;,&quot;68167&quot;:&quot;Mannheim&quot;,&quot;68169&quot;:&quot;Mannheim&quot;,&quot;68199&quot;:&quot;Mannheim&quot;,&quot;68219&quot;:&quot;Mannheim&quot;,&quot;68229&quot;:&quot;Mannheim&quot;,&quot;68239&quot;:&quot;Mannheim&quot;,&quot;68259&quot;:&quot;Mannheim&quot;,&quot;68305&quot;:&quot;Mannheim&quot;,&quot;68307&quot;:&quot;Mannheim&quot;,&quot;68309&quot;:&quot;Mannheim&quot;,&quot;68519&quot;:&quot;Viernheim&quot;,&quot;68723&quot;:&quot;Schwetzingen&quot;,&quot;68766&quot;:&quot;Hockenheim&quot;,&quot;68775&quot;:&quot;Ketsch&quot;,&quot;68809&quot;:&quot;Neulußheim&quot;,&quot;69115&quot;:&quot;Heidelberg&quot;,&quot;69117&quot;:&quot;Heidelberg&quot;,&quot;69118&quot;:&quot;Heidelberg&quot;,&quot;69120&quot;:&quot;Heidelberg&quot;,&quot;69121&quot;:&quot;Heidelberg&quot;,&quot;69123&quot;:&quot;Heidelberg&quot;,&quot;69124&quot;:&quot;Heidelberg&quot;,&quot;69126&quot;:&quot;Heidelberg&quot;,&quot;69469&quot;:&quot;Weinheim&quot;,&quot;76131&quot;:&quot;Karlsruhe&quot;,&quot;76133&quot;:&quot;Karlsruhe&quot;,&quot;76135&quot;:&quot;Karlsruhe&quot;,&quot;76137&quot;:&quot;Karlsruhe&quot;,&quot;76139&quot;:&quot;Karlsruhe&quot;,&quot;76149&quot;:&quot;Karlsruhe&quot;,&quot;76185&quot;:&quot;Karlsruhe&quot;,&quot;76187&quot;:&quot;Karlsruhe&quot;,&quot;76189&quot;:&quot;Karlsruhe&quot;,&quot;76199&quot;:&quot;Karlsruhe&quot;,&quot;76227&quot;:&quot;Karlsruhe&quot;,&quot;76228&quot;:&quot;Karlsruhe&quot;,&quot;76229&quot;:&quot;Karlsruhe&quot;,&quot;76726&quot;:&quot;Germersheim&quot;}" data-ja="Ja, ich komme zu Ihnen nach {ort}." data-nein="Diese Postleitzahl steht nicht auf meiner Liste. Schicken Sie mir Ihre Adresse, dann sage ich Ihnen, ob und zu welchen Bedingungen ich komme." data-fehler="Bitte geben Sie fünf Ziffern ein." novalidate>
+        <label class="feld__label" for="plz-eingabe">Ihre Postleitzahl</label>
+        <div class="plz__zeile">
+          <input class="feld" id="plz-eingabe" name="plz" inputmode="numeric" autocomplete="postal-code" maxlength="5" pattern="[0-9]{5}" aria-describedby="plz-hinweis plz-antwort">
+          <button class="knopf" type="submit">Prüfen</button>
+        </div>
+        <p class="feld__hinweis" id="plz-hinweis">Fünf Ziffern, zum Beispiel 68159</p>
+        <p class="plz__antwort" id="plz-antwort" role="status" aria-live="polite"></p>
+      </form>
+      <p class="hinweis-fehlt"><span class="fehlt">[FEHLT: Postleitzahlen aus der Ortsliste vom Kunden prüfen lassen]</span></p>
     </div>
   </section>
 
@@ -150,23 +187,6 @@
     </div>
   </section>
 
-  <section class="einsatz" id="einsatz" aria-labelledby="einsatz-titel">
-    <div class="einsatz__tafel einblenden">
-      <h2 id="einsatz-titel">Wohin ich komme</h2>
-      <p class="einsatz__satz">Mein Schwerpunkt ist das Stadtgebiet Mannheim. Ich fahre auch nach Ludwigshafen, Heidelberg, Karlsruhe, Speyer, Schwetzingen, Weinheim, Worms und in die Orte dazwischen.</p>
-      <form class="plz" data-plz="{&quot;55232&quot;:&quot;Alzey&quot;,&quot;67059&quot;:&quot;Ludwigshafen&quot;,&quot;67061&quot;:&quot;Ludwigshafen&quot;,&quot;67063&quot;:&quot;Ludwigshafen&quot;,&quot;67065&quot;:&quot;Ludwigshafen&quot;,&quot;67067&quot;:&quot;Ludwigshafen&quot;,&quot;67069&quot;:&quot;Ludwigshafen&quot;,&quot;67071&quot;:&quot;Ludwigshafen&quot;,&quot;67098&quot;:&quot;Bad Dürkheim&quot;,&quot;67112&quot;:&quot;Mutterstadt&quot;,&quot;67117&quot;:&quot;Limburgerhof&quot;,&quot;67122&quot;:&quot;Altrip&quot;,&quot;67125&quot;:&quot;Dannstadt&quot;,&quot;67126&quot;:&quot;Hochdorf-Assenheim&quot;,&quot;67127&quot;:&quot;Rödersheim-Gronau&quot;,&quot;67136&quot;:&quot;Fußgönheim&quot;,&quot;67141&quot;:&quot;Neuhofen&quot;,&quot;67165&quot;:&quot;Waldsee&quot;,&quot;67166&quot;:&quot;Otterstadt&quot;,&quot;67245&quot;:&quot;Lambsheim&quot;,&quot;67346&quot;:&quot;Speyer&quot;,&quot;67354&quot;:&quot;Römerberg&quot;,&quot;67360&quot;:&quot;Lingenfeld&quot;,&quot;67373&quot;:&quot;Dudenhofen&quot;,&quot;67433&quot;:&quot;Neustadt&quot;,&quot;67434&quot;:&quot;Neustadt&quot;,&quot;67435&quot;:&quot;Neustadt&quot;,&quot;67454&quot;:&quot;Haßloch&quot;,&quot;67459&quot;:&quot;Böhl-Iggelheim&quot;,&quot;67547&quot;:&quot;Worms&quot;,&quot;67549&quot;:&quot;Worms&quot;,&quot;67550&quot;:&quot;Worms&quot;,&quot;67551&quot;:&quot;Worms&quot;,&quot;68159&quot;:&quot;Mannheim&quot;,&quot;68161&quot;:&quot;Mannheim&quot;,&quot;68163&quot;:&quot;Mannheim&quot;,&quot;68165&quot;:&quot;Mannheim&quot;,&quot;68167&quot;:&quot;Mannheim&quot;,&quot;68169&quot;:&quot;Mannheim&quot;,&quot;68199&quot;:&quot;Mannheim&quot;,&quot;68219&quot;:&quot;Mannheim&quot;,&quot;68229&quot;:&quot;Mannheim&quot;,&quot;68239&quot;:&quot;Mannheim&quot;,&quot;68259&quot;:&quot;Mannheim&quot;,&quot;68305&quot;:&quot;Mannheim&quot;,&quot;68307&quot;:&quot;Mannheim&quot;,&quot;68309&quot;:&quot;Mannheim&quot;,&quot;68519&quot;:&quot;Viernheim&quot;,&quot;68723&quot;:&quot;Schwetzingen&quot;,&quot;68766&quot;:&quot;Hockenheim&quot;,&quot;68775&quot;:&quot;Ketsch&quot;,&quot;68809&quot;:&quot;Neulußheim&quot;,&quot;69115&quot;:&quot;Heidelberg&quot;,&quot;69117&quot;:&quot;Heidelberg&quot;,&quot;69118&quot;:&quot;Heidelberg&quot;,&quot;69120&quot;:&quot;Heidelberg&quot;,&quot;69121&quot;:&quot;Heidelberg&quot;,&quot;69123&quot;:&quot;Heidelberg&quot;,&quot;69124&quot;:&quot;Heidelberg&quot;,&quot;69126&quot;:&quot;Heidelberg&quot;,&quot;69469&quot;:&quot;Weinheim&quot;,&quot;76131&quot;:&quot;Karlsruhe&quot;,&quot;76133&quot;:&quot;Karlsruhe&quot;,&quot;76135&quot;:&quot;Karlsruhe&quot;,&quot;76137&quot;:&quot;Karlsruhe&quot;,&quot;76139&quot;:&quot;Karlsruhe&quot;,&quot;76149&quot;:&quot;Karlsruhe&quot;,&quot;76185&quot;:&quot;Karlsruhe&quot;,&quot;76187&quot;:&quot;Karlsruhe&quot;,&quot;76189&quot;:&quot;Karlsruhe&quot;,&quot;76199&quot;:&quot;Karlsruhe&quot;,&quot;76227&quot;:&quot;Karlsruhe&quot;,&quot;76228&quot;:&quot;Karlsruhe&quot;,&quot;76229&quot;:&quot;Karlsruhe&quot;,&quot;76726&quot;:&quot;Germersheim&quot;}" data-ja="Ja, ich komme zu Ihnen nach {ort}." data-nein="Diese Postleitzahl steht nicht auf meiner Liste. Schicken Sie mir Ihre Adresse, dann sage ich Ihnen, ob und zu welchen Bedingungen ich komme." data-fehler="Bitte geben Sie fünf Ziffern ein." novalidate>
-        <label class="feld__label" for="plz-eingabe">Ihre Postleitzahl</label>
-        <div class="plz__zeile">
-          <input class="feld" id="plz-eingabe" name="plz" inputmode="numeric" autocomplete="postal-code" maxlength="5" pattern="[0-9]{5}" aria-describedby="plz-hinweis plz-antwort">
-          <button class="knopf" type="submit">Prüfen</button>
-        </div>
-        <p class="feld__hinweis" id="plz-hinweis">Fünf Ziffern, zum Beispiel 68159</p>
-        <p class="plz__antwort" id="plz-antwort" role="status" aria-live="polite"></p>
-      </form>
-      <p class="hinweis-fehlt"><span class="fehlt">[FEHLT: Postleitzahlen aus der Ortsliste vom Kunden prüfen lassen]</span></p>
-    </div>
-  </section>
-
   <section class="kosten" id="kosten" aria-labelledby="kosten-titel">
     <h2 id="kosten-titel" class="einblenden">Was auf Sie zukommt</h2>
     <p class="kosten__satz einblenden">Ich rechne nach der Gebührenordnung für Tierärzte ab. Vorab erstelle ich Ihnen einen Kostenvoranschlag.</p>
@@ -213,34 +233,14 @@
     </div>
   </section>
 
-  <section class="kontakt" id="kontakt" aria-labelledby="kontakt-titel">
-    <div class="kontakt__anfrage">
-      <h2 id="kontakt-titel">Termin anfragen</h2>
-      <p class="kontakt__satz">Zwei kurze Fragen, dann geht es zur Anfrage. Mein Team meldet sich so schnell wie möglich bei Ihnen.</p>
-      <form class="vorauswahl" action="termin/" method="get">
-        <fieldset class="vorauswahl__gruppe">
-          <legend class="feld__label">Für wen ist der Termin?</legend>
-          <div class="wahlreihe">
-            <label class="wahl"><input type="radio" name="tier" value="hund" required><span>Hund</span></label>
-            <label class="wahl"><input type="radio" name="tier" value="katze"><span>Katze</span></label>
-            <label class="wahl"><input type="radio" name="tier" value="anderes-tier"><span>Anderes Tier</span></label>
-          </div>
-        </fieldset>
-        <div class="vorauswahl__gruppe">
-          <label class="feld__label" for="anlass">Worum geht es?</label>
-          <div class="auswahl"><select class="feld" id="anlass" name="anlass" required><option value="" selected disabled>Bitte wählen</option><option>Frisst nicht oder wirkt krank</option><option>Akutversorgung und Stabilisierung</option><option>Durchfall und Erbrechen</option><option>Schmerzbehandlung</option><option>Bisswunden und Verletzungen</option><option>Ohrenentzündungen</option><option>Augen und Bindehaut</option><option>Blase und Harnwege</option><option>Infektionen und Infusionen</option><option>Lahmheit und Bewegung</option><option>Abschied zu Hause</option><option>Etwas anderes</option></select></div>
-        </div>
-        <button class="knopf knopf--gross" type="submit">Weiter zur Anfrage<span class="pfeil" aria-hidden="true"></span></button>
-      </form>
-    </div>
-    <div class="kontakt__telefon">
-      <h3>Lieber anrufen?</h3>
-      <p>Am Telefon klären wir am schnellsten, was Ihr Tier braucht. Schreiben können Sie mir auch per WhatsApp: [FEHLT: Nummer].</p>
-      <p class="kontakt__nummer"><a class="nummer" href="tel:+496210000000"><span class="fehlt" title="FEHLT: neue Telefonnummer">0621 000 00 00</span></a></p>
-      <table class="zeiten">
-        <caption>Erreichbar</caption>
-        <tbody><tr><th scope="row">Montag bis Freitag</th><td>9 bis 23 Uhr</td></tr><tr><th scope="row">Samstag</th><td>8 bis 12 Uhr</td></tr><tr><th scope="row">Sonntag</th><td>in Ausnahmefällen nach Absprache</td></tr></tbody>
-      </table>
+  <section class="notfall" aria-labelledby="notfall-titel">
+    <div class="notfall__innen einblenden">
+      <h2 id="notfall-titel">Im Notfall</h2>
+      <div class="notfall__text">
+        <p>Bei Atemnot, Vergiftung, Verletzungen, starken Schmerzen oder Kreislaufproblemen rufen Sie mich an. Ich komme so schnell wie möglich, untersuche Ihr Tier und stabilisiere es. Die wichtigsten Medikamente habe ich dabei.</p>
+        <p class="notfall__klinik">Eine 24-Stunden-Versorgung biete ich nicht an. Ist das Leben Ihres Tieres in Gefahr oder erreichen Sie mich außerhalb meiner Zeiten, fahren Sie bitte direkt in die nächste Tierklinik.</p>
+      </div>
+      <p class="notfall__nummer"><a class="nummer" href="tel:+496210000000"><span class="fehlt" title="FEHLT: neue Telefonnummer">0621 000 00 00</span></a></p>
     </div>
   </section>
 </main>

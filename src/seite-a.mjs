@@ -61,14 +61,48 @@ export function startseiteA({ g, r, s, esc, txt, bild, nr, tel, kopf }) {
     </div>
   </section>
 
-  <section class="notfall" aria-labelledby="notfall-titel">
-    <div class="notfall__innen einblenden">
-      <h2 id="notfall-titel">${esc(s.notfall.titel)}</h2>
-      <div class="notfall__text">
-        <p>${txt(s.notfall.text)}</p>
-        <p class="notfall__klinik">${txt(s.notfall.klinik)}</p>
-      </div>
-      <p class="notfall__nummer">${tel}</p>
+  <section class="kontakt" id="kontakt" aria-labelledby="kontakt-titel">
+    <div class="kontakt__anfrage">
+      <h2 id="kontakt-titel">${esc(s.kontakt.titel)}</h2>
+      <p class="kontakt__satz">${txt(s.kontakt.satz)}</p>
+      <form class="vorauswahl" action="termin/" method="get">
+        <fieldset class="vorauswahl__gruppe">
+          <legend class="feld__label">${esc(s.kontakt.frage_tier)}</legend>
+          <div class="wahlreihe">${tiere}
+          </div>
+        </fieldset>
+        <div class="vorauswahl__gruppe">
+          <label class="feld__label" for="anlass">${esc(s.kontakt.frage_anlass)}</label>
+          <div class="auswahl"><select class="feld" id="anlass" name="anlass" required>${anlaesse}</select></div>
+        </div>
+        <button class="knopf knopf--gross" type="submit">${esc(s.kontakt.weiter)}<span class="pfeil" aria-hidden="true"></span></button>
+      </form>
+    </div>
+    <div class="kontakt__telefon">
+      <h3>${esc(s.kontakt.telefon_titel)}</h3>
+      <p>${esc(s.kontakt.telefon_satz)}</p>
+      <p class="kontakt__nummer">${tel}</p>
+      <table class="zeiten">
+        <caption>${esc(s.erreichbarkeit.titel)}</caption>
+        <tbody>${zeiten}</tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="einsatz" id="einsatz" aria-labelledby="einsatz-titel">
+    <div class="einsatz__tafel einblenden">
+      <h2 id="einsatz-titel">${esc(s.einsatz.titel)}</h2>
+      <p class="einsatz__satz">${txt(s.einsatz.satz)}</p>
+      <form class="plz" data-plz="${plzDaten}" data-ja="${esc(s.einsatz.antwort_ja)}" data-nein="${esc(s.einsatz.antwort_nein)}" data-fehler="${esc(s.einsatz.antwort_fehler)}" novalidate>
+        <label class="feld__label" for="plz-eingabe">${esc(s.einsatz.plz_label)}</label>
+        <div class="plz__zeile">
+          <input class="feld" id="plz-eingabe" name="plz" inputmode="numeric" autocomplete="postal-code" maxlength="5" pattern="[0-9]{5}" aria-describedby="plz-hinweis plz-antwort">
+          <button class="knopf" type="submit">${esc(s.einsatz.plz_knopf)}</button>
+        </div>
+        <p class="feld__hinweis" id="plz-hinweis">${esc(s.einsatz.plz_hinweis)}</p>
+        <p class="plz__antwort" id="plz-antwort" role="status" aria-live="polite"></p>
+      </form>
+      <p class="hinweis-fehlt">${txt(s.einsatz.plz_fehlt)}</p>
     </div>
   </section>
 
@@ -109,23 +143,6 @@ export function startseiteA({ g, r, s, esc, txt, bild, nr, tel, kopf }) {
     </div>
   </section>
 
-  <section class="einsatz" id="einsatz" aria-labelledby="einsatz-titel">
-    <div class="einsatz__tafel einblenden">
-      <h2 id="einsatz-titel">${esc(s.einsatz.titel)}</h2>
-      <p class="einsatz__satz">${txt(s.einsatz.satz)}</p>
-      <form class="plz" data-plz="${plzDaten}" data-ja="${esc(s.einsatz.antwort_ja)}" data-nein="${esc(s.einsatz.antwort_nein)}" data-fehler="${esc(s.einsatz.antwort_fehler)}" novalidate>
-        <label class="feld__label" for="plz-eingabe">${esc(s.einsatz.plz_label)}</label>
-        <div class="plz__zeile">
-          <input class="feld" id="plz-eingabe" name="plz" inputmode="numeric" autocomplete="postal-code" maxlength="5" pattern="[0-9]{5}" aria-describedby="plz-hinweis plz-antwort">
-          <button class="knopf" type="submit">${esc(s.einsatz.plz_knopf)}</button>
-        </div>
-        <p class="feld__hinweis" id="plz-hinweis">${esc(s.einsatz.plz_hinweis)}</p>
-        <p class="plz__antwort" id="plz-antwort" role="status" aria-live="polite"></p>
-      </form>
-      <p class="hinweis-fehlt">${txt(s.einsatz.plz_fehlt)}</p>
-    </div>
-  </section>
-
   <section class="kosten" id="kosten" aria-labelledby="kosten-titel">
     <h2 id="kosten-titel" class="einblenden">${esc(s.kosten.titel)}</h2>
     <p class="kosten__satz einblenden">${esc(s.kosten.satz)}</p>
@@ -139,31 +156,14 @@ export function startseiteA({ g, r, s, esc, txt, bild, nr, tel, kopf }) {
     </div>
   </section>
 
-  <section class="kontakt" id="kontakt" aria-labelledby="kontakt-titel">
-    <div class="kontakt__anfrage">
-      <h2 id="kontakt-titel">${esc(s.kontakt.titel)}</h2>
-      <p class="kontakt__satz">${txt(s.kontakt.satz)}</p>
-      <form class="vorauswahl" action="termin/" method="get">
-        <fieldset class="vorauswahl__gruppe">
-          <legend class="feld__label">${esc(s.kontakt.frage_tier)}</legend>
-          <div class="wahlreihe">${tiere}
-          </div>
-        </fieldset>
-        <div class="vorauswahl__gruppe">
-          <label class="feld__label" for="anlass">${esc(s.kontakt.frage_anlass)}</label>
-          <div class="auswahl"><select class="feld" id="anlass" name="anlass" required>${anlaesse}</select></div>
-        </div>
-        <button class="knopf knopf--gross" type="submit">${esc(s.kontakt.weiter)}<span class="pfeil" aria-hidden="true"></span></button>
-      </form>
-    </div>
-    <div class="kontakt__telefon">
-      <h3>${esc(s.kontakt.telefon_titel)}</h3>
-      <p>${esc(s.kontakt.telefon_satz)}</p>
-      <p class="kontakt__nummer">${tel}</p>
-      <table class="zeiten">
-        <caption>${esc(s.erreichbarkeit.titel)}</caption>
-        <tbody>${zeiten}</tbody>
-      </table>
+  <section class="notfall" aria-labelledby="notfall-titel">
+    <div class="notfall__innen einblenden">
+      <h2 id="notfall-titel">${esc(s.notfall.titel)}</h2>
+      <div class="notfall__text">
+        <p>${txt(s.notfall.text)}</p>
+        <p class="notfall__klinik">${txt(s.notfall.klinik)}</p>
+      </div>
+      <p class="notfall__nummer">${tel}</p>
     </div>
   </section>
 </main>
