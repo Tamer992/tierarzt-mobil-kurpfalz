@@ -1,5 +1,5 @@
-/* Richtung „Abendlicht“, Fassung Tageslicht (25.10.2026): Farben aus Al Saeeds Logo.
-   Helles Startbild, Grund hell, Mint als Fläche, Petrol als Akzent, Source Serif 4 + Albert Sans */
+/* Fassung „Zu Hause behandelt“ (25.10.2026): Farben aus Al Saeeds Logo.
+   Startfoto öffnet sich wie eine Tür, Grund hell, kühles Hellgrau als Fläche, Petrol als Akzent, Source Serif 4 + Albert Sans */
 @font-face { font-family: 'Source Serif 4'; src: url('../schriften/SourceSerif4.woff2') format('woff2'); font-weight: 200 900; font-display: swap; }
 @font-face { font-family: 'Albert Sans'; src: url('../schriften/AlbertSans.woff2') format('woff2'); font-weight: 100 900; font-display: swap; }
 @font-face { font-family: 'Serif Ersatz'; src: local('Georgia'), local('Times New Roman'); size-adjust: 98%; }
@@ -10,9 +10,10 @@
   --nacht-2: #1f444a;
   --licht: #f3f7f6;      /* Schrift auf dunkel, heller Knopf */
   --asche: #b5c8ca;      /* leise Schrift auf dunkel */
-  --lampe: #a8d5d3;      /* helles Mint, kleine Hinweise auf dunkel */
-  --kalk: #fafaf8;       /* Grund, hell und neutral */
-  --sand: #e3efee;       /* Mint aus der Logo-Vorlage, zweite Fläche */
+  --lampe: #c3d7da;      /* helles Petrolgrau, kleine Hinweise auf dunkel */
+  --kalk: #fbfcfc;       /* Grund, Weiß des Logos leicht gebrochen */
+  --sand: #eef1f2;       /* kühles Hellgrau aus dem Petrol, zweite Fläche */
+  --sand-tief: #dfe5e7;  /* Platzhalter-Flächen auf Hellgrau */
   --tinte: #1f2d3a;      /* Dunkelblau der Logo-Schrift */
   --stein: #3f4c58;      /* leise Schrift auf hell, ab 7:1 */
   --honig: #1f6f78;      /* Petrol aus dem Logo-Pin, Akzent, ab 5:1 */
@@ -21,8 +22,8 @@
   --linie-dunkel: rgba(243, 247, 246, .16);
   --serif: 'Source Serif 4', 'Serif Ersatz', Georgia, serif;
   --schrift: 'Albert Sans', 'Sans Ersatz', system-ui, sans-serif;
-  --rand: clamp(20px, 4.5vw, 72px);
-  --breite: 1240px;
+  --rand: clamp(20px, 5.2vw, 104px);
+  --breite: 2000px;
   --abstand: clamp(64px, 7.5vw, 108px);
   --rund: 14px;
   --dauer: 900ms;
@@ -66,8 +67,8 @@ h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 500; letter-spac
 .knopf--rand:hover { border-color: var(--tinte); background: #fff; }
 
 /* Kopf */
-.kopf { position: fixed; inset: 0 0 auto; z-index: 20; display: flex; align-items: center; gap: 32px; padding: 18px var(--rand); transition: background-color 400ms ease, padding 400ms ease; }
-.kopf.ist-fest { background: rgba(250, 250, 248, .96); padding-block: 12px; box-shadow: 0 1px 0 var(--linie-hell); }
+.kopf { position: fixed; inset: 0 0 auto; z-index: 20; display: flex; align-items: center; gap: 32px; padding: 18px var(--rand); transition: background-color 400ms ease, box-shadow 400ms ease; }
+.kopf.ist-fest { background: rgba(251, 252, 252, .97); box-shadow: 0 1px 0 var(--linie-hell); }
 .kopf__marke img { width: 280px; height: auto; }
 .kopf__nav { margin-left: auto; }
 .kopf__nav ul { display: flex; gap: 30px; list-style: none; margin: 0; padding: 0; }
@@ -75,12 +76,13 @@ h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 500; letter-spac
 .kopf__nav a:hover, .kopf__tel:hover { opacity: 1; }
 .kopf__tel { font-weight: 600; opacity: 1; padding-left: 30px; border-left: 1px solid var(--linie-hell); white-space: nowrap; font-variant-numeric: tabular-nums; }
 
-/* 1 Startbereich */
-.start { position: relative; min-height: 100svh; display: grid; grid-template-columns: minmax(0, 1fr); align-content: center; overflow: hidden; isolation: isolate; background: var(--kalk); color: var(--tinte); }
-.start__bild { position: absolute; inset: 0 0 0 47%; z-index: -1; }
-.start__bild img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; }
-.start__bild::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, var(--kalk) 0%, rgba(250,250,248,0) 14%); }
-.start__text { padding: clamp(120px, 16vh, 160px) var(--rand) clamp(80px, 12vh, 130px); max-width: calc(47% + 40px); }
+/* 1 Startbereich: Foto füllt den Bildschirm, Text und Uhr sitzen bündig auf der Unterkante.
+   Mit Skript öffnet sich das Foto beim ersten Scrollen vom Türrahmen auf volle Breite (tuer.js). */
+.start { position: relative; height: 100svh; min-height: 680px; display: grid; align-content: end; overflow: hidden; isolation: isolate; background: var(--kalk); color: var(--tinte); }
+.start__tuer { position: absolute; inset: 0; z-index: -1; overflow: hidden; }
+.start__bild { position: absolute; inset: 0; }
+.start__bild img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 62%; transform: scaleX(-1); }
+.start__text { justify-self: start; margin-left: var(--rand); width: min(600px, 42vw); padding: clamp(32px, 3.4vw, 48px) clamp(32px, 3.4vw, 48px) clamp(36px, 4vh, 56px); background: var(--kalk); border-radius: var(--rund) var(--rund) 0 0; }
 .start__marke { margin: 0 0 18px; font-size: 16px; color: var(--stein); }
 .start__titel { font-size: clamp(42px, 4.4vw, 64px); line-height: 1.06; letter-spacing: -.015em; }
 .start__titel span { display: block; }
@@ -93,7 +95,7 @@ h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 500; letter-spac
 .start__arzt:hover strong { text-decoration: underline; text-underline-offset: 4px; }
 
 /* Uhr: Uhrzeit in Mannheim und ob die Praxis gerade erreichbar ist */
-.uhr { position: absolute; right: var(--rand); bottom: clamp(36px, 6vh, 64px); margin: 0; display: grid; justify-items: end; gap: 4px; text-align: right; color: var(--tinte); background: rgba(250, 250, 248, .94); padding: 18px 22px; border-radius: var(--rund); box-shadow: 0 10px 30px rgba(31, 45, 58, .12); }
+.uhr { position: absolute; right: var(--rand); bottom: 0; margin: 0; display: grid; justify-items: end; gap: 4px; text-align: right; color: var(--tinte); background: var(--kalk); padding: 22px 28px 26px; border-radius: var(--rund) var(--rund) 0 0; }
 .uhr__zeit { font-family: var(--serif); font-weight: 400; font-size: clamp(38px, 4vw, 60px); line-height: 1; font-variant-numeric: lining-nums tabular-nums; }
 .uhr__zeit i { font-style: normal; }
 .uhr__satz { font-size: 15px; color: var(--stein); max-width: 30ch; }
@@ -102,7 +104,7 @@ h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 500; letter-spac
 /* 2 Termin anfragen */
 .termin { padding: var(--abstand) var(--rand); background: var(--sand); }
 .termin__innen { max-width: var(--breite); margin: 0 auto; display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(48px, 8vw, 120px); }
-.vorauswahl { margin-top: 44px; display: grid; gap: 28px; max-width: 560px; }
+.vorauswahl { margin-top: 44px; display: grid; gap: 28px; max-width: 640px; }
 .gruppe { border: 0; margin: 0; padding: 0; min-width: 0; }
 .wahlen { display: flex; flex-wrap: wrap; gap: 10px; }
 .wahl input { position: absolute; opacity: 0; pointer-events: none; }
@@ -127,12 +129,16 @@ h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 500; letter-spac
 .zeiten dt { color: var(--stein); }
 .zeiten dd { margin: 0; text-align: right; }
 
-/* 3 Wobei ich helfe: Foto oben, Text darunter */
+/* 3 Wobei ich helfe: eine große Leistung links, zwei rechts übereinander */
 .leistungen { padding: var(--abstand) var(--rand); }
 .abschnittkopf { max-width: var(--breite); margin: 0 auto 40px; display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; }
-.kacheln { list-style: none; margin: 0 auto; padding: 0; max-width: var(--breite); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 24px; }
+.kacheln { list-style: none; margin: 0 auto; padding: 0; max-width: var(--breite); display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 48px clamp(28px, 3vw, 56px); }
+.kachel--gross { grid-row: span 2; }
 .kachel a { display: block; text-decoration: none; }
-.kachel__bild { aspect-ratio: 4 / 3; border-radius: var(--rund); overflow: hidden; background: var(--sand); }
+.kachel__bild { aspect-ratio: 16 / 9; border-radius: var(--rund); overflow: hidden; background: var(--sand); }
+.kachel--gross .kachel__bild { aspect-ratio: 4 / 3; }
+.kachel--gross h3 { font-size: clamp(28px, 2.4vw, 36px); }
+.kachel--gross p { max-width: 52ch; }
 .kachel__bild img { width: 100%; height: 100%; object-fit: cover; transition: transform 1200ms var(--kurve); }
 .kachel a:hover .kachel__bild img { transform: scale(1.03); }
 .kachel__text { padding-top: 20px; }
@@ -141,8 +147,10 @@ h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 500; letter-spac
 .kachel__mehr { display: inline-block; margin-top: 14px; font-size: 18px; font-weight: 600; color: var(--honig); }
 .kachel a:hover h3 { color: var(--honig); }
 .leistungen > .untertitel { max-width: var(--breite); margin: 64px auto 8px; }
-.zeilen { list-style: none; margin: 0 auto; padding: 0; max-width: var(--breite); }
-.zeilen a { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr) auto; gap: 24px; align-items: baseline; padding: 20px 0; border-bottom: 1px solid var(--linie-hell); text-decoration: none; }
+.zeilen { list-style: none; margin: 0 auto; padding: 0; max-width: var(--breite); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: clamp(28px, 3vw, 56px); }
+.zeilen a { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 24px; row-gap: 4px; align-items: baseline; padding: 20px 0; border-bottom: 1px solid var(--linie-hell); text-decoration: none; }
+.zeilen__anzeichen { grid-column: 1; grid-row: 2; }
+.zeilen__pfeil { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
 .zeilen a:hover .zeilen__titel, .zeilen a:hover .zeilen__pfeil { color: var(--honig); }
 .zeilen__titel { font-family: var(--serif); font-size: clamp(21px, 1.8vw, 24px); }
 .zeilen__anzeichen { color: var(--stein); font-size: 18px; }
@@ -154,7 +162,6 @@ h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 500; letter-spac
 .ablauf__bild { position: absolute; inset: 0; opacity: 0; transition: opacity 900ms ease; }
 .ablauf__bild.ist-aktiv { opacity: 1; }
 .ablauf__bild img { width: 100%; height: 100%; object-fit: cover; }
-.ablauf__bild::after { content: ''; position: absolute; inset: 0; background: linear-gradient(270deg, var(--kalk) 0%, rgba(250,250,248,0) 14%); }
 .ablauf__text { padding: var(--abstand) var(--rand) calc(var(--abstand) * .6) clamp(40px, 6vw, 96px); }
 .schritte { list-style: none; margin: 56px 0 0; padding: 0; }
 .schritt { min-height: 40svh; display: flex; flex-direction: column; justify-content: center; padding: 36px 0; border-top: 1px solid var(--linie-hell); }
@@ -165,7 +172,7 @@ h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 500; letter-spac
 /* 5 Tierarzt: der Mittelpunkt, auf Sand */
 .tierarzt { background: var(--sand); padding: var(--abstand) var(--rand); }
 .tierarzt__innen { max-width: var(--breite); margin: 0 auto; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(48px, 7vw, 110px); align-items: center; }
-.tierarzt__portraet { aspect-ratio: 4 / 5; border-radius: var(--rund); border: 1.5px dashed rgba(31, 45, 58, .25); display: grid; place-content: center; gap: 10px; text-align: center; padding: 24px; background: #d3e5e3; }
+.tierarzt__portraet { aspect-ratio: 4 / 5; max-height: 760px; border-radius: var(--rund); border: 1.5px dashed rgba(31, 45, 58, .25); display: grid; place-content: center; gap: 10px; text-align: center; padding: 24px; background: var(--sand-tief); }
 .tierarzt__portraet small { color: var(--stein); font-size: 16px; max-width: 26ch; }
 .tierarzt__name { margin: 14px 0 22px; font-size: 18px; font-weight: 600; color: var(--honig); }
 .tierarzt__text > p:not(.tierarzt__name) { margin: 0 0 16px; max-width: 62ch; font-size: 20px; }
@@ -201,8 +208,9 @@ h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 500; letter-spac
 .einsatz__orte .untertitel + * { margin-top: 10px; }
 .einsatz__teile { margin: 0 0 32px; color: var(--tinte); font-size: 18px; line-height: 1.7; }
 .einsatz__liste { list-style: none; margin: 0; padding: 0; columns: 3; column-gap: 24px; font-size: 18px; line-height: 1.85; }
-.einsatz__bild { margin-top: 36px; aspect-ratio: 3 / 2; border-radius: var(--rund); overflow: hidden; }
-.einsatz__bild img { width: 100%; height: 100%; object-fit: cover; }
+/* Fotoband: randlos, ganze Breite, harte Kanten */
+.band { height: clamp(320px, 62svh, 760px); overflow: hidden; }
+.band img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; }
 
 /* 7 Was auf Sie zukommt */
 .kosten { padding: var(--abstand) var(--rand); background: var(--sand); box-shadow: 0 0 0 100vmax var(--sand); clip-path: inset(0 -100vmax); }
@@ -219,7 +227,7 @@ h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 500; letter-spac
 .fragen { background: var(--sand); }
 .artikel { list-style: none; margin: 0 auto; padding: 0; max-width: var(--breite); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px 28px; }
 .artikel a { display: block; text-decoration: none; }
-.artikel figure { aspect-ratio: 4 / 3; border-radius: var(--rund); overflow: hidden; background: #d3e5e3; }
+.artikel figure { aspect-ratio: 4 / 3; border-radius: var(--rund); overflow: hidden; background: var(--sand-tief); }
 .artikel img { width: 100%; height: 100%; object-fit: cover; transition: transform 1200ms var(--kurve); }
 .artikel a:hover img { transform: scale(1.03); }
 .artikel a:hover h3 { color: var(--honig); }
@@ -261,7 +269,7 @@ details p { margin: 0 0 20px; max-width: 62ch; color: var(--tinte); }
 .leiste { display: none; }
 
 /* Auftritt */
-.js .start__bild img { animation: bild 1600ms var(--kurve) both; }
+.js .start__bild { animation: bild 1600ms var(--kurve) both; }
 .js .start__text .start__marke, .js .start__titel span, .js .start__satz, .js .start__knoepfe, .js .start__arzt, .js .uhr { animation: auf var(--dauer) var(--kurve) both; }
 .js .start__titel span:nth-child(1) { animation-delay: 120ms; }
 .js .start__titel span:nth-child(2) { animation-delay: 220ms; }
@@ -269,7 +277,7 @@ details p { margin: 0 0 20px; max-width: 62ch; color: var(--tinte); }
 .js .start__knoepfe { animation-delay: 460ms; }
 .js .start__arzt { animation-delay: 600ms; }
 .js .uhr { animation-delay: 700ms; }
-@keyframes bild { from { transform: scale(1.04); opacity: .4; } to { transform: none; opacity: 1; } }
+@keyframes bild { from { opacity: .3; } to { opacity: 1; } }
 @keyframes auf { from { transform: translateY(24px); opacity: 0; } to { transform: none; opacity: 1; } }
 .js .zeige { opacity: 0; transform: translateY(28px); transition: opacity var(--dauer) var(--kurve), transform var(--dauer) var(--kurve); }
 .js .zeige.ist-da { opacity: 1; transform: none; }
@@ -288,11 +296,15 @@ details p { margin: 0 0 20px; max-width: 62ch; color: var(--tinte); }
 @media (max-width: 980px) {
   .kopf__nav { display: none; }
   .kopf__tel { margin-left: auto; border-left: 0; padding-left: 0; }
-  .start__bild { left: 50%; }
-  .start__text { max-width: 54%; }
+  .start { height: auto; min-height: 0; align-content: start; }
+  .start__tuer { position: relative; inset: auto; height: 52svh; min-height: 300px; margin-top: 96px; z-index: 0; }
+  .start__text { width: auto; margin: 0; padding: 32px var(--rand) 24px; border-radius: 0; }
+  .uhr { position: static; justify-items: start; text-align: left; padding: 20px 0 32px; margin: 4px var(--rand) 0; border-radius: 0; border-top: 1px solid var(--linie-hell); grid-template-columns: auto 1fr; align-items: center; gap: 16px; }
+  .kacheln { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .kachel--gross { grid-column: 1 / -1; grid-row: auto; }
+  .zeilen { grid-template-columns: minmax(0, 1fr); }
   .ablauf { grid-template-columns: minmax(0, 1fr); }
   .ablauf__buehne { position: relative; height: 56svh; }
-  .ablauf__bild::after { background: none; }
   .ablauf__text { padding-top: 24px; padding-left: var(--rand); }
   .schritt { min-height: 0; }
   .schritt p { color: var(--tinte); }
@@ -300,7 +312,6 @@ details p { margin: 0 0 20px; max-width: 62ch; color: var(--tinte); }
   .kosten { gap: 0; }
   .tierarzt__portraet { max-width: 420px; }
   .tierarzt__werte ul { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
-  .kacheln { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
   .artikel { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
   .fragen__gruppen { grid-template-columns: minmax(0, 1fr); }
   .fuss__innen { grid-template-columns: 1fr 1fr; }
@@ -311,17 +322,14 @@ details p { margin: 0 0 20px; max-width: 62ch; color: var(--tinte); }
   body { font-size: 18px; }
   .kopf { padding-block: 14px; }
   .kopf__marke img { width: 206px; }
-  .start { align-content: start; }
-  .start__bild { position: relative; inset: auto; height: 44svh; margin-top: 82px; }
-  .start__bild img { object-position: 50% 35%; }
-  .start__bild::after { background: none; }
-  .start__text { padding: 28px var(--rand) 24px; max-width: none; }
+  .start__tuer { height: 44svh; margin-top: 82px; }
+  .start__bild img { object-position: 42% 50%; }
+  .start__text { padding: 28px var(--rand) 24px; }
   .start__marke { margin-bottom: 12px; font-size: 15px; }
   .start__satz { margin-top: 18px; }
   .start__knoepfe { margin-top: 26px; }
   .start__knoepfe .knopf { flex: 1 1 auto; }
   .start__arzt { margin-top: 26px; }
-  .uhr { position: static; justify-items: start; text-align: left; padding: 20px 0 32px; margin: 4px var(--rand) 0; background: none; box-shadow: none; border-radius: 0; border-top: 1px solid var(--linie-hell); grid-template-columns: auto 1fr; align-items: center; gap: 16px; }
   .uhr__zeit { font-size: 34px; }
   .termin__rechts { padding: 28px 24px; }
   .kacheln { grid-template-columns: minmax(0, 1fr); }

@@ -49,7 +49,7 @@ const kopf = `
 
 const start = `
 <section class="start" aria-labelledby="start-titel">
-  <figure class="start__bild">${bild('tag-start', 'Eine rote Katze liegt am hellen Fenster und schaut ruhig in die Kamera.', '(max-width: 700px) 100vw, 74vw', { prio: true })}</figure>
+  <div class="start__tuer" data-tuer><figure class="start__bild" data-tuer-bild>${bild('tag-golden-boden', 'Ein Golden Retriever liegt zu Hause auf dem Holzboden und schaut ruhig zur Seite.', '100vw', { prio: true })}</figure></div>
   <div class="start__text">
     <p class="start__marke">Mannheim · Ludwigshafen · Heidelberg</p>
     <h1 id="start-titel" class="start__titel"><span>Wir kommen</span> <span>zu Ihnen.</span></h1>
@@ -122,12 +122,12 @@ const termin = `
 const teile = e.orte.find((st) => st.stufe === 'stadtteile').orte;
 const umgebung = e.orte.filter((st) => st.stufe !== 1 && st.stufe !== 'stadtteile').flatMap((st) => st.orte);
 const einsatz = `
+<figure class="band">${bild('tag-hund-fensterbank', 'Ein Hund liegt in der Sonne auf der Fensterbank und schaut hinaus.', '100vw')}</figure>
 <section class="einsatz" id="einsatz" aria-labelledby="einsatz-titel">
   <div class="einsatz__innen">
     <div class="einsatz__links zeige">
       <h2 id="einsatz-titel" class="titel">${esc(e.titel)}</h2>
       <p class="einleitung">${esc(e.satz)}</p>
-      <figure class="einsatz__bild">${bild('tag-hund-fensterbank', 'Ein Hund liegt in der Sonne auf der Fensterbank und schaut hinaus.', '(max-width: 980px) 100vw, 46vw')}</figure>
     </div>
     <div class="einsatz__orte zeige" role="group" aria-label="${esc(e.orte_titel)}">
       <h3 class="untertitel">Mannheim</h3>
@@ -170,9 +170,9 @@ const leistungen = `
     <a class="textlink" href="${A}leistungen/">Alle Leistungen</a>
   </div>
   <ul class="kacheln">
-    ${gross.map((l) => `<li class="kachel zeige">
+    ${gross.map((l, i) => `<li class="kachel${i === 0 ? ' kachel--gross' : ''} zeige">
       <a href="${A}${l.seite}">
-        <figure class="kachel__bild">${bild(grossBilder[l.titel][0], grossBilder[l.titel][1], '(max-width: 900px) 100vw, 33vw')}</figure>
+        <figure class="kachel__bild">${bild(grossBilder[l.titel][0], grossBilder[l.titel][1], i === 0 ? '(max-width: 900px) 100vw, 58vw' : '(max-width: 900px) 100vw, 40vw')}</figure>
         <div class="kachel__text"><h3>${esc(l.titel)}</h3><p>${esc(l.satz)}</p><span class="kachel__mehr">Mehr dazu <span aria-hidden="true">→</span></span></div>
       </a>
     </li>`).join('\n    ')}
@@ -275,10 +275,13 @@ const html = `<!doctype html>
 <meta name="description" content="Mobiler Notfall-Tierarzt für Hunde und Katzen in Mannheim, Ludwigshafen, Heidelberg und Umgebung. Behandlung zu Hause, Montag bis Freitag bis 23 Uhr.">
 <link rel="preload" href="../schriften/SourceSerif4.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../schriften/AlbertSans.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" href="img/tag-start-1800.webp" imagesrcset="img/tag-start-640.webp 640w, img/tag-start-1100.webp 1100w, img/tag-start-1800.webp 1800w" imagesizes="(max-width: 700px) 100vw, 74vw">
+<link rel="preload" as="image" href="img/tag-golden-boden-1800.webp" imagesrcset="img/tag-golden-boden-640.webp 640w, img/tag-golden-boden-1100.webp 1100w, img/tag-golden-boden-1800.webp 1800w" imagesizes="100vw">
 <link rel="icon" href="../logo/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="stil.css">
 <script src="abend.js" defer></script>
+<script src="gsap.min.js" defer></script>
+<script src="ScrollTrigger.min.js" defer></script>
+<script src="tuer.js" defer></script>
 </head>
 <body>
 <a class="sprung" href="#inhalt">Zum Inhalt springen</a>
@@ -304,6 +307,7 @@ ${fuss}
 const ziel = join(wurzel, 'site/abend');
 await mkdir(ziel, { recursive: true });
 await writeFile(join(ziel, 'index.html'), html);
-for (const f of ['stil.css', 'abend.js']) await cp(join(wurzel, 'src/abend', f), join(ziel, f));
+for (const f of ['stil.css', 'abend.js', 'tuer.js']) await cp(join(wurzel, 'src/abend', f), join(ziel, f));
+for (const f of ['gsap.min.js', 'ScrollTrigger.min.js']) await cp(join(wurzel, 'node_modules/gsap/dist', f), join(ziel, f));
 for (const f of ['SourceSerif4.woff2', 'SourceSerif4-Italic.woff2', 'AlbertSans.woff2']) await cp(join(wurzel, 'schriften/woff2', f), join(wurzel, 'site/schriften', f));
 console.log('site/abend/index.html gebaut');

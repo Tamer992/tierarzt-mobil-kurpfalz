@@ -8,10 +8,13 @@
 <meta name="description" content="Mobiler Notfall-Tierarzt für Hunde und Katzen in Mannheim, Ludwigshafen, Heidelberg und Umgebung. Behandlung zu Hause, Montag bis Freitag bis 23 Uhr.">
 <link rel="preload" href="../schriften/SourceSerif4.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../schriften/AlbertSans.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" href="img/tag-start-1800.webp" imagesrcset="img/tag-start-640.webp 640w, img/tag-start-1100.webp 1100w, img/tag-start-1800.webp 1800w" imagesizes="(max-width: 700px) 100vw, 74vw">
+<link rel="preload" as="image" href="img/tag-golden-boden-1800.webp" imagesrcset="img/tag-golden-boden-640.webp 640w, img/tag-golden-boden-1100.webp 1100w, img/tag-golden-boden-1800.webp 1800w" imagesizes="100vw">
 <link rel="icon" href="../logo/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="stil.css">
 <script src="abend.js" defer></script>
+<script src="gsap.min.js" defer></script>
+<script src="ScrollTrigger.min.js" defer></script>
+<script src="tuer.js" defer></script>
 </head>
 <body>
 <a class="sprung" href="#inhalt">Zum Inhalt springen</a>
@@ -30,7 +33,7 @@
 <main id="inhalt">
 
 <section class="start" aria-labelledby="start-titel">
-  <figure class="start__bild"><img src="img/tag-start-1100.webp" srcset="img/tag-start-640.webp 640w, img/tag-start-1100.webp 1100w, img/tag-start-1800.webp 1800w" sizes="(max-width: 700px) 100vw, 74vw" width="2400" height="1602" alt="Eine rote Katze liegt am hellen Fenster und schaut ruhig in die Kamera." fetchpriority="high"></figure>
+  <div class="start__tuer" data-tuer><figure class="start__bild" data-tuer-bild><img src="img/tag-golden-boden-1100.webp" srcset="img/tag-golden-boden-640.webp 640w, img/tag-golden-boden-1100.webp 1100w, img/tag-golden-boden-1800.webp 1800w" sizes="100vw" width="2400" height="1600" alt="Ein Golden Retriever liegt zu Hause auf dem Holzboden und schaut ruhig zur Seite." fetchpriority="high"></figure></div>
   <div class="start__text">
     <p class="start__marke">Mannheim · Ludwigshafen · Heidelberg</p>
     <h1 id="start-titel" class="start__titel"><span>Wir kommen</span> <span>zu Ihnen.</span></h1>
@@ -102,21 +105,21 @@
     <a class="textlink" href="leistungen/">Alle Leistungen</a>
   </div>
   <ul class="kacheln">
-    <li class="kachel zeige">
+    <li class="kachel kachel--gross zeige">
       <a href="leistungen/akutversorgung/">
-        <figure class="kachel__bild"><img src="img/tag-hund-kissen-1100.webp" srcset="img/tag-hund-kissen-640.webp 640w, img/tag-hund-kissen-1100.webp 1100w, img/tag-hund-kissen-1800.webp 1800w" sizes="(max-width: 900px) 100vw, 33vw" width="2400" height="1920" alt="Ein brauner Hund ruht mit dem Kopf auf einem Kissen." loading="lazy" decoding="async"></figure>
+        <figure class="kachel__bild"><img src="img/tag-hund-kissen-1100.webp" srcset="img/tag-hund-kissen-640.webp 640w, img/tag-hund-kissen-1100.webp 1100w, img/tag-hund-kissen-1800.webp 1800w" sizes="(max-width: 900px) 100vw, 58vw" width="2400" height="1920" alt="Ein brauner Hund ruht mit dem Kopf auf einem Kissen." loading="lazy" decoding="async"></figure>
         <div class="kachel__text"><h3>Akutversorgung und Stabilisierung</h3><p>Bei Atemnot, Vergiftung oder Kreislaufproblemen untersuche ich Ihr Tier sofort, stabilisiere es und lindere den Schmerz.</p><span class="kachel__mehr">Mehr dazu <span aria-hidden="true">→</span></span></div>
       </a>
     </li>
     <li class="kachel zeige">
       <a href="leistungen/durchfall-erbrechen/">
-        <figure class="kachel__bild"><img src="img/tag-katze-schlaf-weiss-1100.webp" srcset="img/tag-katze-schlaf-weiss-640.webp 640w, img/tag-katze-schlaf-weiss-1100.webp 1100w, img/tag-katze-schlaf-weiss-1800.webp 1800w" sizes="(max-width: 900px) 100vw, 33vw" width="2400" height="1800" alt="Eine Katze schläft auf einer weichen Decke." loading="lazy" decoding="async"></figure>
+        <figure class="kachel__bild"><img src="img/tag-katze-schlaf-weiss-1100.webp" srcset="img/tag-katze-schlaf-weiss-640.webp 640w, img/tag-katze-schlaf-weiss-1100.webp 1100w, img/tag-katze-schlaf-weiss-1800.webp 1800w" sizes="(max-width: 900px) 100vw, 40vw" width="2400" height="1800" alt="Eine Katze schläft auf einer weichen Decke." loading="lazy" decoding="async"></figure>
         <div class="kachel__text"><h3>Durchfall und Erbrechen</h3><p>Ich untersuche Ihr Tier, suche die Ursache und gebe ihm Flüssigkeit, wenn es sie braucht.</p><span class="kachel__mehr">Mehr dazu <span aria-hidden="true">→</span></span></div>
       </a>
     </li>
     <li class="kachel zeige">
       <a href="leistungen/schmerzbehandlung/">
-        <figure class="kachel__bild"><img src="img/tag-chihuahua-alt-1100.webp" srcset="img/tag-chihuahua-alt-640.webp 640w, img/tag-chihuahua-alt-1100.webp 1100w, img/tag-chihuahua-alt-1800.webp 1800w" sizes="(max-width: 900px) 100vw, 33vw" width="2400" height="1600" alt="Ein älterer Chihuahua liegt ruhig auf dem Sofa." loading="lazy" decoding="async"></figure>
+        <figure class="kachel__bild"><img src="img/tag-chihuahua-alt-1100.webp" srcset="img/tag-chihuahua-alt-640.webp 640w, img/tag-chihuahua-alt-1100.webp 1100w, img/tag-chihuahua-alt-1800.webp 1800w" sizes="(max-width: 900px) 100vw, 40vw" width="2400" height="1600" alt="Ein älterer Chihuahua liegt ruhig auf dem Sofa." loading="lazy" decoding="async"></figure>
         <div class="kachel__text"><h3>Schmerzbehandlung</h3><p>Ich behandle akute und chronische Schmerzen mit Medikamenten aus meiner tierärztlichen Apotheke.</p><span class="kachel__mehr">Mehr dazu <span aria-hidden="true">→</span></span></div>
       </a>
     </li>
@@ -171,12 +174,12 @@
   </div>
 </section>
 
+<figure class="band"><img src="img/tag-hund-fensterbank-1100.webp" srcset="img/tag-hund-fensterbank-640.webp 640w, img/tag-hund-fensterbank-1100.webp 1100w, img/tag-hund-fensterbank-1800.webp 1800w" sizes="100vw" width="2400" height="1594" alt="Ein Hund liegt in der Sonne auf der Fensterbank und schaut hinaus." loading="lazy" decoding="async"></figure>
 <section class="einsatz" id="einsatz" aria-labelledby="einsatz-titel">
   <div class="einsatz__innen">
     <div class="einsatz__links zeige">
       <h2 id="einsatz-titel" class="titel">Wohin ich komme</h2>
       <p class="einleitung">Mein Schwerpunkt ist das Stadtgebiet Mannheim. Ich fahre auch nach Ludwigshafen, Heidelberg, Karlsruhe, Speyer, Schwetzingen, Weinheim, Worms und in die Orte dazwischen.</p>
-      <figure class="einsatz__bild"><img src="img/tag-hund-fensterbank-1100.webp" srcset="img/tag-hund-fensterbank-640.webp 640w, img/tag-hund-fensterbank-1100.webp 1100w, img/tag-hund-fensterbank-1800.webp 1800w" sizes="(max-width: 980px) 100vw, 46vw" width="2400" height="1594" alt="Ein Hund liegt in der Sonne auf der Fensterbank und schaut hinaus." loading="lazy" decoding="async"></figure>
     </div>
     <div class="einsatz__orte zeige" role="group" aria-label="Orte im Einsatzgebiet">
       <h3 class="untertitel">Mannheim</h3>
