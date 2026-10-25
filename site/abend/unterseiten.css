@@ -941,6 +941,9 @@ h1, h2, h3 { font-weight: 500; letter-spacing: -.01em; }
 /* Keine Kursivschrift (Tamers Wunsch), auch nicht aus dem Aufbau von Richtung A */
 h1, h2, h3, p, span, li, a, blockquote, figcaption, summary, dt, dd, label, legend, small, strong, .schritt__wann { font-style: normal !important; }
 
+/* Sprungziele (Menü, #termin) landen mit Luft unter der festen bzw. klebenden Kopfzeile, Höhe misst abend.js */
+html { scroll-padding-top: calc(var(--kopf-hoehe, 96px) + 24px); }
+
 /* ===== Kopfzeile am Computer: eine Petrol-Linie gleitet unter den Punkt unter der Maus
    und zurück zum aktuellen Abschnitt bzw. zur aktuellen Seite (Steuerung in abend.js) ===== */
 .navlinie { position: relative; }

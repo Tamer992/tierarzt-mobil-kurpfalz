@@ -10,6 +10,15 @@
   function fest() { kopf.classList.toggle('ist-fest', window.scrollY > 40); }
   if (kopf) { fest(); window.addEventListener('scroll', fest, { passive: true }); }
 
+  // Höhe der Kopfzeile für scroll-padding-top (schublade.css): Sprungziele landen unter der Kopfzeile, nicht dahinter
+  var kopfzeile = kopf || document.querySelector('.ab-kopf');
+  if (kopfzeile) {
+    var kopfHoehe = function () { doc.style.setProperty('--kopf-hoehe', kopfzeile.offsetHeight + 'px'); };
+    kopfHoehe();
+    window.addEventListener('resize', kopfHoehe);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(kopfHoehe);
+  }
+
   // Menü für Tablet und Handy: fährt von rechts herein, Escape und Klick daneben schließen, Tab bleibt im Menü
   var sKnopf = document.querySelector('.schublade-knopf');
   var sMenue = document.getElementById('schublade');

@@ -354,6 +354,9 @@ details p { margin: 0 0 20px; max-width: 62ch; color: var(--tinte); }
 /* Keine Kursivschrift (Tamers Wunsch) */
 h1, h2, h3, p, span, li, a, blockquote, figcaption, summary, dt, dd, label, legend, small, strong { font-style: normal; }
 
+/* Sprungziele (Menü, #termin) landen mit Luft unter der festen bzw. klebenden Kopfzeile, Höhe misst abend.js */
+html { scroll-padding-top: calc(var(--kopf-hoehe, 96px) + 24px); }
+
 /* ===== Kopfzeile am Computer: eine Petrol-Linie gleitet unter den Punkt unter der Maus
    und zurück zum aktuellen Abschnitt bzw. zur aktuellen Seite (Steuerung in abend.js) ===== */
 .navlinie { position: relative; }
