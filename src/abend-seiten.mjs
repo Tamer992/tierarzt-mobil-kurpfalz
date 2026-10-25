@@ -79,7 +79,7 @@ function kopfzeile(p) {
   return `
 <header class="ab-kopf">
   <a class="ab-kopf__marke" href="${p || './'}" aria-label="Mobile Tierarztpraxis Kurpfalz, zur Startseite"><img src="${p}../logo/logo-quer-original.svg" width="166" height="50" alt=""></a>
-  <nav class="ab-kopf__nav" aria-label="Hauptnavigation"><ul>${nav}</ul></nav>
+  <nav class="ab-kopf__nav navlinie" aria-label="Hauptnavigation"><span class="navlinie__strich" aria-hidden="true"></span><ul>${nav}</ul></nav>
   <a class="ab-kopf__tel" href="tel:${g.telefon_link}">${nr()}</a>
   ${schubladeKnopf}
 </header>

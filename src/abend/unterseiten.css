@@ -51,7 +51,7 @@ h1, h2, h3 { font-weight: 500; letter-spacing: -.01em; }
 .fehlt { font-family: var(--sans); font-size: .8em; background: rgba(31, 111, 120, .14); padding: 0 .3em; border-radius: 3px; }
 
 /* ----- Kopf ----- */
-.ab-kopf { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; gap: 32px; padding: 14px var(--rand); background: rgba(251, 252, 252, .97); color: var(--tinte); box-shadow: 0 1px 0 var(--linie); }
+.ab-kopf { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; gap: 32px; padding: 14px var(--rand); background: var(--kalk); color: var(--tinte); box-shadow: 0 1px 0 var(--linie); }
 .ab-kopf__marke img { width: 272px; height: auto; display: block; }
 .ab-kopf__nav { margin-left: auto; }
 .ab-kopf__nav a { white-space: nowrap; }

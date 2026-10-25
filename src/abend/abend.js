@@ -46,6 +46,53 @@
     window.matchMedia('(min-width: 1101px)').addEventListener('change', function (m) { if (m.matches && !sMenue.hidden) sZu(false); });
   }
 
+  // Kopfzeile: Petrol-Linie gleitet unter den Punkt unter Maus oder Fokus, sonst unter den aktuellen Punkt
+  var navl = document.querySelector('.navlinie');
+  if (navl) {
+    var strich = navl.querySelector('.navlinie__strich');
+    var links = Array.prototype.slice.call(navl.querySelectorAll('a'));
+    var ziel = null;
+    var setze = function (a) {
+      ziel = a;
+      if (!a || !a.offsetWidth) { strich.style.opacity = '0'; return; }
+      var n = navl.getBoundingClientRect(), r = a.getBoundingClientRect();
+      strich.style.transform = 'translateX(' + (r.left - n.left) + 'px) scaleX(' + r.width + ')';
+      strich.style.opacity = '1';
+    };
+    var aktuell = function () { return navl.querySelector('a[aria-current]'); };
+    links.forEach(function (a) {
+      a.addEventListener('mouseenter', function () { setze(a); });
+      a.addEventListener('focus', function () { setze(a); });
+      a.addEventListener('blur', function () { setze(aktuell()); });
+    });
+    navl.addEventListener('mouseleave', function () { setze(aktuell()); });
+    window.addEventListener('resize', function () { setze(ziel); });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { setze(ziel || aktuell()); });
+
+    // Unterseiten: Leistungen bzw. Ratgeber markieren
+    var pfad = location.pathname;
+    links.forEach(function (a) {
+      var h = a.getAttribute('href') || '';
+      if ((/leistungen\/$/.test(h) && /\/(leistungen|abschied)\//.test(pfad)) || (/ratgeber\/$/.test(h) && /\/ratgeber\//.test(pfad))) a.setAttribute('aria-current', 'page');
+    });
+    // Startseite: der Abschnitt in der Bildschirmmitte bestimmt den markierten Punkt
+    var anker = links.filter(function (a) { return (a.getAttribute('href') || '').charAt(0) === '#'; });
+    if (anker.length && 'IntersectionObserver' in window) {
+      var markiere = function (id) {
+        anker.forEach(function (a) { if (a.getAttribute('href') === '#' + id) a.setAttribute('aria-current', 'location'); else a.removeAttribute('aria-current'); });
+        if (!navl.matches(':hover') && !navl.contains(document.activeElement)) setze(aktuell());
+      };
+      var spion = new IntersectionObserver(function (e) {
+        e.forEach(function (x) { if (x.isIntersecting) markiere(x.target.id); });
+      }, { rootMargin: '-45% 0px -50% 0px' });
+      anker.forEach(function (a) { var s = document.getElementById(a.getAttribute('href').slice(1)); if (s) spion.observe(s); });
+      // Über dem Startbild ist nichts markiert
+      var startBereich = document.querySelector('.start');
+      if (startBereich) new IntersectionObserver(function (e) { if (e[0].isIntersecting) markiere(''); }, { rootMargin: '-45% 0px -50% 0px' }).observe(startBereich);
+    }
+    setze(aktuell());
+  }
+
   // Handy-Leiste erst zeigen, wenn die Knöpfe im Startbereich aus dem Bild sind
   var leiste = document.querySelector('.leiste');
   var startKnoepfe = document.querySelector('.start__knoepfe');

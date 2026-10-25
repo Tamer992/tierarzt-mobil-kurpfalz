@@ -38,7 +38,7 @@ const telFehlt = g.telefon_fehlt ? `<span class="fehlt fehlt--block">[FEHLT: neu
 const kopf = `
 <header class="kopf" data-kopf>
   <a class="kopf__marke" href="./" aria-label="Mobile Tierarztpraxis Kurpfalz, zur Startseite"><img src="../logo/logo-quer-original.svg" width="166" height="50" alt=""></a>
-  <nav class="kopf__nav" aria-label="Hauptnavigation"><ul>
+  <nav class="kopf__nav navlinie" aria-label="Hauptnavigation"><span class="navlinie__strich" aria-hidden="true"></span><ul>
     <li><a href="#leistungen">Leistungen</a></li>
     <li><a href="#ablauf">Hausbesuch</a></li>
     <li><a href="#tierarzt">Über mich</a></li>
