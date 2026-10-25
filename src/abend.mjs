@@ -18,13 +18,13 @@ const A = ''; // Unterseiten liegen in site/abend/ (src/abend-seiten.mjs)
 
 // Bild mit drei Breiten; masse = [breite, hoehe] des Originals
 const MASSE = {
-  'start-blick': [2400, 1600], 'start-schlaf': [2400, 1600], 'katze-kissen-dunkel': [2400, 1350], 'hand-katze': [2400, 1600],
-  'katze-decken': [2400, 1667], 'hund-alt-dunkel': [2400, 1600], 'hund-sofa-kopf': [2400, 1600], 'hund-hand-futter': [2400, 1602],
-  'katze-seitenlicht': [2400, 1600], 'hund-verband': [2400, 1600], 'nacht-scheinwerfer': [2400, 1600], 'akut-b': [1200, 1200],
+  'tag-start': [2400, 1602], 'tag-hund-kissen': [2400, 1920], 'tag-katze-schlaf-weiss': [2400, 1800], 'tag-chihuahua-alt': [2400, 1600],
+  'tag-bengal-sofa': [2400, 1600], 'tag-tiger-blick': [2400, 1600], 'tag-hund-bett': [2400, 1600], 'tag-hund-fensterbank': [2400, 1594],
+  'tag-golden-boden': [2400, 1600], 'tag-yorkie-verband': [2400, 1600], 'tag-katze-grau-fenster': [2400, 1602],
 };
 function bild(name, alt, sizes, { prio = false, klasse = '' } = {}) {
   const [w, h] = MASSE[name];
-  const breiten = name === 'akut-b' ? [640, 1100] : [640, 1100, 1800];
+  const breiten = [640, 1100, 1800];
   const set = breiten.map((b) => `img/${name}-${b}.webp ${b}w`).join(', ');
   return `<img${klasse ? ` class="${klasse}"` : ''} src="img/${name}-1100.webp" srcset="${set}" sizes="${sizes}" width="${w}" height="${h}" alt="${esc(alt)}"${prio ? ' fetchpriority="high"' : ' loading="lazy" decoding="async"'}>`;
 }
@@ -36,7 +36,7 @@ const telFehlt = g.telefon_fehlt ? `<span class="fehlt fehlt--block">[FEHLT: neu
 
 const kopf = `
 <header class="kopf" data-kopf>
-  <a class="kopf__marke" href="./" aria-label="Mobile Tierarztpraxis Kurpfalz, zur Startseite"><img src="../logo/logo-quer-warm.svg" width="166" height="50" alt=""></a>
+  <a class="kopf__marke" href="./" aria-label="Mobile Tierarztpraxis Kurpfalz, zur Startseite"><img src="../logo/logo-quer-original.svg" width="166" height="50" alt=""></a>
   <nav class="kopf__nav" aria-label="Hauptnavigation"><ul>
     <li><a href="#leistungen">Leistungen</a></li>
     <li><a href="#ablauf">Hausbesuch</a></li>
@@ -49,14 +49,14 @@ const kopf = `
 
 const start = `
 <section class="start" aria-labelledby="start-titel">
-  <figure class="start__bild">${bild('start-blick', 'Eine Katze liegt auf dem Sofa im warmen Licht einer Lampe und schaut ruhig in die Kamera.', '(max-width: 700px) 100vw, 74vw', { prio: true })}</figure>
+  <figure class="start__bild">${bild('tag-start', 'Eine rote Katze liegt am hellen Fenster und schaut ruhig in die Kamera.', '(max-width: 700px) 100vw, 74vw', { prio: true })}</figure>
   <div class="start__text">
     <p class="start__marke">Mannheim · Ludwigshafen · Heidelberg</p>
     <h1 id="start-titel" class="start__titel"><span>Wir kommen</span> <span>zu Ihnen.</span></h1>
     <p class="start__satz">Notfall- und Akutversorgung für Hunde und Katzen, bei Ihnen zu Hause. Kein Transportkorb, keine Fahrt, kein Wartezimmer.</p>
     <div class="start__knoepfe">
-      <a class="knopf knopf--hell" href="#termin">Termin anfragen</a>
-      <a class="knopf knopf--linie" href="${telLink}">Anrufen</a>
+      <a class="knopf knopf--dunkel" href="#termin">Termin anfragen</a>
+      <a class="knopf knopf--rand" href="${telLink}">Anrufen</a>
     </div>
     <a class="start__arzt" href="#tierarzt"><span class="start__portraet" aria-hidden="true">RA</span><span><strong>Rasheed Al Saeed</strong><br>Ihr Tierarzt, kommt selbst zu Ihnen</span></a>
   </div>
@@ -67,6 +67,7 @@ const start = `
 </section>`;
 
 const k = s.kontakt;
+const e = s.einsatz;
 const anlaesse = `<option value="" selected disabled>${esc(k.anlass_leer)}</option>` + [k.anlass_erst, ...g.leistungen.map((l) => l.titel), k.anlass_sonst].map((t) => `<option>${esc(t)}</option>`).join('');
 const termin = `
 <section class="termin hell" id="termin" aria-labelledby="termin-titel">
@@ -74,6 +75,15 @@ const termin = `
     <div class="termin__links zeige">
       <h2 id="termin-titel" class="titel">${esc(k.titel)}</h2>
       <p class="einleitung">${esc(k.satz)}</p>
+      <form class="plz" data-plz='${esc(JSON.stringify(e.plz_liste))}' data-ja="${esc(e.antwort_ja)}" data-nein="${esc(e.antwort_nein)}" data-fehler="${esc(e.antwort_fehler)}" novalidate>
+        <label class="beschriftung" for="plz-feld">${esc(e.plz_label)}</label>
+        <div class="plz__zeile">
+          <input id="plz-feld" class="plz__feld" name="plz" inputmode="numeric" autocomplete="postal-code" maxlength="5" placeholder="68159" aria-describedby="plz-hinweis plz-antwort">
+          <button class="knopf knopf--dunkel" type="submit">${esc(e.plz_knopf)}</button>
+        </div>
+        <p class="hinweis" id="plz-hinweis">${esc(e.plz_hinweis)} <span class="fehlt">${esc(e.plz_fehlt)}</span></p>
+        <p class="plz__antwort" id="plz-antwort" role="status"></p>
+      </form>
       <form class="vorauswahl" action="${A}termin/" method="get">
         <fieldset class="gruppe">
           <legend class="beschriftung">${esc(k.frage_tier)}</legend>
@@ -109,7 +119,6 @@ const termin = `
   </div>
 </section>`;
 
-const e = s.einsatz;
 const teile = e.orte.find((st) => st.stufe === 'stadtteile').orte;
 const umgebung = e.orte.filter((st) => st.stufe !== 1 && st.stufe !== 'stadtteile').flatMap((st) => st.orte);
 const einsatz = `
@@ -118,15 +127,6 @@ const einsatz = `
     <div class="einsatz__links zeige">
       <h2 id="einsatz-titel" class="titel">${esc(e.titel)}</h2>
       <p class="einleitung">${esc(e.satz)}</p>
-      <form class="plz" data-plz='${esc(JSON.stringify(e.plz_liste))}' data-ja="${esc(e.antwort_ja)}" data-nein="${esc(e.antwort_nein)}" data-fehler="${esc(e.antwort_fehler)}" novalidate>
-        <label class="beschriftung" for="plz-feld">${esc(e.plz_label)}</label>
-        <div class="plz__zeile">
-          <input id="plz-feld" class="plz__feld" name="plz" inputmode="numeric" autocomplete="postal-code" maxlength="5" placeholder="68159" aria-describedby="plz-hinweis plz-antwort">
-          <button class="knopf knopf--dunkel" type="submit">${esc(e.plz_knopf)}</button>
-        </div>
-        <p class="hinweis" id="plz-hinweis">${esc(e.plz_hinweis)} <span class="fehlt">${esc(e.plz_fehlt)}</span></p>
-        <p class="plz__antwort" id="plz-antwort" role="status"></p>
-      </form>
     </div>
     <div class="einsatz__orte zeige" role="group" aria-label="${esc(e.orte_titel)}">
       <h3 class="untertitel">Mannheim</h3>
@@ -139,11 +139,11 @@ const einsatz = `
 
 const ab = s.ablauf;
 const ablaufBilder = [
-  ['katze-kissen-dunkel', 'Eine Katze schaut zwischen zwei Kissen auf dem Sofa hervor.'],
-  ['katze-kissen-dunkel', ''],
-  ['hand-katze', 'Eine Hand streichelt eine Katze, die die Augen genießerisch schließt.'],
-  ['start-schlaf', 'Eine junge Katze schläft im warmen Licht.'],
-  ['hund-hand-futter', 'Eine Hand hält die Pfote eines Hundes.'],
+  ['tag-bengal-sofa', 'Eine Bengalkatze liegt entspannt auf dem Sofa.'],
+  ['tag-bengal-sofa', ''],
+  ['tag-tiger-blick', 'Eine getigerte Katze schaut aufmerksam.'],
+  ['tag-hund-bett', 'Ein kleiner Hund schläft auf einer hellen Decke.'],
+  ['tag-hund-fensterbank', 'Ein Hund liegt in der Sonne auf der Fensterbank.'],
 ];
 const eindeutig = ablaufBilder.filter(([n], i) => ablaufBilder.findIndex(([m]) => m === n) === i);
 const ablauf = `
@@ -159,7 +159,7 @@ const ablauf = `
   </div>
 </section>`;
 
-const grossBilder = { 'Akutversorgung und Stabilisierung': ['akut-b', 'Ein Stethoskop liegt im Lichtkegel einer Lampe auf dunklem Holz.'], 'Durchfall und Erbrechen': ['katze-decken', 'Eine Katze liegt müde zwischen gestrickten Decken.'], 'Schmerzbehandlung': ['hund-alt-dunkel', 'Ein Hund liegt erschöpft am Boden und schaut zur Seite.'] };
+const grossBilder = { 'Akutversorgung und Stabilisierung': ['tag-hund-kissen', 'Ein brauner Hund ruht mit dem Kopf auf einem Kissen.'], 'Durchfall und Erbrechen': ['tag-katze-schlaf-weiss', 'Eine Katze schläft auf einer weichen Decke.'], 'Schmerzbehandlung': ['tag-chihuahua-alt', 'Ein älterer Chihuahua liegt ruhig auf dem Sofa.'] };
 const gross = g.leistungen.filter((l) => grossBilder[l.titel]);
 const weitere = g.leistungen.filter((l) => !grossBilder[l.titel]);
 const leistungen = `
@@ -214,7 +214,7 @@ const kosten = `
   </dl>
 </section>`;
 
-const ratBilder = { 'warnzeichen-notfall': ['hund-sofa-kopf', 'Ein Hund liegt mit dem Kopf auf dem Sofa und schaut müde.'], 'giftig-fuer-hunde': ['hund-verband', 'Ein Hund liegt mit einem Venenzugang am Bein auf einer Decke.'], 'schmerzen-erkennen': ['katze-seitenlicht', 'Eine getigerte Katze im seitlichen Licht.'] };
+const ratBilder = { 'warnzeichen-notfall': ['tag-golden-boden', 'Ein Golden Retriever liegt auf dem Boden und schaut müde.'], 'giftig-fuer-hunde': ['tag-yorkie-verband', 'Ein kleiner Hund mit Verband am Vorderbein.'], 'schmerzen-erkennen': ['tag-katze-grau-fenster', 'Eine graue Katze liegt am Fenster.'] };
 const ratgeber = `
 <section class="ratgeber hell" aria-labelledby="ratgeber-titel">
   <div class="abschnittkopf zeige">
@@ -222,7 +222,7 @@ const ratgeber = `
     <a class="textlink" href="${A}ratgeber/">Alle Artikel</a>
   </div>
   <ul class="artikel">
-    ${artikel.slice(0, 3).map((r) => { const [b, alt] = ratBilder[r.datei] || ['katze-seitenlicht', '']; return `<li class="zeige"><a href="${A}ratgeber/${r.datei}/">
+    ${artikel.slice(0, 3).map((r) => { const [b, alt] = ratBilder[r.datei] || ['tag-katze-grau-fenster', '']; return `<li class="zeige"><a href="${A}ratgeber/${r.datei}/">
       <figure>${bild(b, alt, '(max-width: 900px) 100vw, 33vw')}</figure>
       <p class="artikel__meta">${esc(r.lesezeit)} Min. Lesezeit</p>
       <h3>${esc(r.titel)}</h3>
@@ -256,12 +256,12 @@ const notfall = `
 const fuss = `
 <footer class="fuss">
   <div class="fuss__innen">
-    <div><img src="../logo/logo-quer-warm.svg" width="166" height="50" alt="Mobile Tierarztpraxis Kurpfalz, Notfall-Tierarzt Al Saeed"></div>
+    <div><img src="../logo/logo-quer-original-negativ.svg" width="166" height="50" alt="Mobile Tierarztpraxis Kurpfalz, Notfall-Tierarzt Al Saeed"></div>
     <div><h2 class="beschriftung">Erreichbar</h2><p>Montag bis Freitag 9 bis 23 Uhr<br>Samstag 8 bis 12 Uhr<br>Sonntag in Ausnahmefällen</p></div>
     <div><h2 class="beschriftung">Kontakt</h2><p><a href="${telLink}">${esc(tel)}</a>${telFehlt}<br><span class="fehlt">[FEHLT: E-Mail]</span></p></div>
     <div><h2 class="beschriftung">Praxis</h2><p>Freinsheimer Str. 30<br>67245 Lambsheim</p></div>
   </div>
-  <p class="fuss__recht"><a href="#">Impressum</a> <a href="#">Datenschutz</a> <span>Fotos: Pexels, Stethoskop KI-generiert</span></p>
+  <p class="fuss__recht"><a href="#">Impressum</a> <a href="#">Datenschutz</a> <span>Fotos: Pexels</span></p>
 </footer>`;
 
 const html = `<!doctype html>
@@ -274,7 +274,7 @@ const html = `<!doctype html>
 <meta name="description" content="Mobiler Notfall-Tierarzt für Hunde und Katzen in Mannheim, Ludwigshafen, Heidelberg und Umgebung. Behandlung zu Hause, Montag bis Freitag bis 23 Uhr.">
 <link rel="preload" href="../schriften/SourceSerif4.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../schriften/AlbertSans.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" href="img/start-blick-1800.webp" imagesrcset="img/start-blick-640.webp 640w, img/start-blick-1100.webp 1100w, img/start-blick-1800.webp 1800w" imagesizes="(max-width: 700px) 100vw, 74vw">
+<link rel="preload" as="image" href="img/tag-start-1800.webp" imagesrcset="img/tag-start-640.webp 640w, img/tag-start-1100.webp 1100w, img/tag-start-1800.webp 1800w" imagesizes="(max-width: 700px) 100vw, 74vw">
 <link rel="icon" href="../logo/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="stil.css">
 <script src="abend.js" defer></script>

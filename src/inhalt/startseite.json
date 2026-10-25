@@ -85,7 +85,7 @@
   "einsatz": {
     "titel": "Wohin ich komme",
     "satz": "Mein Schwerpunkt ist das Stadtgebiet Mannheim. Ich fahre auch nach Ludwigshafen, Heidelberg, Karlsruhe, Speyer, Schwetzingen, Weinheim, Worms und in die Orte dazwischen.",
-    "plz_label": "Ihre Postleitzahl",
+    "plz_label": "Komme ich zu Ihnen? Ihre Postleitzahl",
     "plz_knopf": "Prüfen",
     "plz_hinweis": "Fünf Ziffern, zum Beispiel 68159",
     "antwort_ja": "Ja, ich komme zu Ihnen nach {ort}.",

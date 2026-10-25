@@ -24,18 +24,18 @@ const txt = (t) => esc(t).replace(/\[(FEHLT:[^\]]*|Praxisname)\]/g, '<span class
 
 // Fotos der Richtung „Abendlicht“ (Pexels, Liste im BILDNACHWEIS)
 const FOTOS = {
-  'leistungen/akutversorgung/': ['hund-dackel-dunkel', 'Ein Dackel liegt erschöpft auf dem Sofa und schaut zur Seite.'],
-  'leistungen/durchfall-erbrechen/': ['katze-decken', 'Eine Katze liegt müde zwischen gestrickten Decken.'],
-  'leistungen/schmerzbehandlung/': ['hund-alt-dunkel', 'Ein Hund liegt erschöpft am Boden und schaut zur Seite.'],
-  'leistungen/bisswunden-verletzungen/': ['hund-kopf-licht', 'Ein Hund liegt mit dem Kopf auf einer Decke im warmen Licht.'],
-  'leistungen/ohrenentzuendungen/': ['hund-ohren-bett', 'Ein Cocker Spaniel mit langen Ohren liegt auf dem Bett.'],
-  'leistungen/augen-bindehaut/': ['katze-schwarz-auge', 'Eine schwarze Katze mit bernsteinfarbenen Augen im seitlichen Licht.'],
-  'leistungen/blase-harnwege/': ['katze-abendfenster', 'Eine rote Katze sitzt im Abendlicht am Fenster.'],
-  'leistungen/infektionen-infusionen/': ['hund-verband', 'Ein Hund liegt mit einem Venenzugang am Bein auf einer Decke.'],
-  'leistungen/lahmheit-bewegung/': ['hund-pfoten-holz', 'Die Pfoten eines liegenden Hundes auf einem Holzboden im warmen Licht.'],
-  'abschied/': ['hund-schlaf-sonne', 'Ein Dackel schläft im warmen Licht auf einer Decke.'],
+  'leistungen/akutversorgung/': ['tag-golden-jung', 'Ein junger Golden Retriever liegt auf dem Boden und schaut auf.'],
+  'leistungen/durchfall-erbrechen/': ['tag-katze-dreifarbig', 'Eine dreifarbige Katze schläft auf einer weißen Decke.'],
+  'leistungen/schmerzbehandlung/': ['tag-hund-decke', 'Ein Hund liegt mit dem Kopf auf einer hellen Decke.'],
+  'leistungen/bisswunden-verletzungen/': ['tag-jack-russell', 'Ein Jack Russell sitzt im Garten.'],
+  'leistungen/ohrenentzuendungen/': ['tag-cocker', 'Ein Cocker Spaniel mit langen Ohren liegt auf einer hellen Decke.'],
+  'leistungen/augen-bindehaut/': ['tag-katze-augen', 'Das Gesicht einer Katze mit grünen Augen von nah.'],
+  'leistungen/blase-harnwege/': ['tag-katze-rot-fenster', 'Eine rote Katze sitzt am Fenster.'],
+  'leistungen/infektionen-infusionen/': ['tag-hund-zugang', 'Ein Hund mit Venenzugang am Vorderbein steht auf einer hellen Decke.'],
+  'leistungen/lahmheit-bewegung/': ['tag-pfoten-hell', 'Die Vorderpfoten eines liegenden Hundes auf hellem Boden.'],
+  'abschied/': ['tag-golden-alt-sonne', 'Ein älterer Golden Retriever schläft im Sonnenlicht auf dem Holzboden.'],
 };
-const VORHER = ['katze-kissen-dunkel', 'Eine Katze schaut zwischen zwei Kissen auf dem Sofa hervor.'];
+const VORHER = ['tag-katze-rot-sofa', 'Eine rote Katze schläft auf dem Sofa.'];
 for (const l of lSeiten) {
   const f = FOTOS[l.pfad]; if (f) [l.foto, l.foto_alt] = f;
   if (l.vorher?.foto) [l.vorher.foto, l.vorher.foto_alt] = VORHER;
@@ -76,7 +76,7 @@ function kopfzeile(p) {
   const nav = navListe(p).replace(/href="([^"]*)#/g, `href="$1#`);
   return `
 <header class="ab-kopf">
-  <a class="ab-kopf__marke" href="${p || './'}" aria-label="Mobile Tierarztpraxis Kurpfalz, zur Startseite"><img src="${p}../logo/logo-quer-warm.svg" width="166" height="50" alt=""></a>
+  <a class="ab-kopf__marke" href="${p || './'}" aria-label="Mobile Tierarztpraxis Kurpfalz, zur Startseite"><img src="${p}../logo/logo-quer-original.svg" width="166" height="50" alt=""></a>
   <nav class="ab-kopf__nav" aria-label="Hauptnavigation"><ul>${nav}</ul></nav>
   <a class="ab-kopf__tel" href="tel:${g.telefon_link}">${nr()}</a>
   <button class="menueknopf" type="button" aria-expanded="false" aria-controls="handymenue"><span class="unsichtbar">Menü öffnen</span><span class="menueknopf__strich"></span><span class="menueknopf__strich"></span></button>
@@ -87,7 +87,7 @@ function fuss(p) {
   return `
 <footer class="ab-fuss">
   <div class="ab-fuss__innen">
-    <div><img src="${p}../logo/logo-quer-warm.svg" width="166" height="50" alt="${logoAlt}" loading="lazy"></div>
+    <div><img src="${p}../logo/logo-quer-original-negativ.svg" width="166" height="50" alt="${logoAlt}" loading="lazy"></div>
     <div><h2 class="ab-fuss__titel">Erreichbar</h2><p>Montag bis Freitag 9 bis 23 Uhr<br>Samstag 8 bis 12 Uhr<br>Sonntag in Ausnahmefällen</p></div>
     <div><h2 class="ab-fuss__titel">Kontakt</h2><p><a href="tel:${g.telefon_link}">${nr()}</a> <span class="fehlt">[FEHLT: neue Nummer]</span><br><span class="fehlt">[FEHLT: E-Mail]</span></p></div>
     <div><h2 class="ab-fuss__titel">Praxis</h2><p>Freinsheimer Str. 30<br>67245 Lambsheim</p></div>
@@ -123,5 +123,5 @@ await schreibe(abschied.pfad, abschiedsseite({ g, s, a: abschied, esc, txt, rh }
 // Stil: Aufbau aus Richtung A, Farben und Schrift der Richtung „Abendlicht“ (src/abend/unterseiten.css)
 const basis = await readFile(join(wurzel, 'src/stil/a.css'), 'utf8');
 const eigen = await readFile(join(wurzel, 'src/abend/unterseiten.css'), 'utf8');
-await writeFile(join(wurzel, 'site/abend/unterseiten.css'), `/* Aufbau aus Richtung A (src/stil/a.css), darunter die Anpassungen der Richtung „Abendlicht“ */\n${basis.replace(/@font-face[^}]*}/g, '').replace(/#3A3F46/gi, '#1c1814')}\n${eigen}`);
+await writeFile(join(wurzel, 'site/abend/unterseiten.css'), `/* Aufbau aus Richtung A (src/stil/a.css), darunter die Anpassungen der Richtung „Abendlicht“ */\n${basis.replace(/@font-face[^}]*}/g, '').replace(/#3A3F46/gi, '#17363b')}\n${eigen}`);
 console.log(`gebaut: ${lSeiten.length} Leistungsseiten, Übersicht, Ratgeber mit ${artikel.length} Artikeln, Terminanfrage, Abschied`);

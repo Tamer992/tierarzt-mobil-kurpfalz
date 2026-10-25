@@ -47,3 +47,32 @@ Frei nutzbar unter der Pexels-Lizenz (https://www.pexels.com/license/), auch ges
 | katze-abendfenster | A close-up of a cat's profile illuminated by warm sunset light. Stock Photo | https://www.pexels.com/photo/profile-of-a-cat-in-warm-sunset-lighting-31227202/ |
 | hund-pfoten-holz | Detailed close-up of a dog's paws resting on a sunny wooden deck in natural lighting. Stock Photo | https://www.pexels.com/photo/dog-feet-in-close-up-photography-9996454/ |
 | hund-schlaf-sonne | Adorable brown dachshund cuddled in a cozy blanket, basking in warm sunlight. Stock Photo | https://www.pexels.com/photo/dachshund-sleeping-peacefully-in-morning-sunlight-30269072/ |
+
+## Pexels, Fassung Tageslicht (ab 25.10.2026)
+
+Nur Tiere bei Tageslicht. Frei nutzbar unter der Pexels-Lizenz. Originale in `fotos/pexels/tag-*.jpg`. Das KI-Stethoskop wird nicht mehr verwendet.
+
+| Datei | Motiv | Quelle |
+|---|---|---|
+| tag-start | Startbild Variante A: Free A relaxed orange tabby cat lounging indoors by a window. Stock Photo | https://www.pexels.com/photo/close-up-of-a-relaxed-orange-tabby-cat-indoors-34554040/ |
+| tag-hund-kissen | Leistung: Akut: Free Adorable brown dog lying on a plush bed with a relaxed expression, perfect pet moment. Stock Ph | https://www.pexels.com/photo/puppy-lying-down-23224802/ |
+| tag-katze-schlaf-weiss | Leistung: Magen-Darm: Free A cozy tabby cat sleeps soundly on a soft, fluffy blanket, embodying tranquility. Stock Photo | https://www.pexels.com/photo/peaceful-cat-sleeping-on-a-soft-blanket-37776019/ |
+| tag-chihuahua-alt | Leistung: Schmerz: Free A long-haired senior chihuahua with blind eyes rests peacefully indoors, showcasing its calm de | https://www.pexels.com/photo/close-up-portrait-of-a-senior-chihuahua-resting-38783979/ |
+| tag-bengal-sofa | Hausbesuch 1: Free A Bengal tabby cat lounging on a gray couch, adding charm to an interior setting. Stock Photo | https://www.pexels.com/photo/cat-on-couch-19974271/ |
+| tag-tiger-blick | Hausbesuch 2: Free Captivating close-up of a mackerel tabby cat with striking yellow eyes. Stock Photo | https://www.pexels.com/photo/close-up-of-mackerel-tabby-cat-16541495/ |
+| tag-hund-bett | Hausbesuch 3: Free A calm small dog sleeping soundly on a soft bed, showcasing relaxation. Stock Photo | https://www.pexels.com/photo/dog-on-bed-5420821/ |
+| tag-hund-fensterbank | Hausbesuch 4: Free A cute and sleepy dog resting comfortably on a sunlit couch indoors. Stock Photo | https://www.pexels.com/photo/dog-laying-by-the-window-1242314/ |
+| tag-golden-boden | Ratgeber: Hund: Free A fluffy golden retriever dog laying indoors with an expressive gaze and blue collar. Stock Pho | https://www.pexels.com/photo/relaxed-golden-retriever-resting-indoors-30836461/ |
+| tag-yorkie-verband | Ratgeber: Giftig: Free Calm purebred Yorkshire Terrier with black sweatband with picture of basketball ball standing o | https://www.pexels.com/photo/small-yorkshire-terrier-standing-against-white-wall-5731877/ |
+| tag-katze-grau-fenster | Ratgeber: Katze: Free Charming grey tabby cat lounging by a window, perfectly capturing a moment of feline tranquilit | https://www.pexels.com/photo/relaxed-cat-resting-by-the-window-33585491/ |
+| tag-golden-jung | Seite Akutversorgung: Free Cute Labrador Retriever puppy lying indoors on a wooden floor, looking relaxed and content. Sto | https://www.pexels.com/photo/a-labrador-retriever-lying-on-the-floor-16234652/ |
+| tag-katze-dreifarbig | Seite Durchfall: Free A serene calico cat resting peacefully on a soft white blanket indoors. Stock Photo | https://www.pexels.com/photo/adorable-calico-cat-sleeping-on-fluffy-blanket-30239291/ |
+| tag-hund-decke | Seite Schmerzen: Free Cozy image of a relaxed dog lying on a couch indoors, showcasing peaceful pet life. Stock Photo | https://www.pexels.com/photo/a-dog-lying-on-a-bed-24595750/ |
+| tag-jack-russell | Seite Bisswunden: Free Cute Jack Russell Terrier sitting in a green outdoor garden, captured in a natural setting. Sto | https://www.pexels.com/photo/jack-russell-terrier-beside-plants-1304320/ |
+| tag-cocker | Seite Ohren: Free A serene cocker spaniel dog resting indoors, showcasing its gentle expression and beautiful fur | https://www.pexels.com/photo/close-up-portrait-of-a-relaxed-cocker-spaniel-dog-31042012/ |
+| tag-katze-augen | Seite Augen: Free Detailed close-up of a calico cat with green eyes and a curious expression. Stock Photo | https://www.pexels.com/photo/close-up-portrait-of-a-calico-cat-37475707/ |
+| tag-katze-rot-fenster | Seite Blase: Free A charming ginger cat sitting by a window, basking in the warm sunlight indoors. Stock Photo | https://www.pexels.com/photo/cute-ginger-cat-enjoying-the-sunlight-by-the-window-34389847/ |
+| tag-hund-zugang | Seite Infusionen: Free A small dog with an IV is receiving treatment at a vet clinic, focusing on its paws. Stock Phot | https://www.pexels.com/photo/dog-with-intravenous-line-on-his-leg-4074725/ |
+| tag-pfoten-hell | Seite Lahmheit: Free A close-up view of a German Shepherd's paws resting on a smooth white floor, capturing texture  | https://www.pexels.com/photo/brown-short-coated-dog-lying-on-floor-11497271/ |
+| tag-golden-alt-sonne | Seite Abschied: Free Warm-toned image of a golden retriever sleeping peacefully on a wooden floor indoors. Stock Pho | https://www.pexels.com/photo/dog-sleeping-on-floor-26741530/ |
+| tag-katze-rot-sofa | Seite Vor dem Besuch: Free A peaceful orange tabby cat relaxing on a couch against a neutral wall. Stock Photo | https://www.pexels.com/photo/orange-tabby-cat-lying-on-sofa-4641450/ |
