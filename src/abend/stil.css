@@ -76,29 +76,28 @@ h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 500; letter-spac
 .kopf__tel { font-weight: 600; opacity: 1; padding-left: 30px; border-left: 1px solid var(--linie-hell); white-space: nowrap; font-variant-numeric: tabular-nums; }
 
 /* 1 Startbereich */
-.start { position: relative; min-height: 100svh; display: grid; grid-template-columns: minmax(0, 1fr); align-content: center; overflow: hidden; isolation: isolate; background: var(--kalk); color: var(--tinte); min-height: clamp(640px, 88svh, 880px); }
+.start { position: relative; min-height: 100svh; display: grid; grid-template-columns: minmax(0, 1fr); align-content: center; overflow: hidden; isolation: isolate; background: var(--kalk); color: var(--tinte); }
 .start__bild { position: absolute; inset: 0 0 0 47%; z-index: -1; }
 .start__bild img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; }
 .start__bild::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, var(--kalk) 0%, rgba(250,250,248,0) 14%); }
 .start__text { padding: clamp(120px, 16vh, 160px) var(--rand) clamp(80px, 12vh, 130px); max-width: calc(47% + 40px); }
 .start__marke { margin: 0 0 18px; font-size: 16px; color: var(--stein); }
-.start__titel { font-size: clamp(38px, 3.9vw, 58px); line-height: 1.1; letter-spacing: -.015em; max-width: 21ch; }
-.ganz { white-space: nowrap; }
-.einsatz__liste li { break-inside: avoid; white-space: nowrap; }
-@media (max-width: 420px) { .ganz, .einsatz__liste li { white-space: normal; } .start__titel { font-size: 34px; } }
-.start__satz { margin: 22px 0 0; max-width: 40ch; font-size: clamp(19px, 1.5vw, 22px); line-height: 1.55; color: var(--tinte); }
-.start__knoepfe { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
-.start__arzt { display: inline-flex; align-items: center; gap: 18px; margin-top: 32px; padding-top: 28px; border-top: 1px solid var(--linie-hell); text-decoration: none; font-size: 18px; line-height: 1.4; color: var(--stein); }
+.start__titel { font-size: clamp(42px, 4.4vw, 64px); line-height: 1.06; letter-spacing: -.015em; }
+.start__titel span { display: block; }
+.start__satz { margin: 26px 0 0; max-width: 34ch; font-size: clamp(18px, 1.5vw, 21px); line-height: 1.55; color: var(--stein); }
+.start__knoepfe { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
+.start__arzt { display: inline-flex; align-items: center; gap: 18px; margin-top: 40px; text-decoration: none; font-size: 18px; line-height: 1.4; color: var(--stein); }
 .start__arzt strong { color: var(--tinte); font-weight: 600; font-size: 21px; }
 .start__portraet { display: grid; place-items: center; flex: none; width: 84px; height: 84px; border-radius: 50%; background: var(--sand); border: 1.5px dashed rgba(31, 111, 120, .55); text-align: center; }
 .start__portraet .fehlt { font-size: 10px; line-height: 1.2; padding: 2px 4px; max-width: 52px; }
 .start__arzt:hover strong { text-decoration: underline; text-underline-offset: 4px; }
 
-/* Erreichbarkeit: ruhige Zeile unter den Knöpfen (Uhrzeit nur intern) */
-.uhr { margin: 18px 0 0; display: flex; align-items: center; gap: 10px; font-size: 17px; color: var(--stein); }
-.uhr__zeit { display: none; }
-.uhr__satz::before { content: ''; display: inline-block; width: 9px; height: 9px; margin-right: 10px; border-radius: 50%; background: var(--honig); vertical-align: .08em; }
-.uhr__satz b { font-weight: 600; color: var(--tinte); }
+/* Uhr: Uhrzeit in Mannheim und ob die Praxis gerade erreichbar ist */
+.uhr { position: absolute; right: var(--rand); bottom: clamp(36px, 6vh, 64px); margin: 0; display: grid; justify-items: end; gap: 4px; text-align: right; color: var(--tinte); background: rgba(250, 250, 248, .94); padding: 18px 22px; border-radius: var(--rund); box-shadow: 0 10px 30px rgba(31, 45, 58, .12); }
+.uhr__zeit { font-family: var(--serif); font-weight: 400; font-size: clamp(38px, 4vw, 60px); line-height: 1; font-variant-numeric: lining-nums tabular-nums; }
+.uhr__zeit i { font-style: normal; }
+.uhr__satz { font-size: 15px; color: var(--stein); max-width: 30ch; }
+.uhr__satz b { font-weight: 600; color: var(--honig); }
 
 /* 2 Termin anfragen */
 .termin { padding: var(--abstand) var(--rand); background: var(--sand); }
@@ -149,15 +148,19 @@ h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 500; letter-spac
 .zeilen__anzeichen { color: var(--stein); font-size: 18px; }
 .zeilen__pfeil { font-size: 20px; color: var(--stein); }
 
-/* 4 So läuft ein Hausbesuch: auf Petrol, ein Foto, Schritte kompakt */
-.ablauf { background: var(--nacht); color: var(--licht); display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(40px, 6vw, 96px); padding: var(--abstand) max(var(--rand), calc((100% - var(--breite)) / 2)); }
-.ablauf__buehne { position: sticky; top: 120px; align-self: start; }
-.ablauf__bild { aspect-ratio: 4 / 5; border-radius: var(--rund); overflow: hidden; }
+/* 4 So läuft ein Hausbesuch: Foto bleibt stehen, Schritte ziehen vorbei */
+.ablauf { background: var(--kalk); color: var(--tinte); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); border-top: 1px solid var(--linie-hell); }
+.ablauf__buehne { position: sticky; top: 0; height: 100svh; overflow: hidden; }
+.ablauf__bild { position: absolute; inset: 0; opacity: 0; transition: opacity 900ms ease; }
+.ablauf__bild.ist-aktiv { opacity: 1; }
 .ablauf__bild img { width: 100%; height: 100%; object-fit: cover; }
-.schritte { list-style: none; margin: 32px 0 0; padding: 0; }
-.schritt { padding: 24px 0; border-top: 1px solid var(--linie-dunkel); }
-.schritt__wann { font-size: clamp(23px, 2vw, 27px); line-height: 1.2; }
-.schritt p { margin: 10px 0 0; max-width: 56ch; color: var(--licht); font-size: 19px; }
+.ablauf__bild::after { content: ''; position: absolute; inset: 0; background: linear-gradient(270deg, var(--kalk) 0%, rgba(250,250,248,0) 14%); }
+.ablauf__text { padding: var(--abstand) var(--rand) calc(var(--abstand) * .6) clamp(40px, 6vw, 96px); }
+.schritte { list-style: none; margin: 56px 0 0; padding: 0; }
+.schritt { min-height: 40svh; display: flex; flex-direction: column; justify-content: center; padding: 36px 0; border-top: 1px solid var(--linie-hell); }
+.schritt__wann { font-size: clamp(26px, 2.6vw, 36px); line-height: 1.15; }
+.schritt p { margin: 14px 0 0; max-width: 42ch; color: #66727c; font-size: 19px; transition: color 500ms ease; }
+.schritt.ist-aktiv p { color: var(--tinte); }
 
 /* 5 Tierarzt: der Mittelpunkt, auf Sand */
 .tierarzt { background: var(--sand); padding: var(--abstand) var(--rand); }
@@ -259,7 +262,7 @@ details p { margin: 0 0 20px; max-width: 62ch; color: var(--tinte); }
 
 /* Auftritt */
 .js .start__bild img { animation: bild 1600ms var(--kurve) both; }
-.js .start__text .start__marke, .js .start__titel, .js .start__satz, .js .start__knoepfe, .js .start__arzt, .js .uhr { animation: auf var(--dauer) var(--kurve) both; }
+.js .start__text .start__marke, .js .start__titel span, .js .start__satz, .js .start__knoepfe, .js .start__arzt, .js .uhr { animation: auf var(--dauer) var(--kurve) both; }
 .js .start__titel span:nth-child(1) { animation-delay: 120ms; }
 .js .start__titel span:nth-child(2) { animation-delay: 220ms; }
 .js .start__satz { animation-delay: 360ms; }
@@ -288,8 +291,11 @@ details p { margin: 0 0 20px; max-width: 62ch; color: var(--tinte); }
   .start__bild { left: 50%; }
   .start__text { max-width: 54%; }
   .ablauf { grid-template-columns: minmax(0, 1fr); }
-  .ablauf__buehne { position: relative; top: 0; max-width: 520px; }
-  .ablauf__bild { aspect-ratio: 3 / 2; }
+  .ablauf__buehne { position: relative; height: 56svh; }
+  .ablauf__bild::after { background: none; }
+  .ablauf__text { padding-top: 24px; padding-left: var(--rand); }
+  .schritt { min-height: 0; }
+  .schritt p { color: var(--tinte); }
   .termin__innen, .tierarzt__innen, .einsatz__innen, .kosten { grid-template-columns: minmax(0, 1fr); }
   .kosten { gap: 0; }
   .tierarzt__portraet { max-width: 420px; }
@@ -310,10 +316,13 @@ details p { margin: 0 0 20px; max-width: 62ch; color: var(--tinte); }
   .start__bild img { object-position: 50% 35%; }
   .start__bild::after { background: none; }
   .start__text { padding: 28px var(--rand) 24px; max-width: none; }
+  .start__marke { margin-bottom: 12px; font-size: 15px; }
   .start__satz { margin-top: 18px; }
   .start__knoepfe { margin-top: 26px; }
   .start__knoepfe .knopf { flex: 1 1 auto; }
   .start__arzt { margin-top: 26px; }
+  .uhr { position: static; justify-items: start; text-align: left; padding: 20px 0 32px; margin: 4px var(--rand) 0; background: none; box-shadow: none; border-radius: 0; border-top: 1px solid var(--linie-hell); grid-template-columns: auto 1fr; align-items: center; gap: 16px; }
+  .uhr__zeit { font-size: 34px; }
   .termin__rechts { padding: 28px 24px; }
   .kacheln { grid-template-columns: minmax(0, 1fr); }
   .zeilen a { grid-template-columns: minmax(0, 1fr) auto; row-gap: 4px; }

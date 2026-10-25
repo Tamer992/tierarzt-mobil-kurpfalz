@@ -51,18 +51,19 @@ const start = `
 <section class="start" aria-labelledby="start-titel">
   <figure class="start__bild">${bild('tag-start', 'Eine rote Katze liegt am hellen Fenster und schaut ruhig in die Kamera.', '(max-width: 700px) 100vw, 74vw', { prio: true })}</figure>
   <div class="start__text">
-    <h1 id="start-titel" class="start__titel"><span class="ganz">Tierarzt-Hausbesuche</span> für Hunde und Katzen</h1>
-    <p class="start__satz">Ich behandle akute Beschwerden bei Ihnen zu Hause, in Mannheim, Ludwigshafen, Heidelberg und Umgebung. Ihr Tier bleibt in seiner gewohnten Umgebung, und Sie sind die ganze Zeit dabei.</p>
+    <p class="start__marke">Mannheim · Ludwigshafen · Heidelberg</p>
+    <h1 id="start-titel" class="start__titel"><span>Wir kommen</span> <span>zu Ihnen.</span></h1>
+    <p class="start__satz">Notfall- und Akutversorgung für Hunde und Katzen, bei Ihnen zu Hause. Kein Transportkorb, keine Fahrt, kein Wartezimmer.</p>
     <div class="start__knoepfe">
       <a class="knopf knopf--dunkel" href="#termin">Termin anfragen</a>
       <a class="knopf knopf--rand" href="${telLink}">Anrufen</a>
     </div>
-    <p class="uhr" aria-live="off">
-      <span class="uhr__zeit" data-uhr-zeit>9–23</span>
-      <span class="uhr__satz" data-uhr-satz>Montag bis Freitag 9 bis 23 Uhr erreichbar, Samstag 8 bis 12 Uhr.</span>
-    </p>
     <a class="start__arzt" href="#tierarzt"><span class="start__portraet" aria-hidden="true"><span class="fehlt">FEHLT: Foto</span></span><span><strong>Rasheed Al Saeed</strong><br>Ihr Tierarzt, kommt selbst zu Ihnen</span></a>
   </div>
+  <p class="uhr" aria-live="off">
+    <span class="uhr__zeit" data-uhr-zeit>9–23</span>
+    <span class="uhr__satz" data-uhr-satz>Montag bis Freitag 9 bis 23 Uhr erreichbar, Samstag 8 bis 12 Uhr.</span>
+  </p>
 </section>`;
 
 const k = s.kontakt;
@@ -149,7 +150,7 @@ const eindeutig = ablaufBilder.filter(([n], i) => ablaufBilder.findIndex(([m]) =
 const ablauf = `
 <section class="ablauf" id="ablauf" aria-labelledby="ablauf-titel">
   <div class="ablauf__buehne" aria-hidden="true">
-    <figure class="ablauf__bild ist-aktiv">${bild('tag-hund-bett', '', '(max-width: 900px) 100vw, 42vw')}</figure>
+    ${eindeutig.map(([n], i) => `<figure class="ablauf__bild${i === 0 ? ' ist-aktiv' : ''}" data-bild="${n}">${bild(n, '', '(max-width: 900px) 100vw, 50vw')}</figure>`).join('\n    ')}
   </div>
   <div class="ablauf__text">
     <h2 id="ablauf-titel" class="titel zeige">${esc(ab.titel)}</h2>
