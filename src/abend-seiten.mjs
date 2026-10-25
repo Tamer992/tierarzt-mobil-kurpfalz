@@ -7,6 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { leistungsseite, terminseite, abschiedsseite } from './seiten-a.mjs';
 import { leistungenSeite, ratgeberSeite, ratgeberArtikel } from './seiten-mehr.mjs';
 import { schublade, schubladeKnopf } from './abend/schublade.mjs';
+import { versioniere } from './abend/version.mjs';
 
 const wurzel = fileURLToPath(new URL('..', import.meta.url));
 const lies = async (p) => JSON.parse(await readFile(join(wurzel, p), 'utf8'));
@@ -109,9 +110,17 @@ const rh = { nr, tel, bild, dokument, kopfzeile, fuss, leiste, zeiten, terminZie
 
 // Sprungmarken der Navigation zeigen auf die Startseite: "../../#ablauf" statt "../../#ablauf" bleibt gleich,
 // auf Unterseiten ergibt p + "#ablauf" den richtigen Weg zur Startseite.
+// Stil zuerst schreiben, damit die Versionsnummern aus dem fertigen Inhalt entstehen.
+// Aufbau aus Richtung A, Farben und Schrift der aktuellen Fassung (src/abend/unterseiten.css)
+const basis = await readFile(join(wurzel, 'src/stil/a.css'), 'utf8');
+const eigen = (await readFile(join(wurzel, 'src/abend/unterseiten.css'), 'utf8')) + (await readFile(join(wurzel, 'src/abend/schublade.css'), 'utf8'));
+await writeFile(join(wurzel, 'site/abend/unterseiten.css'), `/* Aufbau aus Richtung A (src/stil/a.css), darunter die Anpassungen der aktuellen Fassung */\n${basis.replace(/@font-face[^}]*}/g, '').replace(/#3A3F46/gi, '#17363b')}\n${eigen}`);
+
 const schreibe = async (pfad, html) => {
-  await mkdir(join(wurzel, 'site/abend', pfad), { recursive: true });
-  await writeFile(join(wurzel, 'site/abend', pfad, 'index.html'), html);
+  const ordner = join(wurzel, 'site/abend', pfad);
+  const p = '../'.repeat(pfad.split('/').filter(Boolean).length);
+  await mkdir(ordner, { recursive: true });
+  await writeFile(join(ordner, 'index.html'), await versioniere(html, ordner, [`${p}unterseiten.css`, `${p}abend.js`, `${p}../js/seite.js`]));
 };
 const lDurchfall = lSeiten.find((l) => l.pfad === 'leistungen/durchfall-erbrechen/');
 const satzAbschluss = lDurchfall.abschluss.satz;
@@ -122,8 +131,4 @@ for (const a of artikel) await schreibe(`ratgeber/${a.slug}/`, ratgeberArtikel({
 await schreibe(termin.pfad, terminseite({ g, s, t: termin, esc, txt, rh }));
 await schreibe(abschied.pfad, abschiedsseite({ g, s, a: abschied, esc, txt, rh }));
 
-// Stil: Aufbau aus Richtung A, Farben und Schrift der Richtung „Abendlicht“ (src/abend/unterseiten.css)
-const basis = await readFile(join(wurzel, 'src/stil/a.css'), 'utf8');
-const eigen = (await readFile(join(wurzel, 'src/abend/unterseiten.css'), 'utf8')) + (await readFile(join(wurzel, 'src/abend/schublade.css'), 'utf8'));
-await writeFile(join(wurzel, 'site/abend/unterseiten.css'), `/* Aufbau aus Richtung A (src/stil/a.css), darunter die Anpassungen der Richtung „Abendlicht“ */\n${basis.replace(/@font-face[^}]*}/g, '').replace(/#3A3F46/gi, '#17363b')}\n${eigen}`);
 console.log(`gebaut: ${lSeiten.length} Leistungsseiten, Übersicht, Ratgeber mit ${artikel.length} Artikeln, Terminanfrage, Abschied`);
