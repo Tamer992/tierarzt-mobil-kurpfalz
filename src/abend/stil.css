@@ -297,7 +297,9 @@ details p { margin: 0 0 20px; max-width: 62ch; color: var(--tinte); }
   .kopf__nav { display: none; }
   .kopf__tel { margin-left: auto; border-left: 0; padding-left: 0; }
   .start { height: auto; min-height: 0; align-content: start; }
-  .start__tuer { position: relative; inset: auto; height: 52svh; min-height: 300px; margin-top: 96px; z-index: 0; }
+  /* Foto passt sich der Bildschirmhöhe an: so hoch, dass „Termin anfragen“ noch im ersten Bildschirm steht
+     (Kopf- und Texthöhe misst abend.js), mindestens 150 px, höchstens 56 % der Höhe. Ohne Skript 44 %. */
+  .start__tuer { position: relative; inset: auto; height: 44svh; height: clamp(150px, calc(100svh - var(--kopf-h, 96px) - var(--start-text, 9999px)), 56svh); margin-top: var(--kopf-h, 96px); z-index: 0; }
   .start__text { width: auto; margin: 0; padding: 32px var(--rand) 24px; border-radius: 0; }
   .uhr { position: static; justify-items: start; text-align: left; padding: 20px 0 32px; margin: 4px var(--rand) 0; border-radius: 0; border-top: 1px solid var(--linie-hell); grid-template-columns: auto 1fr; align-items: center; gap: 16px; }
   .kacheln { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
@@ -322,7 +324,6 @@ details p { margin: 0 0 20px; max-width: 62ch; color: var(--tinte); }
   body { font-size: 18px; }
   .kopf { padding-block: 14px; }
   .kopf__marke img { width: 206px; }
-  .start__tuer { height: 44svh; margin-top: 82px; }
   .start__bild img { object-position: 42% 50%; }
   .start__text { padding: 28px var(--rand) 24px; }
   .start__marke { margin-bottom: 12px; font-size: 15px; }

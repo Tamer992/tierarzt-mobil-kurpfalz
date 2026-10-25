@@ -93,13 +93,29 @@
     setze(aktuell());
   }
 
-  // Handy-Leiste erst zeigen, wenn die Knöpfe im Startbereich aus dem Bild sind
-  var leiste = document.querySelector('.leiste');
+  // Startbereich am Handy und Tablet: Höhe von Kopf und Text bis unter die Knöpfe messen,
+  // damit das Foto genau so hoch wird, dass „Termin anfragen“ im ersten Bildschirm steht (CSS in stil.css)
   var startKnoepfe = document.querySelector('.start__knoepfe');
+  var startText = document.querySelector('.start__text');
+  if (startKnoepfe && startText && kopf) {
+    var messeStart = function () {
+      if (!window.matchMedia('(max-width: 980px)').matches) return;
+      var oben = startText.getBoundingClientRect().top, unten = startKnoepfe.getBoundingClientRect().bottom;
+      doc.style.setProperty('--kopf-h', kopf.offsetHeight + 'px');
+      doc.style.setProperty('--start-text', Math.ceil(unten - oben + 20) + 'px');
+    };
+    messeStart();
+    window.addEventListener('resize', messeStart);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(messeStart);
+  }
+
+  // Handy-Leiste zeigen, sobald die Knöpfe im Startbereich nicht zu sehen sind:
+  // nach dem Scrollen oder auf sehr kleinen Bildschirmen, auf denen sie gar nicht in den ersten Bildschirm passen
+  var leiste = document.querySelector('.leiste');
   if (leiste && startKnoepfe && 'IntersectionObserver' in window) {
     new IntersectionObserver(function (e) {
-      leiste.classList.toggle('ist-sichtbar', !e[0].isIntersecting && e[0].boundingClientRect.top < 0);
-    }).observe(startKnoepfe);
+      leiste.classList.toggle('ist-sichtbar', !e[0].isIntersecting);
+    }, { threshold: 0.9 }).observe(startKnoepfe);
   } else if (leiste) { leiste.classList.add('ist-sichtbar'); }
 
   // Uhr: Telefonzeiten Mo–Fr 9–23 Uhr, Sa 8–12 Uhr, So nur in Ausnahmefällen

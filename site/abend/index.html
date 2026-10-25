@@ -10,8 +10,8 @@
 <link rel="preload" href="../schriften/AlbertSans.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" href="img/tag-golden-boden-1800.webp" imagesrcset="img/tag-golden-boden-640.webp 640w, img/tag-golden-boden-1100.webp 1100w, img/tag-golden-boden-1800.webp 1800w" imagesizes="100vw">
 <link rel="icon" href="../logo/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="stil.css?v=5364a325">
-<script src="abend.js?v=9cbc3e0c" defer></script>
+<link rel="stylesheet" href="stil.css?v=cd3ea000">
+<script src="abend.js?v=7dac45ec" defer></script>
 <script src="gsap.min.js?v=9396f256" defer></script>
 <script src="ScrollTrigger.min.js?v=05ca5ad8" defer></script>
 <script src="tuer.js?v=b2562118" defer></script>
@@ -29,23 +29,23 @@
     <li><a href="#termin">Kontakt</a></li>
   </ul></nav>
   <a class="kopf__tel" href="tel:+496210000000">0621 000 00 00</a>
-  <button class="schublade-knopf" type="button" aria-expanded="false" aria-controls="schublade"><span class="unsichtbar">Menü öffnen</span><span class="schublade-knopf__strich"></span><span class="schublade-knopf__strich"></span></button>
+  <button class="schublade-knopf" type="button" aria-expanded="false" aria-controls="schublade">Menü<span class="menuezeichen" aria-hidden="true"><span></span><span></span></span></button>
 </header>
 
 <div class="schublade" id="schublade" hidden>
   <div class="schublade__grund" data-schliessen></div>
   <nav class="schublade__tafel" aria-label="Menü">
-    <button class="schublade__zu" type="button" data-schliessen>Schließen</button>
+    <button class="schublade-knopf schublade__zu" type="button" data-schliessen>Schließen<span class="menuezeichen menuezeichen--x" aria-hidden="true"><span></span><span></span></span></button>
     <ul class="schublade__liste"><li><a href="#leistungen">Leistungen</a></li><li><a href="#ablauf">Hausbesuch</a></li><li><a href="#tierarzt">Über mich</a></li><li><a href="ratgeber/">Ratgeber</a></li><li><a href="#termin">Kontakt</a></li></ul>
     <div class="schublade__kontakt">
       <p class="schublade__titel">Lieber anrufen?</p>
       <a class="schublade__nummer" href="tel:+496210000000">0621 000 00 00</a> <span class="fehlt">[FEHLT: neue Nummer]</span>
+      <a class="schublade__termin" href="#termin">Termin anfragen</a>
       <dl class="schublade__zeiten">
         <div><dt>Montag bis Freitag</dt><dd>9 bis 23 Uhr</dd></div>
         <div><dt>Samstag</dt><dd>8 bis 12 Uhr</dd></div>
         <div><dt>Sonntag</dt><dd>in Ausnahmefällen</dd></div>
       </dl>
-      <a class="schublade__termin" href="#termin">Termin anfragen</a>
     </div>
   </nav>
 </div>
