@@ -18,9 +18,26 @@
   <a class="ab-kopf__marke" href="../../" aria-label="Mobile Tierarztpraxis Kurpfalz, zur Startseite"><img src="../../../logo/logo-quer-original.svg" width="166" height="50" alt=""></a>
   <nav class="ab-kopf__nav" aria-label="Hauptnavigation"><ul><li><a href="../../leistungen/">Leistungen</a></li><li><a href="../../#ablauf">Hausbesuch</a></li><li><a href="../../#tierarzt">Über mich</a></li><li><a href="../../ratgeber/">Ratgeber</a></li><li><a href="../../#termin">Kontakt</a></li></ul></nav>
   <a class="ab-kopf__tel" href="tel:+496210000000">0621 000 00 00</a>
-  <button class="menueknopf" type="button" aria-expanded="false" aria-controls="handymenue"><span class="unsichtbar">Menü öffnen</span><span class="menueknopf__strich"></span><span class="menueknopf__strich"></span></button>
-  <nav class="handymenue" id="handymenue" aria-label="Menü" hidden><ul><li><a href="../../leistungen/">Leistungen</a></li><li><a href="../../#ablauf">Hausbesuch</a></li><li><a href="../../#tierarzt">Über mich</a></li><li><a href="../../ratgeber/">Ratgeber</a></li><li><a href="../../#termin">Kontakt</a></li></ul></nav>
+  <button class="schublade-knopf" type="button" aria-expanded="false" aria-controls="schublade"><span class="unsichtbar">Menü öffnen</span><span class="schublade-knopf__strich"></span><span class="schublade-knopf__strich"></span></button>
 </header>
+
+<div class="schublade" id="schublade" hidden>
+  <div class="schublade__grund" data-schliessen></div>
+  <nav class="schublade__tafel" aria-label="Menü">
+    <button class="schublade__zu" type="button" data-schliessen>Schließen</button>
+    <ul class="schublade__liste"><li><a href="../../leistungen/">Leistungen</a></li><li><a href="../../#ablauf">Hausbesuch</a></li><li><a href="../../#tierarzt">Über mich</a></li><li><a href="../../ratgeber/">Ratgeber</a></li><li><a href="../../#termin">Kontakt</a></li></ul>
+    <div class="schublade__kontakt">
+      <p class="schublade__titel">Lieber anrufen?</p>
+      <a class="schublade__nummer" href="tel:+496210000000">0621 000 00 00</a> <span class="fehlt">[FEHLT: neue Nummer]</span>
+      <dl class="schublade__zeiten">
+        <div><dt>Montag bis Freitag</dt><dd>9 bis 23 Uhr</dd></div>
+        <div><dt>Samstag</dt><dd>8 bis 12 Uhr</dd></div>
+        <div><dt>Sonntag</dt><dd>in Ausnahmefällen</dd></div>
+      </dl>
+      <a class="schublade__termin" href="../../termin/">Termin anfragen</a>
+    </div>
+  </nav>
+</div>
 <main id="inhalt">
   <article class="artikel" aria-labelledby="artikel-titel">
     <nav class="brotkrumen auftritt" aria-label="Sie sind hier"><ol><li><a href="../../">Startseite</a></li><li><a href="../../ratgeber/">Ratgeber</a></li><li aria-current="page">Warnzeichen: Wann Ihr Tier sofort Hilfe braucht</li></ol></nav>

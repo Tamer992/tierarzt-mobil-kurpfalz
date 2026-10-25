@@ -10,6 +10,42 @@
   function fest() { kopf.classList.toggle('ist-fest', window.scrollY > 40); }
   if (kopf) { fest(); window.addEventListener('scroll', fest, { passive: true }); }
 
+  // Menü für Tablet und Handy: fährt von rechts herein, Escape und Klick daneben schließen, Tab bleibt im Menü
+  var sKnopf = document.querySelector('.schublade-knopf');
+  var sMenue = document.getElementById('schublade');
+  if (sKnopf && sMenue) {
+    var tafel = sMenue.querySelector('.schublade__tafel');
+    var sZu = function (fokus) {
+      sMenue.classList.remove('ist-offen');
+      doc.classList.remove('schublade-offen');
+      sKnopf.setAttribute('aria-expanded', 'false');
+      setTimeout(function () { if (!sMenue.classList.contains('ist-offen')) sMenue.hidden = true; }, ruhig ? 0 : 400);
+      if (fokus) sKnopf.focus();
+    };
+    sKnopf.addEventListener('click', function () {
+      sMenue.hidden = false;
+      sKnopf.setAttribute('aria-expanded', 'true');
+      doc.classList.add('schublade-offen');
+      requestAnimationFrame(function () { requestAnimationFrame(function () { sMenue.classList.add('ist-offen'); }); });
+      var erster = sMenue.querySelector('.schublade__liste a');
+      if (erster) erster.focus({ preventScroll: true });
+    });
+    sMenue.addEventListener('click', function (e) {
+      if (e.target.closest('[data-schliessen]')) sZu(true);
+      else if (e.target.closest('a')) sZu(false);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (sMenue.hidden) return;
+      if (e.key === 'Escape') { sZu(true); return; }
+      if (e.key !== 'Tab') return;
+      var ziele = tafel.querySelectorAll('a, button');
+      var erstes = ziele[0], letztes = ziele[ziele.length - 1];
+      if (e.shiftKey && document.activeElement === erstes) { e.preventDefault(); letztes.focus(); }
+      else if (!e.shiftKey && document.activeElement === letztes) { e.preventDefault(); erstes.focus(); }
+    });
+    window.matchMedia('(min-width: 1101px)').addEventListener('change', function (m) { if (m.matches && !sMenue.hidden) sZu(false); });
+  }
+
   // Handy-Leiste erst zeigen, wenn die Knöpfe im Startbereich aus dem Bild sind
   var leiste = document.querySelector('.leiste');
   var startKnoepfe = document.querySelector('.start__knoepfe');

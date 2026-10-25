@@ -3,6 +3,7 @@
 import { readFile, writeFile, mkdir, cp, readdir } from 'node:fs/promises';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { schublade, schubladeKnopf } from './abend/schublade.mjs';
 
 const wurzel = fileURLToPath(new URL('..', import.meta.url));
 const lies = async (p) => JSON.parse(await readFile(join(wurzel, p), 'utf8'));
@@ -45,7 +46,9 @@ const kopf = `
     <li><a href="#termin">Kontakt</a></li>
   </ul></nav>
   <a class="kopf__tel" href="${telLink}">${esc(tel)}</a>
-</header>`;
+  ${schubladeKnopf}
+</header>
+${schublade({ links: [['Leistungen', '#leistungen'], ['Hausbesuch', '#ablauf'], ['Über mich', '#tierarzt'], ['Ratgeber', `${A}ratgeber/`], ['Kontakt', '#termin']], tel: { anzeige: tel, link: g.telefon_link, fehlt: g.telefon_fehlt }, termin: '#termin' })}`;
 
 const start = `
 <section class="start" aria-labelledby="start-titel">
@@ -307,7 +310,8 @@ ${fuss}
 const ziel = join(wurzel, 'site/abend');
 await mkdir(ziel, { recursive: true });
 await writeFile(join(ziel, 'index.html'), html);
-for (const f of ['stil.css', 'abend.js', 'tuer.js']) await cp(join(wurzel, 'src/abend', f), join(ziel, f));
+for (const f of ['abend.js', 'tuer.js']) await cp(join(wurzel, 'src/abend', f), join(ziel, f));
+await writeFile(join(ziel, 'stil.css'), (await readFile(join(wurzel, 'src/abend/stil.css'), 'utf8')) + (await readFile(join(wurzel, 'src/abend/schublade.css'), 'utf8')));
 for (const f of ['gsap.min.js', 'ScrollTrigger.min.js']) await cp(join(wurzel, 'node_modules/gsap/dist', f), join(ziel, f));
 for (const f of ['SourceSerif4.woff2', 'SourceSerif4-Italic.woff2', 'AlbertSans.woff2']) await cp(join(wurzel, 'schriften/woff2', f), join(wurzel, 'site/schriften', f));
 console.log('site/abend/index.html gebaut');

@@ -1,0 +1,29 @@
+
+/* ===== Menü für Tablet und Handy (gleich auf allen Seiten, src/abend/schublade.css) ===== */
+.unsichtbar { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.schublade-knopf { display: none; width: 48px; height: 48px; margin-right: -10px; border: 0; background: transparent; color: var(--tinte); cursor: pointer; place-content: center; gap: 7px; }
+.schublade-knopf__strich { display: block; width: 26px; height: 2px; background: currentColor; }
+@media (max-width: 1100px) { .schublade-knopf { display: grid; } }
+@media (max-width: 560px) { .kopf__tel, .ab-kopf__tel { display: none !important; } .kopf .schublade-knopf, .ab-kopf .schublade-knopf { margin-left: auto; } }
+
+.schublade { position: fixed; inset: 0; z-index: 60; }
+.schublade[hidden] { display: none; }
+.schublade__grund { position: absolute; inset: 0; background: rgba(23, 54, 59, .42); opacity: 0; transition: opacity 350ms ease; }
+.schublade__tafel { position: absolute; inset: 0 0 0 auto; width: min(440px, 100%); overflow-y: auto; display: flex; flex-direction: column; padding: 20px var(--rand) calc(32px + env(safe-area-inset-bottom)); background: var(--kalk); color: var(--tinte); transform: translateX(100%); transition: transform 400ms cubic-bezier(.2, .7, .2, 1); }
+.schublade.ist-offen .schublade__grund { opacity: 1; }
+.schublade.ist-offen .schublade__tafel { transform: none; }
+.schublade__zu { align-self: flex-end; min-height: 48px; padding: 0 4px; border: 0; background: transparent; color: var(--tinte); font: 600 17px/1 var(--schrift, var(--sans)); text-decoration: underline; text-decoration-color: var(--honig); text-underline-offset: 5px; cursor: pointer; }
+.schublade__liste { list-style: none; margin: 16px 0 0; padding: 0; }
+.schublade__liste a { display: block; padding: 16px 0; border-bottom: 1px solid var(--linie-hell, rgba(31, 45, 58, .14)); font: 500 26px/1.2 var(--serif); letter-spacing: -.01em; color: var(--tinte); text-decoration: none; }
+.schublade__liste a:hover { color: var(--honig); }
+.schublade__kontakt { margin-top: auto; padding-top: 36px; }
+.schublade__titel { margin: 0; font: 600 17px/1.4 var(--schrift, var(--sans)); color: var(--stein); }
+.schublade__nummer { display: inline-block; margin-top: 6px; font: 600 30px/1.2 var(--schrift, var(--sans)); font-variant-numeric: tabular-nums; white-space: nowrap; color: var(--tinte); text-decoration: none; }
+.schublade__zeiten { margin: 20px 0 0; font: 400 17px/1.4 var(--schrift, var(--sans)); }
+.schublade__zeiten div { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-top: 1px solid var(--linie-hell, rgba(31, 45, 58, .14)); }
+.schublade__zeiten dt { color: var(--stein); }
+.schublade__zeiten dd { margin: 0; text-align: right; }
+.schublade__termin { display: flex; align-items: center; justify-content: center; min-height: 56px; margin-top: 24px; border-radius: 12px; background: var(--honig); color: #fff; font: 600 18px/1 var(--schrift, var(--sans)); text-decoration: none; }
+.schublade__termin:hover { background: var(--petrol-tief); }
+html.schublade-offen { overflow: hidden; }
+@media (prefers-reduced-motion: reduce) { .schublade__grund, .schublade__tafel { transition: none; } }

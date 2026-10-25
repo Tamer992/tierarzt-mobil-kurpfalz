@@ -6,6 +6,7 @@ import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { leistungsseite, terminseite, abschiedsseite } from './seiten-a.mjs';
 import { leistungenSeite, ratgeberSeite, ratgeberArtikel } from './seiten-mehr.mjs';
+import { schublade, schubladeKnopf } from './abend/schublade.mjs';
 
 const wurzel = fileURLToPath(new URL('..', import.meta.url));
 const lies = async (p) => JSON.parse(await readFile(join(wurzel, p), 'utf8'));
@@ -69,7 +70,8 @@ function dokument(titel, p, { beschreibung = '', koerper = '' } = {}) {
 <body class="unterseite${koerper ? ` ${koerper}` : ''}">
 <a class="sprung" href="#inhalt">Zum Inhalt springen</a>`;
 }
-const navListe = (p) => [['Leistungen', 'leistungen/'], ['Hausbesuch', '#ablauf'], ['Über mich', '#tierarzt'], ['Ratgeber', 'ratgeber/'], ['Kontakt', '#termin']]
+const NAV = [['Leistungen', 'leistungen/'], ['Hausbesuch', '#ablauf'], ['Über mich', '#tierarzt'], ['Ratgeber', 'ratgeber/'], ['Kontakt', '#termin']];
+const navListe = (p) => NAV
   .map(([t, z]) => `<li><a href="${p}${z.startsWith('#') ? '' : ''}${z}">${esc(t)}</a></li>`).join('');
 const terminZiel = (p) => `${p}termin/`;
 function kopfzeile(p) {
@@ -79,9 +81,9 @@ function kopfzeile(p) {
   <a class="ab-kopf__marke" href="${p || './'}" aria-label="Mobile Tierarztpraxis Kurpfalz, zur Startseite"><img src="${p}../logo/logo-quer-original.svg" width="166" height="50" alt=""></a>
   <nav class="ab-kopf__nav" aria-label="Hauptnavigation"><ul>${nav}</ul></nav>
   <a class="ab-kopf__tel" href="tel:${g.telefon_link}">${nr()}</a>
-  <button class="menueknopf" type="button" aria-expanded="false" aria-controls="handymenue"><span class="unsichtbar">Menü öffnen</span><span class="menueknopf__strich"></span><span class="menueknopf__strich"></span></button>
-  <nav class="handymenue" id="handymenue" aria-label="Menü" hidden><ul>${nav}</ul></nav>
-</header>`;
+  ${schubladeKnopf}
+</header>
+${schublade({ links: NAV.map(([t, z]) => [t, p + z]), tel: { anzeige: g.telefon_anzeige, link: g.telefon_link, fehlt: g.telefon_fehlt }, termin: terminZiel(p) })}`;
 }
 function fuss(p) {
   return `
@@ -122,6 +124,6 @@ await schreibe(abschied.pfad, abschiedsseite({ g, s, a: abschied, esc, txt, rh }
 
 // Stil: Aufbau aus Richtung A, Farben und Schrift der Richtung „Abendlicht“ (src/abend/unterseiten.css)
 const basis = await readFile(join(wurzel, 'src/stil/a.css'), 'utf8');
-const eigen = await readFile(join(wurzel, 'src/abend/unterseiten.css'), 'utf8');
+const eigen = (await readFile(join(wurzel, 'src/abend/unterseiten.css'), 'utf8')) + (await readFile(join(wurzel, 'src/abend/schublade.css'), 'utf8'));
 await writeFile(join(wurzel, 'site/abend/unterseiten.css'), `/* Aufbau aus Richtung A (src/stil/a.css), darunter die Anpassungen der Richtung „Abendlicht“ */\n${basis.replace(/@font-face[^}]*}/g, '').replace(/#3A3F46/gi, '#17363b')}\n${eigen}`);
 console.log(`gebaut: ${lSeiten.length} Leistungsseiten, Übersicht, Ratgeber mit ${artikel.length} Artikeln, Terminanfrage, Abschied`);
