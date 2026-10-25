@@ -30,9 +30,21 @@
       var erster = sMenue.querySelector('.schublade__liste a');
       if (erster) erster.focus({ preventScroll: true });
     });
+    // Sprungziele auf derselben Seite selbst anfahren: erst Menü zu und Scroll-Sperre weg, dann scrollen.
+    // Sonst verschluckt Safari am iPhone den Sprung, weil die Seite beim Tippen noch gesperrt ist.
     sMenue.addEventListener('click', function (e) {
-      if (e.target.closest('[data-schliessen]')) sZu(true);
-      else if (e.target.closest('a')) sZu(false);
+      if (e.target.closest('[data-schliessen]')) { sZu(true); return; }
+      var a = e.target.closest('a');
+      if (!a) return;
+      var h = a.getAttribute('href') || '';
+      var ziel = h.charAt(0) === '#' ? document.getElementById(h.slice(1)) : null;
+      sZu(false);
+      if (!ziel) return;
+      e.preventDefault();
+      requestAnimationFrame(function () {
+        ziel.scrollIntoView({ behavior: ruhig ? 'auto' : 'smooth', block: 'start' });
+        if (history.pushState) history.pushState(null, '', h); else location.hash = h;
+      });
     });
     document.addEventListener('keydown', function (e) {
       if (sMenue.hidden) return;
