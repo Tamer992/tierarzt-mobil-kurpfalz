@@ -52,3 +52,41 @@ html { scroll-padding-top: calc(var(--kopf-hoehe, 96px) + 24px); }
 .schublade__termin:hover { background: var(--petrol-tief); }
 html.schublade-offen { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) { .schublade__grund, .schublade__tafel { transition: none; } }
+
+/* ===== Knöpfe, Variante A (Tamers Wahl, 25.10.2026), gleich auf allen Seiten:
+   Beim Überfahren fährt eine dunklere Fläche von links durch den Knopf, der Pfeil rückt vor;
+   beim Tippen gibt der Knopf nach. Nur transform und Farbe. ===== */
+.knopf, .ab-knopf, .schublade__termin { position: relative; isolation: isolate; overflow: hidden; gap: 12px; -webkit-tap-highlight-color: transparent; transition: color 300ms var(--kurve), border-color 300ms var(--kurve), transform 120ms ease; }
+.knopf::before, .ab-knopf::before, .schublade__termin::before { content: ''; position: absolute; inset: 0; z-index: -1; background: var(--petrol-tief); transform: scaleX(0); transform-origin: 0 50%; transition: transform 420ms var(--kurve); }
+a.knopf:not(.knopf--rand):not(.knopf--linie)::after, .ab-knopf--hell::after, .schublade__termin::after { content: '→'; display: inline-block; font-weight: 500; transition: transform 420ms var(--kurve); }
+/* In der schmalen Handy-Leiste ohne Pfeil, damit „Termin anfragen“ in einer Zeile bleibt */
+.leiste a.knopf.knopf::after, .ab-leiste a.ab-knopf.ab-knopf::after { content: none; }
+@media (max-width: 374px) { .leiste .knopf, .ab-leiste .ab-knopf { padding: 0 8px; font-size: 16px; } }
+.leiste .knopf, .ab-leiste .ab-knopf { white-space: nowrap; }
+.plz__zeile .knopf { flex: none; }
+.plz__zeile input { min-width: 0; }
+.knopf:active, .ab-knopf:active, .schublade__termin:active { transform: scale(.97); }
+.knopf:focus-visible, .ab-knopf:focus-visible, .schublade__termin:focus-visible { outline: 2px solid var(--honig); outline-offset: 3px; }
+
+/* Farben je Art: Grundfläche bleibt, die Fläche beim Überfahren ist die dunklere bzw. hellere Stufe */
+.knopf, .knopf--dunkel, .schublade__termin { background: var(--honig); color: #fff; }
+.knopf--hell, .ab-knopf--hell { background: var(--licht); color: var(--nacht); }
+.knopf--hell::before, .ab-knopf--hell::before { background: #fff; }
+.knopf--rand { background: transparent; color: var(--tinte); }
+.knopf--rand::before { background: var(--tinte); }
+.knopf--linie, .ab-knopf--linie { background: transparent; color: var(--licht); }
+.knopf--linie::before, .ab-knopf--linie::before { background: var(--licht); }
+.knopf--hell:focus-visible, .knopf--linie:focus-visible, .ab-knopf:focus-visible { outline-color: var(--licht); }
+
+@media (hover: hover) {
+  .knopf:hover, .knopf--dunkel:hover, .schublade__termin:hover { background: var(--honig); }
+  .knopf--hell:hover, .ab-knopf--hell:hover { background: var(--licht); }
+  .knopf--rand:hover { background: transparent; color: #fff; border-color: var(--tinte); }
+  .knopf--linie:hover, .ab-knopf--linie:hover { background: transparent; color: var(--nacht); border-color: var(--licht); }
+  .knopf:hover::before, .ab-knopf:hover::before, .schublade__termin:hover::before { transform: scaleX(1); }
+  .knopf:hover::after, .ab-knopf:hover::after, .schublade__termin:hover::after,
+  .knopf:hover .pfeil { transform: translateX(4px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .knopf, .ab-knopf, .schublade__termin, .knopf::before, .ab-knopf::before, .schublade__termin::before, .knopf::after, .ab-knopf::after, .schublade__termin::after { transition: none; }
+}
