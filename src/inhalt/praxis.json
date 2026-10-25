@@ -25,7 +25,8 @@
   "kontakt": {
     "telefon": "[FEHLT: neue Nummer]",
     "whatsapp": "[FEHLT: Nummer]",
-    "email": "[FEHLT: neue Adresse]"
+    "email": "info@tierpraxis-kurpfalz.de",
+    "domain": "tierpraxis-kurpfalz.de"
   },
   "adresse_impressum": "Freinsheimer Str. 30, 67245 Lambsheim",
   "kammer": "Landestierärztekammer Rheinland-Pfalz",
