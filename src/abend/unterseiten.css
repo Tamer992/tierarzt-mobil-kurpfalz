@@ -45,17 +45,20 @@ h1, h2, h3 { font-weight: 500; letter-spacing: -.01em; }
 
 /* ----- Kopf ----- */
 .ab-kopf { position: sticky; top: 0; z-index: 20; display: flex; flex-wrap: wrap; align-items: center; gap: 32px; padding: 14px var(--rand); background: rgba(250, 250, 248, .97); color: var(--tinte); box-shadow: 0 1px 0 var(--linie); }
-.ab-kopf__marke img { width: 236px; height: auto; display: block; }
+.ab-kopf__marke img { width: 272px; height: auto; display: block; }
 .ab-kopf__nav { margin-left: auto; }
+.ab-kopf__nav a { white-space: nowrap; }
 .ab-kopf__nav ul { display: flex; gap: 30px; list-style: none; margin: 0; padding: 0; }
-.ab-kopf__nav a, .ab-kopf__tel { font-size: 15px; text-decoration: none; color: var(--tinte); opacity: .86; }
+.ab-kopf__nav a, .ab-kopf__tel { font-size: 17px; text-decoration: none; color: var(--tinte); opacity: .86; }
 .ab-kopf__nav a:hover, .ab-kopf__tel:hover { opacity: 1; }
-.ab-kopf__tel { font-weight: 600; font-variant-numeric: tabular-nums; font-size: 15px; opacity: 1; padding-left: 30px; border-left: 1px solid var(--linie); white-space: nowrap; }
+.ab-kopf__tel { font-weight: 600; font-variant-numeric: tabular-nums; font-size: 17px; opacity: 1; padding-left: 30px; border-left: 1px solid var(--linie); white-space: nowrap; }
+@media (max-width: 1240px) { .ab-kopf { gap: 24px; } .ab-kopf__nav ul { gap: 22px; } .ab-kopf__tel { padding-left: 22px; } }
+@media (max-width: 700px) { .ab-kopf__marke img { width: 206px; } }
 .ab-kopf .menueknopf { display: none; color: var(--tinte); margin-left: auto; }
 .ab-kopf .handymenue { flex-basis: 100%; background: transparent; padding: 8px 0 20px; margin: 0; }
 .ab-kopf .handymenue ul { list-style: none; margin: 0; padding: 0; }
 .ab-kopf .handymenue a { color: var(--tinte); font-family: var(--sans); font-weight: 500; font-size: 24px; letter-spacing: -.02em; border-bottom: 1px solid var(--linie); }
-@media (max-width: 980px) {
+@media (max-width: 1100px) {
   .ab-kopf__nav, .ab-kopf__tel { display: none; }
   .ab-kopf .menueknopf { display: grid; }
 }
