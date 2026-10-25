@@ -4,7 +4,7 @@
 
 :root {
   --nacht: #17363b; --nacht-2: #1f444a; --licht: #f3f7f6; --asche: #b5c8ca; --lampe: #a8d5d3;
-  --kalk: #fafaf8; --sand: #e3efee; --tinte: #1f2d3a; --stein: #4d5a66; --honig: #1f6f78; --petrol-tief: #175a62;
+  --kalk: #fafaf8; --sand: #e3efee; --tinte: #1f2d3a; --stein: #3f4c58; --honig: #1f6f78; --petrol-tief: #175a62;
   /* Variablen von Richtung A auf Abendlicht umgestellt */
   --grund: var(--kalk);
   --flaeche: #ffffff;
@@ -21,6 +21,9 @@
   --rund: 14px;
 }
 body { -webkit-font-smoothing: antialiased; }
+/* Größere Schrift (Tamer, 25.10.2026): Fließtext 18 px am Handy, 20 px am Computer, nichts unter 17 px */
+:root { --s1: 1.0625rem; --s2: 1.125rem; }
+@media (min-width: 701px) { :root { --s1: 1.0625rem; --s2: 1.25rem; --s3: 1.5rem; } }
 ::selection { background: var(--sand); color: var(--tinte); }
 input, select, textarea { caret-color: var(--tinte); accent-color: var(--tinte); }
 
