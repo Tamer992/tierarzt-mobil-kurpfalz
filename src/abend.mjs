@@ -62,7 +62,7 @@ const start = `
       <a class="knopf knopf--dunkel" href="#termin">Termin anfragen</a>
       <a class="knopf knopf--rand" href="${telLink}">Anrufen</a>
     </div>
-    <a class="start__arzt" href="#tierarzt"><span class="start__portraet" aria-hidden="true"><img src="img/arzt-klein-168.webp" width="168" height="168" alt=""></span><span><strong>Rasheed Al Saeed</strong><br>Ihr Tierarzt, kommt selbst zu Ihnen</span></a>
+    <a class="start__arzt" href="#tierarzt"><span><strong>Rasheed Al Saeed</strong><br>Ihr Tierarzt, kommt selbst zu Ihnen</span></a>
   </div>
   <p class="uhr" aria-live="off">
     <span class="uhr__zeit" data-uhr-zeit>9–23</span>
