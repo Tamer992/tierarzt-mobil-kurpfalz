@@ -46,7 +46,7 @@ for (const l of lSeiten) {
 for (const x of g.leistungen) { const f = FOTOS[x.seite]; if (f) x.foto = f[0]; }
 
 // --- Rahmen „Abendlicht“ für Unterseiten --------------------------------------
-const logoAlt = 'Mobile Tierarztpraxis Kurpfalz, Notfall-Tierarzt Al Saeed';
+const logoAlt = 'Kurpfalzvet, mobiler Tierarzt';
 const nr = () => esc(g.telefon_anzeige);
 const tel = `<a class="nummer" href="tel:${g.telefon_link}">${nr()}</a>`;
 function bild(name, alt, sizes, { p = '', prio = false, klasse = '' } = {}) {
@@ -63,7 +63,7 @@ function dokument(titel, p, { beschreibung = '', koerper = '' } = {}) {
 <meta name="robots" content="noindex, nofollow">
 <title>${esc(titel)}</title>${beschreibung ? `\n<meta name="description" content="${esc(beschreibung)}">` : ''}
 <link rel="preload" href="${p}../schriften/SourceSerif4.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="icon" href="${p}../logo/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="${p}../logo/favicon-kurpfalzvet.svg" type="image/svg+xml">
 <link rel="stylesheet" href="${p}unterseiten.css">
 <script src="${p}../js/seite.js" defer></script>
 <script src="${p}abend.js" defer></script>
@@ -79,7 +79,7 @@ function kopfzeile(p) {
   const nav = navListe(p).replace(/href="([^"]*)#/g, `href="$1#`);
   return `
 <header class="ab-kopf">
-  <a class="ab-kopf__marke" href="${p || './'}" aria-label="Mobile Tierarztpraxis Kurpfalz, zur Startseite"><img src="${p}../logo/logo-quer-original.svg" width="166" height="50" alt=""></a>
+  <a class="ab-kopf__marke" href="${p || './'}" aria-label="Mobile Tierarztpraxis Kurpfalz, zur Startseite"><img src="${p}../logo/logo-kurpfalzvet.svg" width="166" height="50" alt=""></a>
   <nav class="ab-kopf__nav navlinie" aria-label="Hauptnavigation"><span class="navlinie__strich" aria-hidden="true"></span><ul>${nav}</ul></nav>
   <a class="ab-kopf__tel" href="tel:${g.telefon_link}">${nr()}</a>
   ${schubladeKnopf}
@@ -90,7 +90,7 @@ function fuss(p) {
   return `
 <footer class="ab-fuss">
   <div class="ab-fuss__innen">
-    <div><img src="${p}../logo/logo-quer-original-negativ.svg" width="166" height="50" alt="${logoAlt}" loading="lazy"></div>
+    <div><img src="${p}../logo/logo-kurpfalzvet-negativ.svg" width="166" height="50" alt="${logoAlt}" loading="lazy"></div>
     <div><h2 class="ab-fuss__titel">Erreichbar</h2><p>Montag bis Freitag 9 bis 23 Uhr<br>Samstag 8 bis 12 Uhr<br>Sonntag in Ausnahmefällen</p></div>
     <div><h2 class="ab-fuss__titel">Kontakt</h2><p><a href="tel:${g.telefon_link}">${nr()}</a> <span class="fehlt">[FEHLT: neue Nummer]</span><br><a href="mailto:info@tierpraxis-kurpfalz.de">info@tierpraxis-kurpfalz.de</a></p></div>
     <div><h2 class="ab-fuss__titel">Praxis</h2><p>Freinsheimer Str. 30<br>67245 Lambsheim</p></div>

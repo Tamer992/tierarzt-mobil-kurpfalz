@@ -91,6 +91,8 @@ h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 500; letter-spac
 .start__arzt { display: inline-flex; align-items: center; gap: 18px; margin-top: 40px; text-decoration: none; font-size: 18px; line-height: 1.4; color: var(--stein); }
 .start__arzt strong { color: var(--tinte); font-weight: 600; font-size: 21px; }
 .start__portraet { display: grid; place-items: center; flex: none; width: 84px; height: 84px; border-radius: 50%; background: var(--sand); border: 1.5px dashed rgba(31, 111, 120, .55); text-align: center; }
+.start__portraet img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+.start__portraet:has(img) { border: 0; background: none; }
 .start__portraet .fehlt { font-size: 10px; line-height: 1.2; padding: 2px 4px; max-width: 52px; }
 .start__arzt:hover strong { text-decoration: underline; text-underline-offset: 4px; }
 
@@ -173,6 +175,8 @@ h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 500; letter-spac
 .tierarzt { background: var(--sand); padding: var(--abstand) var(--rand); }
 .tierarzt__innen { max-width: var(--breite); margin: 0 auto; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(48px, 7vw, 110px); align-items: center; }
 .tierarzt__portraet { aspect-ratio: 4 / 5; max-height: 760px; border-radius: var(--rund); border: 1.5px dashed rgba(31, 45, 58, .25); display: grid; place-content: center; gap: 10px; text-align: center; padding: 24px; background: var(--sand-tief); }
+.tierarzt__portraet--foto { display: block; padding: 0; border: 0; overflow: hidden; background: none; }
+.tierarzt__portraet--foto img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .tierarzt__portraet small { color: var(--stein); font-size: 16px; max-width: 26ch; }
 .tierarzt__name { margin: 14px 0 22px; font-size: 18px; font-weight: 600; color: var(--honig); }
 .tierarzt__text > p:not(.tierarzt__name) { margin: 0 0 16px; max-width: 62ch; font-size: 20px; }

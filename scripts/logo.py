@@ -57,22 +57,24 @@ def quer(farben, titel):
            + f'<path d="{p1}" fill="{zeile1}"/><path d="{p2}" fill="{gross}"/><path d="{p3}" fill="{unten}"/></svg>')
     return svg
 
-ziel = sys.argv[1] if len(sys.argv) > 1 else 'src/logo'
-import os; os.makedirs(ziel, exist_ok=True)
-titel = 'Mobile Tierarztpraxis Kurpfalz, Notfall-Tierarzt Al Saeed'
-open(f'{ziel}/logo-quer.svg', 'w').write(quer((PETROL, '#FFFFFF', NAVY, NAVY), titel))
-# Negativ: Pin weiß, Pfote Petrol, Zeile 1 Pfirsich, Rest weiß (wie Vorlage NEGATIV)
-p1, b1 = text('MOBILE TIERARZTPRAXIS', 132, 34, 21, 800, 0.22)
-p2, b2 = text('Kurpfalz', 128, 98, 74, 800)
-p3, b3 = text('Notfall-Tierarzt · Al Saeed', 131, 136, 26, 500)
-breite = 132 + max(b1, b2, b3) + 4
-open(f'{ziel}/logo-quer-negativ.svg', 'w').write(
-    f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {breite:.0f} 150" role="img" aria-labelledby="t"><title id="t">{titel}</title>'
-    + symbol(0, 18, 120, '#FFFFFF', PETROL, 'schnitt')
-    + f'<path d="{p1}" fill="{PFIRSICH}"/><path d="{p2}" fill="#FFFFFF"/><path d="{p3}" fill="#FFFFFF"/></svg>')
-open(f'{ziel}/logo-symbol.svg', 'w').write(
-    f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 110" role="img" aria-label="{titel}">' + symbol(0, 0, 110, PETROL, '#FFFFFF', 's') + '</svg>')
-# App-Symbol: Petrol-Quadrat, weißer Pin
-open(f'{ziel}/favicon.svg', 'w').write(
-    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><rect width="120" height="120" rx="26" fill="#2B44A3"/>' + symbol(17, 11, 96, '#FFFFFF', PETROL, 'f') + '</svg>')
-print('Logo geschrieben nach', ziel)
+if __name__ == '__main__':
+    ziel = sys.argv[1] if len(sys.argv) > 1 else 'src/logo'
+    import os; os.makedirs(ziel, exist_ok=True)
+    titel = 'Mobile Tierarztpraxis Kurpfalz, Notfall-Tierarzt Al Saeed'
+    open(f'{ziel}/logo-quer.svg', 'w').write(quer((PETROL, '#FFFFFF', NAVY, NAVY), titel))
+    # Negativ: Pin weiß, Pfote Petrol, Zeile 1 Pfirsich, Rest weiß (wie Vorlage NEGATIV)
+    p1, b1 = text('MOBILE TIERARZTPRAXIS', 132, 34, 21, 800, 0.22)
+    p2, b2 = text('Kurpfalz', 128, 98, 74, 800)
+    p3, b3 = text('Notfall-Tierarzt · Al Saeed', 131, 136, 26, 500)
+    breite = 132 + max(b1, b2, b3) + 4
+    open(f'{ziel}/logo-quer-negativ.svg', 'w').write(
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {breite:.0f} 150" role="img" aria-labelledby="t"><title id="t">{titel}</title>'
+        + symbol(0, 18, 120, '#FFFFFF', PETROL, 'schnitt')
+        + f'<path d="{p1}" fill="{PFIRSICH}"/><path d="{p2}" fill="#FFFFFF"/><path d="{p3}" fill="#FFFFFF"/></svg>')
+    open(f'{ziel}/logo-symbol.svg', 'w').write(
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 110" role="img" aria-label="{titel}">' + symbol(0, 0, 110, PETROL, '#FFFFFF', 's') + '</svg>')
+    # App-Symbol: Petrol-Quadrat, weißer Pin
+    open(f'{ziel}/favicon.svg', 'w').write(
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><rect width="120" height="120" rx="26" fill="#2B44A3"/>' + symbol(17, 11, 96, '#FFFFFF', PETROL, 'f') + '</svg>')
+    print('Logo geschrieben nach', ziel)
+

@@ -38,7 +38,7 @@ const telFehlt = g.telefon_fehlt ? `<span class="fehlt fehlt--block">[FEHLT: neu
 
 const kopf = `
 <header class="kopf" data-kopf>
-  <a class="kopf__marke" href="./" aria-label="Mobile Tierarztpraxis Kurpfalz, zur Startseite"><img src="../logo/logo-quer-original.svg" width="166" height="50" alt=""></a>
+  <a class="kopf__marke" href="./" aria-label="Mobile Tierarztpraxis Kurpfalz, zur Startseite"><img src="../logo/logo-kurpfalzvet.svg" width="166" height="50" alt=""></a>
   <nav class="kopf__nav navlinie" aria-label="Hauptnavigation"><span class="navlinie__strich" aria-hidden="true"></span><ul>
     <li><a href="#leistungen">Leistungen</a></li>
     <li><a href="#ablauf">Hausbesuch</a></li>
@@ -62,7 +62,7 @@ const start = `
       <a class="knopf knopf--dunkel" href="#termin">Termin anfragen</a>
       <a class="knopf knopf--rand" href="${telLink}">Anrufen</a>
     </div>
-    <a class="start__arzt" href="#tierarzt"><span class="start__portraet" aria-hidden="true"><span class="fehlt">FEHLT: Foto</span></span><span><strong>Rasheed Al Saeed</strong><br>Ihr Tierarzt, kommt selbst zu Ihnen</span></a>
+    <a class="start__arzt" href="#tierarzt"><span class="start__portraet" aria-hidden="true"><img src="img/arzt-klein-168.webp" width="168" height="168" alt=""></span><span><strong>Rasheed Al Saeed</strong><br>Ihr Tierarzt, kommt selbst zu Ihnen</span></a>
   </div>
   <p class="uhr" aria-live="off">
     <span class="uhr__zeit" data-uhr-zeit>9–23</span>
@@ -192,7 +192,7 @@ const t = s.tierarzt;
 const tierarzt = `
 <section class="tierarzt" id="tierarzt" aria-labelledby="tierarzt-titel">
   <div class="tierarzt__innen">
-    <figure class="tierarzt__portraet zeige"><span class="fehlt">${esc(t.portraet)}</span><small>${esc(t.portraet_hinweis)}</small></figure>
+    <figure class="tierarzt__portraet tierarzt__portraet--foto zeige"><img src="img/arzt-portraet-917.webp" srcset="img/arzt-portraet-640.webp 640w, img/arzt-portraet-917.webp 917w" sizes="(max-width: 900px) 420px, 460px" width="917" height="1146" alt="Rasheed Al Saeed im Behandlungsraum" loading="lazy" decoding="async"></figure>
     <div class="tierarzt__text zeige">
       <h2 id="tierarzt-titel" class="titel">${esc(t.titel)}</h2>
       <p class="tierarzt__name">${esc(t.name)}</p>
@@ -261,7 +261,7 @@ const notfall = `
 const fuss = `
 <footer class="fuss">
   <div class="fuss__innen">
-    <div><img src="../logo/logo-quer-original-negativ.svg" width="166" height="50" alt="Mobile Tierarztpraxis Kurpfalz, Notfall-Tierarzt Al Saeed"></div>
+    <div><img src="../logo/logo-kurpfalzvet-negativ.svg" width="166" height="50" alt="Kurpfalzvet, mobiler Tierarzt"></div>
     <div><h2 class="beschriftung">Erreichbar</h2><p>Montag bis Freitag 9 bis 23 Uhr<br>Samstag 8 bis 12 Uhr<br>Sonntag in Ausnahmefällen</p></div>
     <div><h2 class="beschriftung">Kontakt</h2><p><a href="${telLink}">${esc(tel)}</a>${telFehlt}<br><a href="mailto:info@tierpraxis-kurpfalz.de">info@tierpraxis-kurpfalz.de</a></p></div>
     <div><h2 class="beschriftung">Praxis</h2><p>Freinsheimer Str. 30<br>67245 Lambsheim</p></div>
@@ -280,7 +280,7 @@ const html = `<!doctype html>
 <link rel="preload" href="../schriften/SourceSerif4.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../schriften/AlbertSans.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" href="img/tag-golden-boden-1800.webp" imagesrcset="img/tag-golden-boden-640.webp 640w, img/tag-golden-boden-1100.webp 1100w, img/tag-golden-boden-1800.webp 1800w" imagesizes="100vw">
-<link rel="icon" href="../logo/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../logo/favicon-kurpfalzvet.svg" type="image/svg+xml">
 <link rel="stylesheet" href="stil.css">
 <script src="abend.js" defer></script>
 <script src="gsap.min.js" defer></script>
