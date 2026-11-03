@@ -85,7 +85,7 @@ function kv_admin_inhalt() {
 		else echo '<div class="notice notice-error"><p>Diese E-Mail-Adresse ist ungültig.</p></div>';
 	}
 	echo '<div class="wrap"><h1>Seiteninhalt</h1><form method="post" style="background:#fff;border:1px solid #c3c4c7;padding:12px 14px;margin:12px 0">'; wp_nonce_field('kv_empfaenger_speichern');
-	echo '<p style="margin:0 0 6px"><strong>Terminanfragen gehen an diese E-Mail-Adresse</strong></p><input type="email" name="kv_empfaenger" value="' . esc_attr(get_option('kv_empfaenger', '')) . '" placeholder="' . esc_attr(get_option('admin_email')) . '" class="regular-text"> <button class="button">Speichern</button> <span style="color:#646970">Leer lassen, dann gilt die Administrator-Adresse.</span></form>';
+	echo '<p style="margin:0 0 6px"><strong>Terminanfragen gehen an diese E-Mail-Adresse</strong></p><input type="email" name="kv_empfaenger" value="' . esc_attr(get_option('kv_empfaenger', '')) . '" placeholder="info@kurpfalzvet.de" class="regular-text"> <button class="button">Speichern</button> <span style="color:#646970">Leer lassen, dann gilt info@kurpfalzvet.de.</span></form>';
 	echo '<p>Hier änderst du Texte der Webseite. Wähle einen Bereich, ändere den Text und klicke auf „Speichern“. Die Gestaltung bleibt unverändert. Bilder wechselst du unter „Bilder“.</p>';
 	foreach ($gruppen as $g => $felder) {
 		$offen = $g === $gruppe ? ' open' : '';
@@ -129,7 +129,7 @@ function kv_admin_bilder() {
 }
 
 // ---------- Termin-Anfrage ----------
-function kv_empfaenger() { return get_option('kv_empfaenger') ?: get_option('admin_email'); }
+function kv_empfaenger() { return get_option('kv_empfaenger') ?: 'info@kurpfalzvet.de'; }
 
 function kv_termin_senden() {
 	$antwort = function ($ok, $code = 200) { wp_send_json(['ok' => $ok], $code); };
