@@ -45,61 +45,89 @@ add_action('after_switch_theme', function () { // schöne Adressen ohne ?p=123
 });
 
 // ---------- Bedienfeld ----------
-function kv_gruppenname($g) {
-	$fest = ['startseite' => 'Startseite', 'gemeinsam' => 'Kontakt, Zeiten und Fuß (auf allen Seiten)', 'termin' => 'Termin anfragen', 'abschied' => 'Abschied zu Hause', 'praxis' => 'Praxis'];
-	if (isset($fest[$g])) return $fest[$g];
-	return str_starts_with($g, 'leistung-') ? 'Leistung: ' . ucfirst(str_replace('-', ' ', substr($g, 9))) : 'Ratgeber: ' . ucfirst(str_replace('-', ' ', preg_replace('~^ratgeber/~', '', $g)));
+// Eigene Rolle: sieht nur „Seiteninhalt“, „Bilder“, Medien und das eigene Profil. Administratoren dürfen es auch.
+function kv_rolle() {
+	if (!get_role('kv_redakteur')) add_role('kv_redakteur', 'Webseiten-Redakteur', ['read' => true, 'upload_files' => true, 'kv_bearbeiten' => true]);
+	$a = get_role('administrator');
+	if ($a && !$a->has_cap('kv_bearbeiten')) $a->add_cap('kv_bearbeiten');
 }
+add_action('init', 'kv_rolle');
+
+function kv_ist_redakteur() { return in_array('kv_redakteur', (array) wp_get_current_user()->roles, true); }
+function kv_url($pfad) { return home_url('/' . ($pfad ? trim($pfad, '/') . '/' : '')); }
+
+add_filter('login_redirect', fn($ziel, $anfrage, $user) => ($user instanceof WP_User && in_array('kv_redakteur', $user->roles, true)) ? admin_url('admin.php?page=kv-inhalt') : $ziel, 10, 3);
+add_action('admin_init', function () { // Redakteure landen nie auf dem WordPress-Dashboard
+	global $pagenow;
+	if (kv_ist_redakteur() && $pagenow === 'index.php') { wp_safe_redirect(admin_url('admin.php?page=kv-inhalt')); exit; }
+});
+add_action('admin_menu', function () {
+	if (kv_ist_redakteur()) remove_menu_page('index.php');
+}, 999);
+add_action('admin_bar_menu', function ($bar) {
+	if (!kv_ist_redakteur()) return;
+	foreach (['wp-logo', 'new-content', 'comments', 'updates', 'search', 'site-name'] as $n) $bar->remove_node($n);
+}, 999);
+add_filter('show_admin_bar', fn($z) => kv_ist_redakteur() ? false : $z);
 
 add_action('admin_menu', function () {
-	add_menu_page('Seiteninhalt', 'Seiteninhalt', 'edit_pages', 'kv-inhalt', 'kv_admin_inhalt', 'dashicons-edit-page', 3);
-	add_submenu_page('kv-inhalt', 'Bilder', 'Bilder', 'edit_pages', 'kv-bilder', 'kv_admin_bilder');
+	add_menu_page('Seiteninhalt', 'Seiteninhalt', 'kv_bearbeiten', 'kv-inhalt', 'kv_admin_inhalt', 'dashicons-edit-page', 3);
+	add_submenu_page('kv-inhalt', 'Texte', 'Texte', 'kv_bearbeiten', 'kv-inhalt', 'kv_admin_inhalt');
+	add_submenu_page('kv-inhalt', 'Bilder', 'Bilder', 'kv_bearbeiten', 'kv-bilder', 'kv_admin_bilder');
 });
 
 add_action('admin_enqueue_scripts', function ($hook) {
 	if (!str_contains($hook, 'kv-bilder')) return;
 	wp_enqueue_media();
-	wp_enqueue_script('kv-admin', get_template_directory_uri() . '/admin.js', ['jquery'], '1.0', true);
+	wp_enqueue_script('kv-admin', get_template_directory_uri() . '/admin.js', ['jquery'], '1.1', true);
 });
 
 function kv_admin_inhalt() {
-	if (!current_user_can('edit_pages')) return;
+	if (!current_user_can('kv_bearbeiten')) return;
 	$standard = kv_json('content.json');
+	$struktur = kv_json('struktur.json');
 	$ist = (array) get_option('kv_inhalt', []);
-	$gruppe = sanitize_text_field($_GET['gruppe'] ?? '');
-	if ($_SERVER['REQUEST_METHOD'] === 'POST' && check_admin_referer('kv_inhalt_speichern')) {
-		$gruppe = sanitize_text_field($_POST['gruppe'] ?? '');
-		foreach ((array) ($_POST['kv'] ?? []) as $pfad => $wert) {
-			if (!isset($standard[$pfad])) continue;
-			$wert = sanitize_textarea_field(wp_unslash($wert));
-			if ($wert === $standard[$pfad]) unset($ist[$pfad]); else $ist[$pfad] = $wert;
-		}
-		update_option('kv_inhalt', $ist);
-		echo '<div class="notice notice-success"><p>Gespeichert.</p></div>';
-	}
-	$gruppen = [];
-	foreach ($standard as $pfad => $wert) $gruppen[explode('.', $pfad)[0]][$pfad] = $wert;
+	$offen = sanitize_text_field($_GET['seite'] ?? 'startseite');
 	if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['kv_empfaenger']) && check_admin_referer('kv_empfaenger_speichern')) {
 		$m = sanitize_email(wp_unslash($_POST['kv_empfaenger']));
 		if ($m === '' || is_email($m)) { update_option('kv_empfaenger', $m); echo '<div class="notice notice-success"><p>Empfänger gespeichert.</p></div>'; }
 		else echo '<div class="notice notice-error"><p>Diese E-Mail-Adresse ist ungültig.</p></div>';
 	}
-	echo '<div class="wrap"><h1>Seiteninhalt</h1><form method="post" style="background:#fff;border:1px solid #c3c4c7;padding:12px 14px;margin:12px 0">'; wp_nonce_field('kv_empfaenger_speichern');
-	echo '<p style="margin:0 0 6px"><strong>Terminanfragen gehen an diese E-Mail-Adresse</strong></p><input type="email" name="kv_empfaenger" value="' . esc_attr(get_option('kv_empfaenger', '')) . '" placeholder="info@kurpfalzvet.de" class="regular-text"> <button class="button">Speichern</button> <span style="color:#646970">Leer lassen, dann gilt info@kurpfalzvet.de.</span></form>';
-	echo '<p>Hier änderst du Texte der Webseite. Wähle einen Bereich, ändere den Text und klicke auf „Speichern“. Die Gestaltung bleibt unverändert. Bilder wechselst du unter „Bilder“.</p>';
-	foreach ($gruppen as $g => $felder) {
-		$offen = $g === $gruppe ? ' open' : '';
-		echo '<details' . $offen . ' style="background:#fff;border:1px solid #c3c4c7;padding:8px 14px;margin:8px 0"><summary style="cursor:pointer;font-weight:600;font-size:14px">' . esc_html(kv_gruppenname($g)) . ' <span style="font-weight:400;color:#646970">(' . count($felder) . ' Texte)</span></summary>';
-		echo '<form method="post" style="margin-top:12px">'; wp_nonce_field('kv_inhalt_speichern');
-		echo '<input type="hidden" name="gruppe" value="' . esc_attr($g) . '">';
-		foreach ($felder as $pfad => $std) {
-			$wert = $ist[$pfad] ?? $std;
-			$label = esc_html(str_replace('.', ' › ', substr($pfad, strlen($g) + 1)));
-			echo '<p style="margin:0 0 10px"><label style="display:block;color:#646970;font-size:12px">' . $label . '</label>';
-			$name = 'kv[' . esc_attr($pfad) . ']';
-			if (strlen($wert) > 70 || str_contains($wert, "\n")) echo '<textarea name="' . $name . '" rows="' . min(8, 1 + intdiv(strlen($wert), 90)) . '" class="large-text">' . esc_textarea($wert) . '</textarea>';
-			else echo '<input type="text" name="' . $name . '" value="' . esc_attr($wert) . '" class="large-text">';
-			echo '</p>';
+	if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['kv']) && check_admin_referer('kv_inhalt_speichern')) {
+		$offen = sanitize_text_field($_POST['seite'] ?? '');
+		foreach ((array) $_POST['kv'] as $pfad => $wert) {
+			if (!isset($standard[$pfad])) continue;
+			$wert = trim(sanitize_textarea_field(wp_unslash($wert)));
+			if ($wert === '' || $wert === $standard[$pfad]) unset($ist[$pfad]); else $ist[$pfad] = $wert; // leer = Originaltext
+		}
+		update_option('kv_inhalt', $ist);
+		echo '<div class="notice notice-success"><p>Gespeichert. Die Änderung ist sofort auf der Webseite sichtbar.</p></div>';
+	}
+	echo '<div class="wrap"><h1>Texte der Webseite</h1>';
+	echo '<p style="max-width:60rem">Öffne eine Seite, ändere den Text im Feld und klicke unten auf „Speichern“. Mit „Seite ansehen“ siehst du die Seite, mit „Stelle ansehen“ den Abschnitt. Ein Feld leer lassen und speichern bringt den Originaltext zurück. Bilder wechselst du unter „Bilder“.</p>';
+	if (current_user_can('manage_options')) {
+		echo '<form method="post" style="background:#fff;border:1px solid #c3c4c7;padding:12px 14px;margin:12px 0;max-width:60rem">'; wp_nonce_field('kv_empfaenger_speichern');
+		echo '<p style="margin:0 0 6px"><strong>Terminanfragen gehen an diese E-Mail-Adresse</strong></p><input type="email" name="kv_empfaenger" value="' . esc_attr(get_option('kv_empfaenger', '')) . '" placeholder="info@kurpfalzvet.de" class="regular-text"> <button class="button">Speichern</button> <span style="color:#646970">Leer lassen, dann gilt info@kurpfalzvet.de.</span></form>';
+	}
+	foreach ($struktur as $seite) {
+		$anzahl = array_sum(array_map(fn($a) => count($a['felder']), $seite['abschnitte']));
+		echo '<details' . ($seite['id'] === $offen ? ' open' : '') . ' style="background:#fff;border:1px solid #c3c4c7;padding:8px 14px;margin:8px 0;max-width:60rem"><summary style="cursor:pointer;font-weight:600;font-size:14px">' . esc_html($seite['titel']) . ' <span style="font-weight:400;color:#646970">(' . $anzahl . ' Texte)</span></summary>';
+		if ($seite['url'] !== null) echo '<p style="margin:8px 0"><a href="' . esc_url(kv_url($seite['url'])) . '" target="_blank" rel="noopener" class="button">Seite ansehen</a></p>';
+		echo '<form method="post">'; wp_nonce_field('kv_inhalt_speichern'); echo '<input type="hidden" name="seite" value="' . esc_attr($seite['id']) . '">';
+		foreach ($seite['abschnitte'] as $a) {
+			echo '<h3 style="margin:22px 0 6px;font-size:15px;border-top:1px solid #dcdcde;padding-top:12px">' . esc_html($a['name']);
+			if ($seite['url'] !== null && !empty($a['anker'])) echo ' <a href="' . esc_url(kv_url($seite['url']) . '#' . $a['anker']) . '" target="_blank" rel="noopener" style="font-weight:400;font-size:12px;margin-left:8px">Stelle ansehen</a>';
+			echo '</h3>';
+			if (!empty($a['versteckt'])) echo '<p style="color:#646970;margin:0 0 8px">Diese Texte sieht man auf der Seite nicht direkt. Sie helfen Menschen mit Sehbehinderung und Suchmaschinen. Meist musst du sie nicht ändern.</p>';
+			foreach ($a['felder'] as $f) {
+				$pfad = $f['p']; $std = $standard[$pfad] ?? ''; $wert = $ist[$pfad] ?? $std;
+				echo '<p style="margin:0 0 10px"><label style="display:block;color:#50575e;font-size:12px;font-weight:600">' . esc_html($f['l']) . (isset($ist[$pfad]) ? ' <span style="color:#996800;font-weight:400">· geändert</span>' : '') . '</label>';
+				$name = 'kv[' . esc_attr($pfad) . ']';
+				if (strlen($wert) > 70 || str_contains($wert, "\n")) echo '<textarea name="' . $name . '" rows="' . min(8, 1 + intdiv(strlen($wert), 90)) . '" class="large-text">' . esc_textarea($wert) . '</textarea>';
+				else echo '<input type="text" name="' . $name . '" value="' . esc_attr($wert) . '" class="large-text">';
+				if (isset($ist[$pfad])) echo '<span style="color:#646970;font-size:12px">Original: ' . esc_html(mb_strimwidth($std, 0, 120, '…')) . '</span>';
+				echo '</p>';
+			}
 		}
 		echo '<p><button class="button button-primary">Speichern</button></p></form></details>';
 	}
@@ -107,22 +135,25 @@ function kv_admin_inhalt() {
 }
 
 function kv_admin_bilder() {
-	if (!current_user_can('edit_pages')) return;
+	if (!current_user_can('kv_bearbeiten')) return;
 	$ist = (array) get_option('kv_bilder', []);
 	if ($_SERVER['REQUEST_METHOD'] === 'POST' && check_admin_referer('kv_bilder_speichern')) {
 		$neu = [];
 		foreach ((array) ($_POST['kv_bild'] ?? []) as $name => $id) if ((int) $id > 0 && isset(kv_json('slots.json')[$name])) $neu[$name] = (int) $id;
 		update_option('kv_bilder', $neu); $ist = $neu;
-		echo '<div class="notice notice-success"><p>Gespeichert.</p></div>';
+		echo '<div class="notice notice-success"><p>Gespeichert. Die Bilder sind sofort auf der Webseite.</p></div>';
 	}
-	echo '<div class="wrap"><h1>Bilder</h1><p>Wähle ein neues Bild für eine Stelle der Webseite. Am besten im gleichen Format wie das aktuelle (Breite zu Höhe siehe unten). „Zurücksetzen“ bringt das ursprüngliche Bild zurück.</p><form method="post">';
+	echo '<div class="wrap"><h1>Bilder der Webseite</h1><p style="max-width:60rem">Klicke bei einem Bild auf „Bild wählen“, lade ein neues hoch oder nimm eins aus der Mediathek, und speichere unten. Die Vorschau zeigt den Ausschnitt, der auf der Webseite zu sehen ist. Passt das Format nicht, siehst du einen Hinweis. „Zurücksetzen“ bringt das ursprüngliche Bild zurück.</p><form method="post">';
 	wp_nonce_field('kv_bilder_speichern');
-	echo '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px">';
+	echo '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px">';
 	foreach (kv_json('slots.json') as $name => $s) {
 		$id = (int) ($ist[$name] ?? 0);
-		$vorschau = $id ? wp_get_attachment_image_url($id, 'medium') : get_template_directory_uri() . '/assets/abend/img/' . $name . '-640.webp';
-		echo '<div class="kv-slot" style="background:#fff;border:1px solid #c3c4c7;padding:10px"><img src="' . esc_url($vorschau) . '" data-standard="' . esc_url(get_template_directory_uri() . '/assets/abend/img/' . $name . '-640.webp') . '" style="width:100%;aspect-ratio:' . (int) $s['w'] . '/' . (int) $s['h'] . ';object-fit:cover;background:#eee">';
-		echo '<p style="margin:6px 0;font-size:12px;color:#646970">' . esc_html($s['alt'] ?: $name) . '<br>Format ' . (int) $s['w'] . ' : ' . (int) $s['h'] . ' · ' . esc_html($s['seite']) . '</p>';
+		$std = get_template_directory_uri() . '/assets/abend/img/' . $name . '-640.webp';
+		$vorschau = $id ? wp_get_attachment_image_url($id, 'medium') : $std;
+		$verhaeltnis = round($s['w'] / max(1, $s['h']), 3);
+		echo '<div class="kv-slot" data-verhaeltnis="' . $verhaeltnis . '" style="background:#fff;border:1px solid #c3c4c7;padding:10px"><img src="' . esc_url($vorschau) . '" data-standard="' . esc_url($std) . '" style="width:100%;aspect-ratio:' . (int) $s['w'] . '/' . (int) $s['h'] . ';object-fit:cover;background:#eee;display:block">';
+		echo '<p style="margin:8px 0 4px;font-size:12px;color:#50575e"><strong>' . esc_html($s['seite']) . '</strong>, ' . esc_html($s['ort']) . '<br>' . esc_html($s['alt']) . '</p>';
+		echo '<p class="kv-hinweis" style="margin:4px 0;font-size:12px;color:#996800;display:none"></p>';
 		echo '<input type="hidden" name="kv_bild[' . esc_attr($name) . ']" value="' . $id . '"><button type="button" class="button kv-waehlen">Bild wählen</button> <button type="button" class="button-link kv-zurueck">Zurücksetzen</button></div>';
 	}
 	echo '</div><p><button class="button button-primary">Speichern</button></p></form></div>';
