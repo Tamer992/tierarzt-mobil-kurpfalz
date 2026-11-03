@@ -26,7 +26,7 @@ export function leistungenSeite({ g, r, esc, txt, rh, satzAbschluss }) {
         <p class="uebersicht__satz">${esc(l.satz)}</p>${l.anzeichen ? `
         <p class="anzeichen"><span class="anzeichen__wort">Woran Sie es merken:</span> ${l.anzeichen.map(esc).join(' · ')}</p>` : ''}
       </li>`).join('');
-  return `${rh.dokument('Leistungen · Mobile Tierarztpraxis Kurpfalz', p, { beschreibung: 'Tierärztliche Behandlung bei Ihnen zu Hause: Akutversorgung, Durchfall und Erbrechen, Schmerzen, Wunden, Ohren, Augen, Blase, Infektionen, Lahmheit und Abschied. Mannheim und Umgebung.' })}${rh.kopfzeile(p)}
+  return `${rh.dokument('Leistungen · Kurpfalzvet', p, { beschreibung: 'Tierärztliche Behandlung bei Ihnen zu Hause: Akutversorgung, Durchfall und Erbrechen, Schmerzen, Wunden, Ohren, Augen, Blase, Infektionen, Lahmheit und Abschied. Mannheim und Umgebung.' })}${rh.kopfzeile(p)}
 <main id="inhalt">
   <section class="seitenkopf" aria-labelledby="seiten-titel">
     <nav class="brotkrumen auftritt" aria-label="Sie sind hier"><ol><li><a href="${p}">Startseite</a></li><li aria-current="page">Leistungen</li></ol></nav>
@@ -50,7 +50,7 @@ export function ratgeberSeite({ g, artikel, esc, txt, rh, satzAbschluss }) {
         <p class="uebersicht__satz">${esc(a.kurz)}</p>
         <p class="artikel__meta"><time datetime="${a.datum}">${datumText(a.datum)}</time> · ${lesezeit(a)}</p>
       </li>`).join('');
-  return `${rh.dokument('Ratgeber · Mobile Tierarztpraxis Kurpfalz', p, { beschreibung: 'Ratgeber für Hunde- und Katzenhalter: Warnzeichen für den Notfall, Gifte im Haushalt, Schmerzen erkennen. Vom mobilen Tierarzt in Mannheim.' })}${rh.kopfzeile(p)}
+  return `${rh.dokument('Ratgeber · Kurpfalzvet', p, { beschreibung: 'Ratgeber für Hunde- und Katzenhalter: Warnzeichen für den Notfall, Gifte im Haushalt, Schmerzen erkennen. Vom mobilen Tierarzt in Mannheim.' })}${rh.kopfzeile(p)}
 <main id="inhalt">
   <section class="seitenkopf" aria-labelledby="seiten-titel">
     <nav class="brotkrumen auftritt" aria-label="Sie sind hier"><ol><li><a href="${p}">Startseite</a></li><li aria-current="page">Ratgeber</li></ol></nav>

@@ -79,7 +79,7 @@ function kopfzeile(p) {
   const nav = navListe(p).replace(/href="([^"]*)#/g, `href="$1#`);
   return `
 <header class="ab-kopf">
-  <a class="ab-kopf__marke" href="${p || './'}" aria-label="Mobile Tierarztpraxis Kurpfalz, zur Startseite"><img src="${p}../logo/logo-kurpfalzvet.svg" width="166" height="50" alt=""></a>
+  <a class="ab-kopf__marke" href="${p || './'}" aria-label="Kurpfalzvet, zur Startseite"><img src="${p}../logo/logo-kurpfalzvet.svg" width="166" height="50" alt=""></a>
   <nav class="ab-kopf__nav navlinie" aria-label="Hauptnavigation"><span class="navlinie__strich" aria-hidden="true"></span><ul>${nav}</ul></nav>
   <a class="ab-kopf__tel" href="tel:${g.telefon_link}">${nr()}</a>
   ${schubladeKnopf}
