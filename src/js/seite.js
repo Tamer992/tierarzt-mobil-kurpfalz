@@ -290,7 +290,21 @@
     if (fehler.length) { liste.focus(); return; }
     // Deaktivierter Zustand, solange gesendet wird
     knopf.setAttribute('aria-disabled', 'true');
+    form.setAttribute('data-wort', wort.textContent);
     wort.textContent = form.getAttribute('data-laeuft');
+    var ziel = form.getAttribute('data-senden');
+    if (ziel) { // WordPress: Anfrage wirklich senden
+      fetch(ziel, { method: 'POST', body: new FormData(form), credentials: 'same-origin' })
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(function (j) { if (!j.ok) throw new Error('abgelehnt'); zeigeGesendet(); })
+        .catch(function () {
+          knopf.removeAttribute('aria-disabled');
+          wort.textContent = form.getAttribute('data-wort') || wort.textContent;
+          zeigeUebersicht([{ name: 'telefon', meldung: form.getAttribute('data-sendefehler') || 'Die Anfrage konnte nicht gesendet werden. Bitte rufen Sie an.' }]);
+          liste.focus();
+        });
+      return;
+    }
     // unter 500 ms, damit der Wechsel als Folge der Eingabe gilt und nicht als Layout-Sprung
     setTimeout(zeigeGesendet, 400);
   });
