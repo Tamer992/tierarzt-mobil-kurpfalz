@@ -10,7 +10,7 @@
 <link rel="preload" href="../schriften/AlbertSans.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" href="img/tag-golden-boden-1800.webp" imagesrcset="img/tag-golden-boden-640.webp 640w, img/tag-golden-boden-1100.webp 1100w, img/tag-golden-boden-1800.webp 1800w" imagesizes="100vw">
 <link rel="icon" href="../logo/favicon-kurpfalzvet.svg" type="image/svg+xml">
-<link rel="stylesheet" href="stil.css?v=61ea9e5e">
+<link rel="stylesheet" href="stil.css?v=371eab57">
 <script src="abend.js?v=b1d9ca91" defer></script>
 <script src="gsap.min.js?v=9396f256" defer></script>
 <script src="ScrollTrigger.min.js?v=05ca5ad8" defer></script>
@@ -80,7 +80,7 @@
           <input id="plz-feld" class="plz__feld" name="plz" inputmode="numeric" autocomplete="postal-code" maxlength="5" placeholder="68159" aria-describedby="plz-hinweis plz-antwort">
           <button class="knopf knopf--dunkel" type="submit">Prüfen</button>
         </div>
-        <p class="hinweis" id="plz-hinweis">Fünf Ziffern, zum Beispiel 68159 <span class="fehlt">[FEHLT: Postleitzahlen aus der Ortsliste vom Kunden prüfen lassen]</span></p>
+        <p class="hinweis" id="plz-hinweis">Fünf Ziffern, zum Beispiel 68159</p>
         <p class="plz__antwort" id="plz-antwort" role="status"></p>
       </form>
       <form class="vorauswahl" action="termin/" method="get">
@@ -107,7 +107,7 @@
     </div>
     <aside class="termin__rechts zeige" aria-labelledby="anrufen-titel">
       <h3 id="anrufen-titel" class="untertitel">Lieber anrufen?</h3>
-      <p>Am Telefon klären wir am schnellsten, was Ihr Tier braucht. Schreiben können Sie mir auch per WhatsApp: <span class="fehlt">[FEHLT: Nummer]</span>.</p>
+      <p>Am Telefon klären wir am schnellsten, was Ihr Tier braucht. Schreiben können Sie mir auch per WhatsApp: <a class="wa" href="https://wa.me/491722473875" rel="noopener" aria-label="Per WhatsApp schreiben"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span>Nachricht schreiben</span></a></p>
       <a class="grossnummer" href="tel:+491722473875">0172 2473875</a>
       <dl class="zeiten">
         <div><dt>Montag bis Freitag</dt><dd>9 bis 23 Uhr</dd></div>
@@ -189,7 +189,7 @@
   <div class="tierarzt__werte zeige">
     <h3 class="untertitel">Was mir wichtig ist</h3>
     <ul><li>Eine einfühlsame, stressarme Behandlung</li><li>Verständliche Erklärungen, damit Sie wissen, was passiert</li><li>Zeit und Geduld für jedes Tier</li><li>Eine Betreuung, die zu Ihrem Tier und Ihrer Familie passt</li><li>Schonende Behandlung nach dem aktuellen Stand der Tiermedizin</li><li>Enge Zusammenarbeit mit Ihnen und, wenn nötig, mit Praxen und Kliniken</li></ul>
-    <div class="tierarzt__auto"><span class="fehlt">[FEHLT: Foto Praxisauto]</span><p>Mit diesem Auto komme ich. Darin ist meine tierärztliche Apotheke mit den wichtigsten Medikamenten.</p></div>
+    
   </div>
 </section>
 
@@ -216,7 +216,7 @@
   </div>
   <dl class="preise zeige">
     <div><dt>Hausbesuch, Untersuchung und Behandlung</dt><dd>nach GOT</dd></div>
-    <div><dt>Anfahrt außerhalb Mannheims</dt><dd><span class="fehlt">[FEHLT: Angabe]</span></dd></div>
+    <div><dt>Anfahrt außerhalb Mannheims</dt><dd>nennt Ihnen mein Team vorab</dd></div>
     <div><dt>Nach 18 Uhr, am Wochenende und an Feiertagen</dt><dd>Zuschlag nach GOT</dd></div>
     <div><dt>Bezahlen</dt><dd>bar, EC-Karte oder Rechnung</dd></div>
     <div><dt>Absagen</dt><dd>bis 24 Stunden vorher ohne Gebühr</dd></div>
@@ -252,7 +252,7 @@
   <div class="fragen__gruppen">
     <div class="fragen__gruppe zeige"><h3 class="beschriftung">Termin</h3>
       <details><summary>Wie vereinbare ich einen Termin?</summary><p>Rufen Sie an, schreiben Sie per WhatsApp oder nutzen Sie die Terminanfrage auf dieser Seite. Ich melde mich so schnell wie möglich und wir finden einen Termin.</p></details>
-      <details><summary>Wie kurzfristig bekomme ich einen Termin?</summary><p>Rufen Sie an, dann sagt Ihnen mein Team, wann ich bei Ihnen sein kann. Bei akuten Beschwerden komme ich innerhalb meiner Zeiten so schnell wie möglich. <span class="fehlt">[FEHLT: übliche Wartezeit von Herrn Al Saeed]</span></p></details>
+      <details><summary>Wie kurzfristig bekomme ich einen Termin?</summary><p>Rufen Sie an, dann sagt Ihnen mein Team, wann ich bei Ihnen sein kann. Bei akuten Beschwerden komme ich innerhalb meiner Zeiten so schnell wie möglich.</p></details>
       <details><summary>Kommen Sie auch am Wochenende?</summary><p>Ja, nach Vereinbarung am Samstag und in Ausnahmefällen am Sonntag. Am Wochenende fällt ein Zuschlag an.</p></details>
       <details><summary>Kann ich einen Termin absagen?</summary><p>Ja. Sagen Sie bitte bis 24 Stunden vorher ab. Bei einer späteren Absage berechne ich bis zur Hälfte der Hausbesuchsgebühr.</p></details>
     </div>
@@ -263,13 +263,13 @@
     </div>
     <div class="fragen__gruppe zeige"><h3 class="beschriftung">Abrechnung</h3>
       <details><summary>Wie bezahle ich, und zahlt meine Versicherung?</summary><p>Sie zahlen bar, mit EC-Karte oder auf Rechnung. Die Rechnung bekommen Sie direkt nach der Behandlung per E-Mail. Viele Tierkrankenversicherungen erstatten die Behandlung, wie viel, hängt von Ihrem Tarif ab.</p></details>
-      <details><summary>Berechnen Sie die Anfahrt?</summary><p><span class="fehlt">[FEHLT: Anfahrt im Stadtgebiet Mannheim inklusive? Pauschale außerhalb? Angabe von Herrn Al Saeed]</span></p></details>
+      <details><summary>Berechnen Sie die Anfahrt?</summary><p>Die Kosten für die Anfahrt nennt Ihnen mein Team bei der Terminvereinbarung, noch bevor ich zu Ihnen komme.</p></details>
     </div>
     <div class="fragen__gruppe zeige"><h3 class="beschriftung">Einsatzgebiet</h3>
       <details><summary>Wie finde ich heraus, ob Sie zu mir kommen?</summary><p>Geben Sie oben unter „Wohin ich komme“ Ihre Postleitzahl ein. Steht Ihr Ort nicht auf der Liste, rufen Sie an, dann klären wir es.</p></details>
     </div>
   </div>
-  <div class="fragen__mehr zeige"><h3 class="untertitel">Ihre Frage war nicht dabei?</h3><p>Rufen Sie an oder schreiben Sie per WhatsApp: <span class="fehlt">[FEHLT: Nummer]</span>. Mein Team beantwortet Ihre Frage direkt.</p></div>
+  <div class="fragen__mehr zeige"><h3 class="untertitel">Ihre Frage war nicht dabei?</h3><p>Rufen Sie an oder schreiben Sie per WhatsApp: <a class="wa" href="https://wa.me/491722473875" rel="noopener" aria-label="Per WhatsApp schreiben"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span>Nachricht schreiben</span></a> Mein Team beantwortet Ihre Frage direkt.</p></div>
 </section>
 
 <section class="notfall" aria-labelledby="notfall-titel">

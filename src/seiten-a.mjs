@@ -73,7 +73,7 @@ ${l.sofort.klinik ? `
     <h2 id="u-fragen-titel" class="einblenden">${esc(l.fragen.titel)}</h2>
     <div class="fragen__liste einblenden">${fragen}
     </div>
-    <p class="hinweis-fehlt">${txt(l.freigabe)}</p>
+    ${l.freigabe ? `<p class="hinweis-fehlt">${txt(l.freigabe)}</p>` : ''}
   </section>
 
   <section class="abschluss" aria-labelledby="abschluss-titel">

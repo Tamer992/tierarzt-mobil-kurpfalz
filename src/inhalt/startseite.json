@@ -69,7 +69,7 @@
     ],
     "portraet": "[FEHLT: Porträt]",
     "portraet_hinweis": "Hochformat 4 : 5, Tageslicht, mit einem Patienten auf dem Boden",
-    "auto": "[FEHLT: Foto Praxisauto]",
+    "auto": "",
     "auto_satz": "Mit diesem Auto komme ich. Darin ist meine tierärztliche Apotheke mit den wichtigsten Medikamenten.",
     "zitat": "Ihr Tier ist für Sie ein Familienmitglied. Ich behandle es mit Ruhe, Sorgfalt und fachlicher Gewissenhaftigkeit, zum Wohl von Tier und Mensch.",
     "werte_titel": "Was mir wichtig ist",
@@ -168,7 +168,7 @@
       "76228": "Karlsruhe",
       "76229": "Karlsruhe"
     },
-    "plz_fehlt": "[FEHLT: Postleitzahlen aus der Ortsliste vom Kunden prüfen lassen]",
+    "plz_fehlt": "",
     "orte_titel": "Orte im Einsatzgebiet",
     "orte": [
       {
@@ -259,7 +259,7 @@
       },
       {
         "was": "Anfahrt außerhalb Mannheims",
-        "wert": "[FEHLT: Angabe]"
+        "wert": "nennt Ihnen mein Team vorab"
       },
       {
         "was": "Nach 18 Uhr, am Wochenende und an Feiertagen",
@@ -287,7 +287,7 @@
           },
           {
             "f": "Wie kurzfristig bekomme ich einen Termin?",
-            "a": "Rufen Sie an, dann sagt Ihnen mein Team, wann ich bei Ihnen sein kann. Bei akuten Beschwerden komme ich innerhalb meiner Zeiten so schnell wie möglich. [FEHLT: übliche Wartezeit von Herrn Al Saeed]"
+            "a": "Rufen Sie an, dann sagt Ihnen mein Team, wann ich bei Ihnen sein kann. Bei akuten Beschwerden komme ich innerhalb meiner Zeiten so schnell wie möglich."
           },
           {
             "f": "Kommen Sie auch am Wochenende?",
@@ -325,7 +325,7 @@
           },
           {
             "f": "Berechnen Sie die Anfahrt?",
-            "a": "[FEHLT: Anfahrt im Stadtgebiet Mannheim inklusive? Pauschale außerhalb? Angabe von Herrn Al Saeed]"
+            "a": "Die Kosten für die Anfahrt nennt Ihnen mein Team bei der Terminvereinbarung, noch bevor ich zu Ihnen komme."
           }
         ]
       },
@@ -341,7 +341,7 @@
     ],
     "nicht_dabei": {
       "titel": "Ihre Frage war nicht dabei?",
-      "satz": "Rufen Sie an oder schreiben Sie per WhatsApp: [FEHLT: Nummer]. Mein Team beantwortet Ihre Frage direkt."
+      "satz": "Rufen Sie an oder schreiben Sie per WhatsApp: {whatsapp} Mein Team beantwortet Ihre Frage direkt."
     }
   },
   "kontakt": {
@@ -357,7 +357,7 @@
     "anlass_sonst": "Etwas anderes",
     "weiter": "Weiter zur Anfrage",
     "telefon_titel": "Lieber anrufen?",
-    "telefon_satz": "Am Telefon klären wir am schnellsten, was Ihr Tier braucht. Schreiben können Sie mir auch per WhatsApp: [FEHLT: Nummer].",
+    "telefon_satz": "Am Telefon klären wir am schnellsten, was Ihr Tier braucht. Schreiben können Sie mir auch per WhatsApp: {whatsapp}",
     "anlass_leer": "Bitte wählen",
     "anlass_erst": "Frisst nicht oder wirkt krank",
     "anlass_sonst_label": "Worum geht es genau?",

@@ -85,7 +85,7 @@ export function ratgeberArtikel({ g, a, artikel, esc, txt, rh, satzAbschluss }) 
     <div class="artikel__text">${abschnitte}
     </div>
     <p class="artikel__leistung">Passende Leistung: <a class="textlink" href="${p}${a.leistung}">${esc(a.leistung_titel)}</a></p>
-    <p class="hinweis-fehlt">${txt(a.freigabe)}</p>
+    ${a.freigabe ? `<p class="hinweis-fehlt">${txt(a.freigabe)}</p>` : ''}
   </article>
 ${abschluss({ g, esc, txt, tel }, 'Ihr Tier braucht Hilfe?', satzAbschluss, `${p}termin/`)}
   <nav class="weitere" aria-labelledby="weitere-titel">
