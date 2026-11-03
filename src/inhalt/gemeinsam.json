@@ -1,7 +1,7 @@
 {
   "praxisname": "Mobile Tierarztpraxis Kurpfalz · Al Saeed",
-  "telefon_anzeige": "0621 000 00 00",
-  "telefon_link": "+496210000000",
+  "telefon_anzeige": "0172 2473875",
+  "telefon_link": "+491722473875",
   "ort": "Mannheim, Ludwigshafen, Heidelberg und Umgebung",
   "termin_label": "Termin anfragen",
   "anrufen_label": "Anrufen",
@@ -119,7 +119,6 @@
     }
   ],
   "leistungen_fehlt": "",
-  "telefon_fehlt": "FEHLT: neue Telefonnummer",
   "marke_zeile1": "Mobile Tierarztpraxis Kurpfalz",
   "marke_zeile2": "Al Saeed"
 }
