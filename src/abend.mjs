@@ -1,5 +1,6 @@
 // Baut die Startseite der Richtung „Abendlicht“ nach site/abend/ (Vorbilder apple.com, rolex.com).
 // Aufruf: node src/abend.mjs   Texte aus src/inhalt/*.json, Stil und Skript aus src/abend/.
+import QRCode from 'qrcode';
 import { readFile, writeFile, mkdir, cp, readdir } from 'node:fs/promises';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -33,6 +34,7 @@ function bild(name, alt, sizes, { prio = false, klasse = '' } = {}) {
 }
 
 const tel = g.telefon_anzeige, telLink = `tel:${g.telefon_link}`;
+const qrTel = await QRCode.toString(telLink, { type: 'svg', margin: 0, errorCorrectionLevel: 'M', color: { dark: '#1F2D3A', light: '#0000' } });
 const telFehlt = g.telefon_fehlt ? `<span class="fehlt fehlt--block">[FEHLT: neue Nummer]</span>` : '';
 
 // --- Abschnitte -------------------------------------------------------------
@@ -114,7 +116,11 @@ const termin = `
     <aside class="termin__rechts zeige" aria-labelledby="anrufen-titel">
       <h3 id="anrufen-titel" class="untertitel">${esc(k.telefon_titel)}</h3>
       <p>${txt(k.telefon_satz)}</p>
-      <a class="grossnummer" href="${telLink}">${esc(tel)}</a>${telFehlt}
+      <a class="knopf knopf--dunkel anrufknopf" href="${telLink}">Jetzt anrufen<span>${esc(tel)}</span></a>
+      <div class="qrkasten">
+        <span class="qr" role="img" aria-label="QR-Code mit der Nummer ${esc(tel)}">${qrTel}</span>
+        <p>Mit dem Handy scannen, dann wählt es die Nummer.<br><a class="grossnummer" href="${telLink}">${esc(tel)}</a></p>
+      </div>${telFehlt}
       <dl class="zeiten">
         <div><dt>Montag bis Freitag</dt><dd>9 bis 23 Uhr</dd></div>
         <div><dt>Samstag</dt><dd>8 bis 12 Uhr</dd></div>
