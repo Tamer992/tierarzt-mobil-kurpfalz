@@ -263,7 +263,7 @@ const fuss = `
   <div class="fuss__innen">
     <div><img src="../logo/logo-kurpfalzvet-negativ.svg" width="166" height="50" alt="Kurpfalzvet, mobiler Tierarzt"></div>
     <div><h2 class="beschriftung">Erreichbar</h2><p>Montag bis Freitag 9 bis 23 Uhr<br>Samstag 8 bis 12 Uhr<br>Sonntag in Ausnahmefällen</p></div>
-    <div><h2 class="beschriftung">Kontakt</h2><p><a href="${telLink}">${esc(tel)}</a>${telFehlt}<br><a href="mailto:info@tierpraxis-kurpfalz.de">info@tierpraxis-kurpfalz.de</a></p></div>
+    <div><h2 class="beschriftung">Kontakt</h2><p><a href="${telLink}">${esc(tel)}</a>${telFehlt}<br><a href="mailto:info@kurpfalzvet.de">info@kurpfalzvet.de</a></p></div>
     <div><h2 class="beschriftung">Praxis</h2><p>Freinsheimer Str. 30<br>67245 Lambsheim</p></div>
   </div>
   <p class="fuss__recht"><a href="#">Impressum</a> <a href="#">Datenschutz</a> <span>Fotos: Pexels</span></p>
