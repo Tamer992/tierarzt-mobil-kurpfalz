@@ -1,6 +1,6 @@
 // Phase 3, Richtung A: Muster-Unterseite (Leistung), Terminanfrage, stille Seite (Abschied).
 // Texte aus src/inhalt/leistung-durchfall.json, termin.json, abschied.json.
-import { ortsliste } from './orte.mjs';
+import { ortsliste, akzeptierteOrte } from './orte.mjs';
 
 /* ---------- Muster-Unterseite einer Leistung ---------- */
 export function leistungsseite({ g, s, l, esc, txt, rh }) {
@@ -115,7 +115,7 @@ export function terminseite({ g, s, t, esc, txt, rh }) {
             <label class="wahl"><input type="${typ}" name="${name}" value="${esc(w)}"${pflicht && i === 0 ? ' required' : ''}><span>${esc(w)}</span></label>`).join('');
   const tiere = s.kontakt.tiere;
   const oa = s.einsatz.ort_auswahl;
-  const orte = `<option value="" selected disabled>${esc(f.ort.leer)}</option>` + [...ortsliste(s.einsatz), f.ort.anderer].map((x) => `<option>${esc(x)}</option>`).join('');
+  const ortListe = ortsliste(s.einsatz).map((x) => `<option value="${esc(x)}">`).join('');
 
   return `${rh.dokument(t.seitentitel, p, { beschreibung: t.beschreibung })}${rh.kopfzeile(p, { termin: false })}
 <main id="inhalt" class="termin">
@@ -134,7 +134,7 @@ export function terminseite({ g, s, t, esc, txt, rh }) {
         <ul></ul>
       </div>
 
-      <form class="anfrage" id="anfrage" action="./" method="post" novalidate data-ausserhalb="${esc(f.ort.ausserhalb)}" data-ja="${esc(oa.antwort_ja)}" data-anderer="${esc(f.ort.anderer)}" data-laeuft="${esc(t.senden_laeuft)}">
+      <form class="anfrage" id="anfrage" action="./" method="post" novalidate data-ausserhalb="${esc(f.ort.ausserhalb)}" data-ja="${esc(oa.antwort_ja)}" data-orte="${esc(JSON.stringify(akzeptierteOrte(s.einsatz)))}" data-laeuft="${esc(t.senden_laeuft)}">
         <p class="anfrage__pflicht">${esc(t.pflicht_hinweis)}</p>
 
         <fieldset class="gruppe">
@@ -170,12 +170,8 @@ export function terminseite({ g, s, t, esc, txt, rh }) {
 
         <fieldset class="gruppe">
           <legend class="gruppe__titel">${esc(t.gruppen.ort)}</legend>
-          <div class="formfeld" data-feld="ort">
-            <label class="feld__label" for="f-ort">${esc(f.ort.label)}</label>
-            <div class="auswahl"><select class="feld" id="f-ort" name="ort" required aria-describedby="ort-fehler" data-fehler="${esc(f.ort.fehler)}">${orte}</select></div>
-            <p class="feld__fehler" id="ort-fehler" hidden></p>
-          </div>
-          ${feld('ort_anderes', { klasse: 'formfeld--kurz', versteckt: true, extra: ' maxlength="60" disabled' }).trim()}
+          ${feld('ort', { auto: 'off', extra: ' maxlength="60" list="orte-liste" autocapitalize="words"' }).trim()}
+          <datalist id="orte-liste">${ortListe}</datalist>
           <p class="plzhinweis" id="plz-ausserhalb" role="status" aria-live="polite"></p>
           ${feld('strasse', { auto: 'address-line1', extra: ' maxlength="80"' }).trim()}
         </fieldset>

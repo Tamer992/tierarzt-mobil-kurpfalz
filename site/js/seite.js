@@ -139,15 +139,13 @@
   if (param.get('schmerzen')) {
     form.querySelectorAll('input[name="schmerzen"]').forEach(function (r) { if (norm(r.value) === norm(param.get('schmerzen'))) r.checked = true; });
   }
-  if (param.get('ort')) {
-    Array.prototype.forEach.call($('#f-ort').options, function (o) { if (o.text === param.get('ort')) o.selected = true; });
-  }
+  if (param.get('ort')) $('#f-ort').value = param.get('ort');
   if (param.get('anlass_text')) $('#f-anlass_text').value = param.get('anlass_text');
   else if (param.get('anlass')) $('#f-anlass_text').value = param.get('anlass') + ': '; // Links von Leistungsseiten
 
   // Bedingte Felder
   var tierAnderes = form.querySelector('[data-feld="tier_anderes"]');
-  var ortAnderes = form.querySelector('[data-feld="ort_anderes"]');
+  var orte = JSON.parse(form.getAttribute('data-orte') || '[]');
   var wunschtag = document.getElementById('wunschtag');
   var heute = new Date(); heute.setMinutes(heute.getMinutes() - heute.getTimezoneOffset());
   var heuteText = heute.toISOString().slice(0, 10);
@@ -156,23 +154,23 @@
   function bedingt() {
     var anders = !!form.querySelector('input[name="tier"][value="Anderes Tier"]:checked');
     tierAnderes.hidden = !anders; $('#f-tier_anderes').disabled = !anders; $('#f-tier_anderes').required = anders;
-    var anderer = $('#f-ort').value === form.getAttribute('data-anderer');
-    ortAnderes.hidden = !anderer; $('#f-ort_anderes').disabled = !anderer; $('#f-ort_anderes').required = anderer;
     var tag = !!form.querySelector('input[name="wann"][value="An einem bestimmten Tag"]:checked');
     wunschtag.hidden = !tag; $('#f-datum').disabled = !tag; $('#f-datum').required = tag; $('#f-tageszeit').disabled = !tag;
   }
 
-  // Ort gewählt: sagen, ob ich komme
+  // Ort getippt oder gewählt: sagen, ob ich komme
   var plzHinweis = document.getElementById('plz-ausserhalb');
+  function ortTreffer(wert) { return orte.filter(function (o) { return o.toLowerCase() === wert.trim().toLowerCase(); })[0]; }
   function ortPruefen() {
-    var wert = $('#f-ort').value;
+    var wert = $('#f-ort').value.trim();
     plzHinweis.className = 'plzhinweis';
     if (!wert) { plzHinweis.textContent = ''; return; }
-    if (wert === form.getAttribute('data-anderer')) {
+    var treffer = ortTreffer(wert);
+    if (treffer) {
+      plzHinweis.textContent = form.getAttribute('data-ja').replace('{ort}', treffer);
+    } else {
       plzHinweis.textContent = form.getAttribute('data-ausserhalb');
       plzHinweis.classList.add('ist-nein');
-    } else {
-      plzHinweis.textContent = form.getAttribute('data-ja').replace('{ort}', wert);
     }
   }
 
@@ -192,7 +190,7 @@
     if (name === 'datum' && wert < heuteText) return meldung;
     return '';
   }
-  var namen = ['tier', 'tier_anderes', 'tier_name', 'tier_alter', 'schmerzen', 'anlass_text', 'ort', 'ort_anderes', 'strasse', 'wann', 'datum', 'name', 'telefon', 'email', 'datenschutz'];
+  var namen = ['tier', 'tier_anderes', 'tier_name', 'tier_alter', 'schmerzen', 'anlass_text', 'ort', 'strasse', 'wann', 'datum', 'name', 'telefon', 'email', 'datenschutz'];
 
   function pruefeFeld(name) {
     var meldung = fehlerVon(name);
@@ -244,6 +242,7 @@
     zeigeUebersicht(offen);
   }
   form.addEventListener('input', function (e) {
+    if (e.target.name === 'ort') ortPruefen();
     aufraeumen(e.target.name);
   });
   form.addEventListener('change', function (e) {
@@ -268,7 +267,7 @@
       wann = d.toLocaleDateString('de-DE', { weekday: 'long', day: 'numeric', month: 'long' });
       if (wertVon('tageszeit') && wertVon('tageszeit') !== 'Egal') wann += ', ' + wertVon('tageszeit').toLowerCase();
     }
-    var werte = { tier: tier, anlass: anlass, ort: wertVon('strasse') + ', ' + (wertVon('ort') === form.getAttribute('data-anderer') ? wertVon('ort_anderes') : wertVon('ort')), wann: wann };
+    var werte = { tier: tier, anlass: anlass, ort: wertVon('strasse') + ', ' + wertVon('ort'), wann: wann };
     gesendet.querySelectorAll('[data-zeile]').forEach(function (dd) { dd.textContent = werte[dd.getAttribute('data-zeile')] || ''; });
     // Telefonnummer am Stück halten, sie darf nicht umbrechen
     var satz = gesendet.querySelector('.gesendet__satz'), teile = gesendet.getAttribute('data-satz').split('{telefon}');

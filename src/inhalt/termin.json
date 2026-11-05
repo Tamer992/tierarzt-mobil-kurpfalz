@@ -45,9 +45,8 @@
     },
     "ort": {
       "label": "In welchem Ort wohnen Sie?",
-      "leer": "Bitte wählen",
-      "anderer": "Anderer Ort",
-      "fehler": "Bitte wählen Sie Ihren Ort aus.",
+      "hinweis": "Tippen Sie den Ort oder wählen Sie ihn aus der Liste.",
+      "fehler": "Bitte geben Sie Ihren Ort ein.",
       "ausserhalb": "Dieser Ort steht nicht auf meiner Liste. Schicken Sie die Anfrage trotzdem, mein Team sagt Ihnen dann, ob ich komme."
     },
     "wann": {
@@ -97,10 +96,6 @@
         "Weiß nicht"
       ],
       "fehler": "Bitte wählen Sie aus, ob Ihr Tier Schmerzen hat."
-    },
-    "ort_anderes": {
-      "label": "Welcher Ort?",
-      "fehler": "Bitte schreiben Sie Ihren Ort."
     }
   },
   "freiwillig": "freiwillig",

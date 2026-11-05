@@ -4,6 +4,7 @@
 import { readFile, writeFile, mkdir, cp, readdir, rm } from 'node:fs/promises';
 import { join, posix } from 'node:path';
 import { createHash } from 'node:crypto';
+import { akzeptierteOrte } from './orte.mjs';
 import { fileURLToPath } from 'node:url';
 
 const wurzel = join(fileURLToPath(import.meta.url), '../..');
@@ -169,6 +170,7 @@ const slotsSortiert = Object.fromEntries(Object.entries(slots).sort(([a], [b]) =
 for (const k of Object.keys(slots)) delete slots[k]; Object.assign(slots, slotsSortiert);
 
 // 4. Dateien des Themes
+await writeFile(join(theme, 'orte.json'), JSON.stringify(akzeptierteOrte((await lade('startseite')).einsatz)));
 await writeFile(join(theme, 'seiten.json'), JSON.stringify(karte, null, 1));
 await writeFile(join(theme, 'slots.json'), JSON.stringify(slots, null, 1));
 await writeFile(join(theme, 'content.json'), JSON.stringify(Object.fromEntries(benutzt), null, 1));

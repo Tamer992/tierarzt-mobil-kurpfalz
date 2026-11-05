@@ -1,7 +1,7 @@
 // Baut die Startseite der Richtung „Abendlicht“ nach site/abend/ (Vorbilder apple.com, rolex.com).
 // Aufruf: node src/abend.mjs   Texte aus src/inhalt/*.json, Stil und Skript aus src/abend/.
 import QRCode from 'qrcode';
-import { ortsliste } from './orte.mjs';
+import { ortsliste, akzeptierteOrte } from './orte.mjs';
 import { readFile, writeFile, mkdir, cp, readdir } from 'node:fs/promises';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -77,7 +77,7 @@ const start = `
 const k = s.kontakt;
 const e = s.einsatz;
 const oa = e.ort_auswahl;
-const ortOptionen = `<option value="" selected disabled>${esc(oa.leer)}</option>` + [...ortsliste(e), oa.anderer].map((x) => `<option>${esc(x)}</option>`).join('');
+const ortListe = ortsliste(e).map((x) => `<option value="${esc(x)}">`).join('');
 const termin = `
 <section class="termin hell" id="termin" aria-labelledby="termin-titel">
   <div class="termin__innen">
@@ -100,7 +100,9 @@ const termin = `
         </fieldset>
         <div class="gruppe">
           <label class="beschriftung" for="ort-wahl">${esc(oa.label)}</label>
-          <div class="auswahl"><select class="feld" id="ort-wahl" name="ort" required data-ja="${esc(oa.antwort_ja)}" data-anderer="${esc(oa.anderer)}" data-hinweis-anderer="${esc(oa.antwort_anderer)}">${ortOptionen}</select></div>
+          <input class="feld" id="ort-wahl" name="ort" type="text" list="orte-liste" required maxlength="60" autocomplete="off" autocapitalize="words" placeholder="${esc(oa.platzhalter)}" aria-describedby="ort-hinweis ort-antwort" data-ja="${esc(oa.antwort_ja)}" data-hinweis-anderer="${esc(oa.antwort_anderer)}" data-orte="${esc(JSON.stringify(akzeptierteOrte(e)))}">
+          <datalist id="orte-liste">${ortListe}</datalist>
+          <p class="hinweis" id="ort-hinweis">${esc(oa.hinweis)}</p>
           <p class="plz__antwort" id="ort-antwort" role="status"></p>
         </div>
         <button class="knopf knopf--dunkel" type="submit">${esc(k.weiter)} <span aria-hidden="true">→</span></button>

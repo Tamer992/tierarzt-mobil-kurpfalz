@@ -250,11 +250,11 @@
     ],
     "ort_auswahl": {
       "label": "In welchem Ort wohnen Sie?",
-      "leer": "Bitte wählen",
       "erst": "Mannheim",
-      "anderer": "Anderer Ort",
       "antwort_ja": "Ja, ich komme zu Ihnen nach {ort}.",
-      "antwort_anderer": "Dieser Ort steht nicht auf meiner Liste. Schicken Sie die Anfrage trotzdem, mein Team sagt Ihnen dann, ob ich komme."
+      "antwort_anderer": "Dieser Ort steht nicht auf meiner Liste. Schicken Sie die Anfrage trotzdem, mein Team sagt Ihnen dann, ob ich komme.",
+      "hinweis": "Tippen Sie den Ort oder wählen Sie ihn aus der Liste.",
+      "platzhalter": "Zum Beispiel Mannheim"
     }
   },
   "kosten": {

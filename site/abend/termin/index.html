@@ -9,8 +9,8 @@
 <link rel="preload" href="../../schriften/SourceSerif4.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="icon" href="../../logo/favicon-kurpfalzvet.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../unterseiten.css?v=7e0cd3ab">
-<script src="../../js/seite.js?v=02c9ef72" defer></script>
-<script src="../abend.js?v=00ec6e94" defer></script>
+<script src="../../js/seite.js?v=d0bf0740" defer></script>
+<script src="../abend.js?v=a6521c2b" defer></script>
 </head>
 <body class="unterseite">
 <a class="sprung" href="#inhalt">Zum Inhalt springen</a>
@@ -54,7 +54,7 @@
         <ul></ul>
       </div>
 
-      <form class="anfrage" id="anfrage" action="./" method="post" novalidate data-ausserhalb="Dieser Ort steht nicht auf meiner Liste. Schicken Sie die Anfrage trotzdem, mein Team sagt Ihnen dann, ob ich komme." data-ja="Ja, ich komme zu Ihnen nach {ort}." data-anderer="Anderer Ort" data-laeuft="Wird gesendet">
+      <form class="anfrage" id="anfrage" action="./" method="post" novalidate data-ausserhalb="Dieser Ort steht nicht auf meiner Liste. Schicken Sie die Anfrage trotzdem, mein Team sagt Ihnen dann, ob ich komme." data-ja="Ja, ich komme zu Ihnen nach {ort}." data-orte="[&quot;Mannheim&quot;,&quot;Altrip&quot;,&quot;Alzey&quot;,&quot;Bad Dürkheim&quot;,&quot;Böhl-Iggelheim&quot;,&quot;Dannstadt&quot;,&quot;Dudenhofen&quot;,&quot;Fußgönheim&quot;,&quot;Germersheim&quot;,&quot;Haßloch&quot;,&quot;Heidelberg&quot;,&quot;Hochdorf-Assenheim&quot;,&quot;Hockenheim&quot;,&quot;Karlsruhe&quot;,&quot;Ketsch&quot;,&quot;Limburgerhof&quot;,&quot;Lingenfeld&quot;,&quot;Ludwigshafen&quot;,&quot;Mutterstadt&quot;,&quot;Neuhofen&quot;,&quot;Neulußheim&quot;,&quot;Neustadt&quot;,&quot;Otterstadt&quot;,&quot;Rödersheim-Gronau&quot;,&quot;Römerberg&quot;,&quot;Schwetzingen&quot;,&quot;Speyer&quot;,&quot;Viernheim&quot;,&quot;Waldsee&quot;,&quot;Weinheim&quot;,&quot;Worms&quot;,&quot;Innenstadt&quot;,&quot;Jungbusch&quot;,&quot;Neckarstadt&quot;,&quot;Lindenhof&quot;,&quot;Neckarau&quot;,&quot;Almenhof&quot;,&quot;Rheinau&quot;,&quot;Schwetzingerstadt&quot;,&quot;Oststadt&quot;,&quot;Neuostheim&quot;,&quot;Seckenheim&quot;,&quot;Friedrichsfeld&quot;,&quot;Feudenheim&quot;,&quot;Käfertal&quot;,&quot;Vogelstang&quot;,&quot;Wallstadt&quot;,&quot;Waldhof&quot;,&quot;Gartenstadt&quot;,&quot;Schönau&quot;,&quot;Sandhofen&quot;]" data-laeuft="Wird gesendet">
         <p class="anfrage__pflicht">Freiwillige Angaben sind markiert. Alles andere brauchen wir, um zu Ihnen zu kommen.</p>
 
         <fieldset class="gruppe">
@@ -112,16 +112,12 @@
         <fieldset class="gruppe">
           <legend class="gruppe__titel">Wo ich hinkomme</legend>
           <div class="formfeld" data-feld="ort">
-            <label class="feld__label" for="f-ort">In welchem Ort wohnen Sie?</label>
-            <div class="auswahl"><select class="feld" id="f-ort" name="ort" required aria-describedby="ort-fehler" data-fehler="Bitte wählen Sie Ihren Ort aus."><option value="" selected disabled>Bitte wählen</option><option>Mannheim</option><option>Altrip</option><option>Alzey</option><option>Bad Dürkheim</option><option>Böhl-Iggelheim</option><option>Dannstadt</option><option>Dudenhofen</option><option>Fußgönheim</option><option>Germersheim</option><option>Haßloch</option><option>Heidelberg</option><option>Hochdorf-Assenheim</option><option>Hockenheim</option><option>Karlsruhe</option><option>Ketsch</option><option>Limburgerhof</option><option>Lingenfeld</option><option>Ludwigshafen</option><option>Mutterstadt</option><option>Neuhofen</option><option>Neulußheim</option><option>Neustadt</option><option>Otterstadt</option><option>Rödersheim-Gronau</option><option>Römerberg</option><option>Schwetzingen</option><option>Speyer</option><option>Viernheim</option><option>Waldsee</option><option>Weinheim</option><option>Worms</option><option>Anderer Ort</option></select></div>
-            <p class="feld__fehler" id="ort-fehler" hidden></p>
-          </div>
-          <div class="formfeld formfeld--kurz" data-feld="ort_anderes" hidden>
-          <label class="feld__label" for="f-ort_anderes">Welcher Ort?</label>
-          <input class="feld" id="f-ort_anderes" name="ort_anderes" type="text" required aria-describedby="ort_anderes-fehler" data-fehler="Bitte schreiben Sie Ihren Ort." maxlength="60" disabled>
-          
-          <p class="feld__fehler" id="ort_anderes-fehler" hidden></p>
+          <label class="feld__label" for="f-ort">In welchem Ort wohnen Sie?</label>
+          <input class="feld" id="f-ort" name="ort" type="text" autocomplete="off" required aria-describedby="ort-hinweis ort-fehler" data-fehler="Bitte geben Sie Ihren Ort ein." maxlength="60" list="orte-liste" autocapitalize="words">
+          <p class="feld__hinweis" id="ort-hinweis">Tippen Sie den Ort oder wählen Sie ihn aus der Liste.</p>
+          <p class="feld__fehler" id="ort-fehler" hidden></p>
         </div>
+          <datalist id="orte-liste"><option value="Mannheim"><option value="Altrip"><option value="Alzey"><option value="Bad Dürkheim"><option value="Böhl-Iggelheim"><option value="Dannstadt"><option value="Dudenhofen"><option value="Fußgönheim"><option value="Germersheim"><option value="Haßloch"><option value="Heidelberg"><option value="Hochdorf-Assenheim"><option value="Hockenheim"><option value="Karlsruhe"><option value="Ketsch"><option value="Limburgerhof"><option value="Lingenfeld"><option value="Ludwigshafen"><option value="Mutterstadt"><option value="Neuhofen"><option value="Neulußheim"><option value="Neustadt"><option value="Otterstadt"><option value="Rödersheim-Gronau"><option value="Römerberg"><option value="Schwetzingen"><option value="Speyer"><option value="Viernheim"><option value="Waldsee"><option value="Weinheim"><option value="Worms"></datalist>
           <p class="plzhinweis" id="plz-ausserhalb" role="status" aria-live="polite"></p>
           <div class="formfeld" data-feld="strasse">
           <label class="feld__label" for="f-strasse">Straße und Hausnummer</label>

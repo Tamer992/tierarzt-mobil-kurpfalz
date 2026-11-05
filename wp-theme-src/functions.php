@@ -169,9 +169,9 @@ function kv_termin_senden() {
 	$n = (int) get_transient('kv_t_' . $ip);
 	if ($n >= 5) $antwort(false, 429);
 	$f = [];
-	foreach (['tier', 'tier_anderes', 'tier_name', 'tier_alter', 'schmerzen', 'anlass_text', 'strasse', 'ort', 'ort_anderes', 'wann', 'datum', 'tageszeit', 'name', 'telefon', 'email'] as $k) $f[$k] = sanitize_textarea_field(wp_unslash($_POST[$k] ?? ''));
+	foreach (['tier', 'tier_anderes', 'tier_name', 'tier_alter', 'schmerzen', 'anlass_text', 'strasse', 'ort', 'wann', 'datum', 'tageszeit', 'name', 'telefon', 'email'] as $k) $f[$k] = sanitize_textarea_field(wp_unslash($_POST[$k] ?? ''));
 	$tier = $f['tier'] === 'Anderes Tier' ? $f['tier_anderes'] : $f['tier'];
-	$ort = $f['ort'] === 'Anderer Ort' ? $f['ort_anderes'] : $f['ort'];
+	$ort = $f['ort'];
 	if (!$tier || !$f['tier_name'] || !$f['tier_alter'] || !in_array($f['schmerzen'], ['Ja', 'Nein', 'Weiß nicht'], true) || !$f['anlass_text'] || !$f['strasse'] || !$ort || !$f['name'] || strlen(preg_replace('/\D/', '', $f['telefon'])) < 6 || empty($_POST['datenschutz'])) $antwort(false, 400);
 	if ($f['email'] && !is_email($f['email'])) $antwort(false, 400);
 	set_transient('kv_t_' . $ip, $n + 1, HOUR_IN_SECONDS);
@@ -183,7 +183,7 @@ function kv_termin_senden() {
 		'Wunschtermin' => $f['datum'] ? $f['datum'] . ($f['tageszeit'] ? ', ' . $f['tageszeit'] : '') : $f['wann'],
 		'Name' => $f['name'], 'Telefon' => $f['telefon'], 'E-Mail für die Rechnung' => $f['email'] ?: '-',
 	];
-	if ($f['ort'] === 'Anderer Ort') $zeilen['Hinweis'] = 'Ort steht nicht auf der Liste, bitte prüfen, ob ein Besuch möglich ist.';
+	if (!in_array(mb_strtolower(trim($ort)), array_map('mb_strtolower', kv_json('orte.json')), true)) $zeilen['Hinweis'] = 'Ort steht nicht auf der Liste, bitte prüfen, ob ein Besuch möglich ist.';
 	$text = "Neue Terminanfrage über die Webseite:\n\n";
 	foreach ($zeilen as $k => $v) $text .= $k . ': ' . $v . "\n";
 	$kopf = ['Content-Type: text/plain; charset=UTF-8'];

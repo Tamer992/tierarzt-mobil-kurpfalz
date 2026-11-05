@@ -195,16 +195,21 @@
     aktiv(schritte[0]);
   }
 
-  // Ort gewählt: sagen, ob ich komme (Mannheim steht oben in der Liste)
+  // Ort getippt oder gewählt: sagen, ob ich komme (Mannheim steht oben in der Liste)
   var ortWahl = document.getElementById('ort-wahl');
   var ortAntwort = document.getElementById('ort-antwort');
   if (ortWahl && ortAntwort) {
-    ortWahl.addEventListener('change', function () {
-      var anders = ortWahl.value === ortWahl.getAttribute('data-anderer');
+    var bekannt = JSON.parse(ortWahl.getAttribute('data-orte') || '[]');
+    var pruefeOrt = function () {
+      var wert = ortWahl.value.trim();
       ortAntwort.classList.remove('ist-ja', 'ist-nein');
-      ortAntwort.textContent = anders ? ortWahl.getAttribute('data-hinweis-anderer') : ortWahl.getAttribute('data-ja').replace('{ort}', ortWahl.value);
-      ortAntwort.classList.add(anders ? 'ist-nein' : 'ist-ja');
-    });
+      if (!wert) { ortAntwort.textContent = ''; return; }
+      var treffer = bekannt.filter(function (o) { return o.toLowerCase() === wert.toLowerCase(); })[0];
+      ortAntwort.textContent = treffer ? ortWahl.getAttribute('data-ja').replace('{ort}', treffer) : ortWahl.getAttribute('data-hinweis-anderer');
+      ortAntwort.classList.add(treffer ? 'ist-ja' : 'ist-nein');
+    };
+    ortWahl.addEventListener('input', pruefeOrt);
+    ortWahl.addEventListener('change', pruefeOrt);
   }
 
   var tierAnderes = document.querySelector('.tier-anderes');
