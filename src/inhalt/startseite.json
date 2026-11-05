@@ -247,7 +247,15 @@
           "Alzey"
         ]
       }
-    ]
+    ],
+    "ort_auswahl": {
+      "label": "In welchem Ort wohnen Sie?",
+      "leer": "Bitte wählen",
+      "erst": "Mannheim",
+      "anderer": "Anderer Ort",
+      "antwort_ja": "Ja, ich komme zu Ihnen nach {ort}.",
+      "antwort_anderer": "Dieser Ort steht nicht auf meiner Liste. Schicken Sie die Anfrage trotzdem, mein Team sagt Ihnen dann, ob ich komme."
+    }
   },
   "kosten": {
     "titel": "Was auf Sie zukommt",
@@ -365,7 +373,13 @@
     "anlass_text_label": "Beschreiben Sie kurz, was Ihnen aufgefallen ist (freiwillig)",
     "anlass_text_hinweis": "Zum Beispiel: seit wann, wie oft, frisst und trinkt es noch?",
     "tier_anderes_label": "Welches Tier?",
-    "tier_anderes_hinweis": "Zum Beispiel Kaninchen oder Meerschweinchen. Andere Kleintiere behandle ich nach Absprache."
+    "tier_anderes_hinweis": "Zum Beispiel Kaninchen oder Meerschweinchen. Andere Kleintiere behandle ich nach Absprache.",
+    "frage_schmerzen": "Hat es Schmerzen?",
+    "schmerzen": [
+      "Ja",
+      "Nein",
+      "Weiß nicht"
+    ]
   },
   "erreichbarkeit": {
     "titel": "Erreichbar",

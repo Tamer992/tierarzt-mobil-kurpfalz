@@ -125,6 +125,7 @@ for (const rel of (await alle(join(site, 'abend'))).sort()) {
   let html = await readFile(join(site, 'abend', rel), 'utf8');
   ctx = { stack: [], cur: '', felder: [], top: { name: 'Titel und Beschreibung der Seite' }, h1: '' };
   html = tokenisiere(html, seitenPfad, seitenPfad || 'Startseite').replace(/(seite\.js\?v=)\w+/, '$1' + seiteHash);
+  if (seitenPfad === 'termin') html = html.replace(/<p class="hinweis-fehlt">[\s\S]*?<\/p>/g, ''); // „Versand folgt“ gilt nur für die statische Vorschau
   if (seitenPfad === 'termin') { // echter Versand per admin-post.php, dazu ein Feld, das nur Spam-Roboter ausfüllen
     html = html.replace(/<form\b/, '<form data-senden="{{H}}/wp-admin/admin-post.php" data-sendefehler="Die Anfrage konnte gerade nicht gesendet werden. Bitte rufen Sie uns an."')
       .replace(/(<form\b[^>]*>)/, '$1<input type="hidden" name="action" value="kv_termin"><div hidden><label>Webseite<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>');

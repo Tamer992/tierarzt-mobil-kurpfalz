@@ -169,23 +169,26 @@ function kv_termin_senden() {
 	$n = (int) get_transient('kv_t_' . $ip);
 	if ($n >= 5) $antwort(false, 429);
 	$f = [];
-	foreach (['tier', 'tier_anderes', 'tier_name', 'anlass', 'anlass_text', 'strasse', 'plz', 'ort', 'wann', 'datum', 'tageszeit', 'name', 'telefon', 'email'] as $k) $f[$k] = sanitize_text_field(wp_unslash($_POST[$k] ?? ''));
+	foreach (['tier', 'tier_anderes', 'tier_name', 'tier_alter', 'schmerzen', 'anlass_text', 'strasse', 'ort', 'ort_anderes', 'wann', 'datum', 'tageszeit', 'name', 'telefon', 'email'] as $k) $f[$k] = sanitize_textarea_field(wp_unslash($_POST[$k] ?? ''));
 	$tier = $f['tier'] === 'Anderes Tier' ? $f['tier_anderes'] : $f['tier'];
-	if (!$tier || !$f['anlass'] || !$f['strasse'] || !preg_match('/^\d{5}$/', $f['plz']) || !$f['ort'] || !$f['name'] || strlen(preg_replace('/\D/', '', $f['telefon'])) < 6 || empty($_POST['datenschutz'])) $antwort(false, 400);
+	$ort = $f['ort'] === 'Anderer Ort' ? $f['ort_anderes'] : $f['ort'];
+	if (!$tier || !$f['tier_name'] || !$f['tier_alter'] || !in_array($f['schmerzen'], ['Ja', 'Nein', 'Weiß nicht'], true) || !$f['anlass_text'] || !$f['strasse'] || !$ort || !$f['name'] || strlen(preg_replace('/\D/', '', $f['telefon'])) < 6 || empty($_POST['datenschutz'])) $antwort(false, 400);
 	if ($f['email'] && !is_email($f['email'])) $antwort(false, 400);
 	set_transient('kv_t_' . $ip, $n + 1, HOUR_IN_SECONDS);
 	$zeilen = [
-		'Tier' => $tier . ($f['tier_name'] ? ' (' . $f['tier_name'] . ')' : ''),
-		'Anlass' => $f['anlass'] . ($f['anlass_text'] ? ': ' . $f['anlass_text'] : ''),
-		'Adresse' => $f['strasse'] . ', ' . $f['plz'] . ' ' . $f['ort'],
+		'Tier' => $tier . ', ' . $f['tier_name'] . ' (' . $f['tier_alter'] . ')',
+		'Schmerzen' => $f['schmerzen'],
+		'Was ist sonst los' => $f['anlass_text'],
+		'Adresse' => $f['strasse'] . ', ' . $ort,
 		'Wunschtermin' => $f['datum'] ? $f['datum'] . ($f['tageszeit'] ? ', ' . $f['tageszeit'] : '') : $f['wann'],
 		'Name' => $f['name'], 'Telefon' => $f['telefon'], 'E-Mail für die Rechnung' => $f['email'] ?: '-',
 	];
+	if ($f['ort'] === 'Anderer Ort') $zeilen['Hinweis'] = 'Ort steht nicht auf der Liste, bitte prüfen, ob ein Besuch möglich ist.';
 	$text = "Neue Terminanfrage über die Webseite:\n\n";
 	foreach ($zeilen as $k => $v) $text .= $k . ': ' . $v . "\n";
 	$kopf = ['Content-Type: text/plain; charset=UTF-8'];
 	if ($f['email']) $kopf[] = 'Reply-To: ' . $f['name'] . ' <' . $f['email'] . '>';
-	$ok = wp_mail(kv_empfaenger(), 'Terminanfrage: ' . $tier . ', ' . $f['anlass'], $text, $kopf);
+	$ok = wp_mail(kv_empfaenger(), 'Terminanfrage: ' . $tier . ' ' . $f['tier_name'] . ($f['schmerzen'] === 'Ja' ? ', Schmerzen' : ''), $text, $kopf);
 	$antwort($ok, $ok ? 200 : 500);
 }
 add_action('admin_post_nopriv_kv_termin', 'kv_termin_senden');

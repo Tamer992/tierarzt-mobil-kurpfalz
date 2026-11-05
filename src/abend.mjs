@@ -1,6 +1,7 @@
 // Baut die Startseite der Richtung „Abendlicht“ nach site/abend/ (Vorbilder apple.com, rolex.com).
 // Aufruf: node src/abend.mjs   Texte aus src/inhalt/*.json, Stil und Skript aus src/abend/.
 import QRCode from 'qrcode';
+import { ortsliste } from './orte.mjs';
 import { readFile, writeFile, mkdir, cp, readdir } from 'node:fs/promises';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -75,22 +76,14 @@ const start = `
 
 const k = s.kontakt;
 const e = s.einsatz;
-const anlaesse = `<option value="" selected disabled>${esc(k.anlass_leer)}</option>` + [k.anlass_erst, ...g.leistungen.map((l) => l.titel), k.anlass_sonst].map((t) => `<option>${esc(t)}</option>`).join('');
+const oa = e.ort_auswahl;
+const ortOptionen = `<option value="" selected disabled>${esc(oa.leer)}</option>` + [...ortsliste(e), oa.anderer].map((x) => `<option>${esc(x)}</option>`).join('');
 const termin = `
 <section class="termin hell" id="termin" aria-labelledby="termin-titel">
   <div class="termin__innen">
     <div class="termin__links zeige">
       <h2 id="termin-titel" class="titel">${esc(k.titel)}</h2>
       <p class="einleitung">${esc(k.satz)}</p>
-      <form class="plz" data-plz='${esc(JSON.stringify(e.plz_liste))}' data-ja="${esc(e.antwort_ja)}" data-nein="${esc(e.antwort_nein)}" data-fehler="${esc(e.antwort_fehler)}" novalidate>
-        <label class="beschriftung" for="plz-feld">${esc(e.plz_label)}</label>
-        <div class="plz__zeile">
-          <input id="plz-feld" class="plz__feld" name="plz" inputmode="numeric" autocomplete="postal-code" maxlength="5" placeholder="68159" aria-describedby="plz-hinweis plz-antwort">
-          <button class="knopf knopf--dunkel" type="submit">${esc(e.plz_knopf)}</button>
-        </div>
-        <p class="hinweis" id="plz-hinweis">${esc(e.plz_hinweis)}${e.plz_fehlt ? ` <span class="fehlt">${esc(e.plz_fehlt)}</span>` : ''}</p>
-        <p class="plz__antwort" id="plz-antwort" role="status"></p>
-      </form>
       <form class="vorauswahl" action="${A}termin/" method="get">
         <fieldset class="gruppe">
           <legend class="beschriftung">${esc(k.frage_tier)}</legend>
@@ -101,14 +94,14 @@ const termin = `
           <input class="feld feld--kurz" id="tier-anderes" name="tier_anderes" type="text" maxlength="60" autocomplete="off" aria-describedby="tier-anderes-hinweis" disabled>
           <p class="hinweis" id="tier-anderes-hinweis">${esc(k.tier_anderes_hinweis)}</p>
         </div>
+        <fieldset class="gruppe">
+          <legend class="beschriftung">${esc(k.frage_schmerzen)}</legend>
+          <div class="wahlen">${k.schmerzen.map((t, i) => `<label class="wahl"><input type="radio" name="schmerzen" value="${esc(t)}"${i === 0 ? ' required' : ''}><span>${esc(t)}</span></label>`).join('')}</div>
+        </fieldset>
         <div class="gruppe">
-          <label class="beschriftung" for="anlass">${esc(k.frage_anlass)}</label>
-          <div class="auswahl"><select class="feld" id="anlass" name="anlass" required data-sonst="${esc(k.anlass_sonst)}">${anlaesse}</select></div>
-        </div>
-        <div class="gruppe anlass-text" hidden data-label-sonst="${esc(k.anlass_sonst_label)}" data-hinweis-sonst="${esc(k.anlass_sonst_hinweis)}" data-label="${esc(k.anlass_text_label)}" data-hinweis="${esc(k.anlass_text_hinweis)}">
-          <label class="beschriftung" for="anlass-text">${esc(k.anlass_text_label)}</label>
-          <textarea class="feld feld--text" id="anlass-text" name="anlass_text" rows="3" maxlength="300" aria-describedby="anlass-text-hinweis" disabled></textarea>
-          <p class="hinweis" id="anlass-text-hinweis">${esc(k.anlass_text_hinweis)}</p>
+          <label class="beschriftung" for="ort-wahl">${esc(oa.label)}</label>
+          <div class="auswahl"><select class="feld" id="ort-wahl" name="ort" required data-ja="${esc(oa.antwort_ja)}" data-anderer="${esc(oa.anderer)}" data-hinweis-anderer="${esc(oa.antwort_anderer)}">${ortOptionen}</select></div>
+          <p class="plz__antwort" id="ort-antwort" role="status"></p>
         </div>
         <button class="knopf knopf--dunkel" type="submit">${esc(k.weiter)} <span aria-hidden="true">→</span></button>
       </form>

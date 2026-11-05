@@ -128,8 +128,6 @@
   if (!form) return;
   var $ = function (sel) { return form.querySelector(sel); };
   var param = new URLSearchParams(location.search);
-  var plzListe = JSON.parse(form.getAttribute('data-plz') || '{}');
-  var sonst = form.getAttribute('data-sonst');
   var geprueft = false;
 
   // Vorbelegung: Werte aus der Vorauswahl der Startseite (tier=hund, anlass=…, anlass_text=…)
@@ -138,14 +136,18 @@
     form.querySelectorAll('input[name="tier"]').forEach(function (r) { if (norm(r.value) === norm(param.get('tier'))) r.checked = true; });
   }
   if (param.get('tier_anderes')) $('#f-tier_anderes').value = param.get('tier_anderes');
-  if (param.get('anlass')) {
-    Array.prototype.forEach.call($('#f-anlass').options, function (o) { if (o.text === param.get('anlass')) o.selected = true; });
+  if (param.get('schmerzen')) {
+    form.querySelectorAll('input[name="schmerzen"]').forEach(function (r) { if (norm(r.value) === norm(param.get('schmerzen'))) r.checked = true; });
+  }
+  if (param.get('ort')) {
+    Array.prototype.forEach.call($('#f-ort').options, function (o) { if (o.text === param.get('ort')) o.selected = true; });
   }
   if (param.get('anlass_text')) $('#f-anlass_text').value = param.get('anlass_text');
+  else if (param.get('anlass')) $('#f-anlass_text').value = param.get('anlass') + ': '; // Links von Leistungsseiten
 
   // Bedingte Felder
   var tierAnderes = form.querySelector('[data-feld="tier_anderes"]');
-  var anlassText = form.querySelector('[data-feld="anlass_text"]');
+  var ortAnderes = form.querySelector('[data-feld="ort_anderes"]');
   var wunschtag = document.getElementById('wunschtag');
   var heute = new Date(); heute.setMinutes(heute.getMinutes() - heute.getTimezoneOffset());
   var heuteText = heute.toISOString().slice(0, 10);
@@ -154,32 +156,29 @@
   function bedingt() {
     var anders = !!form.querySelector('input[name="tier"][value="Anderes Tier"]:checked');
     tierAnderes.hidden = !anders; $('#f-tier_anderes').disabled = !anders; $('#f-tier_anderes').required = anders;
-    var istSonst = $('#f-anlass').value === sonst;
-    $('#f-anlass_text').required = istSonst;
-    anlassText.querySelector('label').textContent = anlassText.getAttribute(istSonst ? 'data-label-sonst' : 'data-label');
-    anlassText.querySelector('.feld__hinweis').textContent = anlassText.getAttribute(istSonst ? 'data-hinweis-sonst' : 'data-hinweis');
+    var anderer = $('#f-ort').value === form.getAttribute('data-anderer');
+    ortAnderes.hidden = !anderer; $('#f-ort_anderes').disabled = !anderer; $('#f-ort_anderes').required = anderer;
     var tag = !!form.querySelector('input[name="wann"][value="An einem bestimmten Tag"]:checked');
     wunschtag.hidden = !tag; $('#f-datum').disabled = !tag; $('#f-datum').required = tag; $('#f-tageszeit').disabled = !tag;
   }
 
-  // Postleitzahl: Ort ergänzen und sagen, ob sie im Einsatzgebiet liegt
+  // Ort gewählt: sagen, ob ich komme
   var plzHinweis = document.getElementById('plz-ausserhalb');
-  function plzPruefen() {
-    var wert = $('#f-plz').value.replace(/\D/g, '');
+  function ortPruefen() {
+    var wert = $('#f-ort').value;
     plzHinweis.className = 'plzhinweis';
-    if (wert.length !== 5) { plzHinweis.textContent = ''; return; }
-    if (Object.prototype.hasOwnProperty.call(plzListe, wert)) {
-      if (!$('#f-ort').value.trim()) { $('#f-ort').value = plzListe[wert]; pruefeFeld('ort'); }
-      plzHinweis.textContent = form.getAttribute('data-ja').replace('{ort}', plzListe[wert]);
-    } else {
+    if (!wert) { plzHinweis.textContent = ''; return; }
+    if (wert === form.getAttribute('data-anderer')) {
       plzHinweis.textContent = form.getAttribute('data-ausserhalb');
       plzHinweis.classList.add('ist-nein');
+    } else {
+      plzHinweis.textContent = form.getAttribute('data-ja').replace('{ort}', wert);
     }
   }
 
   // Prüfregeln je Feld; leer heißt in Ordnung
   function fehlerVon(name) {
-    if (name === 'tier' || name === 'wann') {
+    if (name === 'tier' || name === 'wann' || name === 'schmerzen') {
       return form.querySelector('input[name="' + name + '"]:checked') ? '' : form.querySelector('input[name="' + name + '"]').getAttribute('data-fehler');
     }
     var el = form.elements[name];
@@ -188,13 +187,12 @@
     if (el.type === 'checkbox') return el.checked ? '' : meldung;
     var wert = el.value.trim();
     if (!wert) return el.required ? meldung : '';
-    if (name === 'plz' && !/^\d{5}$/.test(wert)) return meldung;
     if (name === 'telefon' && wert.replace(/\D/g, '').length < 6) return meldung;
     if (name === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(wert)) return meldung;
     if (name === 'datum' && wert < heuteText) return meldung;
     return '';
   }
-  var namen = ['tier', 'tier_anderes', 'anlass', 'anlass_text', 'strasse', 'plz', 'ort', 'wann', 'datum', 'name', 'telefon', 'email', 'datenschutz'];
+  var namen = ['tier', 'tier_anderes', 'tier_name', 'tier_alter', 'schmerzen', 'anlass_text', 'ort', 'ort_anderes', 'strasse', 'wann', 'datum', 'name', 'telefon', 'email', 'datenschutz'];
 
   function pruefeFeld(name) {
     var meldung = fehlerVon(name);
@@ -246,11 +244,11 @@
     zeigeUebersicht(offen);
   }
   form.addEventListener('input', function (e) {
-    if (e.target.name === 'plz') plzPruefen();
     aufraeumen(e.target.name);
   });
   form.addEventListener('change', function (e) {
     bedingt();
+    if (e.target.name === 'ort') ortPruefen();
     aufraeumen(e.target.name);
   });
 
@@ -262,14 +260,15 @@
   function zeigeGesendet() {
     var tier = wertVon('tier') === 'Anderes Tier' ? wertVon('tier_anderes') : wertVon('tier');
     if (wertVon('tier_name')) tier += ', ' + wertVon('tier_name');
-    var anlass = wertVon('anlass') + (wertVon('anlass_text') ? ': ' + wertVon('anlass_text') : '');
+    if (wertVon('tier_alter')) tier += ' (' + wertVon('tier_alter') + ')';
+    var anlass = 'Schmerzen: ' + wertVon('schmerzen') + (wertVon('anlass_text') ? '. ' + wertVon('anlass_text') : '');
     var wann = wertVon('wann');
     if (wertVon('datum')) {
       var d = new Date(wertVon('datum') + 'T12:00:00');
       wann = d.toLocaleDateString('de-DE', { weekday: 'long', day: 'numeric', month: 'long' });
       if (wertVon('tageszeit') && wertVon('tageszeit') !== 'Egal') wann += ', ' + wertVon('tageszeit').toLowerCase();
     }
-    var werte = { tier: tier, anlass: anlass, ort: wertVon('strasse') + ', ' + wertVon('plz') + ' ' + wertVon('ort'), wann: wann };
+    var werte = { tier: tier, anlass: anlass, ort: wertVon('strasse') + ', ' + (wertVon('ort') === form.getAttribute('data-anderer') ? wertVon('ort_anderes') : wertVon('ort')), wann: wann };
     gesendet.querySelectorAll('[data-zeile]').forEach(function (dd) { dd.textContent = werte[dd.getAttribute('data-zeile')] || ''; });
     // Telefonnummer am Stück halten, sie darf nicht umbrechen
     var satz = gesendet.querySelector('.gesendet__satz'), teile = gesendet.getAttribute('data-satz').split('{telefon}');
@@ -310,20 +309,19 @@
   });
 
   bedingt();
-  plzPruefen();
+  ortPruefen();
 
   // Vorschau der Zustände für die Prüfung: ?vorschau=fehler oder ?vorschau=gesendet
   var vorschau = param.get('vorschau');
   if (vorschau === 'fehler') {
-    form.elements['plz'].value = '681';
     knopf.click();
   } else if (vorschau === 'gesendet') {
     form.querySelector('input[name="tier"][value="Katze"]').checked = true;
-    form.elements['tier_name'].value = 'Minka';
-    $('#f-anlass').value = 'Durchfall und Erbrechen';
+    form.elements['tier_name'].value = 'Minka'; form.elements['tier_alter'].value = '9 Jahre';
+    form.querySelector('input[name="schmerzen"][value="Nein"]').checked = true;
     form.elements['anlass_text'].value = 'Seit gestern Abend dreimal erbrochen, trinkt wenig.';
     form.elements['strasse'].value = 'Beispielweg 4';
-    form.elements['plz'].value = '68159'; form.elements['ort'].value = 'Mannheim';
+    form.elements['ort'].value = 'Mannheim';
     form.elements['name'].value = 'Beispiel';
     form.elements['telefon'].value = '0170 000 00 00';
     form.elements['datenschutz'].checked = true;

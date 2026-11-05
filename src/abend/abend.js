@@ -195,53 +195,18 @@
     aktiv(schritte[0]);
   }
 
-  // Postleitzahl prüfen, Liste im data-Attribut
-  var plz = document.querySelector('.plz');
-  if (plz) {
-    var liste = JSON.parse(plz.getAttribute('data-plz') || '{}');
-    var feld = plz.querySelector('input');
-    var antwort = plz.querySelector('.plz__antwort');
-    plz.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var wert = feld.value.replace(/\D/g, '');
-      antwort.classList.remove('ist-ja', 'ist-nein', 'ist-fehler');
-      if (wert.length !== 5) {
-        feld.setAttribute('aria-invalid', 'true');
-        antwort.textContent = plz.getAttribute('data-fehler');
-        antwort.classList.add('ist-fehler');
-        return;
-      }
-      feld.removeAttribute('aria-invalid');
-      if (Object.prototype.hasOwnProperty.call(liste, wert)) {
-        antwort.textContent = plz.getAttribute('data-ja').replace('{ort}', liste[wert]);
-        antwort.classList.add('ist-ja');
-      } else {
-        antwort.textContent = plz.getAttribute('data-nein');
-        antwort.classList.add('ist-nein');
-      }
+  // Ort gewählt: sagen, ob ich komme (Mannheim steht oben in der Liste)
+  var ortWahl = document.getElementById('ort-wahl');
+  var ortAntwort = document.getElementById('ort-antwort');
+  if (ortWahl && ortAntwort) {
+    ortWahl.addEventListener('change', function () {
+      var anders = ortWahl.value === ortWahl.getAttribute('data-anderer');
+      ortAntwort.classList.remove('ist-ja', 'ist-nein');
+      ortAntwort.textContent = anders ? ortWahl.getAttribute('data-hinweis-anderer') : ortWahl.getAttribute('data-ja').replace('{ort}', ortWahl.value);
+      ortAntwort.classList.add(anders ? 'ist-nein' : 'ist-ja');
     });
-    feld.addEventListener('input', function () { feld.removeAttribute('aria-invalid'); });
   }
 
-  // Termin-Vorauswahl: Beschreibung zum Anlass (bei „Etwas anderes“ Pflicht), Feld für ein anderes Tier
-  var anlass = document.getElementById('anlass');
-  var anlassText = document.querySelector('.anlass-text');
-  if (anlass && anlassText) {
-    var textfeld = anlassText.querySelector('textarea');
-    var label = anlassText.querySelector('label');
-    var hinweis = anlassText.querySelector('.hinweis');
-    var pruefeAnlass = function () {
-      var gewaehlt = anlass.value !== '';
-      var sonst = anlass.value === anlass.getAttribute('data-sonst');
-      anlassText.hidden = !gewaehlt;
-      textfeld.disabled = !gewaehlt;
-      textfeld.required = sonst;
-      label.textContent = anlassText.getAttribute(sonst ? 'data-label-sonst' : 'data-label');
-      hinweis.textContent = anlassText.getAttribute(sonst ? 'data-hinweis-sonst' : 'data-hinweis');
-    };
-    anlass.addEventListener('change', pruefeAnlass);
-    pruefeAnlass();
-  }
   var tierAnderes = document.querySelector('.tier-anderes');
   var tiere = document.querySelectorAll('input[name="tier"]');
   if (tierAnderes && tiere.length) {
